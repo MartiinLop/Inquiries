@@ -20,14 +20,17 @@ namespace Inquiries
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Inicio_sesion f2 = new Inicio_sesion();
-            f2.ShowDialog();
+            Inicio_sesion f= new Inicio_sesion();
+            f.ShowDialog();
             this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Registro f1 = new Registro();
+            f1.ShowDialog();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
