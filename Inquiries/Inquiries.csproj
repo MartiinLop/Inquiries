@@ -58,6 +58,12 @@
     <Compile Include="Inicio_sesion.Designer.cs">
       <DependentUpon>Inicio_sesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDocentes.Designer.cs">
+      <DependentUpon>MenuDocentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio_sesion.resx">
       <DependentUpon>Inicio_sesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuDocentes.resx">
+      <DependentUpon>MenuDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_Admin.resx">
       <DependentUpon>Menu_Admin.cs</DependentUpon>

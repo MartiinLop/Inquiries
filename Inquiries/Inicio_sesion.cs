@@ -19,7 +19,10 @@ namespace Inquiries
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MenuDocentes f = new MenuDocentes();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

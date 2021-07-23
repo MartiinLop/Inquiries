@@ -31,7 +31,7 @@ namespace Inquiries
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.roundButton1 = new Inquiries.RoundButton();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -40,7 +40,7 @@ namespace Inquiries
             this.button2.Cursor = System.Windows.Forms.Cursors.No;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1130, 632);
+            this.button2.Location = new System.Drawing.Point(1106, 646);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 23);
             this.button2.TabIndex = 2;
@@ -63,27 +63,28 @@ namespace Inquiries
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // roundButton1
+            // btnInicio
             // 
-            this.roundButton1.BackColor = System.Drawing.Color.White;
-            this.roundButton1.FlatAppearance.BorderSize = 0;
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton1.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton1.Location = new System.Drawing.Point(483, 280);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(298, 72);
-            this.roundButton1.TabIndex = 3;
-            this.roundButton1.Text = "Iniciar sesión";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            this.btnInicio.BackColor = System.Drawing.Color.White;
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Font = new System.Drawing.Font("Roboto", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.Location = new System.Drawing.Point(483, 271);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(298, 63);
+            this.btnInicio.TabIndex = 3;
+            this.btnInicio.Text = "Iniciar sesión";
+            this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1306, 667);
-            this.Controls.Add(this.roundButton1);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "Form1";
@@ -95,7 +96,7 @@ namespace Inquiries
         #endregion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private RoundButton roundButton1;
+        private System.Windows.Forms.Button btnInicio;
     }
 }
 

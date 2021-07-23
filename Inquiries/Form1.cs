@@ -17,7 +17,7 @@ namespace Inquiries
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
             this.Hide();
             Inicio_sesion f= new Inicio_sesion();
@@ -40,10 +40,9 @@ namespace Inquiries
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Inicio_sesion f2 = new Inicio_sesion();
-            f2.ShowDialog();
-            this.Show();
+
         }
+
+
     }
 }
