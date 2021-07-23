@@ -45,12 +45,13 @@ namespace Inquiries
             this.label7 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnConfAl = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // txtCIAl
             // 
             this.txtCIAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCIAl.Location = new System.Drawing.Point(428, 270);
+            this.txtCIAl.Location = new System.Drawing.Point(431, 297);
             this.txtCIAl.Name = "txtCIAl";
             this.txtCIAl.Size = new System.Drawing.Size(195, 31);
             this.txtCIAl.TabIndex = 0;
@@ -59,7 +60,7 @@ namespace Inquiries
             // txtApeAl
             // 
             this.txtApeAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeAl.Location = new System.Drawing.Point(649, 348);
+            this.txtApeAl.Location = new System.Drawing.Point(652, 375);
             this.txtApeAl.Name = "txtApeAl";
             this.txtApeAl.Size = new System.Drawing.Size(181, 31);
             this.txtApeAl.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace Inquiries
             // txtNomAl
             // 
             this.txtNomAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomAl.Location = new System.Drawing.Point(428, 348);
+            this.txtNomAl.Location = new System.Drawing.Point(431, 375);
             this.txtNomAl.Name = "txtNomAl";
             this.txtNomAl.Size = new System.Drawing.Size(194, 31);
             this.txtNomAl.TabIndex = 2;
@@ -77,7 +78,7 @@ namespace Inquiries
             // txtContraAl
             // 
             this.txtContraAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraAl.Location = new System.Drawing.Point(428, 428);
+            this.txtContraAl.Location = new System.Drawing.Point(431, 455);
             this.txtContraAl.Name = "txtContraAl";
             this.txtContraAl.Size = new System.Drawing.Size(194, 31);
             this.txtContraAl.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace Inquiries
             // txtContraConfAl
             // 
             this.txtContraConfAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraConfAl.Location = new System.Drawing.Point(649, 428);
+            this.txtContraConfAl.Location = new System.Drawing.Point(652, 455);
             this.txtContraConfAl.Name = "txtContraConfAl";
             this.txtContraConfAl.Size = new System.Drawing.Size(181, 31);
             this.txtContraConfAl.TabIndex = 4;
@@ -95,7 +96,7 @@ namespace Inquiries
             // txtGrupoAl
             // 
             this.txtGrupoAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrupoAl.Location = new System.Drawing.Point(428, 510);
+            this.txtGrupoAl.Location = new System.Drawing.Point(431, 537);
             this.txtGrupoAl.Name = "txtGrupoAl";
             this.txtGrupoAl.Size = new System.Drawing.Size(100, 31);
             this.txtGrupoAl.TabIndex = 5;
@@ -104,7 +105,7 @@ namespace Inquiries
             // txtNickAl
             // 
             this.txtNickAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNickAl.Location = new System.Drawing.Point(649, 510);
+            this.txtNickAl.Location = new System.Drawing.Point(652, 537);
             this.txtNickAl.Name = "txtNickAl";
             this.txtNickAl.Size = new System.Drawing.Size(181, 31);
             this.txtNickAl.TabIndex = 6;
@@ -114,7 +115,7 @@ namespace Inquiries
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(646, 320);
+            this.label2.Location = new System.Drawing.Point(649, 347);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 25);
             this.label2.TabIndex = 8;
@@ -125,7 +126,7 @@ namespace Inquiries
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 320);
+            this.label1.Location = new System.Drawing.Point(426, 347);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 9;
@@ -136,7 +137,7 @@ namespace Inquiries
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(423, 242);
+            this.label3.Location = new System.Drawing.Point(426, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 25);
             this.label3.TabIndex = 10;
@@ -147,7 +148,7 @@ namespace Inquiries
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(423, 400);
+            this.label4.Location = new System.Drawing.Point(426, 427);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 25);
             this.label4.TabIndex = 11;
@@ -158,7 +159,7 @@ namespace Inquiries
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(646, 400);
+            this.label5.Location = new System.Drawing.Point(649, 427);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(285, 25);
             this.label5.TabIndex = 12;
@@ -169,7 +170,7 @@ namespace Inquiries
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(423, 482);
+            this.label6.Location = new System.Drawing.Point(426, 509);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 25);
             this.label6.TabIndex = 13;
@@ -180,7 +181,7 @@ namespace Inquiries
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(646, 482);
+            this.label7.Location = new System.Drawing.Point(649, 509);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 25);
             this.label7.TabIndex = 14;
@@ -191,7 +192,7 @@ namespace Inquiries
             // 
             this.btnVolver.BackColor = System.Drawing.Color.White;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1084, 610);
+            this.btnVolver.Location = new System.Drawing.Point(1084, 620);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(168, 47);
             this.btnVolver.TabIndex = 16;
@@ -203,7 +204,7 @@ namespace Inquiries
             // 
             this.btnConfAl.BackColor = System.Drawing.Color.White;
             this.btnConfAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfAl.Location = new System.Drawing.Point(549, 593);
+            this.btnConfAl.Location = new System.Drawing.Point(552, 620);
             this.btnConfAl.Name = "btnConfAl";
             this.btnConfAl.Size = new System.Drawing.Size(168, 47);
             this.btnConfAl.TabIndex = 17;
@@ -211,12 +212,21 @@ namespace Inquiries
             this.btnConfAl.UseVisualStyleBackColor = false;
             this.btnConfAl.Click += new System.EventHandler(this.btnConfAl_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.wok;
+            this.panel1.Location = new System.Drawing.Point(946, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(306, 343);
+            this.panel1.TabIndex = 18;
+            // 
             // RegistroAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfAl);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label7);
@@ -259,5 +269,6 @@ namespace Inquiries
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnConfAl;
+        private System.Windows.Forms.Panel panel1;
     }
 }

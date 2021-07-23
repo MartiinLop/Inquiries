@@ -47,5 +47,10 @@ namespace Inquiries
         {
 
         }
+
+        private void btnCerrarAl_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

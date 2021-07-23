@@ -45,6 +45,7 @@ namespace Inquiries
             this.btnVolver = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMateDoc = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // txtCIDoc
@@ -197,11 +198,22 @@ namespace Inquiries
             this.txtMateDoc.Size = new System.Drawing.Size(181, 31);
             this.txtMateDoc.TabIndex = 24;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.wok;
+            this.panel1.Location = new System.Drawing.Point(946, 14);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(306, 343);
+            this.panel1.TabIndex = 34;
+            // 
             // RegistroDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfDoc);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.label7);
@@ -243,5 +255,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMateDoc;
+        private System.Windows.Forms.Panel panel1;
     }
 }

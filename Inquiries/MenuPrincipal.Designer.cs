@@ -32,6 +32,7 @@ namespace Inquiries
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnInSesión = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnSalirPrincipal
@@ -54,7 +55,7 @@ namespace Inquiries
             this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarse.FlatAppearance.BorderSize = 0;
             this.btnRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarse.Location = new System.Drawing.Point(348, 337);
+            this.btnRegistrarse.Location = new System.Drawing.Point(359, 481);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(583, 69);
             this.btnRegistrarse.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace Inquiries
             this.btnInSesión.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInSesión.FlatAppearance.BorderSize = 0;
             this.btnInSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInSesión.Location = new System.Drawing.Point(348, 245);
+            this.btnInSesión.Location = new System.Drawing.Point(359, 389);
             this.btnInSesión.Name = "btnInSesión";
             this.btnInSesión.Size = new System.Drawing.Size(583, 69);
             this.btnInSesión.TabIndex = 3;
@@ -76,12 +77,21 @@ namespace Inquiries
             this.btnInSesión.UseVisualStyleBackColor = false;
             this.btnInSesión.Click += new System.EventHandler(this.btnInicio_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.wok;
+            this.panel1.Location = new System.Drawing.Point(497, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(306, 343);
+            this.panel1.TabIndex = 4;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnInSesión);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnSalirPrincipal);
@@ -95,6 +105,7 @@ namespace Inquiries
         private System.Windows.Forms.Button btnSalirPrincipal;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Button btnInSesión;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

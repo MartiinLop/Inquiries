@@ -33,6 +33,7 @@ namespace Inquiries
             this.btnVolver = new System.Windows.Forms.Button();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -40,7 +41,7 @@ namespace Inquiries
             this.btnIngresar.BackColor = System.Drawing.Color.White;
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(514, 563);
+            this.btnIngresar.Location = new System.Drawing.Point(536, 571);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(220, 57);
             this.btnIngresar.TabIndex = 3;
@@ -65,7 +66,7 @@ namespace Inquiries
             // 
             this.txtContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContra.ForeColor = System.Drawing.Color.Silver;
-            this.txtContra.Location = new System.Drawing.Point(433, 383);
+            this.txtContra.Location = new System.Drawing.Point(439, 474);
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(409, 44);
             this.txtContra.TabIndex = 8;
@@ -75,11 +76,20 @@ namespace Inquiries
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.Silver;
-            this.txtUsuario.Location = new System.Drawing.Point(433, 288);
+            this.txtUsuario.Location = new System.Drawing.Point(439, 379);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(409, 44);
             this.txtUsuario.TabIndex = 7;
             this.txtUsuario.Text = "Cédula de Identidad";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.wok;
+            this.panel1.Location = new System.Drawing.Point(490, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(306, 343);
+            this.panel1.TabIndex = 35;
             // 
             // InicioSesion
             // 
@@ -87,6 +97,7 @@ namespace Inquiries
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnVolver);
@@ -103,5 +114,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Panel panel1;
     }
 }
