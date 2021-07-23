@@ -36,26 +36,37 @@ namespace Inquiries
 
             try
             {
+                // Test de espacios vacíos 
+                if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || txtGrupoAl.Text == "" || txtContraConfAl.Text == "")
+                {
+                    throw new ArgumentNullException();
+                }
+                else
+                { 
+                    // Creación de alumno
+                    if (txtContraAl.Text == txtContraConfAl.Text)
+                    {
 
-                if (txtContraAl.Text == txtContraConfAl.Text) {
+                        Alumno al1 = new Alumno(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text);
+                        MessageBox.Show("Usuario creado!");
 
-                Alumno al1 = new Alumno(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text);
-                MessageBox.Show("Usuario creado!");
+                        txtCIAl.Text = "";
+                        txtNomAl.Text = "";
+                        txtApeAl.Text = "";
+                        txtContraAl.Text = "";
+                        txtContraConfAl.Text = "";
+                        txtGrupoAl.Text = "";
+                        txtNickAl.Text = "";
 
-                txtCIAl.Text = "";
-                txtNomAl.Text = "";
-                txtApeAl.Text = "";
-                txtContraAl.Text = "";
-                txtContraConfAl.Text = "";
-                txtGrupoAl.Text = "";
-                txtNickAl.Text = "";
+                        alumnos.Add(al1);
+                    }
+                    else
+                    {
 
-                alumnos.Add(al1);
-            } else {
+                        MessageBox.Show("Las contraseñas no son iguales!");
 
-                MessageBox.Show("Las contraseñas no son iguales!");
-
-            }
+                    }
+                }
             }catch(Exception) {
 
                 MessageBox.Show("Faltan datos");

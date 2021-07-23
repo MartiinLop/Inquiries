@@ -25,6 +25,11 @@ namespace Inquiries
         {
             try
             {
+                // Test de espacios vacíos 
+                if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || txtMateDoc.Text == "" || txtGrupoDoc.Text == "" || txtContraConfDoc.Text == "")
+                {
+                    throw new ArgumentNullException();
+                }
 
                 if (txtContraDoc.Text == txtContraConfDoc.Text)
                 {
