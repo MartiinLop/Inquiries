@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inquiries
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form1()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Inquiries
         private void btnInicio_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Inicio_sesion f= new Inicio_sesion();
+            InicioSesion f= new InicioSesion();
             f.ShowDialog();
             this.Show();
         }

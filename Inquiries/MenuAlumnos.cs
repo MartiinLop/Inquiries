@@ -42,5 +42,10 @@ namespace Inquiries
 
 
         }
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

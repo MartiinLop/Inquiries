@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Inquiries
 {
-    public partial class Inicio_sesion : Form
+    public partial class InicioSesion : Form
     {
-        public Inicio_sesion()
+        public InicioSesion()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace Inquiries
             try
             {
                 // Inicio sesión 
-                if (Convert.ToInt32(txtID.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
+                if (Convert.ToInt32(txtUsuario.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
                 {
                     this.Hide();
                     MenuAlumnos f = new MenuAlumnos();
@@ -36,7 +36,7 @@ namespace Inquiries
                 }
                 else
                 {
-                    if (Convert.ToInt32(txtID.Text) == docenteEjemplo.docci && txtContra.Text == docenteEjemplo.doccon)
+                    if (Convert.ToInt32(txtUsuario.Text) == docenteEjemplo.docci && txtContra.Text == docenteEjemplo.doccon)
                     {
                         this.Hide();
                         MenuDocentes f = new MenuDocentes();
@@ -45,7 +45,7 @@ namespace Inquiries
                     }
                     else
                     {
-                        MessageBox.Show("Error");
+                        MessageBox.Show("Este usuario no existe");
                     }
                 }
 

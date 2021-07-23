@@ -59,11 +59,11 @@ namespace Inquiries
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 35);
+            this.label1.Size = new System.Drawing.Size(262, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "NOTIFICACIONES";
             // 
@@ -83,7 +83,7 @@ namespace Inquiries
             // 
             this.btnChat.FlatAppearance.BorderSize = 0;
             this.btnChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChat.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChat.Location = new System.Drawing.Point(420, 5);
             this.btnChat.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnChat.Name = "btnChat";
@@ -96,7 +96,7 @@ namespace Inquiries
             // 
             this.btnConsultas.FlatAppearance.BorderSize = 0;
             this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultas.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultas.Location = new System.Drawing.Point(192, 5);
             this.btnConsultas.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultas.Name = "btnConsultas";
@@ -104,12 +104,13 @@ namespace Inquiries
             this.btnConsultas.TabIndex = 1;
             this.btnConsultas.Text = "CONSULTAS";
             this.btnConsultas.UseVisualStyleBackColor = true;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // btnGrupos
             // 
             this.btnGrupos.FlatAppearance.BorderSize = 0;
             this.btnGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrupos.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrupos.Location = new System.Drawing.Point(6, 5);
             this.btnGrupos.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnGrupos.Name = "btnGrupos";
@@ -124,8 +125,8 @@ namespace Inquiries
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "MenuAlumnos";
             this.Text = "MenuAlumnos";
