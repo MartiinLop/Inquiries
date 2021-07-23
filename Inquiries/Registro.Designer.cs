@@ -29,35 +29,47 @@ namespace Inquiries
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.RegDoc = new System.Windows.Forms.Button();
+            this.RegAl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnVolver
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(523, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 55);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVolver.BackColor = System.Drawing.Color.White;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(1084, 604);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(168, 47);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // button2
+            // RegDoc
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1084, 604);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 47);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Volver";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RegDoc.BackColor = System.Drawing.Color.White;
+            this.RegDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegDoc.Location = new System.Drawing.Point(341, 345);
+            this.RegDoc.Name = "RegDoc";
+            this.RegDoc.Size = new System.Drawing.Size(583, 69);
+            this.RegDoc.TabIndex = 8;
+            this.RegDoc.Text = "Registrarse cómo docente";
+            this.RegDoc.UseVisualStyleBackColor = false;
+            this.RegDoc.Click += new System.EventHandler(this.RegDoc_Click);
+            // 
+            // RegAl
+            // 
+            this.RegAl.BackColor = System.Drawing.Color.White;
+            this.RegAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegAl.Location = new System.Drawing.Point(341, 248);
+            this.RegAl.Name = "RegAl";
+            this.RegAl.Size = new System.Drawing.Size(583, 69);
+            this.RegAl.TabIndex = 7;
+            this.RegAl.Text = "Registrarse cómo alumno";
+            this.RegAl.UseVisualStyleBackColor = false;
+            this.RegAl.Click += new System.EventHandler(this.RegAl_Click);
             // 
             // Registro
             // 
@@ -65,8 +77,9 @@ namespace Inquiries
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1264, 663);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RegDoc);
+            this.Controls.Add(this.RegAl);
+            this.Controls.Add(this.btnVolver);
             this.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Registro";
             this.Text = "Registro";
@@ -76,7 +89,8 @@ namespace Inquiries
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button RegDoc;
+        private System.Windows.Forms.Button RegAl;
     }
 }

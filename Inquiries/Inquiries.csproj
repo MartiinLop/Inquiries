@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="Docente.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +59,12 @@
     </Compile>
     <Compile Include="Inicio_sesion.Designer.cs">
       <DependentUpon>Inicio_sesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAlumnos.Designer.cs">
+      <DependentUpon>MenuAlumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuDocentes.cs">
       <SubType>Form</SubType>
@@ -79,6 +86,18 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroAlumnos.Designer.cs">
+      <DependentUpon>RegistroAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroDocentes.Designer.cs">
+      <DependentUpon>RegistroDocentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -87,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio_sesion.resx">
       <DependentUpon>Inicio_sesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAlumnos.resx">
+      <DependentUpon>MenuAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuDocentes.resx">
       <DependentUpon>MenuDocentes.cs</DependentUpon>
@@ -105,6 +127,12 @@
     </Compile>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroAlumnos.resx">
+      <DependentUpon>RegistroAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroDocentes.resx">
+      <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace Inquiries
 {
-    public partial class MenuDocentes : Form
+    public partial class MenuAlumnos : Form
     {
         int v = 1;
-        public MenuDocentes()
+        public MenuAlumnos()
         {
             InitializeComponent();
-        }
-
-        private void MenuDocentes_Load(object sender, EventArgs e)
-        {
             panel3.Hide();
         }
 
         private void btnGrupos_Click(object sender, EventArgs e)
         {
-
 
             if (v == 1)
             {

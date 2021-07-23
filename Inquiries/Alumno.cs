@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InquiriesAlumnos
+namespace Inquiries
 {
     class Alumno
     {
@@ -17,7 +17,8 @@ namespace InquiriesAlumnos
         protected string alNick;
 
         //constructor completo
-        public Alumno (int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick){
+        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
+        {
 
             this.alCI = alCI;
             this.alNom = alNom;
@@ -28,31 +29,32 @@ namespace InquiriesAlumnos
 
         }
         // Gets y Sets
-        public int ci {
-           get { return alCI; }
-           set { alCI = value; }
+        public int alci
+        {
+            get { return alCI; }
+            set { alCI = value; }
         }
-        public string nom
+        public string alnom
         {
             get { return alNom; }
             set { alNom = value; }
         }
-        public string ape
+        public string alape
         {
             get { return alApe; }
             set { alApe = value; }
         }
-        public string con
+        public string alcon
         {
             get { return alCon; }
             set { alCon = value; }
         }
-        public string grupo
+        public string algrupo
         {
             get { return alGrupo; }
             set { alGrupo = value; }
         }
-        public string nickname
+        public string alnickname
         {
             get { return alNick; }
             set { alNick = value; }
@@ -60,4 +62,3 @@ namespace InquiriesAlumnos
         ////////////////////////////
     }
 }
-
