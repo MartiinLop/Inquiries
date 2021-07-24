@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Inquiries
 {
+
+
     class Alumno
     {
+
+        
         // atributos
         protected int alCI;
         protected string alNom;
@@ -59,6 +64,8 @@ namespace Inquiries
             get { return alNick; }
             set { alNick = value; }
         }
+
+
         ////////////////////////////
     }
 }

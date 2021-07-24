@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+
 
 namespace Inquiries
 {
@@ -16,8 +18,9 @@ namespace Inquiries
         public InicioSesion()
         {
             InitializeComponent();
-        }
-        
+        } 
+
+
         Alumno alumnoEjemplo = new Alumno(543, "juan", "diaz", "123", "3°BA", "JuanDiaz");
 
         Docente docenteEjemplo = new Docente(54, "juan", "diaz", "12", "3°BA, 3°BB", "BD, Programación");
@@ -25,6 +28,7 @@ namespace Inquiries
         private void button1_Click(object sender, EventArgs e)
         {
             try
+              
             {
                 // Inicio sesión 
                 if (Convert.ToInt32(txtUsuario.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
