@@ -41,9 +41,10 @@ namespace Inquiries
             this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalirPrincipal.Location = new System.Drawing.Point(1032, 612);
+            this.btnSalirPrincipal.Location = new System.Drawing.Point(1376, 753);
+            this.btnSalirPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
-            this.btnSalirPrincipal.Size = new System.Drawing.Size(220, 57);
+            this.btnSalirPrincipal.Size = new System.Drawing.Size(293, 70);
             this.btnSalirPrincipal.TabIndex = 2;
             this.btnSalirPrincipal.Text = "Cerrar programa";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
@@ -55,9 +56,10 @@ namespace Inquiries
             this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarse.FlatAppearance.BorderSize = 0;
             this.btnRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarse.Location = new System.Drawing.Point(359, 481);
+            this.btnRegistrarse.Location = new System.Drawing.Point(479, 592);
+            this.btnRegistrarse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(583, 69);
+            this.btnRegistrarse.Size = new System.Drawing.Size(777, 85);
             this.btnRegistrarse.TabIndex = 1;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = false;
@@ -69,10 +71,11 @@ namespace Inquiries
             this.btnInSesión.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInSesión.FlatAppearance.BorderSize = 0;
             this.btnInSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInSesión.Location = new System.Drawing.Point(359, 389);
+            this.btnInSesión.Location = new System.Drawing.Point(479, 479);
+            this.btnInSesión.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInSesión.Name = "btnInSesión";
-            this.btnInSesión.Size = new System.Drawing.Size(583, 69);
-            this.btnInSesión.TabIndex = 3;
+            this.btnInSesión.Size = new System.Drawing.Size(777, 85);
+            this.btnInSesión.TabIndex = 0;
             this.btnInSesión.Text = "Iniciar sesión";
             this.btnInSesión.UseVisualStyleBackColor = false;
             this.btnInSesión.Click += new System.EventHandler(this.btnInicio_Click);
@@ -80,21 +83,23 @@ namespace Inquiries
             // panel1
             // 
             this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.wok;
-            this.panel1.Location = new System.Drawing.Point(497, 12);
+            this.panel1.Location = new System.Drawing.Point(663, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 343);
+            this.panel1.Size = new System.Drawing.Size(408, 422);
             this.panel1.TabIndex = 4;
             // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnInSesión);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnSalirPrincipal);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuPrincipal";
             this.Text = "Menú Principal";
             this.ResumeLayout(false);

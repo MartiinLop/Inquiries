@@ -18,7 +18,7 @@ namespace Inquiries
         public InicioSesion()
         {
             InitializeComponent();
-        } 
+        }
 
 
         Alumno alumnoEjemplo = new Alumno(543, "juan", "diaz", "123", "3°BA", "JuanDiaz");
@@ -28,7 +28,7 @@ namespace Inquiries
         private void button1_Click(object sender, EventArgs e)
         {
             try
-              
+
             {
                 // Inicio sesión 
                 if (Convert.ToInt32(txtUsuario.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
@@ -49,13 +49,13 @@ namespace Inquiries
                     }
                     else
                     {
-                        MessageBox.Show("Este usuario no existe");
+                        MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
-            }catch (Exception)
+            } catch (Exception)
             {
-                MessageBox.Show("Faltan datos");
+                MessageBox.Show("Faltan datos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -63,6 +63,22 @@ namespace Inquiries
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtUsuario_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Cédula de Identidad")
+            {
+                txtUsuario.Text = "";
+            }
+        }
+
+        private void txtContra_Click(object sender, EventArgs e)
+        {
+            if (txtContra.Text == "Contraseña")
+            {
+                txtContra.Text = "";
+            }
         }
     }
 }

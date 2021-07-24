@@ -63,13 +63,13 @@ namespace Inquiries
                     else
                     {
 
-                        MessageBox.Show("Las contraseñas no son iguales!");
+                        MessageBox.Show("Las contraseñas no son iguales!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                 }
             }catch(Exception) {
 
-                MessageBox.Show("Faltan datos");
+                MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
