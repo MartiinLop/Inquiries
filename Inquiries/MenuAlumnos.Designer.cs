@@ -33,11 +33,11 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPerfilDoc = new System.Windows.Forms.Button();
+            this.btnCerrarAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
-            this.btnCerrarAl = new System.Windows.Forms.Button();
-            this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,8 +83,38 @@ namespace Inquiries
             this.panel1.Size = new System.Drawing.Size(1264, 122);
             this.panel1.TabIndex = 4;
             // 
+            // btnPerfilDoc
+            // 
+            this.btnPerfilDoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPerfilDoc.FlatAppearance.BorderSize = 0;
+            this.btnPerfilDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerfilDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfilDoc.Location = new System.Drawing.Point(1108, 4);
+            this.btnPerfilDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnPerfilDoc.Name = "btnPerfilDoc";
+            this.btnPerfilDoc.Size = new System.Drawing.Size(141, 112);
+            this.btnPerfilDoc.TabIndex = 6;
+            this.btnPerfilDoc.Text = "Perfil";
+            this.btnPerfilDoc.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrarAl
+            // 
+            this.btnCerrarAl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarAl.FlatAppearance.BorderSize = 0;
+            this.btnCerrarAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarAl.Location = new System.Drawing.Point(573, 5);
+            this.btnCerrarAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnCerrarAl.Name = "btnCerrarAl";
+            this.btnCerrarAl.Size = new System.Drawing.Size(203, 112);
+            this.btnCerrarAl.TabIndex = 5;
+            this.btnCerrarAl.Text = "Cerrar sesión";
+            this.btnCerrarAl.UseVisualStyleBackColor = true;
+            this.btnCerrarAl.Click += new System.EventHandler(this.btnCerrarAl_Click);
+            // 
             // btnChatAl
             // 
+            this.btnChatAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChatAl.FlatAppearance.BorderSize = 0;
             this.btnChatAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChatAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,6 +128,7 @@ namespace Inquiries
             // 
             // btnConsultasAl
             // 
+            this.btnConsultasAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultasAl.FlatAppearance.BorderSize = 0;
             this.btnConsultasAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultasAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,6 +143,7 @@ namespace Inquiries
             // 
             // btnGruposAl
             // 
+            this.btnGruposAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGruposAl.FlatAppearance.BorderSize = 0;
             this.btnGruposAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGruposAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,33 +156,6 @@ namespace Inquiries
             this.btnGruposAl.UseVisualStyleBackColor = true;
             this.btnGruposAl.Click += new System.EventHandler(this.btnGrupos_Click);
             // 
-            // btnCerrarAl
-            // 
-            this.btnCerrarAl.FlatAppearance.BorderSize = 0;
-            this.btnCerrarAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarAl.Location = new System.Drawing.Point(585, 5);
-            this.btnCerrarAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnCerrarAl.Name = "btnCerrarAl";
-            this.btnCerrarAl.Size = new System.Drawing.Size(203, 112);
-            this.btnCerrarAl.TabIndex = 5;
-            this.btnCerrarAl.Text = "Cerrar sesión";
-            this.btnCerrarAl.UseVisualStyleBackColor = true;
-            this.btnCerrarAl.Click += new System.EventHandler(this.btnCerrarAl_Click);
-            // 
-            // btnPerfilDoc
-            // 
-            this.btnPerfilDoc.FlatAppearance.BorderSize = 0;
-            this.btnPerfilDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPerfilDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerfilDoc.Location = new System.Drawing.Point(1108, 4);
-            this.btnPerfilDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnPerfilDoc.Name = "btnPerfilDoc";
-            this.btnPerfilDoc.Size = new System.Drawing.Size(141, 112);
-            this.btnPerfilDoc.TabIndex = 6;
-            this.btnPerfilDoc.Text = "Perfil";
-            this.btnPerfilDoc.UseVisualStyleBackColor = true;
-            // 
             // MenuAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,7 +165,7 @@ namespace Inquiries
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "MenuAlumnos";
-            this.Text = "MenuAlumnos";
+            this.Text = "Menu de Alumnos";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

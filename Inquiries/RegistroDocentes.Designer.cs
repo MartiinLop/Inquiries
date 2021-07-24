@@ -99,6 +99,7 @@ namespace Inquiries
             // btnConfDoc
             // 
             this.btnConfDoc.BackColor = System.Drawing.Color.White;
+            this.btnConfDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfDoc.Location = new System.Drawing.Point(549, 605);
             this.btnConfDoc.Name = "btnConfDoc";
@@ -171,6 +172,7 @@ namespace Inquiries
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.White;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(1084, 622);
             this.btnVolver.Name = "btnVolver";
@@ -231,7 +233,7 @@ namespace Inquiries
             this.Controls.Add(this.txtApeDoc);
             this.Controls.Add(this.txtCIDoc);
             this.Name = "RegistroDocentes";
-            this.Text = "RegistroDocentes";
+            this.Text = "Registro de Docentes";
             this.ResumeLayout(false);
             this.PerformLayout();
 

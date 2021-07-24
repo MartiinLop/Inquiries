@@ -191,6 +191,7 @@ namespace Inquiries
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.White;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(1084, 620);
             this.btnVolver.Name = "btnVolver";
@@ -203,6 +204,7 @@ namespace Inquiries
             // btnConfAl
             // 
             this.btnConfAl.BackColor = System.Drawing.Color.White;
+            this.btnConfAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfAl.Location = new System.Drawing.Point(552, 620);
             this.btnConfAl.Name = "btnConfAl";

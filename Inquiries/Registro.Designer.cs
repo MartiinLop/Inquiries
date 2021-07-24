@@ -37,6 +37,7 @@ namespace Inquiries
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.White;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(1084, 604);
             this.btnVolver.Name = "btnVolver";
@@ -49,6 +50,7 @@ namespace Inquiries
             // RegDoc
             // 
             this.RegDoc.BackColor = System.Drawing.Color.White;
+            this.RegDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegDoc.Location = new System.Drawing.Point(341, 345);
             this.RegDoc.Name = "RegDoc";
@@ -61,6 +63,7 @@ namespace Inquiries
             // RegAl
             // 
             this.RegAl.BackColor = System.Drawing.Color.White;
+            this.RegAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegAl.Location = new System.Drawing.Point(341, 248);
             this.RegAl.Name = "RegAl";

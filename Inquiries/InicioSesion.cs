@@ -55,7 +55,7 @@ namespace Inquiries
 
             } catch (Exception)
             {
-                MessageBox.Show("Faltan datos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
