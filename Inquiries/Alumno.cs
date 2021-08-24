@@ -9,7 +9,7 @@ namespace Inquiries
 {
 
 
-    class Alumno
+    class Alumno : Persona
     {
 
         
@@ -22,7 +22,7 @@ namespace Inquiries
         protected string alNick;
 
         //constructor completo
-        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
+        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick): base(alCI, alNom, alApe, alCon)
         {
 
             this.alCI = alCI;

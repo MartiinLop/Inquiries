@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inquiries
 {
-    class Docente
+    class Docente : Persona
     {
         // atributos
         protected int DocCI;
@@ -17,7 +17,7 @@ namespace Inquiries
         protected string DocMateria;
 
         // constructor completo
-        public Docente(int DocCI, string DocNom, string DocApe, string DocCon, string DocGrupo, string DocMateria)
+        public Docente(int DocCI, string DocNom, string DocApe, string DocCon, string DocGrupo, string DocMateria) : base(DocCI, DocNom, DocApe, DocCon)
         {
 
             this.DocCI = DocCI;

@@ -150,11 +150,12 @@ namespace Inquiries
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel3.Location = new System.Drawing.Point(6, 125);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1196, 525);
             this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // MenuDocentes
             // 
