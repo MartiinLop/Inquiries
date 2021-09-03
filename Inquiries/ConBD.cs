@@ -23,8 +23,9 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
             conectar.Open();
 
-            MySqlCommand nual = new MySqlCommand("insert into alumno (alci, alnom, alape, alcon, algrupo, alnick) values ('"+Convert.ToString(alCI)+"','"+alNom+"','"+alApe+"','"+alCon+"','"+alGrupo+ "','"+alNick+"');'", conectar);
+            MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick) VALUES ('"+alCI+"','"+alNom+"','"+alApe+"','"+alCon+"','"+alGrupo+ "','"+alNick+"');", conectar);
             nual.ExecuteNonQuery();
+            conectar.Close();
         }
     }
 

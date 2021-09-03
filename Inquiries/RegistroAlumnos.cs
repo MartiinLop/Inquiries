@@ -32,17 +32,9 @@ namespace Inquiries
 
         private void btnConfAl_Click(object sender, EventArgs e)
         {
-            txtCIAl.Text = "1";
-            txtNomAl.Text = "1";
-            txtApeAl.Text = "1";
-            txtContraAl.Text = "1";
-            txtContraConfAl.Text = "1";
-            txtGrupoAl.Text = "1";
-            txtNickAl.Text = "1";
-
-            //try
-            //{
-            // Test de espacios vacíos 
+            try
+            {
+                //Test de espacios vacíos
             if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || txtGrupoAl.Text == "" || txtContraConfAl.Text == "")
                 {
                     throw new ArgumentNullException();
@@ -75,11 +67,13 @@ namespace Inquiries
 
                     }
                 }
-            //}catch(Exception) {
+            }
+            catch (Exception)
+            {
 
-            //    MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //}
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
