@@ -14,8 +14,6 @@ namespace Inquiries
     public partial class RegistroDocentes : Form
     {
 
-        ArrayList docentes = new ArrayList();
-
         public RegistroDocentes()
         {
             InitializeComponent();
@@ -34,8 +32,7 @@ namespace Inquiries
                 if (txtContraDoc.Text == txtContraConfDoc.Text)
                 {
 
-                    Docente doc1 = new Docente(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, txtGrupoDoc.Text, txtMateDoc.Text);
-                    MessageBox.Show("Usuario creado!");
+                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(txtGrupoDoc.Text));
 
                     txtCIDoc.Text = "";
                     txtNomDoc.Text = "";
@@ -45,7 +42,8 @@ namespace Inquiries
                     txtGrupoDoc.Text = "";
                     txtMateDoc.Text = "";
 
-                    docentes.Add(doc1);
+                    MessageBox.Show("Usuario creado!");
+
                 }
                 else
                 {
@@ -55,7 +53,7 @@ namespace Inquiries
                 }
             }catch(Exception) {
 
-                MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faltan datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }

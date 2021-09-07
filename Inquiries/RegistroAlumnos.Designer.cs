@@ -35,18 +35,17 @@ namespace Inquiries
             this.txtContraAl = new System.Windows.Forms.TextBox();
             this.txtContraConfAl = new System.Windows.Forms.TextBox();
             this.txtGrupoAl = new System.Windows.Forms.TextBox();
-            this.txtNickAl = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnConfAl = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNickAl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCIAl
@@ -102,15 +101,6 @@ namespace Inquiries
             this.txtGrupoAl.Size = new System.Drawing.Size(100, 31);
             this.txtGrupoAl.TabIndex = 5;
             this.txtGrupoAl.TextChanged += new System.EventHandler(this.txtGrupoAl_TextChanged);
-            // 
-            // txtNickAl
-            // 
-            this.txtNickAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNickAl.Location = new System.Drawing.Point(652, 537);
-            this.txtNickAl.Name = "txtNickAl";
-            this.txtNickAl.Size = new System.Drawing.Size(181, 31);
-            this.txtNickAl.TabIndex = 6;
-            this.txtNickAl.TextChanged += new System.EventHandler(this.txtNickAl_TextChanged);
             // 
             // label2
             // 
@@ -178,17 +168,6 @@ namespace Inquiries
             this.label6.Text = "Grupo";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(649, 509);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 25);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Apodo";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.White;
@@ -223,18 +202,25 @@ namespace Inquiries
             this.panel1.Size = new System.Drawing.Size(306, 343);
             this.panel1.TabIndex = 18;
             // 
-            // button1
+            // label7
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(86, 580);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(297, 47);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Crear Elsapataso";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(649, 509);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 25);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Apodo";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // txtNickAl
+            // 
+            this.txtNickAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNickAl.Location = new System.Drawing.Point(652, 537);
+            this.txtNickAl.Name = "txtNickAl";
+            this.txtNickAl.Size = new System.Drawing.Size(181, 31);
+            this.txtNickAl.TabIndex = 6;
+            this.txtNickAl.TextChanged += new System.EventHandler(this.txtNickAl_TextChanged);
             // 
             // RegistroAlumnos
             // 
@@ -242,7 +228,6 @@ namespace Inquiries
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfAl);
             this.Controls.Add(this.btnVolver);
@@ -276,17 +261,16 @@ namespace Inquiries
         private System.Windows.Forms.TextBox txtContraAl;
         private System.Windows.Forms.TextBox txtContraConfAl;
         private System.Windows.Forms.TextBox txtGrupoAl;
-        private System.Windows.Forms.TextBox txtNickAl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnConfAl;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNickAl;
     }
 }

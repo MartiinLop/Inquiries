@@ -21,18 +21,16 @@ namespace Inquiries
         }
 
 
-        Alumno alumnoEjemplo = new Alumno(543, "juan", "diaz", "123", "3°BA", "JuanDiaz");
-
-        Docente docenteEjemplo = new Docente(54, "juan", "diaz", "12", "3°BA, 3°BB", "BD, Programación");
-
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            //try
 
-            {
+            //{
                 // Inicio sesión 
-                if (Convert.ToInt32(txtUsuario.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
+                if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))//Convert.ToInt32(txtUsuario.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
                 {
+                    txtContra.Text = "";
+                    txtUsuario.Text = "";
                     this.Hide();
                     MenuAlumnos f = new MenuAlumnos();
                     f.ShowDialog();
@@ -40,23 +38,24 @@ namespace Inquiries
                 }
                 else
                 {
-                    if (Convert.ToInt32(txtUsuario.Text) == docenteEjemplo.docci && txtContra.Text == docenteEjemplo.doccon)
-                    {
-                        this.Hide();
-                        MenuDocentes f = new MenuDocentes();
-                        f.ShowDialog();
-                        this.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+
+                    //if (Convert.ToInt32(txtUsuario.Text) == docenteEjemplo.docci && txtContra.Text == docenteEjemplo.doccon)
+                    //{
+                    //    this.Hide();
+                    //    MenuDocentes f = new MenuDocentes();
+                    //    f.ShowDialog();
+                    //    this.Show();
+                    //}
+                    //else
+                    //{
+                    MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
                 }
 
-            } catch (Exception)
-            {
-                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //} catch (Exception)
+            //{
+            //    MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 
