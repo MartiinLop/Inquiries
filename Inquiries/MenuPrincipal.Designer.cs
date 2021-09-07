@@ -34,12 +34,9 @@ namespace Inquiries
             this.btnInSesión = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalirPrincipal
@@ -47,7 +44,9 @@ namespace Inquiries
             this.btnSalirPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
             this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
+            this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
             this.btnSalirPrincipal.Location = new System.Drawing.Point(941, 542);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
             this.btnSalirPrincipal.Size = new System.Drawing.Size(220, 57);
@@ -105,36 +104,15 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1180, 620);
             this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
             this.panel4.Location = new System.Drawing.Point(145, 499);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(98, 100);
             this.panel4.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Amiri Quran", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(19, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 33);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "logo";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Amiri Quran", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(19, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 33);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "esi";
             // 
             // panel3
             // 
@@ -146,10 +124,10 @@ namespace Inquiries
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.wok;
-            this.panel1.Location = new System.Drawing.Point(431, 15);
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
+            this.panel1.Location = new System.Drawing.Point(449, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 343);
+            this.panel1.Size = new System.Drawing.Size(276, 271);
             this.panel1.TabIndex = 4;
             // 
             // MenuPrincipal
@@ -162,8 +140,6 @@ namespace Inquiries
             this.Name = "MenuPrincipal";
             this.Text = "Menú Principal";
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -176,8 +152,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
     }
 }
 

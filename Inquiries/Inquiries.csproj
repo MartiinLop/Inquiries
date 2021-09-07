@@ -123,7 +123,6 @@
     <Compile Include="Menu_Admin.Designer.cs">
       <DependentUpon>Menu_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="PedBD.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wok2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lutu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inquiries.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
