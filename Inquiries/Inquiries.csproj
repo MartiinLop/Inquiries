@@ -196,5 +196,8 @@
   <ItemGroup>
     <None Include="Resources\wok.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wok2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
