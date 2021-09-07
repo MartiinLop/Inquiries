@@ -35,41 +35,73 @@ namespace Inquiries
         {
             MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
             conectar.Open();
-            int e;
+            MySqlDataReader com;
+            int op;
             int vCI;
             String vCon;
             //MySqlCommand inse = new MySqlCommand
-             string a = "select alci,alcon from alumno";
+            string a = "select alci,alcon from alumno";
             MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
-            MySqlDataAdapter datos = new MySqlDataAdapter(seleccionar);
 
-            while (seleccionar.Read())
+            com = seleccionar.ExecuteReader();
+
+                while (com.Read())
+                {
+                    vCI = com.GetInt32("alci");
+                    vCon = com.GetString("alcon");
+                    if (vCI == alCI && vCon == alCon)
+                    {
+                        op = 1;
+                    }
+                    else
+                    {
+                        op = 0;
+                    }
+
+                    if (op == 1)
+                    {
+                        op = 0;
+                        return true;
+                    }
+                }
+            return false;
+
+            }
+        public static Boolean Insedoc(int dCI, string dCon)
+        {
+            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
+            conectar.Open();
+            MySqlDataReader com;
+            int op;
+            int vCI;
+            String vCon;
+            //MySqlCommand inse = new MySqlCommand
+            string a = "select dci,dcon from docente";
+            MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
+
+            com = seleccionar.ExecuteReader();
+
+            while (com.Read())
             {
-                vCI = r.GetInt32("alci");
-                vCon = r.GetString("alcon");
-                if (vCI == alCI || vCon == alCon)
+                vCI = com.GetInt32("dci");
+                vCon = com.GetString("dcon");
+                if (vCI == dCI && vCon == dCon)
                 {
-                    e = 1;
+                    op = 1;
                 }
                 else
                 {
-                    e = 0;
+                    op = 0;
                 }
 
-                if (e == 1)
+                if (op == 1)
                 {
-                    e = 0;
-                    conectar.Close();
+                    op = 0;
                     return true;
-                }
-                else
-                {
-                    conectar.Close();
-                    return false;
                 }
             }
             return false;
-            
+
         }
     }
 

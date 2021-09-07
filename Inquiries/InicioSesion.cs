@@ -23,39 +23,42 @@ namespace Inquiries
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //try
-
-            //{
+            try
+            {
                 // Inicio sesión 
-                if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))//Convert.ToInt32(txtUsuario.Text) == alumnoEjemplo.alci && txtContra.Text == alumnoEjemplo.alcon)
+                if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
-                    txtContra.Text = "";
-                    txtUsuario.Text = "";
+                    txtContra.Text = "Cédula de identidad";
+                    txtUsuario.Text = "Contraseña";
                     this.Hide();
                     MenuAlumnos f = new MenuAlumnos();
                     f.ShowDialog();
                     this.Show();
                 }
+
                 else
                 {
-
-                    //if (Convert.ToInt32(txtUsuario.Text) == docenteEjemplo.docci && txtContra.Text == docenteEjemplo.doccon)
-                    //{
-                    //    this.Hide();
-                    //    MenuDocentes f = new MenuDocentes();
-                    //    f.ShowDialog();
-                    //    this.Show();
-                    //}
-                    //else
-                    //{
-                    MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //}
+                    if (ConBD.Insedoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                    {
+                    txtContra.Text = "Cédula de identidad";
+                    txtUsuario.Text = "Contraseña";
+                    this.Hide();
+                    MenuDocentes f = new MenuDocentes();
+                    f.ShowDialog();
+                    this.Show();
+                    }
+                        else
+                        {
+                            MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+    
                 }
 
-            //} catch (Exception)
-            //{
-            //    MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -78,6 +81,11 @@ namespace Inquiries
             {
                 txtContra.Text = "";
             }
+        }
+
+        private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

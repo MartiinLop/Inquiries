@@ -74,6 +74,7 @@ namespace Inquiries
             this.txtContra.TabIndex = 1;
             this.txtContra.Text = "Contraseña";
             this.txtContra.Click += new System.EventHandler(this.txtContra_Click);
+            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
             // txtUsuario
             // 
