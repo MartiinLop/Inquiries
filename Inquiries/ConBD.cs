@@ -8,14 +8,6 @@ namespace Inquiries
 {
     class ConBD
     {
-
-        public static void bd(){
-
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
-            conectar.Open();
-
-        }
-
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
         {
             Alumno bd = new Alumno(alCI, alNom, alApe, alCon, alGrupo, alNick);
@@ -46,10 +38,12 @@ namespace Inquiries
             int e;
             int vCI;
             String vCon;
-            MySqlCommand inse = new MySqlCommand("select alci,alcon from alumno where alci='"+alCI+"' and '"+alCon+"' ");
-            MySqlDataReader r;
-            r = inse.ExecuteReader();
-            while (r.Read())
+            //MySqlCommand inse = new MySqlCommand
+             string a = "select alci,alcon from alumno";
+            MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(seleccionar);
+
+            while (seleccionar.Read())
             {
                 vCI = r.GetInt32("alci");
                 vCon = r.GetString("alcon");
