@@ -45,7 +45,10 @@ namespace Inquiries
 
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MenuConsultaAl f1 = new MenuConsultaAl();
+            f1.ShowDialog();
+            this.Show();
         }
 
         private void btnCerrarAl_Click(object sender, EventArgs e)

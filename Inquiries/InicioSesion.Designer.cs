@@ -84,7 +84,7 @@ namespace Inquiries
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(409, 44);
             this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.Text = "Cédula de Identidad";
+            this.txtUsuario.Text = "Cédula de identidad";
             this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 

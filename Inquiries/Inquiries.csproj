@@ -93,6 +93,18 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="ConBD.cs" />
     <Compile Include="Docente.cs" />
+    <Compile Include="ConsultaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaAlumno.Designer.cs">
+      <DependentUpon>ConsultaAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuConsultaAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuConsultaAl.Designer.cs">
+      <DependentUpon>MenuConsultaAl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     <Compile Include="RegistroDocentes.Designer.cs">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConsultaAlumno.resx">
+      <DependentUpon>ConsultaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuConsultaAl.resx">
+      <DependentUpon>MenuConsultaAl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
