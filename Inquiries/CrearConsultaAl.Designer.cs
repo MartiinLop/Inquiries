@@ -1,7 +1,7 @@
 ﻿
 namespace Inquiries
 {
-    partial class CrearConsulta
+    partial class CrearConsultaAl
     {
         /// <summary>
         /// Required designer variable.

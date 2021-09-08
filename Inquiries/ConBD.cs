@@ -11,7 +11,13 @@ namespace Inquiries
         //Contraseña a base de datos
         private static string contrabd = "1234";
 
+        public static int obtCI(int vCI)
+        {
 
+            int usu = vCI;
+
+            return usu;
+        }
 
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
         {
@@ -38,14 +44,13 @@ namespace Inquiries
 
         public static Boolean Inseal(int alCI, string alCon)
         {
-            string usu;
+            int intento;
             MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= "+contrabd+";");
             conectar.Open();
             MySqlDataReader com;
             int op;
             int vCI;
             String vCon;
-            //MySqlCommand inse = new MySqlCommand
             string a = "select alci,alcon from alumno";
             MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
 
@@ -58,12 +63,14 @@ namespace Inquiries
                     if (vCI == alCI && vCon == alCon)
                     {
                         op = 1;
-                        usu = alCI;
-                    }
+                    intento = obtCI(vCI);
+                }
                     else
                     {
                         op = 0;
                     }
+
+                
 
                     if (op == 1)
                     {
