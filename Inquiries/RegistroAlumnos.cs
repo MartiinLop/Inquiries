@@ -32,22 +32,22 @@ namespace Inquiries
 
         private void btnConfAl_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 //Test de espacios vacíos
-            if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || txtGrupoAl.Text == "" || txtContraConfAl.Text == "")
+                if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || txtGrupoAl.Text == "" || txtContraConfAl.Text == "")
                 {
                     throw new ArgumentNullException();
                 }
                 else
-                { 
+                {
                     // Creación de alumno
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
 
-                    //Alumno al1 = new Alumno(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text);
+                        //Alumno al1 = new Alumno(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text);
 
-                    ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text);
+                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text);
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";
@@ -57,7 +57,7 @@ namespace Inquiries
                         txtGrupoAl.Text = "";
                         txtNickAl.Text = "";
 
-                        
+
                         MessageBox.Show("Usuario creado!");
                     }
                     else
@@ -68,12 +68,13 @@ namespace Inquiries
                     }
                 }
             }
-            //catch (Exception)
-            //{
+            catch (Exception)
+            {
 
-            //    MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //}
+            }
+        }
         
 
         private void label7_Click(object sender, EventArgs e)

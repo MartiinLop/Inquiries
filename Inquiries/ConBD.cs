@@ -12,7 +12,7 @@ namespace Inquiries
         {
             Alumno bd = new Alumno(alCI, alNom, alApe, alCon, alGrupo, alNick);
 
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
+            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;");
             conectar.Open();
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick) VALUES ('"+alCI+"','"+alNom+"','"+alApe+"','"+alCon+"','"+alGrupo+ "','"+alNick+"');", conectar);
@@ -23,7 +23,7 @@ namespace Inquiries
         public static void regdoc(int dCI,string dNom ,string dApe,string dCon,int año)
         {
 
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
+            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;");
             conectar.Open();
 
             MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año) VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "');", conectar);
@@ -33,7 +33,7 @@ namespace Inquiries
 
         public static Boolean Inseal(int alCI, string alCon)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
+            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;");
             conectar.Open();
             MySqlDataReader com;
             int op;
@@ -69,7 +69,7 @@ namespace Inquiries
             }
         public static Boolean Insedoc(int dCI, string dCon)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;");
+            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;");
             conectar.Open();
             MySqlDataReader com;
             int op;

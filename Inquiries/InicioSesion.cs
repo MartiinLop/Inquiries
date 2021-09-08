@@ -28,8 +28,8 @@ namespace Inquiries
                 // Inicio sesión 
                 if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
-                    txtContra.Text = "Cédula de identidad";
-                    txtUsuario.Text = "Contraseña";
+                    txtUsuario.Text = "Cédula de identidad";
+                    txtContra.Text = "Contraseña";
                     this.Hide();
                     MenuAlumnos f = new MenuAlumnos();
                     f.ShowDialog();
@@ -40,8 +40,8 @@ namespace Inquiries
                 {
                     if (ConBD.Insedoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                     {
-                    txtContra.Text = "Cédula de identidad";
-                    txtUsuario.Text = "Contraseña";
+                    txtUsuario.Text = "Cédula de identidad";
+                    txtContra.Text = "Contraseña";
                     this.Hide();
                     MenuDocentes f = new MenuDocentes();
                     f.ShowDialog();
@@ -69,7 +69,7 @@ namespace Inquiries
 
         private void txtUsuario_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Cédula de Identidad")
+            if (txtUsuario.Text == "Cédula de identidad")
             {
                 txtUsuario.Text = "";
             }
@@ -84,6 +84,11 @@ namespace Inquiries
         }
 
         private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }

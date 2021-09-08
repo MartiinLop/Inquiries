@@ -86,6 +86,7 @@ namespace Inquiries
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Text = "Cédula de Identidad";
             this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // panel1
             // 
