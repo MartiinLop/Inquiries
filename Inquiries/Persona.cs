@@ -15,9 +15,14 @@ namespace Inquiries
             protected string PApe;
             protected string PCon;
 
+        //constructor vacio
+        public Persona()
+        {
+        }
 
-            // constructor completo
-            public Persona(int PCI, string PNom, string PApe, string PCon)
+
+        // constructor completo
+        public Persona(int PCI, string PNom, string PApe, string PCon)
             {
 
                 this.PCI= PCI;

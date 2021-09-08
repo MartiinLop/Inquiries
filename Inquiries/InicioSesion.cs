@@ -23,10 +23,10 @@ namespace Inquiries
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 // Inicio sesión 
-                if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                if (Alumno.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
                     txtUsuario.Text = "Cédula de identidad";
                     txtContra.Text = "Contraseña";
@@ -54,11 +54,11 @@ namespace Inquiries
     
                 }
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 

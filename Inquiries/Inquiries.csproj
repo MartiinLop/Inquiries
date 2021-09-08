@@ -92,11 +92,11 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="ConBD.cs" />
-    <Compile Include="CrearConsulta.cs">
+    <Compile Include="CrearConsultaAl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearConsulta.Designer.cs">
-      <DependentUpon>CrearConsulta.cs</DependentUpon>
+    <Compile Include="CrearConsultaAl.Designer.cs">
+      <DependentUpon>CrearConsultaAl.cs</DependentUpon>
     </Compile>
     <Compile Include="Docente.cs" />
     <Compile Include="ConsultaAlumno.cs">
@@ -165,8 +165,8 @@
     <EmbeddedResource Include="ConsultaAlumno.resx">
       <DependentUpon>ConsultaAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearConsulta.resx">
-      <DependentUpon>CrearConsulta.cs</DependentUpon>
+    <EmbeddedResource Include="CrearConsultaAl.resx">
+      <DependentUpon>CrearConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuConsultaAl.resx">
       <DependentUpon>MenuConsultaAl.cs</DependentUpon>

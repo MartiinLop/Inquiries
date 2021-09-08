@@ -12,7 +12,6 @@ namespace Inquiries
         private static string contrabd = "1234";
 
 
-
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
         {
             Alumno bd = new Alumno(alCI, alNom, alApe, alCon, alGrupo, alNick);
@@ -36,16 +35,15 @@ namespace Inquiries
             conectar.Close();
         }
 
-        public static Boolean Inseal(int alCI, string alCon)
+        public static Alumno Iniciosealum(int alCI, string alCon)
         {
-            string usu;
+
             MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= "+contrabd+";");
             conectar.Open();
             MySqlDataReader com;
             int op;
             int vCI;
             String vCon;
-            //MySqlCommand inse = new MySqlCommand
             string a = "select alci,alcon from alumno";
             MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
 
@@ -58,22 +56,52 @@ namespace Inquiries
                     if (vCI == alCI && vCon == alCon)
                     {
                         op = 1;
-                        usu = alCI;
-                    }
+                }
                     else
                     {
                         op = 0;
                     }
 
+                
+
                     if (op == 1)
                     {
-                        op = 0;
-                        return true;
+                    MySqlDataReader f;
+                    int cedula;
+                    string nombre;
+                    string ape;
+                    string con;
+                    string grupo;
+                    string nick;
+
+                    conectar.Close();
+                    conectar.Open();
+                    MySqlCommand ses = new MySqlCommand("select alci,alnom,alape,alcon,algrupo,alnick from alumno where alci='" + vCI + "' ", conectar);
+
+                    f = ses.ExecuteReader();
+                    f.Read();
+                    cedula = f.GetInt32("alci");
+                    nombre = f.GetString("alnom");
+                    ape = f.GetString("alape");
+                    con = f.GetString("alcon");
+                    grupo = f.GetString("algrupo");
+                    nick = f.GetString("alnick");
+
+
+                    Alumno sesion = new Alumno(cedula, nombre, ape, con, grupo, nick);
+                    op = 0;
+                    return sesion;
+                    }
+                    else
+                    {
+
                     }
                 }
-            return false;
+            Alumno error = new Alumno(0, null, null, null, null, null);
+            return error;
 
-            }
+
+        }
         
         public static Boolean Insedoc(int dCI, string dCon)
         {
@@ -83,7 +111,6 @@ namespace Inquiries
             int op;
             int vCI;
             String vCon;
-            //MySqlCommand inse = new MySqlCommand
             string a = "select dci,dcon from docente";
             MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
 
@@ -112,13 +139,27 @@ namespace Inquiries
 
         }
         
-        public static Boolean Consulta()
-        {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= "+contrabd+";");
-            conectar.Open();
-            
-            MySqlCommand con = new MySqlCommand("insert into consulta values (estado, )")
-        }
+        //public static Boolean Consulta(string consulta, int dci)
+        //{
+        //    try
+        //    {
+        //        Alumno v = new Alumno();
+        //        int cod;
+        //        int z;
+
+        //        MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= " + contrabd + ";");
+        //        conectar.Open();
+
+        //        MySqlCommand con = new MySqlCommand("insert into consulta (estado, alci, dci ) values ('realizada','"++"','" + dci + "')", conectar);
+        //        con.ExecuteNonQuery();
+
+        //        MySqlCommand lcod = new MySqlCommand("select cod from consultas where ")
+                
+        //        MySqlCommand txtcon = new MySqlCommand
+
+        //    }
+        //}
+
     }
 
 
