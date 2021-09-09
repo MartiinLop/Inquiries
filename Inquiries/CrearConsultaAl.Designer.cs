@@ -40,13 +40,15 @@ namespace Inquiries
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn_RCons = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtConsulta = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDocPrueba = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +79,7 @@ namespace Inquiries
             this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalirPrincipal.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
             this.btnSalirPrincipal.Location = new System.Drawing.Point(893, 470);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
@@ -161,6 +163,7 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.groupBox1.Controls.Add(this.txtDocPrueba);
             this.groupBox1.Location = new System.Drawing.Point(1019, 161);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 521);
@@ -186,7 +189,7 @@ namespace Inquiries
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.groupBox2.Controls.Add(this.btn_RCons);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.txtConsulta);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.panel3);
@@ -197,25 +200,41 @@ namespace Inquiries
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             // 
-            // panel3
+            // btn_RCons
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BackgroundImage = global::Inquiries.Properties.Resources.libroconsultas;
-            this.panel3.Location = new System.Drawing.Point(27, 89);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(241, 290);
-            this.panel3.TabIndex = 8;
+            this.btn_RCons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btn_RCons.Cursor = System.Windows.Forms.Cursors.No;
+            this.btn_RCons.FlatAppearance.BorderSize = 0;
+            this.btn_RCons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RCons.ForeColor = System.Drawing.Color.White;
+            this.btn_RCons.Location = new System.Drawing.Point(744, 470);
+            this.btn_RCons.Name = "btn_RCons";
+            this.btn_RCons.Size = new System.Drawing.Size(143, 29);
+            this.btn_RCons.TabIndex = 13;
+            this.btn_RCons.Text = "Realizar Consulta";
+            this.btn_RCons.UseVisualStyleBackColor = false;
+            this.btn_RCons.Click += new System.EventHandler(this.btn_RCons_Click);
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(422, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 38);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Título Consulta:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(422, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(153, 37);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Consulta:";
+            // 
+            // txtConsulta
+            // 
+            this.txtConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtConsulta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConsulta.Location = new System.Drawing.Point(429, 186);
+            this.txtConsulta.Name = "txtConsulta";
+            this.txtConsulta.Size = new System.Drawing.Size(390, 248);
+            this.txtConsulta.TabIndex = 11;
+            this.txtConsulta.Text = "";
             // 
             // textBox1
             // 
@@ -227,43 +246,37 @@ namespace Inquiries
             this.textBox1.Size = new System.Drawing.Size(390, 33);
             this.textBox1.TabIndex = 10;
             // 
-            // richTextBox1
+            // label2
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(429, 186);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(390, 248);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(422, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(257, 37);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Título Consulta:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // panel3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(422, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 38);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Consulta:";
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackgroundImage = global::Inquiries.Properties.Resources.libroconsultas;
+            this.panel3.Location = new System.Drawing.Point(27, 89);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(241, 290);
+            this.panel3.TabIndex = 8;
             // 
-            // btn_RCons
+            // txtDocPrueba
             // 
-            this.btn_RCons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btn_RCons.Cursor = System.Windows.Forms.Cursors.No;
-            this.btn_RCons.FlatAppearance.BorderSize = 0;
-            this.btn_RCons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RCons.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RCons.ForeColor = System.Drawing.Color.White;
-            this.btn_RCons.Location = new System.Drawing.Point(744, 470);
-            this.btn_RCons.Name = "btn_RCons";
-            this.btn_RCons.Size = new System.Drawing.Size(143, 29);
-            this.btn_RCons.TabIndex = 13;
-            this.btn_RCons.Text = "Realizar Consulta";
-            this.btn_RCons.UseVisualStyleBackColor = false;
-            this.btn_RCons.Click += new System.EventHandler(this.btn_RCons_Click);
+            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocPrueba.Location = new System.Drawing.Point(38, 73);
+            this.txtDocPrueba.Name = "txtDocPrueba";
+            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
+            this.txtDocPrueba.TabIndex = 15;
             // 
-            // CrearConsulta
+            // CrearConsultaAl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,10 +285,12 @@ namespace Inquiries
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "CrearConsulta";
+            this.Name = "CrearConsultaAl";
             this.Text = "CrearConsulta";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -300,7 +315,8 @@ namespace Inquiries
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_RCons;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtConsulta;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDocPrueba;
     }
 }

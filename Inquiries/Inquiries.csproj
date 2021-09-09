@@ -99,12 +99,6 @@
       <DependentUpon>CrearConsultaAl.cs</DependentUpon>
     </Compile>
     <Compile Include="Docente.cs" />
-    <Compile Include="ConsultaAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConsultaAlumno.Designer.cs">
-      <DependentUpon>ConsultaAlumno.cs</DependentUpon>
-    </Compile>
     <Compile Include="MenuConsultaAl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,9 +156,6 @@
     <Compile Include="RegistroDocentes.Designer.cs">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ConsultaAlumno.resx">
-      <DependentUpon>ConsultaAlumno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrearConsultaAl.resx">
       <DependentUpon>CrearConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
