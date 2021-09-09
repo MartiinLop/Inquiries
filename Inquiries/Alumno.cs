@@ -65,10 +65,7 @@ namespace Inquiries
             set { alNick = value; }
         }
 
-        public static Boolean RCon(string a)
-        {
-
-        }
+     
 
         ////////////////////////////
     }

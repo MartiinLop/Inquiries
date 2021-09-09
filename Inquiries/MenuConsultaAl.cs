@@ -68,5 +68,24 @@ namespace Inquiries
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearConsultaAl f = new CrearConsultaAl();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void btnConsultasAl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
