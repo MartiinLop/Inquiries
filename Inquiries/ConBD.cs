@@ -13,6 +13,7 @@ namespace Inquiries
         //Contraseña a base de datos
         private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
+        //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
         {
             Alumno bd = new Alumno(alCI, alNom, alApe, alCon, alGrupo, alNick);
@@ -25,6 +26,7 @@ namespace Inquiries
             conectar.Close();
         }
 
+        //Registro docente
         public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año)
         {
 
@@ -36,6 +38,7 @@ namespace Inquiries
             conectar.Close();
         }
 
+        //Inicio sesión alumno
         public static Boolean Inseal(int alCI, string alCon)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
@@ -77,6 +80,7 @@ namespace Inquiries
 
         }
 
+        //Inicio sesión docente
         public static Boolean Insedoc(int dCI, string dCon)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
@@ -115,6 +119,7 @@ namespace Inquiries
 
         }
 
+        //Crear Consulta
         public static void Consulta(int dci, string contenido)
         {             
             MySqlConnection conexion = new MySqlConnection(conexbd);
@@ -144,7 +149,19 @@ namespace Inquiries
 
         }
 
-        public static 
+        //Leer Consulta
+        public static LeerConsulta() {
+
+            MySqlConnection conexion = new MySqlConnection(conexbd);
+            conexion.Open();
+
+            // Obtener consultas de la base de datos 
+            MySqlCommand lcon = new MySqlCommand("select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod", conexion);
+
+            //Devolver las consultas en un objeto tipo consulta
+        }
+
+
     }
 
 

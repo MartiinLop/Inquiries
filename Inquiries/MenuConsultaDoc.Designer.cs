@@ -33,11 +33,9 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.checkFiltro = new System.Windows.Forms.CheckBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
@@ -45,6 +43,8 @@ namespace Inquiries
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -96,16 +96,6 @@ namespace Inquiries
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
             this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 401);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Actualizar";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // btnChatAl
             // 
             this.btnChatAl.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -149,13 +139,6 @@ namespace Inquiries
             this.btnGruposAl.TabIndex = 0;
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(52, 388);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(50, 43);
-            this.panel5.TabIndex = 5;
             // 
             // checkFiltro
             // 
@@ -208,10 +191,10 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.checkFiltro);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(1019, 156);
@@ -242,6 +225,38 @@ namespace Inquiries
             this.dataGridView1.Size = new System.Drawing.Size(825, 456);
             this.dataGridView1.TabIndex = 13;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.No;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(80, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 42);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.No;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(31, 332);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 66);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "⟳ ";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // MenuConsultaDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,11 +284,9 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtCodFiltro;
         private System.Windows.Forms.Button btnSalirPrincipal;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnGruposAl;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox checkFiltro;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnPerfilDoc;
@@ -281,5 +294,7 @@ namespace Inquiries
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

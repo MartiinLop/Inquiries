@@ -38,5 +38,13 @@ namespace Inquiries
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Crear objeto vacio alumnos
+            Consulta f = new Consulta();
+
+            //Llamar al metodo para obtener consultas docente
+        }
     }
 }

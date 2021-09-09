@@ -8,13 +8,18 @@ namespace Inquiries
 {
     class Consulta
     {
-        private int cod;
+        protected int cod;
         private string est;
         private string cont;
         private string res;
         private string fere;
         private int alci;
         private int dci;
+
+        public Consulta()
+        {
+
+        }
 
         public Consulta(int cod, string est, string cont, string res, string fere, int alci, int dci)
         {
@@ -27,6 +32,11 @@ namespace Inquiries
             this.dci = dci;
         }
 
+        //Leer consultas
+        public Consulta LCon(int dci)
+        {
+             // Mandar cedula docente a ConBD y recibir todas las consultas que esten a nombre del profe
+        }
 
     }
 }
