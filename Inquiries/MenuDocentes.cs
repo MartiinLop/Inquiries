@@ -62,5 +62,13 @@ namespace Inquiries
         {
 
         }
+
+        private void btnConsultasDoc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuConsultaDoc m = new MenuConsultaDoc();
+            m.ShowDialog();
+            this.Show();
+        }
     }
 }

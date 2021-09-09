@@ -47,6 +47,7 @@ namespace Inquiries
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,6 +171,7 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtDocPrueba);
             this.groupBox1.Location = new System.Drawing.Point(1019, 161);
             this.groupBox1.Name = "groupBox1";
@@ -291,6 +293,15 @@ namespace Inquiries
             this.panel3.TabIndex = 8;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Cedula Docente";
+            // 
             // CrearConsultaAl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,5 +344,6 @@ namespace Inquiries
         private System.Windows.Forms.RichTextBox txtConsulta;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtDocPrueba;
+        private System.Windows.Forms.Label label4;
     }
 }

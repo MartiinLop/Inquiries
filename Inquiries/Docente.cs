@@ -60,5 +60,7 @@ namespace Inquiries
             set { DocMateria = value; }
         }
         //////////////////////////////
+        
+        public 
     }
 }

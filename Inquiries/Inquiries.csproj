@@ -92,6 +92,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="ConBD.cs" />
+    <Compile Include="Consulta.cs" />
     <Compile Include="CrearConsultaAl.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -112,6 +112,7 @@ namespace Inquiries
             this.btnConsultasDoc.TabIndex = 1;
             this.btnConsultasDoc.Text = "CONSULTAS";
             this.btnConsultasDoc.UseVisualStyleBackColor = true;
+            this.btnConsultasDoc.Click += new System.EventHandler(this.btnConsultasDoc_Click);
             // 
             // btnGruposDoc
             // 

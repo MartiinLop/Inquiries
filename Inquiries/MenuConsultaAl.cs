@@ -108,10 +108,6 @@ namespace Inquiries
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
@@ -134,6 +130,11 @@ namespace Inquiries
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
