@@ -11,13 +11,13 @@ namespace Inquiries
 
         static int obtCI;
         //Contraseña a base de datos
-        private static string contrabd = "26134075sql";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
         {
             Alumno bd = new Alumno(alCI, alNom, alApe, alCon, alGrupo, alNick);
 
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= " + contrabd + ";");
+            MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick) VALUES ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "','" + alGrupo + "','" + alNick + "');", conectar);
@@ -28,7 +28,7 @@ namespace Inquiries
         public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año)
         {
 
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= " + contrabd + ";");
+            MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
             MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año) VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "');", conectar);
@@ -38,7 +38,7 @@ namespace Inquiries
 
         public static Boolean Inseal(int alCI, string alCon)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= " + contrabd + ";");
+            MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             MySqlDataReader com;
             int op;
@@ -79,7 +79,7 @@ namespace Inquiries
 
         public static Boolean Insedoc(int dCI, string dCon)
         {
-            MySqlConnection conectar = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= " + contrabd + ";");
+            MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             MySqlDataReader com;
             int op;
@@ -117,9 +117,9 @@ namespace Inquiries
 
         public static void Consulta(int dci, string contenido)
         {             
-            MySqlConnection conexion = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= "+contrabd+";");
+            MySqlConnection conexion = new MySqlConnection(conexbd);
             conexion.Open();
-            MySqlConnection datos = new MySqlConnection("Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= " + contrabd + ";");
+            MySqlConnection datos = new MySqlConnection(conexbd);
             datos.Open();
 
             MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, alci, dci) values ('realizada', now(), " + obtCI + ", " + dci + "); ", conexion);

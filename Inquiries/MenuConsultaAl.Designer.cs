@@ -68,6 +68,7 @@ namespace Inquiries
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 122);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnPerfilDoc
             // 
@@ -82,6 +83,7 @@ namespace Inquiries
             this.btnPerfilDoc.TabIndex = 6;
             this.btnPerfilDoc.Text = "Perfil";
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
+            this.btnPerfilDoc.Click += new System.EventHandler(this.btnPerfilDoc_Click);
             // 
             // btnCerrarAl
             // 
@@ -111,6 +113,7 @@ namespace Inquiries
             this.btnChatAl.TabIndex = 2;
             this.btnChatAl.Text = "CHAT";
             this.btnChatAl.UseVisualStyleBackColor = true;
+            this.btnChatAl.Click += new System.EventHandler(this.btnChatAl_Click);
             // 
             // btnConsultasAl
             // 
@@ -141,6 +144,7 @@ namespace Inquiries
             this.btnGruposAl.TabIndex = 0;
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
+            this.btnGruposAl.Click += new System.EventHandler(this.btnGruposAl_Click);
             // 
             // groupBox1
             // 
@@ -194,6 +198,7 @@ namespace Inquiries
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Actualizar";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel5
             // 
@@ -201,6 +206,7 @@ namespace Inquiries
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(50, 43);
             this.panel5.TabIndex = 5;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // checkFiltro
             // 
@@ -219,6 +225,7 @@ namespace Inquiries
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(251, 100);
             this.panel4.TabIndex = 2;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // button3
             // 
@@ -228,6 +235,7 @@ namespace Inquiries
             this.button3.TabIndex = 6;
             this.button3.Text = "Ver Listado Completo";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel3
             // 
@@ -236,6 +244,7 @@ namespace Inquiries
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(251, 100);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button2
             // 
@@ -266,6 +275,7 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1264, 52);
             this.panel2.TabIndex = 9;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 

@@ -37,5 +37,84 @@ namespace Inquiries
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChatAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultasAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGruposAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarAl_Click(object sender, EventArgs e)
+        {
+            MenuAlumnos a = (MenuAlumnos)Application.OpenForms["MenuAlumnos"];
+            MenuConsultaAl b = (MenuConsultaAl)Application.OpenForms["MenuConsultaAl"];
+            a.Close();
+            b.Close();
+            this.Dispose();
+        }
+
+        private void btnPerfilDoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDocPrueba_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConsulta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

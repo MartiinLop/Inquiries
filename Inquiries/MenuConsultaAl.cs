@@ -40,7 +40,7 @@ namespace Inquiries
         private void btnCerrarAl_Click(object sender, EventArgs e)
         {
             MenuAlumnos a = (MenuAlumnos)Application.OpenForms["MenuAlumnos"];
-            a.Close();
+            a.Dispose();
             this.Dispose();
         }
 
@@ -84,6 +84,56 @@ namespace Inquiries
         }
 
         private void btnConsultasAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPerfilDoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChatAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGruposAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

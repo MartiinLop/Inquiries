@@ -38,6 +38,7 @@ namespace Inquiries
             this.btnCerrarAl = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDocPrueba = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_RCons = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace Inquiries
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDocPrueba = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,6 +63,7 @@ namespace Inquiries
             this.label1.Size = new System.Drawing.Size(246, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Realizar Consulta";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -72,6 +73,7 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1264, 52);
             this.panel2.TabIndex = 12;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnSalirPrincipal
             // 
@@ -102,6 +104,7 @@ namespace Inquiries
             this.btnChatAl.TabIndex = 2;
             this.btnChatAl.Text = "CHAT";
             this.btnChatAl.UseVisualStyleBackColor = true;
+            this.btnChatAl.Click += new System.EventHandler(this.btnChatAl_Click);
             // 
             // btnConsultasAl
             // 
@@ -117,6 +120,7 @@ namespace Inquiries
             this.btnConsultasAl.TabIndex = 1;
             this.btnConsultasAl.Text = "CONSULTAS";
             this.btnConsultasAl.UseVisualStyleBackColor = false;
+            this.btnConsultasAl.Click += new System.EventHandler(this.btnConsultasAl_Click);
             // 
             // btnGruposAl
             // 
@@ -131,6 +135,7 @@ namespace Inquiries
             this.btnGruposAl.TabIndex = 0;
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
+            this.btnGruposAl.Click += new System.EventHandler(this.btnGruposAl_Click);
             // 
             // btnCerrarAl
             // 
@@ -145,6 +150,7 @@ namespace Inquiries
             this.btnCerrarAl.TabIndex = 5;
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
+            this.btnCerrarAl.Click += new System.EventHandler(this.btnCerrarAl_Click);
             // 
             // btnPerfilDoc
             // 
@@ -159,6 +165,7 @@ namespace Inquiries
             this.btnPerfilDoc.TabIndex = 6;
             this.btnPerfilDoc.Text = "Perfil";
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
+            this.btnPerfilDoc.Click += new System.EventHandler(this.btnPerfilDoc_Click);
             // 
             // groupBox1
             // 
@@ -169,6 +176,18 @@ namespace Inquiries
             this.groupBox1.Size = new System.Drawing.Size(245, 521);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtDocPrueba
+            // 
+            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocPrueba.Location = new System.Drawing.Point(38, 73);
+            this.txtDocPrueba.Name = "txtDocPrueba";
+            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
+            this.txtDocPrueba.TabIndex = 15;
+            this.txtDocPrueba.TextChanged += new System.EventHandler(this.txtDocPrueba_TextChanged);
             // 
             // panel1
             // 
@@ -183,6 +202,7 @@ namespace Inquiries
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 122);
             this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox2
             // 
@@ -199,6 +219,7 @@ namespace Inquiries
             this.groupBox2.Size = new System.Drawing.Size(1019, 510);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btn_RCons
             // 
@@ -225,6 +246,7 @@ namespace Inquiries
             this.label3.Size = new System.Drawing.Size(153, 37);
             this.label3.TabIndex = 12;
             this.label3.Text = "Consulta:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtConsulta
             // 
@@ -235,6 +257,7 @@ namespace Inquiries
             this.txtConsulta.Size = new System.Drawing.Size(390, 248);
             this.txtConsulta.TabIndex = 11;
             this.txtConsulta.Text = "";
+            this.txtConsulta.TextChanged += new System.EventHandler(this.txtConsulta_TextChanged);
             // 
             // textBox1
             // 
@@ -245,6 +268,7 @@ namespace Inquiries
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(390, 33);
             this.textBox1.TabIndex = 10;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -265,16 +289,7 @@ namespace Inquiries
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(241, 290);
             this.panel3.TabIndex = 8;
-            // 
-            // txtDocPrueba
-            // 
-            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocPrueba.Location = new System.Drawing.Point(38, 73);
-            this.txtDocPrueba.Name = "txtDocPrueba";
-            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
-            this.txtDocPrueba.TabIndex = 15;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // CrearConsultaAl
             // 
