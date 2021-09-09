@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inquiries
 {
-    public partial class CrearConsultaAl : Form
+    public partial class CrearConsulta : Form
     {
-        public CrearConsultaAl()
+        public CrearConsulta()
         {
             InitializeComponent();
         }

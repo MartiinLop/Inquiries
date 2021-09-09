@@ -21,11 +21,6 @@ namespace Inquiries
         protected string alGrupo;
         protected string alNick;
 
-        //constructor vacio
-        public Alumno()
-        {
-
-        }
         //constructor completo
         public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick): base(alCI, alNom, alApe, alCon)
         {
@@ -38,8 +33,6 @@ namespace Inquiries
             this.alNom = alNick;
 
         }
-
-
         // Gets y Sets
         public int alci
         {
@@ -72,26 +65,11 @@ namespace Inquiries
             set { alNick = value; }
         }
 
-        //public static Boolean RCon(string a)
-        //{
-
-        //}
-
-        public static Boolean Inseal(int alCI, string alCon)
+        public static Boolean RCon(string a)
         {
-            Alumno t = new Alumno(alCI,null,null,alCon,null,null);
-            string ci;
-            string con;
 
-            ci = Convert.ToString(t.alci);
-            con = t.alCon;
-
-            if (con == alCon && ci == Convert.ToString(alCI))
-            {
-                return true;
-            }
-            else return false;
         }
+
         ////////////////////////////
     }
 }
