@@ -13,7 +13,7 @@ namespace Inquiries
         static int obtCI;
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
@@ -138,7 +138,7 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand cerrar = new MySqlCommand("update table docente modify docestado = false where alci = " + obtCI + "");
+            MySqlCommand cerrar = new MySqlCommand("update table docente modify destado = false where dci = " + obtCI + "");
             cerrar.ExecuteNonQuery();
             obtCI = 0;
         }

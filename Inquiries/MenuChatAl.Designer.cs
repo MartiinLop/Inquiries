@@ -32,6 +32,7 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.checkFiltro = new System.Windows.Forms.CheckBox();
@@ -42,7 +43,10 @@ namespace Inquiries
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,6 +76,7 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
@@ -82,6 +87,21 @@ namespace Inquiries
             this.groupBox1.Size = new System.Drawing.Size(245, 526);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.No;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(6, 483);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 29);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Iniciar Sesión";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // txtCodFiltro
             // 
@@ -212,26 +232,51 @@ namespace Inquiries
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // listBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.No;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(6, 483);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Iniciar Sesión";
-            this.button1.UseVisualStyleBackColor = false;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(27, 190);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(967, 433);
+            this.listBox1.TabIndex = 16;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(27, 639);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(824, 20);
+            this.textBox1.TabIndex = 17;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.No;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(874, 633);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 29);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Enviar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(42, 153);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 10;
             // 
             // MenuChatAl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -243,6 +288,7 @@ namespace Inquiries
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -262,5 +308,9 @@ namespace Inquiries
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
