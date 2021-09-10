@@ -54,5 +54,12 @@ namespace Inquiries
         {
             this.Dispose();
         }
+
+        private void btnChatAl_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuChatAl f1 = new MenuChatAl();
+            f1.ShowDialog();
+        }
     }
 }

@@ -27,9 +27,15 @@ namespace Inquiries
         {
             Chat.EnviarChat(Convert.ToInt32(txtDCI.Text), Convert.ToString(txtMensaje.Text));
             listBox1.Items.Clear();
+            DataTable data = new DataTable();
             MySqlDataAdapter datos = new MySqlDataAdapter();
+
             Chat c = new Chat();
-            datos = c.VerMensaje();
+            datos = Chat.VerMensaje();
+
+            datos.Fill(data);
+
+            listBox1.Items.Add(datos);
 
         }
     }

@@ -70,5 +70,12 @@ namespace Inquiries
             m.ShowDialog();
             this.Show();
         }
+
+        private void btnChatDoc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuChatDoc f1 = new MenuChatDoc();
+            f1.ShowDialog();
+        }
     }
 }

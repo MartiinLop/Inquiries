@@ -98,6 +98,7 @@ namespace Inquiries
             this.btnChatDoc.TabIndex = 2;
             this.btnChatDoc.Text = "CHAT";
             this.btnChatDoc.UseVisualStyleBackColor = true;
+            this.btnChatDoc.Click += new System.EventHandler(this.btnChatDoc_Click);
             // 
             // btnConsultasDoc
             // 

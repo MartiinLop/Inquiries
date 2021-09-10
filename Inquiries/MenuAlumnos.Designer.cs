@@ -125,6 +125,7 @@ namespace Inquiries
             this.btnChatAl.TabIndex = 2;
             this.btnChatAl.Text = "CHAT";
             this.btnChatAl.UseVisualStyleBackColor = true;
+            this.btnChatAl.Click += new System.EventHandler(this.btnChatAl_Click);
             // 
             // btnConsultasAl
             // 

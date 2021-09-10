@@ -13,7 +13,7 @@ namespace Inquiries
         static int obtCI;
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
@@ -197,14 +197,14 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente,resumen) values "+dci+",'"+texto+"'; ", conectar);
+            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente,resumen) values ("+dci+",'"+texto+"'); ", conectar);
             chat.ExecuteNonQuery();
             conectar.Close();
           
             MySqlConnection conectar2 = new MySqlConnection(conexbd);
             conectar2.Open();
 
-            t = "select chcod from chat order by desc limit 1;";
+            t = "select chcod from chat order by chcod desc limit 1;";
             MySqlCommand part = new MySqlCommand(string.Format(t), conectar2);
             MySqlDataReader cod = part.ExecuteReader();
 
@@ -216,8 +216,11 @@ namespace Inquiries
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
 
-            MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values '" + obtCI + "','" + c + "';", conectar3);
+            MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values ('" + obtCI + "','" + c + "');", conectar3);
             cpart.ExecuteNonQuery();
+
+            conectar2.Close();
+            conectar3.Close();
         }
         
         //Leer Mensaje
@@ -225,16 +228,23 @@ namespace Inquiries
         {
             string comando;
             string prueba;
-            string comparar;
+            int comparar = 0;
 
             MySqlConnection conectar2 = new MySqlConnection(conexbd);
             conectar2.Open();
 
-            prueba = "select alci from alumnos where alci = "+obtCI+"";
+            prueba = "select alci from alumno where alci = "+obtCI+"";
             MySqlCommand pr = new MySqlCommand(string.Format(prueba), conectar2);
-            MySqlDataAdapter dat = new MySqlDataAdapter(pr);
-            comparar = dat.ToString();
-            if (obtCI == Convert.ToInt32(comparar))
+            MySqlDataReader dat = pr.ExecuteReader();
+
+            if (dat.Read())
+            {
+
+                comparar = dat.GetInt32("alci");
+
+            }
+
+            if (obtCI == comparar)
             {
 
                 MySqlConnection conectar = new MySqlConnection(conexbd);
