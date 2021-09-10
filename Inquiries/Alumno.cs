@@ -13,16 +13,18 @@ namespace Inquiries
     {
 
         
-        // atributos
+        // Atributos
         protected int alCI;
         protected string alNom;
         protected string alApe;
         protected string alCon;
         protected string alGrupo;
         protected string alNick;
+        protected Boolean alEstado;
+        protected Boolean Conectado;
 
-        //constructor completo
-        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick): base(alCI, alNom, alApe, alCon)
+        //Constructor completo
+        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alEstado, Boolean Conectado): base(alCI, alNom, alApe, alCon)
         {
 
             this.alCI = alCI;
@@ -31,8 +33,11 @@ namespace Inquiries
             this.alCon = alCon;
             this.alNom = alGrupo;
             this.alNom = alNick;
+            this.alEstado = alEstado;
+            this.Conectado = Conectado;
 
         }
+
         // Gets y Sets
         public int alci
         {
@@ -64,8 +69,22 @@ namespace Inquiries
             get { return alNick; }
             set { alNick = value; }
         }
+        public Boolean alestado
+        {
+            get { return alEstado; }
+            set { alEstado = value; }
+        }
+        public Boolean conectado
+        {
+            get { return conectado; }
+            set { conectado = value; }
+        }
 
-     
+        //Metodos
+        public void CSesion()
+        {
+            ConBD.CerrarSesionAl();
+        }
 
         ////////////////////////////
     }

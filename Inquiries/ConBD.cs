@@ -18,7 +18,6 @@ namespace Inquiries
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
         {
-            Alumno bd = new Alumno(alCI, alNom, alApe, alCon, alGrupo, alNick);
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -120,6 +119,28 @@ namespace Inquiries
             conectar.Close();
             return false;
 
+        }
+
+        //Cerrar sesión alumno
+        public static void CerrarSesionAl()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cerrar = new MySqlCommand("update table alumno modify alestado = false where alci = "+obtCI+"");
+            cerrar.ExecuteNonQuery();
+            obtCI = 0;
+        }
+
+        //Cerrar sesión docente
+        public static void CerrarSesionDoc()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cerrar = new MySqlCommand("update table docente modify docestado = false where alci = " + obtCI + "");
+            cerrar.ExecuteNonQuery();
+            obtCI = 0;
         }
 
         //Crear Consulta
