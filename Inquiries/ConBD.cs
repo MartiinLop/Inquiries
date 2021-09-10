@@ -13,7 +13,7 @@ namespace Inquiries
         static int obtCI;
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
