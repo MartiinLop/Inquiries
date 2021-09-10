@@ -8,16 +8,18 @@ namespace Inquiries
 {
     class Docente : Persona
     {
-        // atributos
+        // Atributos
         protected int DocCI;
         protected string DocNom;
         protected string DocApe;
         protected string DocCon;
         protected string DocGrupo;
         protected string DocMateria;
+        protected Boolean DocEstado;
+        protected Boolean Conectado;
 
-        // constructor completo
-        public Docente(int DocCI, string DocNom, string DocApe, string DocCon, string DocGrupo, string DocMateria) : base(DocCI, DocNom, DocApe, DocCon)
+        // Constructor completo
+        public Docente(int DocCI, string DocNom, string DocApe, string DocCon, string DocGrupo, string DocMateria, Boolean DocEstado, Boolean Conectado) : base(DocCI, DocNom, DocApe, DocCon)
         {
 
             this.DocCI = DocCI;
@@ -26,8 +28,11 @@ namespace Inquiries
             this.DocCon = DocCon;
             this.DocGrupo = DocGrupo;
             this.DocMateria = DocMateria;
+            this.DocEstado = DocEstado;
+            this.Conectado = Conectado;
 
         }
+
         //Gets y Sets
         public int docci
         {
@@ -59,8 +64,25 @@ namespace Inquiries
             get { return DocMateria; }
             set { DocMateria = value; }
         }
+        public Boolean docestado
+        {
+            get { return DocEstado; }
+            set { DocEstado = value; }
+        }
+        public Boolean conectado
+        {
+            get { return conectado; }
+            set { conectado = value; }
+        }
+
+        //Metodos
+        public static void CSesion()
+        {
+            ConBD.CerrarSesionDoc();
+        }
+
         //////////////////////////////
-        
-        
+
+
     }
 }

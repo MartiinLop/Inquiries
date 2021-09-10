@@ -100,6 +100,18 @@
       <DependentUpon>CrearConsultaAl.cs</DependentUpon>
     </Compile>
     <Compile Include="Docente.cs" />
+    <Compile Include="MenuChatAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuChatAl.Designer.cs">
+      <DependentUpon>MenuChatAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuChatDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuChatDoc.Designer.cs">
+      <DependentUpon>MenuChatDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuConsultaAl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,12 @@
     </Compile>
     <EmbeddedResource Include="CrearConsultaAl.resx">
       <DependentUpon>CrearConsultaAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuChatAl.resx">
+      <DependentUpon>MenuChatAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuChatDoc.resx">
+      <DependentUpon>MenuChatDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuConsultaAl.resx">
       <DependentUpon>MenuConsultaAl.cs</DependentUpon>
