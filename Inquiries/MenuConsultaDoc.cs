@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Inquiries
 {
@@ -42,9 +43,16 @@ namespace Inquiries
         private void button1_Click(object sender, EventArgs e)
         {
             //Crear objeto vacio alumnos
-            Consulta f = new Consulta();
+            Consulta c = new Consulta();
+            DataTable datos = new DataTable();
+            MySqlDataAdapter data = new MySqlDataAdapter();
 
-            //Llamar al metodo para obtener consultas docente
-        }
+            data = c.LCon();
+            data.Fill(datos);
+
+            dataGridView1.DataSource = datos;
+
+         //Llamar al metodo para obtener consultas docente
+    }
     }
 }

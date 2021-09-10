@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 namespace Inquiries
 {
     class ConBD
     {
 
         static int obtCI;
+
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
@@ -101,6 +103,7 @@ namespace Inquiries
                 if (vCI == dCI && vCon == dCon)
                 {
                     op = 1;
+                    obtCI = vCI;
                 }
                 else
                 {
@@ -121,7 +124,7 @@ namespace Inquiries
 
         //Crear Consulta
         public static void Consulta(int dci, string contenido)
-        {             
+        {
             MySqlConnection conexion = new MySqlConnection(conexbd);
             conexion.Open();
             MySqlConnection datos = new MySqlConnection(conexbd);
@@ -150,15 +153,20 @@ namespace Inquiries
         }
 
         //Leer Consulta
-        public static LeerConsulta() {
+       
+        public static MySqlDataAdapter LeerConsulta(){
 
-            MySqlConnection conexion = new MySqlConnection(conexbd);
-            conexion.Open();
+            MySqlConnection conLeer = new MySqlConnection(conexbd);
+            conLeer.Open();
 
-            // Obtener consultas de la base de datos 
-            MySqlCommand lcon = new MySqlCommand("select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod", conexion);
+            string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where dci = " + obtCI + ";";
+            MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
 
-            //Devolver las consultas en un objeto tipo consulta
+            MySqlDataAdapter data = new MySqlDataAdapter(cons);
+
+            conLeer.Close();
+            return data;
+
         }
 
 

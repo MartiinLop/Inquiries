@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace Inquiries
 {
     class Consulta
     {
         protected int cod;
-        private string est;
-        private string cont;
-        private string res;
-        private string fere;
-        private int alci;
-        private int dci;
+        protected string est;
+        protected string cont;
+        protected string res;
+        protected string fere;
+        protected int alci;
+        protected int dci;
 
         public Consulta()
         {
@@ -33,9 +35,13 @@ namespace Inquiries
         }
 
         //Leer consultas
-        public Consulta LCon(int dci)
+        public MySqlDataAdapter LCon()
         {
-             // Mandar cedula docente a ConBD y recibir todas las consultas que esten a nombre del profe
+            MySqlDataAdapter cons = new MySqlDataAdapter();
+            cons = ConBD.LeerConsulta();
+
+            return cons;
+            // Mandar cedula docente a ConBD y recibir todas las consultas que esten a nombre del profe
         }
 
     }
