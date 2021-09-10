@@ -29,6 +29,7 @@ namespace Inquiries
 
         private void btn_RCons_Click(object sender, EventArgs e)
         {
+            //******ESTO TIENE QUE PASAR POR LA CLASE CONSULTA******
             ConBD.Consulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text);
             MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
