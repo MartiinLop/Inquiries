@@ -46,6 +46,7 @@ namespace Inquiries
             this.button2 = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtDCI = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,6 +75,7 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.txtDCI);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
@@ -199,6 +201,7 @@ namespace Inquiries
             this.btnChatAl.TabIndex = 2;
             this.btnChatAl.Text = "CHAT";
             this.btnChatAl.UseVisualStyleBackColor = false;
+            this.btnChatAl.Click += new System.EventHandler(this.btnChatAl_Click);
             // 
             // btnConsultas
             // 
@@ -260,6 +263,13 @@ namespace Inquiries
             this.listBox1.Size = new System.Drawing.Size(967, 433);
             this.listBox1.TabIndex = 20;
             // 
+            // txtDCI
+            // 
+            this.txtDCI.Location = new System.Drawing.Point(63, 154);
+            this.txtDCI.Name = "txtDCI";
+            this.txtDCI.Size = new System.Drawing.Size(100, 20);
+            this.txtDCI.TabIndex = 22;
+            // 
             // MenuChatDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +312,6 @@ namespace Inquiries
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txtDCI;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Inquiries
 {
@@ -15,11 +16,27 @@ namespace Inquiries
         public MenuChatDoc()
         {
             InitializeComponent();
+            Timer r = new Timer
+            {
+                Interval = 3000
+            };
+            r.Enabled = true;
+            r.Tick += new System.EventHandler(AcMen);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Convert.ToString(txtMensaje.Text));
+        }
+
+        private void btnChatAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AcMen(object source, EventArgs e)
+        {
+            listBox1.Items.Add(Chat.RecibirMensaje());
         }
     }
 }

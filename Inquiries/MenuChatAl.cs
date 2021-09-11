@@ -16,6 +16,12 @@ namespace Inquiries
         public MenuChatAl()
         {
             InitializeComponent();
+            Timer r = new Timer
+            {
+                Interval = 3000
+            };
+            r.Enabled = true;
+            r.Tick += new System.EventHandler(AcMen);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,6 +35,11 @@ namespace Inquiries
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AcMen(object source, EventArgs e)
         {
             listBox1.Items.Add(Chat.RecibirMensaje());
         }

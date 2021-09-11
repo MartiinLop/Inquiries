@@ -13,7 +13,7 @@ namespace Inquiries
         static int obtCI;
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
@@ -269,7 +269,7 @@ namespace Inquiries
                 conectar.Open();
 
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                     "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && chat.docente = " + obtCI + ";";
+                     "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && chat.docente = " + obtCI + " order by chat.chcod desc;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
                 
                 MySqlDataReader data = buscar.ExecuteReader();
@@ -281,9 +281,6 @@ namespace Inquiries
 
         }
 
-
-
     }
-
 
 }
