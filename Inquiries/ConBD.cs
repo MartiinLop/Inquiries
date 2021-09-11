@@ -230,6 +230,7 @@ namespace Inquiries
         //Leer Mensaje
         public static string LeerMensaje()
         {
+            
             string comando;
             int comparar = 0;
             string textovich=null;
@@ -247,7 +248,7 @@ namespace Inquiries
                 comparar = dat.GetInt32("alci");
 
             }
-
+            conectar2.Close();
             if (obtCI == comparar)
             {
 
@@ -261,6 +262,7 @@ namespace Inquiries
                 MySqlDataReader data = buscar.ExecuteReader();
                 if(data.Read()) textovich = data.GetString("contenido") ;
                 conectar.Close();
+                conectar.Dispose();
                 return textovich;
             }
             else
