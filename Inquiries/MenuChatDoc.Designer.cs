@@ -44,7 +44,7 @@ namespace Inquiries
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMensaje = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -63,11 +63,11 @@ namespace Inquiries
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(21, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 35);
+            this.label1.Size = new System.Drawing.Size(193, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Chat";
             // 
@@ -136,10 +136,10 @@ namespace Inquiries
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(74, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 33);
+            this.label2.Size = new System.Drawing.Size(100, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "Filtrar:";
             // 
@@ -176,7 +176,7 @@ namespace Inquiries
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(907, 4);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCerrar.Name = "btnCerrar";
@@ -243,13 +243,14 @@ namespace Inquiries
             this.button2.TabIndex = 19;
             this.button2.Text = "Enviar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // txtMensaje
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 635);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(824, 20);
-            this.textBox1.TabIndex = 21;
+            this.txtMensaje.Location = new System.Drawing.Point(27, 635);
+            this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.Size = new System.Drawing.Size(824, 20);
+            this.txtMensaje.TabIndex = 21;
             // 
             // listBox1
             // 
@@ -265,7 +266,7 @@ namespace Inquiries
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMensaje);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
@@ -299,7 +300,7 @@ namespace Inquiries
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

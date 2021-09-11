@@ -37,13 +37,13 @@ namespace Inquiries
         //
 
         //Metodos
-        public static string VerMensaje()
+        public static string RecibirMensaje()
         {
             string text = ConBD.LeerMensaje();
             return text;
         }
         
-        public static void EnviarChat(int dci, string texto)
+        public static void EnviarMensaje(int dci, string texto)
         {
             ConBD.CrearMensaje(dci, texto);
         }

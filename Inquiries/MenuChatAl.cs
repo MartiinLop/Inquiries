@@ -25,26 +25,12 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string d;
-            Chat.EnviarChat(Convert.ToInt32(txtDCI.Text), Convert.ToString(txtMensaje.Text));
-            listBox1.Items.Clear();
-            DataTable data = new DataTable();
-            MySqlDataAdapter datos = new MySqlDataAdapter();
-
-            Chat c = new Chat();
-
-            //datos = Chat.VerMensaje();
-
-            //datos.Fill(data);
-
-
-
+            Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Convert.ToString(txtMensaje.Text));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(Chat.VerMensaje());
-            listBox1.Items.Add("a");
+            listBox1.Items.Add(Chat.RecibirMensaje());
         }
     }
 }
