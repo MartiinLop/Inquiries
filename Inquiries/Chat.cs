@@ -37,11 +37,10 @@ namespace Inquiries
         //
 
         //Metodos
-        public static MySqlDataAdapter VerMensaje()
+        public static string VerMensaje()
         {
-            MySqlDataAdapter datos = new MySqlDataAdapter();
-            datos = ConBD.LeerMensaje();
-            return datos;
+            string text = ConBD.LeerMensaje();
+            return text;
         }
         
         public static void EnviarChat(int dci, string texto)

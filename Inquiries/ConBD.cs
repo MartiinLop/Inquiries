@@ -13,7 +13,7 @@ namespace Inquiries
         static int obtCI;
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
@@ -197,9 +197,10 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente,resumen) values ("+dci+",'"+texto+"'); ", conectar);
+            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente) values ("+dci+"); ", conectar);
             chat.ExecuteNonQuery();
             conectar.Close();
+
           
             MySqlConnection conectar2 = new MySqlConnection(conexbd);
             conectar2.Open();
@@ -212,6 +213,7 @@ namespace Inquiries
             {
                 c = cod.GetString("chcod");
             }
+            conectar2.Close();
 
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
@@ -219,16 +221,19 @@ namespace Inquiries
             MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values ('" + obtCI + "','" + c + "');", conectar3);
             cpart.ExecuteNonQuery();
 
-            conectar2.Close();
+            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,nomemisor,contenido) values (" + c + ",'" + obtCI + "','" + texto + "');",conectar3);
+            mens.ExecuteNonQuery();
             conectar3.Close();
+
         }
         
         //Leer Mensaje
-        public static MySqlDataAdapter LeerMensaje()
+        public static string LeerMensaje()
         {
             string comando;
             string prueba;
             int comparar = 0;
+            string textovich=null;
 
             MySqlConnection conectar2 = new MySqlConnection(conexbd);
             conectar2.Open();
@@ -254,8 +259,10 @@ namespace Inquiries
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
                 MySqlDataAdapter datos = new MySqlDataAdapter(buscar);
 
+                MySqlDataReader aa = buscar.ExecuteReader();
+                if(aa.Read()) textovich = aa.GetString("resumen") ;
                 conectar.Close();
-                return datos;
+                return textovich;
             }
             else
             {
@@ -265,9 +272,11 @@ namespace Inquiries
                 comando = "select chat.docente,chat.resumen,participa.alci from chat inner join participa on participa.chcod = chat.chcod where chat.docente=" + obtCI + ";";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
                 MySqlDataAdapter datos = new MySqlDataAdapter(buscar);
-
+                
+                MySqlDataReader aa = buscar.ExecuteReader();
+                if (aa.Read()) textovich = aa.GetString("resumen");
                 conectar.Close();
-                return datos;
+                return textovich;
             }
 
 

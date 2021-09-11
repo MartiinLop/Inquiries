@@ -32,6 +32,7 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtDCI = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace Inquiries
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -90,6 +90,15 @@ namespace Inquiries
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Docente ci";
+            // 
             // txtDCI
             // 
             this.txtDCI.Location = new System.Drawing.Point(42, 153);
@@ -111,6 +120,7 @@ namespace Inquiries
             this.button1.TabIndex = 9;
             this.button1.Text = "Iniciar Sesión";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtCodFiltro
             // 
@@ -271,15 +281,6 @@ namespace Inquiries
             this.button2.Text = "Enviar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Docente ci";
             // 
             // MenuChatAl
             // 
