@@ -18,7 +18,7 @@ namespace Inquiries
             InitializeComponent();
             Timer r = new Timer
             {
-                Interval = 3000
+                Interval = 300
             };
             r.Enabled = true;
             r.Tick += new System.EventHandler(AcMen);
@@ -36,7 +36,11 @@ namespace Inquiries
 
         private void AcMen(object source, EventArgs e)
         {
-            listBox1.Items.Add(Chat.RecibirMensaje());
+            string a = Chat.RecibirMensaje();
+            if (a != null)
+            {
+                listBox1.Items.Add(a);
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ namespace Inquiries
     {
 
         static int obtCI;
+        static string mcod;
+        static string lastmcod = null;
 
         //Contraseña a base de datos
         private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
@@ -170,6 +172,7 @@ namespace Inquiries
             conCont.ExecuteNonQuery();
 
             conexion.Close();
+            datos.Close();
 
         }
 
@@ -261,9 +264,8 @@ namespace Inquiries
 
                 MySqlDataReader data = buscar.ExecuteReader();
                 if(data.Read()) textovich = data.GetString("contenido") ;
+
                 conectar.Close();
-                conectar.Dispose();
-                return textovich;
             }
             else
             {
@@ -277,9 +279,29 @@ namespace Inquiries
                 MySqlDataReader data = buscar.ExecuteReader();
                 if (data.Read()) textovich = data.GetString("contenido");
                 conectar.Close();
-                return textovich;
+            }
+            
+
+            MySqlConnection conectar3 = new MySqlConnection(conexbd);
+            conectar3.Open();
+
+            string a = "select mcod from mensaje order by mcod desc limit 1";
+            MySqlCommand test = new MySqlCommand(string.Format(a), conectar3);
+            MySqlDataReader lcod = test.ExecuteReader();
+            while (lcod.Read())
+            {
+                mcod = lcod.GetString("mcod");
             }
 
+            if(lastmcod == mcod)
+            {
+                return null;
+            }
+            else
+            {
+                lastmcod = mcod;
+                return textovich;
+            }
 
         }
 
