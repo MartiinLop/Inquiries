@@ -91,6 +91,12 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
+    <Compile Include="BajaUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BajaUsuAdmin.Designer.cs">
+      <DependentUpon>BajaUsuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chat.cs" />
     <Compile Include="ConBD.cs" />
     <Compile Include="Consulta.cs" />
@@ -101,6 +107,12 @@
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </Compile>
     <Compile Include="Docente.cs" />
+    <Compile Include="EditarUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUsuAdmin.Designer.cs">
+      <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuChatAl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,11 +161,17 @@
     <Compile Include="MenuDocentes.Designer.cs">
       <DependentUpon>MenuDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu_Admin.cs">
+    <Compile Include="MenuPrincipalAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu_Admin.Designer.cs">
-      <DependentUpon>Menu_Admin.cs</DependentUpon>
+    <Compile Include="MenuPrincipalAdmin.Designer.cs">
+      <DependentUpon>MenuPrincipalAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUsuAdminCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuUsuAdminCompleto.Designer.cs">
+      <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
     </Compile>
     <Compile Include="ModPerfilAlumno.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,18 @@
     </Compile>
     <Compile Include="ModPerfilDocente.Designer.cs">
       <DependentUpon>ModPerfilDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrearUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearUsuAdmin.Designer.cs">
+      <DependentUpon>CrearUsuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModUsuAdmin.Designer.cs">
+      <DependentUpon>ModUsuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
@@ -188,8 +218,26 @@
     <Compile Include="RegistroDocentes.Designer.cs">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuUsuariosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuUsuariosAdmin.Designer.cs">
+      <DependentUpon>MenuUsuariosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerUsuAdmin.Designer.cs">
+      <DependentUpon>VerUsuAdmin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminConsultaAl.resx">
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaUsuAdmin.resx">
+      <DependentUpon>BajaUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarUsuAdmin.resx">
+      <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuChatAl.resx">
       <DependentUpon>MenuChatAl.cs</DependentUpon>
@@ -215,14 +263,23 @@
     <EmbeddedResource Include="MenuDocentes.resx">
       <DependentUpon>MenuDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu_Admin.resx">
-      <DependentUpon>Menu_Admin.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipalAdmin.resx">
+      <DependentUpon>MenuPrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUsuAdminCompleto.resx">
+      <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModPerfilAlumno.resx">
       <DependentUpon>ModPerfilAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModPerfilDocente.resx">
       <DependentUpon>ModPerfilDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearUsuAdmin.resx">
+      <DependentUpon>CrearUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModUsuAdmin.resx">
+      <DependentUpon>ModUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -242,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroDocentes.resx">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUsuariosAdmin.resx">
+      <DependentUpon>MenuUsuariosAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerUsuAdmin.resx">
+      <DependentUpon>VerUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -270,7 +333,9 @@
     <None Include="Resources\inquiries.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\nuevousuario.jpg" />
     <None Include="Resources\lapis.jpg" />
+    <None Include="Resources\33x42 basura.jpg" />
     <Content Include="Resources\libroconsultas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

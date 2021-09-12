@@ -33,10 +33,12 @@ namespace Inquiries
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnInSesión = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalirPrincipal
@@ -93,8 +95,8 @@ namespace Inquiries
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnInSesión);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btnRegistrarse);
@@ -106,22 +108,6 @@ namespace Inquiries
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
-            this.panel4.Location = new System.Drawing.Point(145, 499);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(98, 100);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Inquiries.Properties.Resources.wok2;
-            this.panel3.Location = new System.Drawing.Point(27, 499);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 100);
-            this.panel3.TabIndex = 5;
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
@@ -129,6 +115,24 @@ namespace Inquiries
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(276, 271);
             this.panel1.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Inquiries.Properties.Resources.wok2;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 499);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
+            this.pictureBox2.Location = new System.Drawing.Point(145, 499);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // MenuPrincipal
             // 
@@ -140,6 +144,8 @@ namespace Inquiries
             this.Name = "MenuPrincipal";
             this.Text = "Menú Principal";
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,8 +156,8 @@ namespace Inquiries
         private System.Windows.Forms.Button btnInSesión;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

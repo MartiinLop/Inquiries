@@ -69,68 +69,7 @@ namespace Inquiries
         }
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-            //public static Boolean Insedoc(int dCI, string dCon)
-            //{
-
-            //    MySqlConnection conectar0 = new MySqlConnection(conexbd);
-            //    conectar0.Open();
-            //    Boolean comp = false;
-            //    string check = "select destado from docente where dci = " + obtCI + ";";
-            //    MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar0);
-            //    MySqlDataReader revisar = chequear.ExecuteReader();
-
-            //    if (revisar.Read())
-            //    {
-            //        comp = revisar.GetBoolean("destado");
-            //    }
-
-
-            //    if (comp == true)
-            //    {
-            //        MySqlConnection conectar = new MySqlConnection(conexbd);
-            //        conectar.Open();
-            //        MySqlDataReader com;
-            //        int op;
-            //        int vCI;
-            //        String vCon;
-            //        string a = "select dci,dcon from docente";
-            //        MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
-
-            //        com = seleccionar.ExecuteReader();
-
-            //        while (com.Read())
-            //        {
-            //            vCI = com.GetInt32("dci");
-            //            vCon = com.GetString("dcon");
-            //            if (vCI == dCI && vCon == dCon)
-            //            {
-            //                op = 1;
-            //                obtCI = vCI;
-            //            }
-            //            else
-            //            {
-            //                op = 0;
-            //            }
-
-            //            if (op == 1)
-            //            {
-            //                op = 0;
-            //                MySqlConnection conectar2 = new MySqlConnection(conexbd);
-            //                conectar2.Open();
-            //                MySqlCommand conex = new MySqlCommand("update docente set dconexion = true where dci =" + obtCI + ";", conectar2);
-            //                conex.ExecuteNonQuery();
-            //                conectar.Close();
-            //                conectar2.Close();
-            //                return true;
-            //            }
-            //        }
-            //        conectar.Close();
-            //        return false;
-            //    }
-            //    conectar0.Close();
-            //    return false;
-
-            //}
+           
         }
 
         private void ModPerfilAlumno_Load(object sender, EventArgs e)

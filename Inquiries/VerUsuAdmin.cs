@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Inquiries
 {
-    public partial class Menu_Admin : Form
+    public partial class VerUsuAdmin : Form
     {
-        public Menu_Admin()
+        public VerUsuAdmin()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
