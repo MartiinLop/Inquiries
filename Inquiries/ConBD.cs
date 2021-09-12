@@ -269,7 +269,7 @@ namespace Inquiries
                 conectar.Open();
 
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                    "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
+                    "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
 
                 MySqlDataReader data = buscar.ExecuteReader();
@@ -283,7 +283,7 @@ namespace Inquiries
                 conectar.Open();
 
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                     "where participa.chcod = chat.chcod && mensaje.nomemisor = chat.docente && chat.docente = "+ obtCI +" order by mensaje.mcod desc limit 1;";
+                     "where participa.chcod = chat.chcod && chat.docente = "+ obtCI +" order by mensaje.mcod desc limit 1;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
                 
                 MySqlDataReader data = buscar.ExecuteReader();
