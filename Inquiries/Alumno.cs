@@ -22,6 +22,11 @@ namespace Inquiries
         protected string alNick;
         protected Boolean alEstado;
         protected Boolean Conectado;
+        //Constructor vacio
+        public Alumno()
+        {
+
+        }
 
         //Constructor completo
         public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alEstado, Boolean Conectado): base(alCI, alNom, alApe, alCon)
@@ -84,6 +89,11 @@ namespace Inquiries
         public void CSesion()
         {
             ConBD.CerrarSesionAl();
+        }
+
+        public void ModPerf(string nombre, string apodo, string contraseña)
+        {
+            ConBD.ModPerfilAl(nombre, apodo, contraseña);
         }
 
         ////////////////////////////

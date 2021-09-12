@@ -81,6 +81,10 @@ namespace Inquiries
             ConBD.CerrarSesionDoc();
         }
 
+        public static void ModPerf(string nombre, string contraseña)
+        {
+            ConBD.ModPerfilDoc(nombre, contraseña);
+        }
         //////////////////////////////
 
 

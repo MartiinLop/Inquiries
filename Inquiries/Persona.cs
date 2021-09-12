@@ -15,7 +15,11 @@ namespace Inquiries
             protected string PApe;
             protected string PCon;
 
+            //Constructor vacio
+            public Persona()
+            {
 
+            }
             // constructor completo
             public Persona(int PCI, string PNom, string PApe, string PCon)
             {
@@ -47,6 +51,14 @@ namespace Inquiries
                 get { return PCon; }
                 set { PCon = value; }
             }
+        
+            //Metodos
+            public static string Mdatos()
+            {
+            string basadoendatos = ConBD.MostrarDatos();
+            return basadoendatos;
+            }
+
 
             //////////////////////////////
         }

@@ -23,8 +23,9 @@ namespace Inquiries
             get { return obtCI; }
             set { obtCI = value; }
         }
+
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = InquiriesAdmin; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
 
         //Registro alumnos
@@ -381,7 +382,8 @@ namespace Inquiries
 
         }
 
-        public static void MostrarDatos()
+        //Mostrar Datos
+        public static string MostrarDatos()
         {
             MySqlConnection conectar1 = new MySqlConnection(conexbd);
             conectar1.Open();
@@ -398,30 +400,69 @@ namespace Inquiries
 
             if (cedula == obtCI)
             {
+                string datote1 = null;
+                string datote2 = null;
+                string datote3 = null;
+                string datotef = null;
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
 
-                string mos = "select alci, alnick, alcon from alumno where alci = " + obtCI + ";";
+                string mos = "select alnom, alnick, alcon from alumno where alci = " + obtCI + ";";
                 MySqlCommand datos = new MySqlCommand(string.Format(mos), conectar);
+                MySqlDataReader datito = datos.ExecuteReader();
+                while (datito.Read()) 
+                { 
+                    datote1 = datito.GetString("alnom");
+                    datote2 = datito.GetString("alnick"); 
+                    datote3 = datito.GetString("alcon"); 
+                }
+                datotef = $"{datote1}|{datote2}|{datote3}";
 
+                return datotef;
             }
+            else
+            {
+                string datote1 = null;
+                string datote2 = null;
+                string datotef = null;
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
 
-            
+                string mos = "select dnom, dcon from alumno where dci = " + obtCI + ";";
+                MySqlCommand datos = new MySqlCommand(string.Format(mos), conectar);
+                MySqlDataReader datito = datos.ExecuteReader();
+                while (datito.Read()) 
+                { 
+                    datote1 = datito.GetString("dnom"); 
+                    datote2 = datito.GetString("dcon"); 
+                }
+                datotef = $"{datote1}|{datote2}";
+                return datotef;
+            }
 
         }
 
+        //Modificar perfil alumno
         public static void ModPerfilAl(string nombre, string apodo, string contraseña)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand mod = new MySqlCommand("update alumno set ");
-
-
-
-
+            MySqlCommand mod = new MySqlCommand("update alumno set alnom = '"+nombre+"', alnick = '"+apodo+"', alcon = '"+contraseña+"' where alci = "+obtCI+";",conectar);
+            mod.ExecuteNonQuery();
             conectar.Close();
 
+        }
+
+        //Modificar perfil docente
+        public static void ModPerfilDoc(string nombre, string contraseña)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "', dcon = '" + contraseña + "' where alci = " + obtCI + "; ",conectar);
+            mod.ExecuteNonQuery();
+            conectar.Close();
         }
 
     }
