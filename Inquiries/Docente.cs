@@ -33,6 +33,11 @@ namespace Inquiries
 
         }
 
+        public Docente()
+        {
+
+        }
+
         //Gets y Sets
         public int docci
         {
@@ -76,17 +81,21 @@ namespace Inquiries
         }
 
         //Metodos
-        public static void CSesion()
+        public static void CSesionDoc()
         {
             ConBD.CerrarSesionDoc();
         }
 
-        public static void ModPerf(string nombre, string contraseña)
+        public static void ModPerfDoc(string nombre, string contraseña)
         {
             ConBD.ModPerfilDoc(nombre, contraseña);
         }
         //////////////////////////////
 
+        public static void ElDoc()
+        {
+            ConBD.EliminarDoc();
+        }
 
     }
 }

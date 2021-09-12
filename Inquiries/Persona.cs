@@ -55,7 +55,7 @@ namespace Inquiries
             //Metodos
             public static string Mdatos()
             {
-            string basadoendatos = ConBD.MostrarDatos();
+            string basadoendatos = ConBD.MostrarDatosPerf();
             return basadoendatos;
             }
 
