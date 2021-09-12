@@ -72,7 +72,7 @@ namespace Inquiries
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CrearConsultaAl f = new CrearConsultaAl();
+            AdminConsultaAl f = new AdminConsultaAl();
             f.ShowDialog();
             this.Show();
         }

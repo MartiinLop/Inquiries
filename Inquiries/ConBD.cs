@@ -24,7 +24,7 @@ namespace Inquiries
             set { obtCI = value; }
         }
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
 
         //Registro alumnos
@@ -186,6 +186,35 @@ namespace Inquiries
 
         }
 
+        public static void Respuesta(int alci, string contenido)
+        {
+            MySqlConnection conexion = new MySqlConnection(conexbd);
+            conexion.Open();
+            MySqlConnection datos = new MySqlConnection(conexbd);
+            datos.Open();
+
+            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, alci, dci) values ('contestada', now(), " + alci + ", " + obtCI + "); ", conexion);
+            con.ExecuteNonQuery();
+
+            string obtCod = "select cod from consulta where dci = " + obtCI + " && " + "alci = " + alci + " order by cod desc limit 1;";
+            MySqlCommand obtenCod = new MySqlCommand(string.Format(obtCod), datos);
+            MySqlDataReader cod = obtenCod.ExecuteReader();
+
+            int codigo = 0;
+
+            if (cod.Read())
+            {
+                codigo = cod.GetInt32("cod");
+            }
+
+            MySqlCommand conCont = new MySqlCommand("insert into respuestaconsulta (cod, respuesta) values ('" + codigo + "', '" + contenido + "');", conexion);
+
+            conCont.ExecuteNonQuery();
+
+            conexion.Close();
+            datos.Close();
+        }
+
         //Leer Consulta
         public static MySqlDataAdapter LeerConsulta(){
 
@@ -200,6 +229,49 @@ namespace Inquiries
             conLeer.Close();
             return data;
 
+        }
+
+        public static string LeerRespuesta()
+        {
+
+            //MySqlConnection conLeer = new MySqlConnection(conexbd);
+            //conLeer.Open();
+
+            //string consulta = "select respuestaconsulta.cod , respuestaconsulta.respuesta, consulta.dci from respuestaconsulta inner join consulta on respuestaconsulta.cod = consulta.cod where alci = " + obtCI + ";";
+            //MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
+
+            //MySqlDataAdapter data = new MySqlDataAdapter(cons);
+
+            //conLeer.Close();
+            //return data;
+            string comando;
+            int codigo = 0;
+            string textovich = null;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
+
+            string consulta = "select cod, dci from consulta where alci = " + obtCI + " order by cod desc limit 1";
+            MySqlCommand codigoCons = new MySqlCommand(string.Format(consulta), conectar);
+            MySqlDataReader dat = codigoCons.ExecuteReader();
+
+            if (dat.Read())
+            {
+
+                codigo = dat.GetInt32("cod");
+
+            }
+
+            comando = "select respuesta from respuestaconsulta where cod = "+ codigo+ ";";
+            MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar2);
+
+            MySqlDataReader data = buscar.ExecuteReader();
+            if (data.Read()) textovich = data.GetString("respuesta");
+
+            conectar.Close();
+            return textovich;
         }
 
         //Crear Mensaje

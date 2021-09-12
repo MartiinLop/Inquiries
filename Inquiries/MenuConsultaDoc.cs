@@ -54,5 +54,16 @@ namespace Inquiries
 
          //Llamar al metodo para obtener consultas docente
     }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ConBD.Respuesta(Convert.ToInt32(txtAlCI.Text), txtRespuesta.Text);
+            MessageBox.Show("Respuesta Enviada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

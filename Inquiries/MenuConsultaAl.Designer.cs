@@ -36,6 +36,7 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.checkFiltro = new System.Windows.Forms.CheckBox();
@@ -46,7 +47,6 @@ namespace Inquiries
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -162,6 +162,21 @@ namespace Inquiries
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(63, 413);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 32);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "↻ Actualizar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // txtCodFiltro
             // 
             this.txtCodFiltro.Location = new System.Drawing.Point(63, 85);
@@ -232,7 +247,7 @@ namespace Inquiries
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 31);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Realizar Consulta";
+            this.button2.Text = "Administrar Consultas";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -268,21 +283,6 @@ namespace Inquiries
             this.label1.TabIndex = 0;
             this.label1.Text = "Consultas Realizadas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(63, 413);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 32);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "↻ Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MenuConsultaAl
             // 

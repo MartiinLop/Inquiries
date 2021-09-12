@@ -45,6 +45,12 @@ namespace Inquiries
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAlCI = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -191,6 +197,8 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtAlCI);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
@@ -252,16 +260,86 @@ namespace Inquiries
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 197);
+            this.dataGridView1.Location = new System.Drawing.Point(548, 247);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(825, 456);
+            this.dataGridView1.Size = new System.Drawing.Size(449, 275);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(552, 203);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 31);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Consulta:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 203);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(193, 31);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Su Respuesta:";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.No;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(323, 542);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(191, 29);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Enviar Respuesta";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRespuesta.Location = new System.Drawing.Point(33, 244);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(481, 278);
+            this.txtRespuesta.TabIndex = 17;
+            this.txtRespuesta.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Cedula Alumno";
+            // 
+            // txtAlCI
+            // 
+            this.txtAlCI.BackColor = System.Drawing.Color.White;
+            this.txtAlCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlCI.Location = new System.Drawing.Point(31, 176);
+            this.txtAlCI.Name = "txtAlCI";
+            this.txtAlCI.Size = new System.Drawing.Size(179, 33);
+            this.txtAlCI.TabIndex = 17;
             // 
             // MenuConsultaDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.txtRespuesta);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
@@ -275,6 +353,7 @@ namespace Inquiries
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -296,5 +375,11 @@ namespace Inquiries
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RichTextBox txtRespuesta;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtAlCI;
     }
 }

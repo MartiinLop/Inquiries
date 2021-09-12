@@ -44,5 +44,11 @@ namespace Inquiries
             // Mandar cedula docente a ConBD y recibir todas las consultas que esten a nombre del profe
         }
 
+        public static string LRes()
+        {
+            string text = ConBD.LeerRespuesta();
+            return text;
+        }
+
     }
 }

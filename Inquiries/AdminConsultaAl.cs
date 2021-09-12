@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inquiries
 {
-    public partial class CrearConsultaAl : Form
+    public partial class AdminConsultaAl : Form
     {
-        public CrearConsultaAl()
+        public AdminConsultaAl()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace Inquiries
 
         private void btn_RCons_Click(object sender, EventArgs e)
         {
-            //******ESTO TIENE QUE PASAR POR LA CLASE CONSULTA******
+            
             ConBD.Consulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text);
             MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -116,6 +116,11 @@ namespace Inquiries
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnVerRespuesta_Click(object sender, EventArgs e)
+        {
+            txtRespuesta.Text = Consulta.LRes();
         }
     }
 }
