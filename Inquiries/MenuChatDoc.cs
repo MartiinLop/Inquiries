@@ -43,5 +43,10 @@ namespace Inquiries
                 listBox1.Items.Add(a);
             }
         }
+
+        private void btnSalirPrincipal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

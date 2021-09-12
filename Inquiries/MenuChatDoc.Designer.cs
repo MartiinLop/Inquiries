@@ -32,6 +32,7 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAlCI = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace Inquiries
             this.button2 = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.txtAlCI = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,6 +87,13 @@ namespace Inquiries
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // txtAlCI
+            // 
+            this.txtAlCI.Location = new System.Drawing.Point(63, 154);
+            this.txtAlCI.Name = "txtAlCI";
+            this.txtAlCI.Size = new System.Drawing.Size(100, 20);
+            this.txtAlCI.TabIndex = 22;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -125,6 +132,7 @@ namespace Inquiries
             this.btnSalirPrincipal.TabIndex = 7;
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
+            this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
             // checkFiltro
             // 
@@ -262,13 +270,6 @@ namespace Inquiries
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(967, 433);
             this.listBox1.TabIndex = 20;
-            // 
-            // txtAlCI
-            // 
-            this.txtAlCI.Location = new System.Drawing.Point(63, 154);
-            this.txtAlCI.Name = "txtAlCI";
-            this.txtAlCI.Size = new System.Drawing.Size(100, 20);
-            this.txtAlCI.TabIndex = 22;
             // 
             // MenuChatDoc
             // 

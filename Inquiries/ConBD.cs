@@ -24,7 +24,7 @@ namespace Inquiries
             set { obtCI = value; }
         }
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = InquiriesAdmin; Pwd= 1234;";
 
 
         //Registro alumnos
@@ -186,6 +186,7 @@ namespace Inquiries
 
         }
 
+        //Crear respuesta de docente
         public static void Respuesta(int alci, string contenido)
         {
             MySqlConnection conexion = new MySqlConnection(conexbd);
@@ -231,19 +232,10 @@ namespace Inquiries
 
         }
 
+        //Leer respuesta para el alumno
         public static string LeerRespuesta()
         {
 
-            //MySqlConnection conLeer = new MySqlConnection(conexbd);
-            //conLeer.Open();
-
-            //string consulta = "select respuestaconsulta.cod , respuestaconsulta.respuesta, consulta.dci from respuestaconsulta inner join consulta on respuestaconsulta.cod = consulta.cod where alci = " + obtCI + ";";
-            //MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
-
-            //MySqlDataAdapter data = new MySqlDataAdapter(cons);
-
-            //conLeer.Close();
-            //return data;
             string comando;
             int codigo = 0;
             string textovich = null;
@@ -386,6 +378,49 @@ namespace Inquiries
                 lastmcod = mcod;
                 return textovich;
             }
+
+        }
+
+        public static void MostrarDatos()
+        {
+            MySqlConnection conectar1 = new MySqlConnection(conexbd);
+            conectar1.Open();
+            int cedula = 0;
+
+            string determinar = "select alci from alumno where alci = " + obtCI + ";";
+            MySqlCommand det = new MySqlCommand(string.Format(determinar), conectar1);
+            MySqlDataReader dete = det.ExecuteReader();
+            while (dete.Read())
+            {
+                cedula = dete.GetInt32("alci");
+            }
+            conectar1.Close();
+
+            if (cedula == obtCI)
+            {
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+
+                string mos = "select alci, alnick, alcon from alumno where alci = " + obtCI + ";";
+                MySqlCommand datos = new MySqlCommand(string.Format(mos), conectar);
+
+            }
+
+            
+
+        }
+
+        public static void ModPerfilAl(string nombre, string apodo, string contraseña)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand mod = new MySqlCommand("update alumno set ");
+
+
+
+
+            conectar.Close();
 
         }
 

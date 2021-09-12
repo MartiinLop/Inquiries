@@ -62,5 +62,12 @@ namespace Inquiries
             MenuChatAl f1 = new MenuChatAl();
             f1.ShowDialog();
         }
+
+        private void btnPerfilDoc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModPerfilAlumno f1 = new ModPerfilAlumno();
+            f1.ShowDialog();
+        }
     }
 }
