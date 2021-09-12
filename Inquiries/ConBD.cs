@@ -14,8 +14,18 @@ namespace Inquiries
         static string mcod;
         static string lastmcod = null;
 
+        public ConBD()
+        {
+        }
+
+        public int obtci
+        {
+            get { return obtCI; }
+            set { obtCI = value; }
+        }
         //Contraseña a base de datos
         private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
@@ -193,7 +203,7 @@ namespace Inquiries
         }
 
         //Crear Mensaje
-        public static void CrearMensaje(int dci, string texto)
+        public static void CrearMensaje(int dci,int alci, string texto)
         {
             
             string c = null;
@@ -221,7 +231,7 @@ namespace Inquiries
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
 
-            MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values ('" + obtCI + "','" + c + "');", conectar3);
+            MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values ('" + alci + "','" + c + "');", conectar3);
             cpart.ExecuteNonQuery();
 
             MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,nomemisor,contenido) values (" + c + ",'" + obtCI + "','" + texto + "');",conectar3);
@@ -259,7 +269,7 @@ namespace Inquiries
                 conectar.Open();
 
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                    "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && participa.alci = " + obtCI + ";";
+                    "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && participa.alci = " + obtCI + "order by mensaje.mcod desc;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
 
                 MySqlDataReader data = buscar.ExecuteReader();
@@ -273,7 +283,7 @@ namespace Inquiries
                 conectar.Open();
 
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                     "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && chat.docente = " + obtCI + " order by chat.chcod desc;";
+                     "where participa.chcod = chat.chcod && mensaje.nomemisor = participa.alci && chat.docente = " + obtCI + " order by mensaje.mcod desc;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
                 
                 MySqlDataReader data = buscar.ExecuteReader();
@@ -295,10 +305,12 @@ namespace Inquiries
 
             if(lastmcod == mcod)
             {
+                conectar3.Close();
                 return null;
             }
             else
             {
+                conectar3.Close();
                 lastmcod = mcod;
                 return textovich;
             }

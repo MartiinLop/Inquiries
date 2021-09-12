@@ -43,10 +43,15 @@ namespace Inquiries
             return text;
         }
         
-        public static void EnviarMensaje(int dci, string texto)
+        public static void EnviarMensaje(int dci,int alci, string texto)
         {
-            ConBD.CrearMensaje(dci, texto);
+            ConBD.CrearMensaje(dci, alci, texto);
         }
 
+        public static int getCIact()
+        {
+            ConBD a = new ConBD();
+            return a.obtci;
+        }
     }
 }

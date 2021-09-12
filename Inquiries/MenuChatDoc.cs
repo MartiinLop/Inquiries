@@ -26,7 +26,8 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Convert.ToString(txtMensaje.Text));
+ 
+            Chat.EnviarMensaje(Chat.getCIact(), Convert.ToInt32(txtAlCI.Text) , Convert.ToString(txtMensaje.Text));
         }
 
         private void btnChatAl_Click(object sender, EventArgs e)
