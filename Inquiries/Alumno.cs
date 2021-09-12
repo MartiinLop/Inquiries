@@ -86,14 +86,19 @@ namespace Inquiries
         }
 
         //Metodos
-        public void CSesion()
+        public void CSesionAl()
         {
             ConBD.CerrarSesionAl();
         }
 
-        public void ModPerf(string nombre, string apodo, string contraseña)
+        public void ModPerfAl(string nombre, string apodo, string contraseña)
         {
             ConBD.ModPerfilAl(nombre, apodo, contraseña);
+        }
+
+        public static void ElAl()
+        {
+            ConBD.EliminarAl();
         }
 
         ////////////////////////////

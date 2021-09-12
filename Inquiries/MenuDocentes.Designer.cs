@@ -69,6 +69,7 @@ namespace Inquiries
             this.btnPerfilAl.TabIndex = 7;
             this.btnPerfilAl.Text = "Perfil";
             this.btnPerfilAl.UseVisualStyleBackColor = true;
+            this.btnPerfilAl.Click += new System.EventHandler(this.btnPerfilAl_Click);
             // 
             // btnCerrarDoc
             // 

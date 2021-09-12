@@ -25,29 +25,31 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = InquiriesAdmin; Pwd= 1234;";
 
 
         //Registro alumnos
-        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick)
+        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado)
         {
-
+            alConexion = false;
+            alEstado = true;
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick) VALUES ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "','" + alGrupo + "','" + alNick + "');", conectar);
+            MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado) VALUES" +
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "',"+ alGrupo +",'" + alNick + "', " +alConexion+ "," + alEstado + ");", conectar);
             nual.ExecuteNonQuery();
             conectar.Close();
         }
 
         //Registro docente
-        public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año)
+        public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año, Boolean dConexion, Boolean dEstado)
         {
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año) VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "');", conectar);
+            MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado) VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ");", conectar);
             nudoc.ExecuteNonQuery();
             conectar.Close();
         }
@@ -55,6 +57,21 @@ namespace Inquiries
         //Inicio sesión alumno
         public static Boolean Inseal(int alCI, string alCon)
         {
+            MySqlConnection conectar0 = new MySqlConnection(conexbd);
+            conectar0.Open();
+            Boolean comp;
+            string check = "select alestado from alumno where alci = "+obtCI+";";
+            MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar0);
+            MySqlDataReader revisar = chequear.ExecuteReader();
+
+            if (revisar.Read())
+            {
+                comp = revisar.GetBoolean("alestado");
+            }
+
+           
+            if (comp = true) { 
+
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             MySqlDataReader com;
@@ -63,6 +80,7 @@ namespace Inquiries
             String vCon;
             string a = "select alci,alcon from alumno";
             MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
+
 
             com = seleccionar.ExecuteReader();
 
@@ -85,51 +103,82 @@ namespace Inquiries
                 if (op == 1)
                 {
                     op = 0;
+                    MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                    conectar2.Open();
+                    MySqlCommand conex = new MySqlCommand("update alumno set alconexion = true where alci =" + obtCI + ";", conectar2);
+                    conex.ExecuteNonQuery();
                     conectar.Close();
+                    conectar2.Close();
                     return true;
                 }
             }
             conectar.Close();
             return false;
-
+            }
+            conectar0.Close();
+            return false;
         }
 
         //Inicio sesión docente
         public static Boolean Insedoc(int dCI, string dCon)
         {
-            MySqlConnection conectar = new MySqlConnection(conexbd);
-            conectar.Open();
-            MySqlDataReader com;
-            int op;
-            int vCI;
-            String vCon;
-            string a = "select dci,dcon from docente";
-            MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
 
-            com = seleccionar.ExecuteReader();
+            MySqlConnection conectar0 = new MySqlConnection(conexbd);
+            conectar0.Open();
+            Boolean comp;
+            string check = "select destado from docente where dci = " + obtCI + ";";
+            MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar0);
+            MySqlDataReader revisar = chequear.ExecuteReader();
 
-            while (com.Read())
+            if (revisar.Read())
             {
-                vCI = com.GetInt32("dci");
-                vCon = com.GetString("dcon");
-                if (vCI == dCI && vCon == dCon)
-                {
-                    op = 1;
-                    obtCI = vCI;
-                }
-                else
-                {
-                    op = 0;
-                }
-
-                if (op == 1)
-                {
-                    op = 0;
-                    conectar.Close();
-                    return true;
-                }
+                comp = revisar.GetBoolean("destado");
             }
-            conectar.Close();
+
+
+            if (comp = true)
+            {
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+                MySqlDataReader com;
+                int op;
+                int vCI;
+                String vCon;
+                string a = "select dci,dcon from docente";
+                MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
+
+                com = seleccionar.ExecuteReader();
+
+                while (com.Read())
+                {
+                    vCI = com.GetInt32("dci");
+                    vCon = com.GetString("dcon");
+                    if (vCI == dCI && vCon == dCon)
+                    {
+                        op = 1;
+                        obtCI = vCI;
+                    }
+                    else
+                    {
+                        op = 0;
+                    }
+
+                    if (op == 1)
+                    {
+                        op = 0;
+                        MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                        conectar2.Open();
+                        MySqlCommand conex = new MySqlCommand("update docente set dconexion = true where dci =" + obtCI + ";", conectar2);
+                        conex.ExecuteNonQuery();
+                        conectar.Close();
+                        conectar2.Close();
+                        return true;
+                    }
+                }
+                conectar.Close();
+                return false;
+            }
+            conectar0.Close();
             return false;
 
         }
@@ -140,9 +189,9 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand cerrar = new MySqlCommand("update table alumno modify alestado = false where alci = "+obtCI+"");
+            MySqlCommand cerrar = new MySqlCommand("update alumno set alconexion = false where alci = "+obtCI+"", conectar);
             cerrar.ExecuteNonQuery();
-            obtCI = 0;
+            conectar.Close();
         }
 
         //Cerrar sesión docente
@@ -151,9 +200,9 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand cerrar = new MySqlCommand("update table docente modify destado = false where dci = " + obtCI + "");
+            MySqlCommand cerrar = new MySqlCommand("update docente set dconexion = false where dci = " + obtCI + "", conectar);
             cerrar.ExecuteNonQuery();
-            obtCI = 0;
+            conectar.Close();
         }
 
         //Crear Consulta
@@ -383,7 +432,7 @@ namespace Inquiries
         }
 
         //Mostrar Datos
-        public static string MostrarDatos()
+        public static string MostrarDatosPerf()
         {
             MySqlConnection conectar1 = new MySqlConnection(conexbd);
             conectar1.Open();
@@ -428,7 +477,7 @@ namespace Inquiries
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
 
-                string mos = "select dnom, dcon from alumno where dci = " + obtCI + ";";
+                string mos = "select dnom, dcon from docente where dci = " + obtCI + ";";
                 MySqlCommand datos = new MySqlCommand(string.Format(mos), conectar);
                 MySqlDataReader datito = datos.ExecuteReader();
                 while (datito.Read()) 
@@ -460,8 +509,31 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "', dcon = '" + contraseña + "' where alci = " + obtCI + "; ",conectar);
+            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "', dcon = '" + contraseña + "' where dci = " + obtCI + "; ",conectar);
             mod.ExecuteNonQuery();
+            conectar.Close();
+        }
+
+        //Eliminar perfil docente
+        public static void EliminarDoc()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand elim = new MySqlCommand("update docente set dconexion = false && destado = false where dci = "+obtCI+";", conectar);
+            elim.ExecuteNonQuery();
+            conectar.Close();
+
+        }
+
+        //Eliminar perfil alumno
+        public static void EliminarAl()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand elim = new MySqlCommand("update alumno set alconexion = false && alestado = false where alci = " + obtCI + ";", conectar);
+            elim.ExecuteNonQuery();
             conectar.Close();
         }
 

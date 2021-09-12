@@ -32,7 +32,8 @@ namespace Inquiries
                 if (txtContraDoc.Text == txtContraConfDoc.Text)
                 {
 
-                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(txtGrupoDoc.Text));
+                    Boolean est = true, con = false;
+                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(txtGrupoDoc.Text), con, est);
 
                     txtCIDoc.Text = "";
                     txtNomDoc.Text = "";

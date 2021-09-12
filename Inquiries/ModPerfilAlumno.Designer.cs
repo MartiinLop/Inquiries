@@ -54,8 +54,15 @@ namespace Inquiries
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnEliminadoAl = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -313,40 +320,119 @@ namespace Inquiries
             this.btnEliminarAl.ForeColor = System.Drawing.Color.White;
             this.btnEliminarAl.Location = new System.Drawing.Point(242, 630);
             this.btnEliminarAl.Name = "btnEliminarAl";
-            this.btnEliminarAl.Size = new System.Drawing.Size(96, 29);
+            this.btnEliminarAl.Size = new System.Drawing.Size(147, 29);
             this.btnEliminarAl.TabIndex = 23;
             this.btnEliminarAl.Text = "Elminar Usuario";
             this.btnEliminarAl.UseVisualStyleBackColor = false;
+            this.btnEliminarAl.Click += new System.EventHandler(this.btnEliminarAl_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(663, 232);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 23);
+            this.label6.Size = new System.Drawing.Size(118, 24);
             this.label6.TabIndex = 24;
             this.label6.Text = "(Modificable)";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(663, 280);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 23);
+            this.label7.Size = new System.Drawing.Size(118, 24);
             this.label7.TabIndex = 25;
             this.label7.Text = "(Modificable)";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(663, 327);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 23);
+            this.label8.Size = new System.Drawing.Size(118, 24);
             this.label8.TabIndex = 26;
             this.label8.Text = "(Modificable)";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.button3);
+            this.panel7.Controls.Add(this.btnConfirmar);
+            this.panel7.Location = new System.Drawing.Point(409, 491);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(333, 178);
+            this.panel7.TabIndex = 49;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(31, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(275, 29);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "desea eliminar su perfil?";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(45, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(228, 29);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Está seguro de que ";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.No;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(184, 139);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(104, 29);
+            this.button3.TabIndex = 49;
+            this.button3.Text = "Cancelar";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.Location = new System.Drawing.Point(50, 139);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(98, 29);
+            this.btnConfirmar.TabIndex = 48;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnEliminadoAl
+            // 
+            this.btnEliminadoAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnEliminadoAl.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnEliminadoAl.FlatAppearance.BorderSize = 0;
+            this.btnEliminadoAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminadoAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminadoAl.ForeColor = System.Drawing.Color.White;
+            this.btnEliminadoAl.Location = new System.Drawing.Point(748, 640);
+            this.btnEliminadoAl.Name = "btnEliminadoAl";
+            this.btnEliminadoAl.Size = new System.Drawing.Size(96, 29);
+            this.btnEliminadoAl.TabIndex = 48;
+            this.btnEliminadoAl.Text = "Volver";
+            this.btnEliminadoAl.UseVisualStyleBackColor = false;
             // 
             // ModPerfilAlumno
             // 
@@ -354,6 +440,8 @@ namespace Inquiries
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.btnEliminadoAl);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -375,9 +463,12 @@ namespace Inquiries
             this.Controls.Add(this.panel1);
             this.Name = "ModPerfilAlumno";
             this.Text = "ModPerfilAlumno";
+            this.Load += new System.EventHandler(this.ModPerfilAlumno_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +501,11 @@ namespace Inquiries
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnEliminadoAl;
     }
 }

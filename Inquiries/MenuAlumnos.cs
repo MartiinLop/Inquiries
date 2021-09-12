@@ -53,6 +53,8 @@ namespace Inquiries
 
         private void btnCerrarAl_Click(object sender, EventArgs e)
         {
+            Alumno a = new Alumno();
+            a.CSesionAl();
             this.Dispose();
         }
 
