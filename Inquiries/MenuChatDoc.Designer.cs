@@ -33,7 +33,6 @@ namespace Inquiries
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtAlCI = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.checkFiltro = new System.Windows.Forms.CheckBox();
@@ -47,6 +46,7 @@ namespace Inquiries
             this.button2 = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,8 +75,8 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtAlCI);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
             this.groupBox1.Controls.Add(this.checkFiltro);
@@ -89,25 +89,10 @@ namespace Inquiries
             // 
             // txtAlCI
             // 
-            this.txtAlCI.Location = new System.Drawing.Point(63, 154);
+            this.txtAlCI.Location = new System.Drawing.Point(74, 155);
             this.txtAlCI.Name = "txtAlCI";
             this.txtAlCI.Size = new System.Drawing.Size(100, 20);
             this.txtAlCI.TabIndex = 22;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.No;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(6, 483);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Iniciar Sesión";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // txtCodFiltro
             // 
@@ -126,7 +111,7 @@ namespace Inquiries
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
-            this.btnSalirPrincipal.Location = new System.Drawing.Point(137, 483);
+            this.btnSalirPrincipal.Location = new System.Drawing.Point(78, 484);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
             this.btnSalirPrincipal.Size = new System.Drawing.Size(96, 29);
             this.btnSalirPrincipal.TabIndex = 7;
@@ -243,7 +228,7 @@ namespace Inquiries
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.No;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -265,11 +250,22 @@ namespace Inquiries
             // 
             // listBox1
             // 
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(27, 186);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(967, 433);
+            this.listBox1.Size = new System.Drawing.Size(967, 429);
             this.listBox1.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(27, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 19);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Alumno CI:";
             // 
             // MenuChatDoc
             // 
@@ -299,7 +295,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtCodFiltro;
         private System.Windows.Forms.Button btnSalirPrincipal;
         private System.Windows.Forms.CheckBox checkFiltro;
@@ -314,5 +309,6 @@ namespace Inquiries
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtAlCI;
+        private System.Windows.Forms.Label label3;
     }
 }

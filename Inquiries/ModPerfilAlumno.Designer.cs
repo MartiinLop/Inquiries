@@ -280,7 +280,7 @@ namespace Inquiries
             // btnGuardarAl
             // 
             this.btnGuardarAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnGuardarAl.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnGuardarAl.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnGuardarAl.FlatAppearance.BorderSize = 0;
             this.btnGuardarAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

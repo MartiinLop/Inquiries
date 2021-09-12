@@ -34,14 +34,12 @@ namespace Inquiries
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDCI = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.checkFiltro = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
@@ -79,7 +77,6 @@ namespace Inquiries
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDCI);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
             this.groupBox1.Controls.Add(this.checkFiltro);
@@ -93,34 +90,20 @@ namespace Inquiries
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 134);
+            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(87, 19);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Docente ci";
+            this.label3.Text = "Docente ci:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtDCI
             // 
-            this.txtDCI.Location = new System.Drawing.Point(42, 153);
+            this.txtDCI.Location = new System.Drawing.Point(69, 164);
             this.txtDCI.Name = "txtDCI";
             this.txtDCI.Size = new System.Drawing.Size(100, 20);
             this.txtDCI.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.No;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(6, 483);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Iniciar Sesión";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtCodFiltro
             // 
@@ -134,12 +117,12 @@ namespace Inquiries
             // btnSalirPrincipal
             // 
             this.btnSalirPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
-            this.btnSalirPrincipal.Location = new System.Drawing.Point(137, 483);
+            this.btnSalirPrincipal.Location = new System.Drawing.Point(89, 483);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
             this.btnSalirPrincipal.Size = new System.Drawing.Size(96, 29);
             this.btnSalirPrincipal.TabIndex = 7;
@@ -169,7 +152,6 @@ namespace Inquiries
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.panel1.Controls.Add(this.btnPerfilDoc);
-            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.btnChatAl);
             this.panel1.Controls.Add(this.btnConsultas);
             this.panel1.Controls.Add(this.btnGruposAl);
@@ -192,20 +174,6 @@ namespace Inquiries
             this.btnPerfilDoc.TabIndex = 6;
             this.btnPerfilDoc.Text = "Perfil";
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(907, 4);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(203, 112);
-            this.btnCerrar.TabIndex = 5;
-            this.btnCerrar.Text = "Cerrar sesión";
-            this.btnCerrar.UseVisualStyleBackColor = true;
             // 
             // btnChatAl
             // 
@@ -269,7 +237,7 @@ namespace Inquiries
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.No;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,11 +284,9 @@ namespace Inquiries
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPerfilDoc;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnGruposAl;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtDCI;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtMensaje;
