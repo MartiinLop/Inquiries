@@ -30,6 +30,7 @@ namespace Inquiries
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -38,12 +39,26 @@ namespace Inquiries
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -54,21 +69,6 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -106,6 +106,13 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1238, 550);
             this.panel2.TabIndex = 12;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(867, 82);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 438);
+            this.vScrollBar1.TabIndex = 22;
             // 
             // textBox2
             // 
@@ -185,6 +192,24 @@ namespace Inquiries
             this.panel8.Size = new System.Drawing.Size(826, 54);
             this.panel8.TabIndex = 13;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(666, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 25);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Eliminar";
+            // 
+            // panel18
+            // 
+            this.panel18.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel18.Location = new System.Drawing.Point(769, 5);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(33, 42);
+            this.panel18.TabIndex = 23;
+            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
@@ -195,6 +220,24 @@ namespace Inquiries
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(826, 54);
             this.panel11.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(666, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 25);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Eliminar";
+            // 
+            // panel19
+            // 
+            this.panel19.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel19.Location = new System.Drawing.Point(769, 6);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(33, 42);
+            this.panel19.TabIndex = 23;
             // 
             // panel6
             // 
@@ -207,6 +250,24 @@ namespace Inquiries
             this.panel6.Size = new System.Drawing.Size(826, 54);
             this.panel6.TabIndex = 13;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(663, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Eliminar";
+            // 
+            // panel16
+            // 
+            this.panel16.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel16.Location = new System.Drawing.Point(769, 5);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(33, 42);
+            this.panel16.TabIndex = 2;
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
@@ -217,6 +278,24 @@ namespace Inquiries
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(826, 54);
             this.panel9.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(666, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 25);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Eliminar";
+            // 
+            // panel17
+            // 
+            this.panel17.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel17.Location = new System.Drawing.Point(769, 5);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(33, 42);
+            this.panel17.TabIndex = 23;
             // 
             // panel5
             // 
@@ -229,6 +308,24 @@ namespace Inquiries
             this.panel5.Size = new System.Drawing.Size(826, 54);
             this.panel5.TabIndex = 11;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(663, 14);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Eliminar";
+            // 
+            // panel14
+            // 
+            this.panel14.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel14.Location = new System.Drawing.Point(769, 6);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(33, 42);
+            this.panel14.TabIndex = 2;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
@@ -240,6 +337,24 @@ namespace Inquiries
             this.panel7.Size = new System.Drawing.Size(826, 54);
             this.panel7.TabIndex = 12;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(663, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Eliminar";
+            // 
+            // panel15
+            // 
+            this.panel15.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel15.Location = new System.Drawing.Point(769, 7);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(33, 42);
+            this.panel15.TabIndex = 2;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
@@ -250,6 +365,24 @@ namespace Inquiries
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(826, 54);
             this.panel4.TabIndex = 10;
+            // 
+            // panel13
+            // 
+            this.panel13.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
+            this.panel13.Location = new System.Drawing.Point(769, 7);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(33, 42);
+            this.panel13.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(663, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Eliminar";
             // 
             // panel3
             // 
@@ -283,7 +416,7 @@ namespace Inquiries
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,139 +511,6 @@ namespace Inquiries
             this.btnCerrarAl.TabIndex = 5;
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(663, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Eliminar";
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(867, 82);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 438);
-            this.vScrollBar1.TabIndex = 22;
-            // 
-            // panel13
-            // 
-            this.panel13.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel13.Location = new System.Drawing.Point(769, 7);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(33, 42);
-            this.panel13.TabIndex = 1;
-            // 
-            // panel14
-            // 
-            this.panel14.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel14.Location = new System.Drawing.Point(769, 6);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(33, 42);
-            this.panel14.TabIndex = 2;
-            // 
-            // panel15
-            // 
-            this.panel15.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel15.Location = new System.Drawing.Point(769, 7);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(33, 42);
-            this.panel15.TabIndex = 2;
-            // 
-            // panel16
-            // 
-            this.panel16.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel16.Location = new System.Drawing.Point(769, 5);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(33, 42);
-            this.panel16.TabIndex = 2;
-            // 
-            // panel17
-            // 
-            this.panel17.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel17.Location = new System.Drawing.Point(769, 5);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(33, 42);
-            this.panel17.TabIndex = 23;
-            // 
-            // panel18
-            // 
-            this.panel18.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel18.Location = new System.Drawing.Point(769, 5);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(33, 42);
-            this.panel18.TabIndex = 23;
-            // 
-            // panel19
-            // 
-            this.panel19.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel19.Location = new System.Drawing.Point(769, 6);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(33, 42);
-            this.panel19.TabIndex = 23;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(663, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Eliminar";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(663, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Eliminar";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(663, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Eliminar";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(666, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 25);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Eliminar";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(666, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 25);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Eliminar";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(666, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 25);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Eliminar";
             // 
             // BajaUsuAdmin
             // 

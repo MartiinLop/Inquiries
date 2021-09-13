@@ -41,6 +41,8 @@ namespace Inquiries
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAlCI = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,8 +51,6 @@ namespace Inquiries
             this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.txtRespuesta = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAlCI = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,7 +89,7 @@ namespace Inquiries
             // btnSalirPrincipal
             // 
             this.btnSalirPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,6 +211,25 @@ namespace Inquiries
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Cedula Alumno";
+            // 
+            // txtAlCI
+            // 
+            this.txtAlCI.BackColor = System.Drawing.Color.White;
+            this.txtAlCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlCI.Location = new System.Drawing.Point(31, 176);
+            this.txtAlCI.Name = "txtAlCI";
+            this.txtAlCI.Size = new System.Drawing.Size(179, 33);
+            this.txtAlCI.TabIndex = 17;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
@@ -230,7 +249,7 @@ namespace Inquiries
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.No;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,7 +308,7 @@ namespace Inquiries
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.No;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,25 +330,6 @@ namespace Inquiries
             this.txtRespuesta.Size = new System.Drawing.Size(481, 278);
             this.txtRespuesta.TabIndex = 17;
             this.txtRespuesta.Text = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Cedula Alumno";
-            // 
-            // txtAlCI
-            // 
-            this.txtAlCI.BackColor = System.Drawing.Color.White;
-            this.txtAlCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAlCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlCI.Location = new System.Drawing.Point(31, 176);
-            this.txtAlCI.Name = "txtAlCI";
-            this.txtAlCI.Size = new System.Drawing.Size(179, 33);
-            this.txtAlCI.TabIndex = 17;
             // 
             // MenuConsultaDoc
             // 

@@ -30,6 +30,11 @@ namespace Inquiries
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblAlDoc = new System.Windows.Forms.Label();
+            this.lblCédula = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,15 +46,10 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
-            this.lblContra = new System.Windows.Forms.Label();
-            this.lblCédula = new System.Windows.Forms.Label();
-            this.lblAlDoc = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -67,6 +67,58 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1238, 550);
             this.panel2.TabIndex = 12;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(11, 89);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(173, 120);
+            this.panel4.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "(Imagen)";
+            // 
+            // lblAlDoc
+            // 
+            this.lblAlDoc.AutoSize = true;
+            this.lblAlDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlDoc.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblAlDoc.Location = new System.Drawing.Point(217, 221);
+            this.lblAlDoc.Name = "lblAlDoc";
+            this.lblAlDoc.Size = new System.Drawing.Size(246, 33);
+            this.lblAlDoc.TabIndex = 17;
+            this.lblAlDoc.Text = "Alumno / Docente";
+            // 
+            // lblCédula
+            // 
+            this.lblCédula.AutoSize = true;
+            this.lblCédula.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCédula.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCédula.Location = new System.Drawing.Point(217, 132);
+            this.lblCédula.Name = "lblCédula";
+            this.lblCédula.Size = new System.Drawing.Size(235, 33);
+            this.lblCédula.TabIndex = 16;
+            this.lblCédula.Text = "Cédula: (Cédula)";
+            // 
+            // lblContra
+            // 
+            this.lblContra.AutoSize = true;
+            this.lblContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContra.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblContra.Location = new System.Drawing.Point(217, 176);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(351, 33);
+            this.lblContra.TabIndex = 15;
+            this.lblContra.Text = "Contraseña: (Contraseña)";
             // 
             // lblNombre
             // 
@@ -111,7 +163,7 @@ namespace Inquiries
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,58 +259,6 @@ namespace Inquiries
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
-            // lblContra
-            // 
-            this.lblContra.AutoSize = true;
-            this.lblContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContra.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblContra.Location = new System.Drawing.Point(217, 176);
-            this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(351, 33);
-            this.lblContra.TabIndex = 15;
-            this.lblContra.Text = "Contraseña: (Contraseña)";
-            // 
-            // lblCédula
-            // 
-            this.lblCédula.AutoSize = true;
-            this.lblCédula.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCédula.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCédula.Location = new System.Drawing.Point(217, 132);
-            this.lblCédula.Name = "lblCédula";
-            this.lblCédula.Size = new System.Drawing.Size(235, 33);
-            this.lblCédula.TabIndex = 16;
-            this.lblCédula.Text = "Cédula: (Cédula)";
-            // 
-            // lblAlDoc
-            // 
-            this.lblAlDoc.AutoSize = true;
-            this.lblAlDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlDoc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAlDoc.Location = new System.Drawing.Point(217, 221);
-            this.lblAlDoc.Name = "lblAlDoc";
-            this.lblAlDoc.Size = new System.Drawing.Size(246, 33);
-            this.lblAlDoc.TabIndex = 17;
-            this.lblAlDoc.Text = "Alumno / Docente";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(11, 89);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(173, 120);
-            this.panel4.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "(Imagen)";
-            // 
             // VerUsuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,11 +270,11 @@ namespace Inquiries
             this.Text = "VerUsuAdmin";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

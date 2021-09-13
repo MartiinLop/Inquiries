@@ -34,9 +34,9 @@ namespace Inquiries
             this.txtContra = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +61,7 @@ namespace Inquiries
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,14 +115,6 @@ namespace Inquiries
             this.panel2.Size = new System.Drawing.Size(1197, 640);
             this.panel2.TabIndex = 36;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
-            this.panel1.Location = new System.Drawing.Point(486, 36);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 271);
-            this.panel1.TabIndex = 7;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
@@ -140,6 +132,14 @@ namespace Inquiries
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
+            this.panel1.Location = new System.Drawing.Point(486, 36);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(276, 271);
+            this.panel1.TabIndex = 7;
             // 
             // InicioSesion
             // 
