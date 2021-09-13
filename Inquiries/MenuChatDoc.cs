@@ -26,8 +26,13 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
- 
-            Chat.EnviarMensaje(Chat.getCIact(), Convert.ToInt32(txtAlCI.Text) , Convert.ToString(txtMensaje.Text));
+            try
+            {
+                Chat.EnviarMensaje(Chat.getCIact(), Convert.ToInt32(txtAlCI.Text), Convert.ToString(txtMensaje.Text));
+            }catch (Exception)
+            {
+                MessageBox.Show("Error al enviar mensaje", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void btnChatAl_Click(object sender, EventArgs e)

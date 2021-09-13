@@ -51,6 +51,7 @@ namespace Inquiries
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
             Docente.ModPerfDoc(txtNombre.Text, txtContra.Text);
+            MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

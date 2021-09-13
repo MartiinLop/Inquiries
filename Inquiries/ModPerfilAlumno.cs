@@ -45,12 +45,11 @@ namespace Inquiries
 
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
-            Alumno m = new Alumno();
-            m.ModPerfAl(txtNombre.Text, txtApodo.Text, txtContra.Text);
-        }
-
-
-        private void panel4_Click(object sender, EventArgs e)
+                Alumno m = new Alumno();
+                m.ModPerfAl(txtNombre.Text, txtApodo.Text, txtContra.Text);
+                MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    private void panel4_Click(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = false;
             label6.Show();

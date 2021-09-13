@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
 
         //Registro alumnos
@@ -184,7 +184,7 @@ namespace Inquiries
         }
 
         //Iniciar sesión administrador
-            public static Boolean Insead(int adCI, string adCon)
+        public static Boolean Insead(int adCI, string adCon)
             {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -247,7 +247,6 @@ namespace Inquiries
             cerrar.ExecuteNonQuery();
             conectar.Close();
         }
-
 
         //Crear Consulta
         public static void Consulta(int dci, string contenido)

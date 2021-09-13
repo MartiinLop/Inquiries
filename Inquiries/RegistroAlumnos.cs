@@ -24,8 +24,8 @@ namespace Inquiries
 
         private void btnConfAl_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 //Test de espacios vacíos
                 if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || txtGrupoAl.Text == "" || txtContraConfAl.Text == "")
                 {
@@ -57,13 +57,13 @@ namespace Inquiries
 
                     }
                 }
-           // }
-            //catch (Exception)
-           // {
+            }
+            catch (Exception)
+            {
 
-              //  MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //}
+            }
         }
 
 

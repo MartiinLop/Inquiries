@@ -33,12 +33,12 @@ namespace Inquiries
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnInSesión = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalirPrincipal
@@ -47,7 +47,7 @@ namespace Inquiries
             this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.No;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalirPrincipal.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
             this.btnSalirPrincipal.Location = new System.Drawing.Point(941, 542);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
@@ -63,7 +63,7 @@ namespace Inquiries
             this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarse.FlatAppearance.BorderSize = 0;
             this.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarse.Font = new System.Drawing.Font("Roboto", 24F);
             this.btnRegistrarse.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarse.Location = new System.Drawing.Point(293, 480);
             this.btnRegistrarse.Name = "btnRegistrarse";
@@ -79,7 +79,7 @@ namespace Inquiries
             this.btnInSesión.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInSesión.FlatAppearance.BorderSize = 0;
             this.btnInSesión.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInSesión.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInSesión.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInSesión.ForeColor = System.Drawing.Color.White;
             this.btnInSesión.Location = new System.Drawing.Point(293, 382);
             this.btnInSesión.Name = "btnInSesión";
@@ -108,13 +108,14 @@ namespace Inquiries
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // panel1
+            // pictureBox2
             // 
-            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
-            this.panel1.Location = new System.Drawing.Point(449, 40);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 271);
-            this.panel1.TabIndex = 4;
+            this.pictureBox2.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
+            this.pictureBox2.Location = new System.Drawing.Point(145, 499);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -125,14 +126,13 @@ namespace Inquiries
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // panel1
             // 
-            this.pictureBox2.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
-            this.pictureBox2.Location = new System.Drawing.Point(145, 499);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
+            this.panel1.Location = new System.Drawing.Point(449, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(276, 271);
+            this.panel1.TabIndex = 4;
             // 
             // MenuPrincipal
             // 
@@ -144,8 +144,8 @@ namespace Inquiries
             this.Name = "MenuPrincipal";
             this.Text = "Menú Principal";
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

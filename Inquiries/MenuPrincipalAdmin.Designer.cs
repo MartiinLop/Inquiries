@@ -43,7 +43,7 @@ namespace Inquiries
             this.btnGruposAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGruposAl.FlatAppearance.BorderSize = 0;
             this.btnGruposAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGruposAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGruposAl.Font = new System.Drawing.Font("Roboto", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGruposAl.Location = new System.Drawing.Point(6, 5);
             this.btnGruposAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnGruposAl.Name = "btnGruposAl";
@@ -58,7 +58,7 @@ namespace Inquiries
             this.btnConsultasAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultasAl.FlatAppearance.BorderSize = 0;
             this.btnConsultasAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultasAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultasAl.Font = new System.Drawing.Font("Roboto", 30F);
             this.btnConsultasAl.Location = new System.Drawing.Point(192, 5);
             this.btnConsultasAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultasAl.Name = "btnConsultasAl";
@@ -73,7 +73,7 @@ namespace Inquiries
             this.btnChatAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChatAl.FlatAppearance.BorderSize = 0;
             this.btnChatAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChatAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChatAl.Font = new System.Drawing.Font("Roboto", 30F);
             this.btnChatAl.Location = new System.Drawing.Point(420, 5);
             this.btnChatAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnChatAl.Name = "btnChatAl";
@@ -88,7 +88,7 @@ namespace Inquiries
             this.btnCerrarAl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarAl.FlatAppearance.BorderSize = 0;
             this.btnCerrarAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarAl.Font = new System.Drawing.Font("Roboto", 30F);
             this.btnCerrarAl.Location = new System.Drawing.Point(893, 5);
             this.btnCerrarAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCerrarAl.Name = "btnCerrarAl";
@@ -103,7 +103,7 @@ namespace Inquiries
             this.btnPerfilDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPerfilDoc.FlatAppearance.BorderSize = 0;
             this.btnPerfilDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPerfilDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfilDoc.Font = new System.Drawing.Font("Roboto", 30F);
             this.btnPerfilDoc.Location = new System.Drawing.Point(1108, 4);
             this.btnPerfilDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnPerfilDoc.Name = "btnPerfilDoc";

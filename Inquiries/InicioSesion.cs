@@ -82,7 +82,7 @@ namespace Inquiries
         {
             if (txtUsuario.Text == "Cédula de identidad")
             {
-                txtUsuario.Text = "";
+                txtUsuario.Text = null;
             }
         }
 
@@ -90,7 +90,7 @@ namespace Inquiries
         {
             if (txtContra.Text == "Contraseña")
             {
-                txtContra.Text = "";
+                txtContra.Text = null;
             }
         }
 
