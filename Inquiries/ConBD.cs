@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = InquiriesAdmin; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
 
         //Registro alumnos
@@ -183,6 +183,49 @@ namespace Inquiries
 
         }
 
+        //Iniciar sesión administrador
+            public static Boolean Insead(int adCI, string adCon)
+            {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            MySqlDataReader com;
+            int op;
+            int vCI;
+            String vCon;
+            string a = "select adci,adcon from administrador";
+            MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
+
+            com = seleccionar.ExecuteReader();
+
+            while (com.Read())
+            {
+                vCI = com.GetInt32("adci");
+                vCon = com.GetString("adcon");
+                    if (vCI == adCI && vCon == adCon)
+                    {
+                        op = 1;
+                        obtCI = vCI;
+                    }
+                    else
+                    {
+                        op = 0;
+                    }
+
+                    if (op == 1)
+                    {
+                        op = 0;
+                        MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                        conectar2.Open();
+                        MySqlCommand conex = new MySqlCommand("update docente set dconexion = true where dci =" + obtCI + ";", conectar2);
+                        conex.ExecuteNonQuery();
+                        conectar.Close();
+                        conectar2.Close();
+                        return true;
+                    }
+                }
+                conectar.Close();
+                return false;
+            }
         //Cerrar sesión alumno
         public static void CerrarSesionAl()
         {
@@ -204,6 +247,7 @@ namespace Inquiries
             cerrar.ExecuteNonQuery();
             conectar.Close();
         }
+
 
         //Crear Consulta
         public static void Consulta(int dci, string contenido)

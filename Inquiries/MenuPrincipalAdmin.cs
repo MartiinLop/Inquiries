@@ -16,5 +16,28 @@ namespace Inquiries
         {
             InitializeComponent();
         }
+
+        private void btnGruposAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultasAl_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuUsuAdminCompleto f = new MenuUsuAdminCompleto();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnChatAl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarAl_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

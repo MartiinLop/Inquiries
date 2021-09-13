@@ -51,6 +51,7 @@ namespace Inquiries
             this.btnGruposAl.TabIndex = 0;
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
+            this.btnGruposAl.Click += new System.EventHandler(this.btnGruposAl_Click);
             // 
             // btnConsultasAl
             // 
@@ -65,6 +66,7 @@ namespace Inquiries
             this.btnConsultasAl.TabIndex = 1;
             this.btnConsultasAl.Text = "USUARIOS";
             this.btnConsultasAl.UseVisualStyleBackColor = true;
+            this.btnConsultasAl.Click += new System.EventHandler(this.btnConsultasAl_Click);
             // 
             // btnChatAl
             // 
@@ -79,6 +81,7 @@ namespace Inquiries
             this.btnChatAl.TabIndex = 2;
             this.btnChatAl.Text = "HISTORIAL";
             this.btnChatAl.UseVisualStyleBackColor = true;
+            this.btnChatAl.Click += new System.EventHandler(this.btnChatAl_Click);
             // 
             // btnCerrarAl
             // 
@@ -93,6 +96,7 @@ namespace Inquiries
             this.btnCerrarAl.TabIndex = 5;
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
+            this.btnCerrarAl.Click += new System.EventHandler(this.btnCerrarAl_Click);
             // 
             // btnPerfilDoc
             // 
