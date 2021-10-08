@@ -91,194 +91,194 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
-    <Compile Include="BajaUsuAdmin.cs">
+    <Compile Include="Presentación\BajaUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BajaUsuAdmin.Designer.cs">
+    <Compile Include="Presentación\BajaUsuAdmin.Designer.cs">
       <DependentUpon>BajaUsuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Chat.cs" />
     <Compile Include="ConBD.cs" />
     <Compile Include="Consulta.cs" />
-    <Compile Include="AdminConsultaAl.cs">
+    <Compile Include="Presentación\AdminConsultaAl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminConsultaAl.Designer.cs">
+    <Compile Include="Presentación\AdminConsultaAl.Designer.cs">
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </Compile>
     <Compile Include="Docente.cs" />
-    <Compile Include="EditarUsuAdmin.cs">
+    <Compile Include="Presentación\EditarUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarUsuAdmin.Designer.cs">
+    <Compile Include="Presentación\EditarUsuAdmin.Designer.cs">
       <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuChatAl.cs">
+    <Compile Include="Presentación\MenuChatAl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuChatAl.Designer.cs">
+    <Compile Include="Presentación\MenuChatAl.Designer.cs">
       <DependentUpon>MenuChatAl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuChatDoc.cs">
+    <Compile Include="Presentación\MenuChatDoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuChatDoc.Designer.cs">
+    <Compile Include="Presentación\MenuChatDoc.Designer.cs">
       <DependentUpon>MenuChatDoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuConsultaAl.cs">
+    <Compile Include="Presentación\MenuConsultaAl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuConsultaAl.Designer.cs">
+    <Compile Include="Presentación\MenuConsultaAl.Designer.cs">
       <DependentUpon>MenuConsultaAl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuConsultaDoc.cs">
+    <Compile Include="Presentación\MenuConsultaDoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuConsultaDoc.Designer.cs">
+    <Compile Include="Presentación\MenuConsultaDoc.Designer.cs">
       <DependentUpon>MenuConsultaDoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="Presentación\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
+    <Compile Include="Presentación\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion.cs">
+    <Compile Include="Presentación\InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioSesion.Designer.cs">
+    <Compile Include="Presentación\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAlumnos.cs">
+    <Compile Include="Presentación\MenuAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAlumnos.Designer.cs">
+    <Compile Include="Presentación\MenuAlumnos.Designer.cs">
       <DependentUpon>MenuAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuDocentes.cs">
+    <Compile Include="Presentación\MenuDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuDocentes.Designer.cs">
+    <Compile Include="Presentación\MenuDocentes.Designer.cs">
       <DependentUpon>MenuDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipalAdmin.cs">
+    <Compile Include="Presentación\MenuPrincipalAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipalAdmin.Designer.cs">
+    <Compile Include="Presentación\MenuPrincipalAdmin.Designer.cs">
       <DependentUpon>MenuPrincipalAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuUsuAdminCompleto.cs">
+    <Compile Include="Presentación\MenuUsuAdminCompleto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUsuAdminCompleto.Designer.cs">
+    <Compile Include="Presentación\MenuUsuAdminCompleto.Designer.cs">
       <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModPerfilAlumno.cs">
+    <Compile Include="Presentación\ModPerfilAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModPerfilAlumno.Designer.cs">
+    <Compile Include="Presentación\ModPerfilAlumno.Designer.cs">
       <DependentUpon>ModPerfilAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModPerfilDocente.cs">
+    <Compile Include="Presentación\ModPerfilDocente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModPerfilDocente.Designer.cs">
+    <Compile Include="Presentación\ModPerfilDocente.Designer.cs">
       <DependentUpon>ModPerfilDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrearUsuAdmin.cs">
+    <Compile Include="Presentación\CrearUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearUsuAdmin.Designer.cs">
+    <Compile Include="Presentación\CrearUsuAdmin.Designer.cs">
       <DependentUpon>CrearUsuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModUsuAdmin.cs">
+    <Compile Include="Presentación\ModUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModUsuAdmin.Designer.cs">
+    <Compile Include="Presentación\ModUsuAdmin.Designer.cs">
       <DependentUpon>ModUsuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs">
+    <Compile Include="Presentación\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.cs">
+    <Compile Include="Presentación\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroAlumnos.cs">
+    <Compile Include="Presentación\RegistroAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroAlumnos.Designer.cs">
+    <Compile Include="Presentación\RegistroAlumnos.Designer.cs">
       <DependentUpon>RegistroAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroDocentes.cs">
+    <Compile Include="Presentación\RegistroDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroDocentes.Designer.cs">
+    <Compile Include="Presentación\RegistroDocentes.Designer.cs">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuUsuariosAdmin.cs">
+    <Compile Include="Presentación\MenuUsuariosAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUsuariosAdmin.Designer.cs">
+    <Compile Include="Presentación\MenuUsuariosAdmin.Designer.cs">
       <DependentUpon>MenuUsuariosAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerUsuAdmin.cs">
+    <Compile Include="Presentación\VerUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerUsuAdmin.Designer.cs">
+    <Compile Include="Presentación\VerUsuAdmin.Designer.cs">
       <DependentUpon>VerUsuAdmin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminConsultaAl.resx">
+    <EmbeddedResource Include="Presentación\AdminConsultaAl.resx">
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BajaUsuAdmin.resx">
+    <EmbeddedResource Include="Presentación\BajaUsuAdmin.resx">
       <DependentUpon>BajaUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarUsuAdmin.resx">
+    <EmbeddedResource Include="Presentación\EditarUsuAdmin.resx">
       <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuChatAl.resx">
+    <EmbeddedResource Include="Presentación\MenuChatAl.resx">
       <DependentUpon>MenuChatAl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuChatDoc.resx">
+    <EmbeddedResource Include="Presentación\MenuChatDoc.resx">
       <DependentUpon>MenuChatDoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuConsultaAl.resx">
+    <EmbeddedResource Include="Presentación\MenuConsultaAl.resx">
       <DependentUpon>MenuConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuConsultaDoc.resx">
+    <EmbeddedResource Include="Presentación\MenuConsultaDoc.resx">
       <DependentUpon>MenuConsultaDoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
+    <EmbeddedResource Include="Presentación\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InicioSesion.resx">
+    <EmbeddedResource Include="Presentación\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAlumnos.resx">
+    <EmbeddedResource Include="Presentación\MenuAlumnos.resx">
       <DependentUpon>MenuAlumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuDocentes.resx">
+    <EmbeddedResource Include="Presentación\MenuDocentes.resx">
       <DependentUpon>MenuDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipalAdmin.resx">
+    <EmbeddedResource Include="Presentación\MenuPrincipalAdmin.resx">
       <DependentUpon>MenuPrincipalAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuUsuAdminCompleto.resx">
+    <EmbeddedResource Include="Presentación\MenuUsuAdminCompleto.resx">
       <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModPerfilAlumno.resx">
+    <EmbeddedResource Include="Presentación\ModPerfilAlumno.resx">
       <DependentUpon>ModPerfilAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModPerfilDocente.resx">
+    <EmbeddedResource Include="Presentación\ModPerfilDocente.resx">
       <DependentUpon>ModPerfilDocente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearUsuAdmin.resx">
+    <EmbeddedResource Include="Presentación\CrearUsuAdmin.resx">
       <DependentUpon>CrearUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModUsuAdmin.resx">
+    <EmbeddedResource Include="Presentación\ModUsuAdmin.resx">
       <DependentUpon>ModUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -291,19 +291,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro.resx">
+    <EmbeddedResource Include="Presentación\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistroAlumnos.resx">
+    <EmbeddedResource Include="Presentación\RegistroAlumnos.resx">
       <DependentUpon>RegistroAlumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistroDocentes.resx">
+    <EmbeddedResource Include="Presentación\RegistroDocentes.resx">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuUsuariosAdmin.resx">
+    <EmbeddedResource Include="Presentación\MenuUsuariosAdmin.resx">
       <DependentUpon>MenuUsuariosAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerUsuAdmin.resx">
+    <EmbeddedResource Include="Presentación\VerUsuAdmin.resx">
       <DependentUpon>VerUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
