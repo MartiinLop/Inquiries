@@ -48,6 +48,7 @@ namespace Inquiries
             this.Hide();
             MenuConsultaAl f1 = new MenuConsultaAl();
             f1.ShowDialog();
+            this.Show();
             
         }
 
@@ -63,6 +64,7 @@ namespace Inquiries
             this.Hide();
             MenuChatAl f1 = new MenuChatAl();
             f1.ShowDialog();
+            this.Show();
         }
 
         private void btnPerfilDoc_Click(object sender, EventArgs e)

@@ -128,6 +128,7 @@ namespace Inquiries
             this.btnSalirPrincipal.TabIndex = 7;
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
+            this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
             // checkFiltro
             // 

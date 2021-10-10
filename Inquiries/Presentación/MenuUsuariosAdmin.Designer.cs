@@ -30,28 +30,28 @@ namespace Inquiries
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,6 +71,13 @@ namespace Inquiries
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 116);
             this.panel1.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(207, 122);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 100);
+            this.panel4.TabIndex = 0;
             // 
             // btnPerfilDoc
             // 
@@ -152,36 +159,6 @@ namespace Inquiries
             this.panel2.Size = new System.Drawing.Size(952, 540);
             this.panel2.TabIndex = 9;
             // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(1129, 640);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(120, 29);
-            this.btnVolver.TabIndex = 8;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(811, 490);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(120, 29);
-            this.btnUsuarios.TabIndex = 8;
-            this.btnUsuarios.Text = "Ver Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -201,77 +178,6 @@ namespace Inquiries
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(912, 450);
             this.panel3.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(207, 122);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 100);
-            this.panel4.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(35, 9);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(207, 138);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(482, 9);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(207, 138);
-            this.panel6.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(259, 9);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(207, 138);
-            this.panel7.TabIndex = 1;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(699, 9);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(207, 138);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(699, 153);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(207, 138);
-            this.panel9.TabIndex = 3;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(482, 153);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(207, 138);
-            this.panel10.TabIndex = 4;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Location = new System.Drawing.Point(259, 153);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(207, 138);
-            this.panel11.TabIndex = 5;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Location = new System.Drawing.Point(35, 153);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(207, 138);
-            this.panel12.TabIndex = 2;
             // 
             // panel13
             // 
@@ -304,6 +210,101 @@ namespace Inquiries
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(207, 138);
             this.panel16.TabIndex = 6;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Location = new System.Drawing.Point(699, 153);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(207, 138);
+            this.panel9.TabIndex = 3;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Location = new System.Drawing.Point(699, 9);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(207, 138);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Location = new System.Drawing.Point(482, 153);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(207, 138);
+            this.panel10.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Location = new System.Drawing.Point(482, 9);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(207, 138);
+            this.panel6.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.Location = new System.Drawing.Point(259, 153);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(207, 138);
+            this.panel11.TabIndex = 5;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Location = new System.Drawing.Point(35, 153);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(207, 138);
+            this.panel12.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Location = new System.Drawing.Point(259, 9);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(207, 138);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(35, 9);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(207, 138);
+            this.panel5.TabIndex = 0;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Location = new System.Drawing.Point(811, 490);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(120, 29);
+            this.btnUsuarios.TabIndex = 8;
+            this.btnUsuarios.Text = "Ver Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(1129, 640);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(120, 29);
+            this.btnVolver.TabIndex = 8;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // UsuariosAdmin
             // 

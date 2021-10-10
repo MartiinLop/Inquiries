@@ -77,6 +77,7 @@ namespace Inquiries
             this.Hide();
             MenuChatDoc f1 = new MenuChatDoc();
             f1.ShowDialog();
+            this.Show();
         }
 
         private void btnPerfilAl_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace Inquiries
             this.Hide();
             ModPerfilDocente f1 = new ModPerfilDocente();
             f1.ShowDialog();
+            this.Show();
         }
     }
 }

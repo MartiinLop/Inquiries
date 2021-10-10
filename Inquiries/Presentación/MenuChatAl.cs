@@ -65,5 +65,10 @@ namespace Inquiries
         {
 
         }
+
+        private void btnSalirPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
