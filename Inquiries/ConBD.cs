@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
 
         //Registro alumnos
@@ -57,11 +57,11 @@ namespace Inquiries
         //Inicio sesión alumno
         public static Boolean Inseal(int alCI, string alCon)
         {
-            MySqlConnection conectar0 = new MySqlConnection(conexbd);
-            conectar0.Open();
+            MySqlConnection conectar00 = new MySqlConnection(conexbd);
+            conectar00.Open();
             Boolean comp;
             string check = "select alestado from alumno where alci = "+obtCI+";";
-            MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar0);
+            MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar00);
             MySqlDataReader revisar = chequear.ExecuteReader();
 
             if (revisar.Read())
@@ -115,7 +115,7 @@ namespace Inquiries
             conectar.Close();
             return false;
             }
-            conectar0.Close();
+            conectar00.Close();
             return false;
         }
 
@@ -425,26 +425,47 @@ namespace Inquiries
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
 
+                MySqlConnection conectar4 = new MySqlConnection(conexbd);
+                conectar4.Open();
+
+                string b = "select nomemisor from mensaje order by mcod desc limit 1";
+                MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
+
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
                     "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
 
+                MySqlDataReader lnomusu = nusuario.ExecuteReader();
                 MySqlDataReader data = buscar.ExecuteReader();
-                if(data.Read()) textovich = data.GetString("contenido") ;
 
+                if (lnomusu.Read()) textovich = lnomusu.GetString("nomemisor");
+                if (data.Read()) textovich = textovich + ": " + data.GetString("contenido");
+                conectar4.Close();
                 conectar.Close();
+
             }
             else
             {
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
 
+                MySqlConnection conectar4 = new MySqlConnection(conexbd);
+                conectar4.Open();
+
+                string b = "select nomemisor from mensaje order by mcod desc limit 1";
+                MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
+
+
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
                      "where participa.chcod = chat.chcod && chat.docente = "+ obtCI +" order by mensaje.mcod desc limit 1;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
-                
+
+                MySqlDataReader lnomusu = nusuario.ExecuteReader();
                 MySqlDataReader data = buscar.ExecuteReader();
-                if (data.Read()) textovich = data.GetString("contenido");
+                
+                if (lnomusu.Read()) textovich = lnomusu.GetString("nomemisor");
+                if (data.Read()) textovich = textovich +": "+ data.GetString("contenido");
+                conectar4.Close();
                 conectar.Close();
             }
             
@@ -455,6 +476,9 @@ namespace Inquiries
             string a = "select mcod from mensaje order by mcod desc limit 1";
             MySqlCommand test = new MySqlCommand(string.Format(a), conectar3);
             MySqlDataReader lcod = test.ExecuteReader();
+
+
+
             while (lcod.Read())
             {
                 mcod = lcod.GetString("mcod");
