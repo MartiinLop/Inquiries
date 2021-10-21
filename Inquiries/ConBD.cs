@@ -27,6 +27,20 @@ namespace Inquiries
         //Contraseña a base de datos
         private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
+        //Cargar grupos
+        public DataTable grupos()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            string a = "select * from grupo";
+            MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
+            DataTable datos = new DataTable();
+            grupo.Fill(datos);
+            
+
+            return datos;
+        }
+
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado)

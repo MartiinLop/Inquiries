@@ -14,7 +14,12 @@ namespace Inquiries
 
         private void RegistroAlumnos_Load(object sender, EventArgs e)
         {
-
+            
+            Grupo a = new Grupo();
+            for(int i=0; i<3; i++)
+            {
+                comboBox1.Items.Add(a.grupo().Rows[i]["gnom"]);
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -23,11 +28,11 @@ namespace Inquiries
         }
 
         private void btnConfAl_Click(object sender, EventArgs e)
-        {
+        { Grupo a = new Grupo();
             try
             {
                 //Test de espacios vacíos
-                if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || txtGrupoAl.Text == "" || txtContraConfAl.Text == "")
+                if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || comboBox1.Text == "" || txtContraConfAl.Text == "")
                 {
                     throw new ArgumentNullException();
                 }
@@ -37,14 +42,14 @@ namespace Inquiries
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
                         Boolean est = true, con = false;
-                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, txtGrupoAl.Text, txtNickAl.Text, con, est);
+                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, a.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est);
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";
                         txtApeAl.Text = "";
                         txtContraAl.Text = "";
                         txtContraConfAl.Text = "";
-                        txtGrupoAl.Text = "";
+                        comboBox1.Text = "";    
                         txtNickAl.Text = "";
 
 
@@ -133,6 +138,16 @@ namespace Inquiries
         }
 
         private void txtCIAl_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
+    <Compile Include="Grupo.cs" />
     <Compile Include="Presentación\BajaUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

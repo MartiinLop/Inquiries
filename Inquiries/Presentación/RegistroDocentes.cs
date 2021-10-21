@@ -21,10 +21,11 @@ namespace Inquiries
 
         private void btnConfDoc_Click(object sender, EventArgs e)
         {
+            Grupo a = new Grupo();
             try
             {
                 // Test de espacios vacíos 
-                if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || txtMateDoc.Text == "" || txtGrupoDoc.Text == "" || txtContraConfDoc.Text == "")
+                if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || txtMateDoc.Text == "" || comboBox1.Text == "" || txtContraConfDoc.Text == "")
                 {
                     throw new ArgumentNullException();
                 }
@@ -33,14 +34,14 @@ namespace Inquiries
                 {
 
                     Boolean est = true, con = false;
-                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(txtGrupoDoc.Text), con, est);
+                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(a.grupo().Rows[comboBox1.SelectedIndex][0].ToString()), con, est);
 
                     txtCIDoc.Text = "";
                     txtNomDoc.Text = "";
                     txtApeDoc.Text = "";
                     txtContraDoc.Text = "";
                     txtContraConfDoc.Text = "";
-                    txtGrupoDoc.Text = "";
+                    comboBox1.Text = "";
                     txtMateDoc.Text = "";
 
                     MessageBox.Show("Usuario creado!");
@@ -67,6 +68,15 @@ namespace Inquiries
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RegistroDocentes_Load(object sender, EventArgs e)
+        {
+            Grupo a = new Grupo();
+            for (int i = 0; i < 3; i++)
+            {
+                comboBox1.Items.Add(a.grupo().Rows[i]["gnom"]);
+            }
         }
     }
 }
