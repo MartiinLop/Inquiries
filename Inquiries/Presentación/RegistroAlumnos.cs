@@ -14,9 +14,10 @@ namespace Inquiries
 
         private void RegistroAlumnos_Load(object sender, EventArgs e)
         {
-            
+            ConBD z = new ConBD();
+            int b = z.contgrupos();
             Grupo a = new Grupo();
-            for(int i=0; i<3; i++)
+            for(int i=0; i<b; i++)
             {
                 comboBox1.Items.Add(a.grupo().Rows[i]["gnom"]);
             }

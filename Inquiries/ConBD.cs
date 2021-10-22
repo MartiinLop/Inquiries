@@ -25,7 +25,27 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+
+
+        //Cargar cantidad de grupos
+
+        public int contgrupos()
+        {
+            int num = 0;
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string a = "select count(*) from grupo";
+            MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataReader obtnum = comando.ExecuteReader();
+
+            if (obtnum.Read())
+            {
+                num = obtnum.GetInt32("count(*)");
+            }
+
+            return num;
+        }
 
         //Cargar grupos
         public DataTable grupos()
