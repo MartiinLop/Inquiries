@@ -46,6 +46,19 @@ namespace Inquiries
             if (a != null)
             {
                 listBox1.Items.Add(a);
+                Panel mensajesReceptor = new Panel();
+                mensajesReceptor.Height = 59;
+                panel3.Controls.Add(mensajesReceptor);
+                mensajesReceptor.Dock = DockStyle.Bottom;
+
+                RichTextBox txtR = new RichTextBox();
+                txtR.BackColor = Color.Black;
+                txtR.Font = new Font("Roboto", 12);
+                txtR.ForeColor = Color.White;
+                txtR.Text = a;
+
+                mensajesReceptor.Controls.Add(txtR);
+                txtR.Location = new Point(69, 7);
             }
         }
 
