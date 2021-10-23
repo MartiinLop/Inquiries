@@ -53,5 +53,11 @@ namespace Inquiries
             ConBD a = new ConBD();
             return a.obtci;
         }
+
+        public static Boolean EmioRec()
+        {
+            Boolean a = ConBD.CIEmisor();
+            return a;
+        }
     }
 }

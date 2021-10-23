@@ -26,13 +26,13 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 Chat.EnviarMensaje(Chat.getCIact(), Convert.ToInt32(txtAlCI.Text), Convert.ToString(txtMensaje.Text));
-            }catch (Exception)
-            {
-                MessageBox.Show("Error al enviar mensaje", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
+            //}catch (Exception)
+            //{
+            //    MessageBox.Show("Error al enviar mensaje", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}   
         }
 
         private void btnChatAl_Click(object sender, EventArgs e)
@@ -45,20 +45,40 @@ namespace Inquiries
             string a = Chat.RecibirMensaje();
             if (a != null)
             {
-                listBox1.Items.Add(a);
-                Panel mensajesReceptor = new Panel();
-                mensajesReceptor.Height = 59;
-                panel3.Controls.Add(mensajesReceptor);
-                mensajesReceptor.Dock = DockStyle.Bottom;
+                if (Chat.EmioRec())
+                {
+                    listBox1.Items.Add(a);
+                    Panel mensajesEnviados = new Panel();
+                    mensajesEnviados.Height = 59;
+                    panel3.Controls.Add(mensajesEnviados);
+                    mensajesEnviados.Dock = DockStyle.Bottom;
 
-                RichTextBox txtR = new RichTextBox();
-                txtR.BackColor = Color.Black;
-                txtR.Font = new Font("Roboto", 12);
-                txtR.ForeColor = Color.White;
-                txtR.Text = a;
+                    RichTextBox txtE = new RichTextBox();
+                    txtE.BackColor = Color.Black;
+                    txtE.Font = new Font("Roboto", 12);
+                    txtE.ForeColor = Color.White;
+                    txtE.Text = a;
 
-                mensajesReceptor.Controls.Add(txtR);
-                txtR.Location = new Point(69, 7);
+                    mensajesEnviados.Controls.Add(txtE);
+                    txtE.Location = new Point(600, 7);
+                }
+                else
+                {
+                    listBox1.Items.Add(a);
+                    Panel mensajesReceptor = new Panel();
+                    mensajesReceptor.Height = 59;
+                    panel3.Controls.Add(mensajesReceptor);
+                    mensajesReceptor.Dock = DockStyle.Bottom;
+
+                    RichTextBox txtR = new RichTextBox();
+                    txtR.BackColor = Color.Black;
+                    txtR.Font = new Font("Roboto", 12);
+                    txtR.ForeColor = Color.White;
+                    txtR.Text = a;
+
+                    mensajesReceptor.Controls.Add(txtR);
+                    txtR.Location = new Point(69, 7);
+                }
             }
         }
 

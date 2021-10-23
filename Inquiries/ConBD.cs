@@ -425,12 +425,12 @@ namespace Inquiries
             MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values ('" + alci + "','" + c + "');", conectar3);
             cpart.ExecuteNonQuery();
 
-            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,nomemisor,contenido) values (" + c + ",'" + obtCI + "','" + texto + "');",conectar3);
+            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,emisor,contenido) values (" + c + ",'" + obtCI + "','" + texto + "');",conectar3);
             mens.ExecuteNonQuery();
             conectar3.Close();
 
         }
-        
+
         //Leer Mensaje
         public static string LeerMensaje()
         {
@@ -462,7 +462,7 @@ namespace Inquiries
                 MySqlConnection conectar4 = new MySqlConnection(conexbd);
                 conectar4.Open();
 
-                string b = "select nomemisor from mensaje order by mcod desc limit 1";
+                string b = "select emisor from mensaje order by mcod desc limit 1";
                 MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
 
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
@@ -472,7 +472,7 @@ namespace Inquiries
                 MySqlDataReader lnomusu = nusuario.ExecuteReader();
                 MySqlDataReader data = buscar.ExecuteReader();
 
-                if (lnomusu.Read()) textovich = lnomusu.GetString("nomemisor");
+                if (lnomusu.Read()) textovich = lnomusu.GetString("emisor");
                 if (data.Read()) textovich = textovich + ": " + data.GetString("contenido");
                 conectar4.Close();
                 conectar.Close();
@@ -486,7 +486,7 @@ namespace Inquiries
                 MySqlConnection conectar4 = new MySqlConnection(conexbd);
                 conectar4.Open();
 
-                string b = "select nomemisor from mensaje order by mcod desc limit 1";
+                string b = "select emisor from mensaje order by mcod desc limit 1";
                 MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
 
 
@@ -497,7 +497,7 @@ namespace Inquiries
                 MySqlDataReader lnomusu = nusuario.ExecuteReader();
                 MySqlDataReader data = buscar.ExecuteReader();
                 
-                if (lnomusu.Read()) textovich = lnomusu.GetString("nomemisor");
+                if (lnomusu.Read()) textovich = lnomusu.GetString("emisor");
                 if (data.Read()) textovich = textovich +": "+ data.GetString("contenido");
                 conectar4.Close();
                 conectar.Close();
@@ -530,6 +530,32 @@ namespace Inquiries
                 return textovich;
             }
 
+        }
+        //Leer CI emisor mensaje
+
+        public static Boolean CIEmisor()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            string a = "select emisor from mensaje where chcod = "+lastmcod+" order by chcod desc limit 1 ";
+            int b=0;
+            MySqlCommand ci = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataReader lci = ci.ExecuteReader();
+
+            while (lci.Read())
+            {
+                b = lci.GetInt32("emisor");
+            }
+
+            if (b == obtCI)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //Mostrar Datos
