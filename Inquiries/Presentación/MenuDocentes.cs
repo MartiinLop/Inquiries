@@ -75,7 +75,7 @@ namespace Inquiries
         private void btnChatDoc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MenuChatDoc f1 = new MenuChatDoc();
+            ChatDoc f1 = new ChatDoc();
             f1.ShowDialog();
             this.Show();
         }

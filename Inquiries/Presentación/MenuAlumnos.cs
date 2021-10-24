@@ -62,7 +62,7 @@ namespace Inquiries
         private void btnChatAl_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MenuChatAl f1 = new MenuChatAl();
+            ChatAl f1 = new ChatAl();
             f1.ShowDialog();
             this.Show();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace Inquiries
 {
-    partial class MenuChatDoc
+    partial class ChatDoc
     {
         /// <summary>
         /// Required designer variable.
@@ -46,8 +46,8 @@ namespace Inquiries
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,10 +91,10 @@ namespace Inquiries
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(27, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 19);
+            this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 23;
             this.label3.Text = "Alumno CI:";
             // 
@@ -259,6 +259,14 @@ namespace Inquiries
             this.txtMensaje.Size = new System.Drawing.Size(824, 20);
             this.txtMensaje.TabIndex = 21;
             // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Location = new System.Drawing.Point(6, 175);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(975, 287);
+            this.panel3.TabIndex = 22;
+            // 
             // listBox1
             // 
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -267,14 +275,6 @@ namespace Inquiries
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(967, 130);
             this.listBox1.TabIndex = 20;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoScroll = true;
-            this.panel3.Location = new System.Drawing.Point(6, 175);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(975, 287);
-            this.panel3.TabIndex = 22;
             // 
             // MenuChatDoc
             // 
@@ -290,6 +290,7 @@ namespace Inquiries
             this.Controls.Add(this.panel1);
             this.Name = "MenuChatDoc";
             this.Text = "MenuChatDoc";
+            this.Load += new System.EventHandler(this.ChatDoc_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -317,9 +318,9 @@ namespace Inquiries
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtMensaje;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtAlCI;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

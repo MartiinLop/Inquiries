@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace Inquiries
 {
-    public partial class MenuChatDoc : Form
+    public partial class ChatAl : Form
     {
-        public MenuChatDoc()
+        public ChatAl()
         {
             InitializeComponent();
             Timer r = new Timer
@@ -24,18 +24,24 @@ namespace Inquiries
             r.Tick += new System.EventHandler(AcMen);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                Chat.EnviarMensaje(Chat.getCIact(), Convert.ToInt32(txtAlCI.Text), Convert.ToString(txtMensaje.Text));
-            //}catch (Exception)
-            //{
-            //    MessageBox.Show("Error al enviar mensaje", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}   
+
         }
 
-        private void btnChatAl_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Chat.getCIact(), Convert.ToString(txtMensaje.Text));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al enviar mensaje", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -82,9 +88,24 @@ namespace Inquiries
             }
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void ChatAl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

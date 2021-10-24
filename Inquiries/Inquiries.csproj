@@ -48,9 +48,7 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\MySql.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -114,17 +112,23 @@
     <Compile Include="Presentación\EditarUsuAdmin.Designer.cs">
       <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\ChatAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ChatAl.Designer.cs">
+      <DependentUpon>ChatAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\ChatDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ChatDoc.Designer.cs">
+      <DependentUpon>ChatDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\MenuChatAl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentación\MenuChatAl.Designer.cs">
       <DependentUpon>MenuChatAl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentación\MenuChatDoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentación\MenuChatDoc.Designer.cs">
-      <DependentUpon>MenuChatDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\MenuConsultaAl.cs">
       <SubType>Form</SubType>
@@ -240,11 +244,14 @@
     <EmbeddedResource Include="Presentación\EditarUsuAdmin.resx">
       <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\ChatAl.resx">
+      <DependentUpon>ChatAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\ChatDoc.resx">
+      <DependentUpon>ChatDoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuChatAl.resx">
       <DependentUpon>MenuChatAl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentación\MenuChatDoc.resx">
-      <DependentUpon>MenuChatDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuConsultaAl.resx">
       <DependentUpon>MenuConsultaAl.cs</DependentUpon>

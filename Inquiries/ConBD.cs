@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
 
 
         //Cargar cantidad de grupos
@@ -401,7 +401,7 @@ namespace Inquiries
             //creacion de chat
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente) values ("+dci+"); ", conectar);
+            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente, chmate, fechacomienzo) values ("+dci+", 2, now()); ", conectar);
             chat.ExecuteNonQuery();
             conectar.Close();
 
@@ -538,7 +538,7 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            string a = "select emisor from mensaje where chcod = "+lastmcod+" order by chcod desc limit 1 ";
+            string a = "select emisor from mensaje where mcod = "+lastmcod+" order by chcod desc limit 1 ";
             int b=0;
             MySqlCommand ci = new MySqlCommand(string.Format(a), conectar);
             MySqlDataReader lci = ci.ExecuteReader();
