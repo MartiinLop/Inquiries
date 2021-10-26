@@ -31,6 +31,12 @@ namespace Inquiries.Presentación
             //no hacer nada, pero si no son iguales:
             //Con un for each, recorrer los valores del array y cargarlos en panelChats
 
+            Array b = Chat.ObtenerDoc();
+
+            Console.WriteLine(b);
+
+            
+
             Panel chat = new Panel();
             chat.Height = 73;
             chat.Width = 800;
@@ -52,6 +58,11 @@ namespace Inquiries.Presentación
         private void MenuChatAl_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalirPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

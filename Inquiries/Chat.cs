@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+
 
 namespace Inquiries
 {
@@ -64,15 +66,18 @@ namespace Inquiries
         {
             
             MySqlDataAdapter docentes = new MySqlDataAdapter();
-            string[] a = new string[] { };
+            string[][] a = new string[][] { };
             docentes = ConBD.ObtDocentes();
+            DataTable b = new DataTable();
 
-            for (int i = 1; i < 5; i++)
+
+            docentes.Fill(b);
+
+            //a = b.Rows.OfType<DataRow>().Select(k => k[0][0].ToString()).ToArray();
+            a = b.AsEnumerable().Select(row => row.ItemArray).ToArray();
+            for (int x = 0; x < b.Rows.Count ; x++)
             {
-                if (docentes.Read())
-                {
-                    a[i] = docentes.GetString("dci, dnom, dape, dconexion, destado");
-                }
+                Console.WriteLine(a[x]);
             }
             return a;
         }
