@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inquiries.Presentación;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Inquiries
 {
@@ -62,8 +64,8 @@ namespace Inquiries
         private void btnChatAl_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChatAl f1 = new ChatAl();
-            f1.ShowDialog();
+            MenuChatAl m1 = new MenuChatAl();
+            m1.ShowDialog();
             this.Show();
         }
 
@@ -72,6 +74,11 @@ namespace Inquiries
             this.Hide();
             ModPerfilAlumno f1 = new ModPerfilAlumno();
             f1.ShowDialog();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
