@@ -59,5 +59,23 @@ namespace Inquiries
             Boolean a = ConBD.CIEmisor();
             return a;
         }
+
+        public static Array ObtenerDoc()
+        {
+            
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+            string[] a = new string[] { };
+            docentes = ConBD.ObtDocentes();
+
+            for (int i = 1; i < 5; i++)
+            {
+                if (docentes.Read())
+                {
+                    a[i] = docentes.GetString("dci, dnom, dape, dconexion, destado");
+                }
+            }
+            return a;
+        }
+
     }
 }

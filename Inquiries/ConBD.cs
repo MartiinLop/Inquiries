@@ -393,6 +393,22 @@ namespace Inquiries
             return textovich;
         }
 
+        //Obtener docentes
+
+        public static MySqlDataAdapter ObtDocentes()
+        {
+            string comando = "select dci, dnom, dape, dconexion from docente";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(string.Format(comando), conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
+
         //Crear Mensaje
         public static void CrearMensaje(int dci,int alci, string texto)
         {
