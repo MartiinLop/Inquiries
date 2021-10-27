@@ -12,7 +12,7 @@ namespace Inquiries
     {
         protected int gcod;
         protected string gnom;
-        enum gori
+        protected enum gori
         {
             Desarrollo_Y_Soporte, 
             Desarrollo_Web, 
@@ -39,10 +39,15 @@ namespace Inquiries
             set { gnom = value; }
         }
 
-        public DataTable grupo()
+        public static DataTable grupo()
         {
             ConBD a = new ConBD();
             return a.grupos();
+        }
+        public static int cantGrupos()
+        {
+            ConBD a = new ConBD();
+            return a.contgrupos();
         }
 
     }

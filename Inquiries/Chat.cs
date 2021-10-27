@@ -17,8 +17,6 @@ namespace Inquiries
         protected int Docente;
         protected string Resumen;
         protected string Materia;
-        protected string RolAlumno;
-        protected int enviar;
 
         //Constructor vacio
         public Chat()
@@ -32,7 +30,6 @@ namespace Inquiries
             this.Docente = Docente;
             this.Resumen = Resumen;
             this.Materia = Materia;
-            this.RolAlumno = RolAlumno;
         }
 
         //Gets y sets
@@ -108,5 +105,18 @@ namespace Inquiries
             return a;
         }
 
+        public static void crearChat(int codChat, int dci, int codMateria, Boolean cEstado)
+        {
+            ConBD.CrearChat(codChat, dci, codMateria, cEstado);
+        }
+
+        public static int obtcodChat()
+        {
+            return ConBD.obtChatCod(); 
+        }
+        public static void desactivarChat(int chcod)
+        {
+            ConBD.desChat(chcod);
+        }
     }
 }

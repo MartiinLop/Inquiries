@@ -56,11 +56,40 @@ namespace Inquiries
             MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
             DataTable datos = new DataTable();
             grupo.Fill(datos);
-            
+
 
             return datos;
         }
+        //Cargar cantidad de materias
+        public int contmaterias()
+        {
+            int num = 0;
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string a = "select count(*) from asignatura";
+            MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataReader obtnum = comando.ExecuteReader();
 
+            if (obtnum.Read())
+            {
+                num = obtnum.GetInt32("count(*)");
+            }
+
+            return num;
+        }
+        //Cargar materias
+        public DataTable materias()
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            string a = "select * from asignatura";
+            MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
+            DataTable datos = new DataTable();
+            grupo.Fill(datos);
+
+
+            return datos;
+        }
 
         //Registro alumnos
         public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado)
@@ -71,7 +100,7 @@ namespace Inquiries
             conectar.Open();
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "',"+ alGrupo +",'" + alNick + "', " +alConexion+ "," + alEstado + ");", conectar);
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ");", conectar);
             nual.ExecuteNonQuery();
             conectar.Close();
         }
@@ -94,7 +123,7 @@ namespace Inquiries
             MySqlConnection conectar00 = new MySqlConnection(conexbd);
             conectar00.Open();
             Boolean comp;
-            string check = "select alestado from alumno where alci = "+obtCI+";";
+            string check = "select alestado from alumno where alci = " + obtCI + ";";
             MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar00);
             MySqlDataReader revisar = chequear.ExecuteReader();
 
@@ -103,51 +132,51 @@ namespace Inquiries
                 comp = revisar.GetBoolean("alestado");
             }
 
-           
-            if (comp = true) { 
 
-            MySqlConnection conectar = new MySqlConnection(conexbd);
-            conectar.Open();
-            MySqlDataReader com;
-            int op;
-            int vCI;
-            String vCon;
-            string a = "select alci,alcon from alumno";
-            MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
+            if (comp = true) {
+
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+                MySqlDataReader com;
+                int op;
+                int vCI;
+                String vCon;
+                string a = "select alci,alcon from alumno";
+                MySqlCommand seleccionar = new MySqlCommand(string.Format(a), conectar);
 
 
-            com = seleccionar.ExecuteReader();
+                com = seleccionar.ExecuteReader();
 
-            while (com.Read())
-            {
-                vCI = com.GetInt32("alci");
-                vCon = com.GetString("alcon");
-                if (vCI == alCI && vCon == alCon)
+                while (com.Read())
                 {
-                    op = 1;
-                    obtCI = vCI;
-                }
-                else
-                {
-                    op = 0;
-                }
+                    vCI = com.GetInt32("alci");
+                    vCon = com.GetString("alcon");
+                    if (vCI == alCI && vCon == alCon)
+                    {
+                        op = 1;
+                        obtCI = vCI;
+                    }
+                    else
+                    {
+                        op = 0;
+                    }
 
 
 
-                if (op == 1)
-                {
-                    op = 0;
-                    MySqlConnection conectar2 = new MySqlConnection(conexbd);
-                    conectar2.Open();
-                    MySqlCommand conex = new MySqlCommand("update alumno set alconexion = true where alci =" + obtCI + ";", conectar2);
-                    conex.ExecuteNonQuery();
-                    conectar.Close();
-                    conectar2.Close();
-                    return true;
+                    if (op == 1)
+                    {
+                        op = 0;
+                        MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                        conectar2.Open();
+                        MySqlCommand conex = new MySqlCommand("update alumno set alconexion = true where alci =" + obtCI + ";", conectar2);
+                        conex.ExecuteNonQuery();
+                        conectar.Close();
+                        conectar2.Close();
+                        return true;
+                    }
                 }
-            }
-            conectar.Close();
-            return false;
+                conectar.Close();
+                return false;
             }
             conectar00.Close();
             return false;
@@ -219,7 +248,7 @@ namespace Inquiries
 
         //Iniciar sesión administrador
         public static Boolean Insead(int adCI, string adCon)
-            {
+        {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             MySqlDataReader com;
@@ -235,38 +264,38 @@ namespace Inquiries
             {
                 vCI = com.GetInt32("adci");
                 vCon = com.GetString("adcon");
-                    if (vCI == adCI && vCon == adCon)
-                    {
-                        op = 1;
-                        obtCI = vCI;
-                    }
-                    else
-                    {
-                        op = 0;
-                    }
-
-                    if (op == 1)
-                    {
-                        op = 0;
-                        MySqlConnection conectar2 = new MySqlConnection(conexbd);
-                        conectar2.Open();
-                        MySqlCommand conex = new MySqlCommand("update docente set dconexion = true where dci =" + obtCI + ";", conectar2);
-                        conex.ExecuteNonQuery();
-                        conectar.Close();
-                        conectar2.Close();
-                        return true;
-                    }
+                if (vCI == adCI && vCon == adCon)
+                {
+                    op = 1;
+                    obtCI = vCI;
                 }
-                conectar.Close();
-                return false;
+                else
+                {
+                    op = 0;
+                }
+
+                if (op == 1)
+                {
+                    op = 0;
+                    MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                    conectar2.Open();
+                    MySqlCommand conex = new MySqlCommand("update docente set dconexion = true where dci =" + obtCI + ";", conectar2);
+                    conex.ExecuteNonQuery();
+                    conectar.Close();
+                    conectar2.Close();
+                    return true;
+                }
             }
+            conectar.Close();
+            return false;
+        }
         //Cerrar sesión alumno
         public static void CerrarSesionAl()
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand cerrar = new MySqlCommand("update alumno set alconexion = false where alci = "+obtCI+"", conectar);
+            MySqlCommand cerrar = new MySqlCommand("update alumno set alconexion = false where alci = " + obtCI + "", conectar);
             cerrar.ExecuteNonQuery();
             conectar.Close();
         }
@@ -344,7 +373,7 @@ namespace Inquiries
         }
 
         //Leer Consulta
-        public static MySqlDataAdapter LeerConsulta(){
+        public static MySqlDataAdapter LeerConsulta() {
 
             MySqlConnection conLeer = new MySqlConnection(conexbd);
             conLeer.Open();
@@ -383,7 +412,7 @@ namespace Inquiries
 
             }
 
-            comando = "select respuesta from respuestaconsulta where cod = "+ codigo+ ";";
+            comando = "select respuesta from respuestaconsulta where cod = " + codigo + ";";
             MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar2);
 
             MySqlDataReader data = buscar.ExecuteReader();
@@ -409,39 +438,76 @@ namespace Inquiries
             return datos;
         }
 
-        //Crear Mensaje
-        public static void CrearMensaje(int dci,int alci, string texto)
+        //Crear Chat
+        public static void CrearChat(int codChat, int dci, int codMateria, Boolean cEstado)
         {
-            
-            string c = null;
-            //creacion de chat
+            MySqlConnection chat = new MySqlConnection(conexbd);
+            chat.Open();
+
+            MySqlCommand insChat = new MySqlCommand("INSERT INTO chat (docente, chmate, fechacomienzo, cestado) values ('" + dci + "', '" + codMateria + "', now(), true); ", chat);
+            insChat.ExecuteNonQuery();
+
+            MySqlCommand cpart = new MySqlCommand("insert into participa (alci, chcod, rol) values ('" + obtCI + "','" + codChat + "', 'iniciador');", chat);
+            cpart.ExecuteNonQuery();
+
+            chat.Close();
+
+        }
+        //Obtener Codigo Chat
+        public static int obtChatCod()
+        {
+            int a = 0;
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            MySqlCommand chat = new MySqlCommand("INSERT INTO chat (docente, chmate, fechacomienzo) values ("+dci+", 2, now()); ", conectar);
-            chat.ExecuteNonQuery();
-            conectar.Close();
-
-            //obtencion de codigo de chat
-            MySqlConnection conectar2 = new MySqlConnection(conexbd);
-            conectar2.Open();
             string t = "select chcod from chat order by chcod desc limit 1;";
-            MySqlCommand part = new MySqlCommand(string.Format(t), conectar2);
+            MySqlCommand part = new MySqlCommand(string.Format(t), conectar);
             MySqlDataReader cod = part.ExecuteReader();
-
             while (cod.Read())
             {
-                c = cod.GetString("chcod");
+                a = cod.GetInt32("chcod");
             }
-            conectar2.Close();
+            conectar.Close();
 
+            return a;
+
+        }
+        //Desactivar chat
+        public static void desChat(int codChat)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand mod = new MySqlCommand("update chat set cestado = false where chcod = '" + codChat +"';", conectar);
+            mod.ExecuteNonQuery();
+            conectar.Close();
+        }
+        //Obtener asignatura
+        public static int obtAsignatura(string nomAsig){
+            int a = 0;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string t = "select acod from asignatura where anom = '" + nomAsig + "';";
+            MySqlCommand codAs = new MySqlCommand(string.Format(t), conectar);
+            MySqlDataReader cod = codAs.ExecuteReader();
+            while (cod.Read())
+            {
+                a = cod.GetInt32("acod");
+            }
+            conectar.Close();
+
+
+            return a;
+        }
+        //Crear Mensaje
+        public static void CrearMensaje(int dci, int alci, string texto)
+        {
+            
             // creacion de mensaje e insercion en participa
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
 
-            MySqlCommand cpart = new MySqlCommand("insert into participa (alci,chcod) values ('" + alci + "','" + c + "');", conectar3);
-            cpart.ExecuteNonQuery();
-
-            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,emisor,contenido) values (" + c + ",'" + obtCI + "','" + texto + "');",conectar3);
+            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,emisor,contenido) values (" + obtChatCod() + ",'" + obtCI + "','" + texto + "');",conectar3);
             mens.ExecuteNonQuery();
             conectar3.Close();
 
@@ -572,6 +638,7 @@ namespace Inquiries
             {
                 return false;
             }
+            conectar.Close();
         }
 
         //Mostrar Datos

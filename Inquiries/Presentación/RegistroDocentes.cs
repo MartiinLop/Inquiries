@@ -34,7 +34,7 @@ namespace Inquiries
                 {
 
                     Boolean est = true, con = false;
-                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(a.grupo().Rows[comboBox1.SelectedIndex][0].ToString()), con, est);
+                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString()), con, est);
 
                     txtCIDoc.Text = "";
                     txtNomDoc.Text = "";
@@ -77,7 +77,7 @@ namespace Inquiries
             Grupo a = new Grupo();
             for (int i = 0; i < b; i++)
             {
-                comboBox1.Items.Add(a.grupo().Rows[i]["gnom"]);
+                comboBox1.Items.Add(Grupo.grupo().Rows[i]["gnom"]);
             }
         }
     }

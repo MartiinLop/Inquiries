@@ -102,12 +102,13 @@ namespace Inquiries
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
+            Chat.desactivarChat(Chat.obtcodChat());
             this.Dispose();
         }
 
         private void ChatAl_Load(object sender, EventArgs e)
         {
-
+            txtDCI.Hide();
         }
     }
 }

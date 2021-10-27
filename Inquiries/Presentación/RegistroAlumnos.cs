@@ -14,12 +14,12 @@ namespace Inquiries
 
         private void RegistroAlumnos_Load(object sender, EventArgs e)
         {
-            ConBD z = new ConBD();
-            int b = z.contgrupos();
+            
+            int b = Grupo.cantGrupos();
             Grupo a = new Grupo();
             for(int i=0; i<b; i++)
             {
-                comboBox1.Items.Add(a.grupo().Rows[i]["gnom"]);
+                comboBox1.Items.Add(Grupo.grupo().Rows[i]["gnom"]);
             }
         }
 
@@ -43,7 +43,7 @@ namespace Inquiries
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
                         Boolean est = true, con = false;
-                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, a.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est);
+                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est);
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";

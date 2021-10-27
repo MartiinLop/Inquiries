@@ -29,6 +29,12 @@ namespace Inquiries.Presentación
 
         private void MenuChatAl_Load(object sender, EventArgs e)
         {
+         
+            int b = Asignatura.cantMaterias();
+            for (int i = 0; i < b; i++)
+            {
+                comboBox1.Items.Add(Asignatura.devolverMaterias().Rows[i]["anom"]);
+            }
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
@@ -48,65 +54,80 @@ namespace Inquiries.Presentación
             string[,] datosProf = (string[,])Chat.ObtenerDoc();
             Boolean a = true;
             int test = 0;
-            try
-            {
-                if (datosProf.Length <= comparar.Length)
+            
+                try
                 {
-                    for (int i = 0; i < datosProf.Length; i++)
+                    if (datosProf.Length <= comparar.Length)
                     {
-                        for (int j = 0; j < comparar.Length; j++)
+                        for (int i = 0; i < datosProf.Length; i++)
                         {
-                            if (datosProf[i, 0] == comparar[j, 0] && datosProf[i, 1] == comparar[j, 1])
+                            for (int j = 0; j < comparar.Length; j++)
                             {
-                                test++;
+                                if (datosProf[i, 0] == comparar[j, 0] && datosProf[i, 1] == comparar[j, 1])
+                                {
+                                    test++;
+                                }
                             }
                         }
                     }
                 }
-            }
-            catch (Exception)
-            {
-                test++;
-            }
-
-            if (test == 0)
-            {
-                for (int x = 0; x < datosProf.GetLength(0); x++)
+                catch (Exception)
                 {
-                    Chat z = new Chat();
+                    test++;
+                }
 
-                    Panel chat = new Panel();
-                    chat.Height = 73;
-                    chat.Width = 500;
-                    panelChats.Controls.Add(chat);
-                    chat.Dock = DockStyle.Top;
-
-
-                    Label usuario = new Label();
-                    usuario.Visible = false;
-                    usuario.Text = Convert.ToString(datosProf[x, 0]);
-                    panelChats.Controls.Add(usuario);
-
-                    RichTextBox nomprof = new RichTextBox();
-                    nomprof.BackColor = Color.FromArgb(143, 131, 131);
-                    nomprof.ForeColor = Color.Black;
-                    nomprof.Text = Convert.ToString(datosProf[x, 1] + " " + datosProf[x, 2]);
-                    nomprof.Width = 500;
-                    chat.Controls.Add(nomprof);
-
-                    nomprof.Click += delegate (object enviar, EventArgs f)
+                if (test == 0)
+                {
+                    for (int x = 0; x < datosProf.GetLength(0); x++)
                     {
-                        invChatAl(enviar, f, Convert.ToString(usuario.Text));
-                        {
-                            
-                            chat.Controls.Add(nomprof);
-                            
-                        };
+                        Chat z = new Chat();
 
-                    };
+                        Panel chat = new Panel();
+                        chat.Height = 73;
+                        chat.Width = 500;
+                        panelChats.Controls.Add(chat);
+                        chat.Dock = DockStyle.Top;
+
+
+                        Label usuario = new Label();
+                        usuario.Visible = false;
+                        usuario.Text = Convert.ToString(datosProf[x, 0]);
+                        panelChats.Controls.Add(usuario);
+
+                        RichTextBox nomprof = new RichTextBox();
+                        nomprof.BackColor = Color.FromArgb(143, 131, 131);
+                        nomprof.ForeColor = Color.Black;
+                        nomprof.Text = Convert.ToString(datosProf[x, 1] + " " + datosProf[x, 2]);
+                        nomprof.Width = 500;
+                        chat.Controls.Add(nomprof);
+
+                    
+                    nomprof.Click += delegate (object enviar, EventArgs f)
+                        {
+                            if (comboBox1.Text == "")
+                            {
+
+                                MessageBox.Show("Debe seleccionar materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                            }
+                            else
+                            {
+                                invChatAl(enviar, f, Convert.ToString(usuario.Text));
+                                {
+
+                                    chat.Controls.Add(nomprof);
+                                    Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true); 
+
+
+                                };
+                            }
+                        };
+                    
                 }
                 comparar = datosProf;
-            }
+                }
+            
+        
         }
     }
 }
