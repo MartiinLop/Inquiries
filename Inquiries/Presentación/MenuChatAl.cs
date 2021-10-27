@@ -52,32 +52,10 @@ namespace Inquiries.Presentación
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             string[,] datosProf = (string[,])Chat.ObtenerDoc();
-            Boolean a = true;
             int test = 0;
             
-                try
-                {
-                    if (datosProf.Length <= comparar.Length)
-                    {
-                        for (int i = 0; i < datosProf.Length; i++)
-                        {
-                            for (int j = 0; j < comparar.Length; j++)
-                            {
-                                if (datosProf[i, 0] == comparar[j, 0] && datosProf[i, 1] == comparar[j, 1])
-                                {
-                                    test++;
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    test++;
-                }
-
-                if (test == 0)
-                {
+               if (datosProf.Length != comparar.Length)
+               {
                     for (int x = 0; x < datosProf.GetLength(0); x++)
                     {
                         Chat z = new Chat();
@@ -101,8 +79,8 @@ namespace Inquiries.Presentación
                         nomprof.Width = 500;
                         chat.Controls.Add(nomprof);
 
-                    
-                    nomprof.Click += delegate (object enviar, EventArgs f)
+
+                        nomprof.Click += delegate (object enviar, EventArgs f)
                         {
                             if (comboBox1.Text == "")
                             {
@@ -116,18 +94,17 @@ namespace Inquiries.Presentación
                                 {
 
                                     chat.Controls.Add(nomprof);
-                                    Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true); 
+                                    Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true);
 
 
                                 };
                             }
                         };
-                    
-                }
-                comparar = datosProf;
-                }
-            
-        
+
+                    }
+                    comparar = datosProf;
+               }
+
         }
     }
 }
