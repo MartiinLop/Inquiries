@@ -24,56 +24,55 @@ namespace Inquiries
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            // Inicio sesión 
+            try
+            {
+                //Inicio sesión
             if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
-            {
-                txtUsuario.Text = "Cédula de identidad";
-                txtContra.Text = "Contraseña";
-                this.Hide();
-                MenuAlumnos f = new MenuAlumnos();
-                f.ShowDialog();
-                this.Show();
-
-            }
-            else
-            {
-                if (ConBD.Insedoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
                     txtUsuario.Text = "Cédula de identidad";
                     txtContra.Text = "Contraseña";
                     this.Hide();
-                    MenuDocentes f = new MenuDocentes();
+                    MenuAlumnos f = new MenuAlumnos();
                     f.ShowDialog();
                     this.Show();
+
                 }
                 else
                 {
-                    if (ConBD.Insead(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                    if (ConBD.Insedoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                     {
                         txtUsuario.Text = "Cédula de identidad";
                         txtContra.Text = "Contraseña";
                         this.Hide();
-                        MenuPrincipalAdmin f = new MenuPrincipalAdmin();
+                        MenuDocentes f = new MenuDocentes();
                         f.ShowDialog();
                         this.Show();
                     }
-                    else { MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else
+                    {
+                        if (ConBD.Insead(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                        {
+                            txtUsuario.Text = "Cédula de identidad";
+                            txtContra.Text = "Contraseña";
+                            this.Hide();
+                            MenuPrincipalAdmin f = new MenuPrincipalAdmin();
+                            f.ShowDialog();
+                            this.Show();
+                        }
+                        else { MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                    }
 
                 }
 
             }
-
+            catch (Exception)
+            {
+                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        //catch (Exception)
-        //{
-        //    MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-    
 
-
-        private void button2_Click(object sender, EventArgs e)
+            private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

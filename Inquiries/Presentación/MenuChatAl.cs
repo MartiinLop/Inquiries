@@ -9,7 +9,6 @@ namespace Inquiries.Presentación
 {
     public partial class MenuChatAl : Form
     {
-        ArrayList lista = new ArrayList();
         private static string a;
         private static string[,] comparar = new string[0, 0];
         public MenuChatAl()
