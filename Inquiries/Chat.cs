@@ -18,6 +18,7 @@ namespace Inquiries
         protected string Resumen;
         protected string Materia;
         protected string RolAlumno;
+        protected int enviar;
 
         //Constructor vacio
         public Chat()
@@ -25,7 +26,7 @@ namespace Inquiries
         }
 
         //Constructor
-        public Chat(int Codigo, int Docente, string Resumen, string Materia, string RolAlumno)
+        public Chat(int Codigo, int Docente, string Resumen, string Materia)
         {
             this.Codigo = Codigo;
             this.Docente = Docente;
@@ -36,6 +37,26 @@ namespace Inquiries
 
         //Gets y sets
         //
+        public int codigo
+        {
+            get { return Codigo; }
+            set { Codigo = value; }
+        }
+        public int docente
+        {
+            get { return Docente; }
+            set { Docente = value; }
+        }
+        public string resumen
+        {
+            get { return Resumen; }
+            set { Resumen = value; }
+        }
+        public string materia
+        {
+            get { return Materia; }
+            set { Materia = value; }
+        }
         //
 
         //Metodos

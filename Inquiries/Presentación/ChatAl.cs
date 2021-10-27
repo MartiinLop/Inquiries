@@ -13,9 +13,11 @@ namespace Inquiries
 {
     public partial class ChatAl : Form
     {
-        public ChatAl()
+        
+        public ChatAl(string ci)
         {
             InitializeComponent();
+            txtDCI.Text = ci;
             Timer r = new Timer
             {
                 Interval = 300

@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Collections;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace Inquiries.Presentación
 {
     public partial class MenuChatAl : Form
     {
+        ArrayList lista = new ArrayList();
+        private static string a;
+        private static string[,] comparar = new string[0, 0];
         public MenuChatAl()
         {
             InitializeComponent();
@@ -25,44 +25,91 @@ namespace Inquiries.Presentación
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            //Crear metodo que selecione a todos los docentes que devuelva MySqlDataAdapter
-            //Agarrar el data adapter y meterlo en un array, y crear otro array auxiliar
-            //Con un if, comparar los arrays, si el array que viene de la base de datos y el auxiliar son iguales,
-            //no hacer nada, pero si no son iguales:
-            //Con un for each, recorrer los valores del array y cargarlos en panelChats
-
-            string[,] datosProf = (string[,])Chat.ObtenerDoc();
-
-            
-
-        
-
-            Panel chat = new Panel();
-            chat.Height = 73;
-            chat.Width = 800;
-            panelChats.Controls.Add(chat);
-            chat.Dock = DockStyle.Top;
-
-
-            RichTextBox nomprof = new RichTextBox();
-            nomprof.BackColor = Color.FromArgb(143,131,131);
-            nomprof.ForeColor = Color.Black;
-            nomprof.Text = Convert.ToString(datosProf[1, 1] + " " + datosProf[1, 2]);
-
-            chat.Controls.Add(nomprof);
-            nomprof.Location = new Point(60, 7);
-
-
         }
 
         private void MenuChatAl_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        private void invChatAl(object sender, EventArgs e, string c)
+        {
+
+            ChatAl a = new ChatAl(c);
+            a.ShowDialog();
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            string[,] datosProf = (string[,])Chat.ObtenerDoc();
+            Boolean a = true;
+            int test = 0;
+            try
+            {
+                if (datosProf.Length <= comparar.Length)
+                {
+                    for (int i = 0; i < datosProf.Length; i++)
+                    {
+                        for (int j = 0; j < comparar.Length; j++)
+                        {
+                            if (datosProf[i, 0] == comparar[j, 0] && datosProf[i, 1] == comparar[j, 1])
+                            {
+                                test++;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                test++;
+            }
+
+            if (test == 0)
+            {
+                for (int x = 0; x < datosProf.GetLength(0); x++)
+                {
+                    Chat z = new Chat();
+
+                    Panel chat = new Panel();
+                    chat.Height = 73;
+                    chat.Width = 500;
+                    panelChats.Controls.Add(chat);
+                    chat.Dock = DockStyle.Top;
+
+
+
+                    Label usuario = new Label();
+                    usuario.Visible = false;
+                    usuario.Text = Convert.ToString(datosProf[x, 3]);
+                    panelChats.Controls.Add(usuario);
+
+                    RichTextBox nomprof = new RichTextBox();
+                    nomprof.BackColor = Color.FromArgb(143, 131, 131);
+                    nomprof.ForeColor = Color.Black;
+                    nomprof.Text = Convert.ToString(datosProf[x, 1] + " " + datosProf[x, 2]);
+                    nomprof.Width = 500;
+                    panelChats.Controls.Add(nomprof);
+
+                    nomprof.Click += delegate (object enviar, EventArgs f)
+                    {
+                        invChatAl(enviar, f, Convert.ToString(usuario.Text));
+                        {
+                            invChatAl(enviar, f, Convert.ToString(usuario.Text));
+
+                            chat.Controls.Add(nomprof);
+                            nomprof.Location = new Point(60, 7);
+                            
+                        };
+
+                    };
+                }
+                comparar = datosProf;
+            }
         }
     }
 }
