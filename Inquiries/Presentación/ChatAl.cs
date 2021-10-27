@@ -33,6 +33,7 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
+         
             try
             {
                 Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Chat.getCIact(), Convert.ToString(txtMensaje.Text));

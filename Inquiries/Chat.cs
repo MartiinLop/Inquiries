@@ -91,8 +91,6 @@ namespace Inquiries
             docentes.Fill(b);
 
             string[,] a = new string[b.Rows.Count, b.Columns.Count];
-
-            Console.WriteLine(Convert.ToString(b.Columns.Count), b.Rows.Count);
           
             for (int x = 0; x < b.Rows.Count ; x++)
             {

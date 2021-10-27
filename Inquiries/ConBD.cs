@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
 
 
         //Cargar cantidad de grupos
@@ -44,6 +44,7 @@ namespace Inquiries
                 num = obtnum.GetInt32("count(*)");
             }
 
+            conectar.Close();
             return num;
         }
 
@@ -51,13 +52,14 @@ namespace Inquiries
         public DataTable grupos()
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
             string a = "select * from grupo";
             MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
             MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
             DataTable datos = new DataTable();
             grupo.Fill(datos);
 
-
+            conectar.Close();
             return datos;
         }
         //Cargar cantidad de materias
@@ -75,19 +77,21 @@ namespace Inquiries
                 num = obtnum.GetInt32("count(*)");
             }
 
+            conectar.Close();
             return num;
         }
         //Cargar materias
         public DataTable materias()
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
             string a = "select * from asignatura";
             MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
             MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
             DataTable datos = new DataTable();
             grupo.Fill(datos);
 
-
+            conectar.Close();
             return datos;
         }
 
@@ -630,6 +634,8 @@ namespace Inquiries
                 b = lci.GetInt32("emisor");
             }
 
+            conectar.Close();
+
             if (b == obtCI)
             {
                 return true;
@@ -638,7 +644,7 @@ namespace Inquiries
             {
                 return false;
             }
-            conectar.Close();
+            
         }
 
         //Mostrar Datos
@@ -677,6 +683,7 @@ namespace Inquiries
                 }
                 datotef = $"{datote1}|{datote2}|{datote3}";
 
+                conectar.Close();
                 return datotef;
             }
             else
@@ -696,6 +703,7 @@ namespace Inquiries
                     datote2 = datito.GetString("dcon"); 
                 }
                 datotef = $"{datote1}|{datote2}";
+                conectar.Close();
                 return datotef;
             }
 
