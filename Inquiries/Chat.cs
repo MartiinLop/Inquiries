@@ -102,7 +102,6 @@ namespace Inquiries
                 for (int y = 0; y < b.Columns.Count; y++)
                 {
                         a[x, y] = Convert.ToString(b.Rows[x][y]);
-                        Console.WriteLine(a[x, y]);
                 }
             }
 

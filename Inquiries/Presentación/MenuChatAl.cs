@@ -82,10 +82,9 @@ namespace Inquiries.Presentación
                     chat.Dock = DockStyle.Top;
 
 
-
                     Label usuario = new Label();
                     usuario.Visible = false;
-                    usuario.Text = Convert.ToString(datosProf[x, 3]);
+                    usuario.Text = Convert.ToString(datosProf[x, 0]);
                     panelChats.Controls.Add(usuario);
 
                     RichTextBox nomprof = new RichTextBox();
@@ -93,16 +92,14 @@ namespace Inquiries.Presentación
                     nomprof.ForeColor = Color.Black;
                     nomprof.Text = Convert.ToString(datosProf[x, 1] + " " + datosProf[x, 2]);
                     nomprof.Width = 500;
-                    panelChats.Controls.Add(nomprof);
+                    chat.Controls.Add(nomprof);
 
                     nomprof.Click += delegate (object enviar, EventArgs f)
                     {
                         invChatAl(enviar, f, Convert.ToString(usuario.Text));
                         {
-                            invChatAl(enviar, f, Convert.ToString(usuario.Text));
-
+                            
                             chat.Controls.Add(nomprof);
-                            nomprof.Location = new Point(60, 7);
                             
                         };
 
