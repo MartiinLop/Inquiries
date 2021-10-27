@@ -66,19 +66,25 @@ namespace Inquiries
         {
             
             MySqlDataAdapter docentes = new MySqlDataAdapter();
-            string[][] a = new string[][] { };
+            
             docentes = ConBD.ObtDocentes();
             DataTable b = new DataTable();
 
-
             docentes.Fill(b);
 
-            //a = b.Rows.OfType<DataRow>().Select(k => k[0][0].ToString()).ToArray();
-            a = b.AsEnumerable().Select(row => row.ItemArray).ToArray();
+            string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+            Console.WriteLine(Convert.ToString(b.Columns.Count), b.Rows.Count);
+          
             for (int x = 0; x < b.Rows.Count ; x++)
             {
-                Console.WriteLine(a[x]);
+                for (int y = 0; y < b.Columns.Count; y++)
+                {
+                        a[x, y] = Convert.ToString(b.Rows[x][y]);
+                        Console.WriteLine(a[x, y]);
+                }
             }
+
             return a;
         }
 

@@ -31,11 +31,11 @@ namespace Inquiries.Presentación
             //no hacer nada, pero si no son iguales:
             //Con un for each, recorrer los valores del array y cargarlos en panelChats
 
-            Array b = Chat.ObtenerDoc();
-
-            Console.WriteLine(b);
+            string[,] datosProf = (string[,])Chat.ObtenerDoc();
 
             
+
+        
 
             Panel chat = new Panel();
             chat.Height = 73;
@@ -47,7 +47,7 @@ namespace Inquiries.Presentación
             RichTextBox nomprof = new RichTextBox();
             nomprof.BackColor = Color.FromArgb(143,131,131);
             nomprof.ForeColor = Color.Black;
-            nomprof.Text = "nooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo";
+            nomprof.Text = Convert.ToString(datosProf[1, 1] + " " + datosProf[1, 2]);
 
             chat.Controls.Add(nomprof);
             nomprof.Location = new Point(60, 7);
