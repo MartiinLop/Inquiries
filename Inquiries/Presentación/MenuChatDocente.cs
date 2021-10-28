@@ -97,5 +97,10 @@ namespace Inquiries.Presentación
             }
 
         }
+
+        private void panelChats_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

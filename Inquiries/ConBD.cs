@@ -647,6 +647,13 @@ namespace Inquiries
             
         }
 
+        //Obtener códigos de chat
+
+        public static MySqlDataAdapter ObtCodigos()
+        {
+            string comando = "select "
+        }
+
         //Mostrar Datos
         public static string MostrarDatosPerf()
         {
