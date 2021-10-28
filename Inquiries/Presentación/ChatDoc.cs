@@ -13,8 +13,9 @@ namespace Inquiries
 {
     public partial class ChatDoc : Form
     {
-        public ChatDoc()
+        public ChatDoc(string c)
         {
+            txtAlCI.Text = c;
             InitializeComponent();
             Timer r = new Timer
             {
