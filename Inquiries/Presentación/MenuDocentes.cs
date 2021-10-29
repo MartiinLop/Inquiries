@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Inquiries.Presentación;
 
 namespace Inquiries
 {
@@ -75,7 +76,7 @@ namespace Inquiries
         private void btnChatDoc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChatDoc f1 = new ChatDoc();
+            MenuChatDocente f1 = new MenuChatDocente();
             f1.ShowDialog();
             this.Show();
         }

@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
 
         //Cargar cantidad de grupos
@@ -475,9 +475,25 @@ namespace Inquiries
             return a;
 
         }
+
+        //Obtener codigos chat
+        public static MySqlDataAdapter ObtenerCodigosChat()
+        {
+            string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and chat.docente='"+obtCI+"';";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            
+            MySqlCommand cons = new MySqlCommand(string.Format(comando), conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+
+        }
         //Desactivar chat
         public static void desChat(int codChat)
-        {
+         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
@@ -647,11 +663,11 @@ namespace Inquiries
             
         }
 
-        //Obtener códigos de chat
+        //Obtener CI de Alumno
 
-        public static int ObtCodigos(int codChat)
+        public static string obtCIAl(int codChat)
         {
-            int a = 0;
+            string a = null;
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -660,7 +676,7 @@ namespace Inquiries
             MySqlDataReader cod = codAs.ExecuteReader();
             while (cod.Read())
             {
-                a = cod.GetInt32("alci");
+                a = cod.GetString("alci");
             }
             conectar.Close();
 

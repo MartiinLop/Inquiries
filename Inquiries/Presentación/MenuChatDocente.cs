@@ -13,10 +13,12 @@ namespace Inquiries.Presentación
     public partial class MenuChatDocente : Form
     {
         private static string a;
-        private static string[,] comparar = new string[0, 0];
+        private static string[,] comparar = new string[0,0];
+        private static Boolean mensaje = false;
         public MenuChatDocente()
         {
             InitializeComponent();
+            mensaje = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -34,66 +36,70 @@ namespace Inquiries.Presentación
         }
         private void invChatDoc(object sender, EventArgs e, string c)
         {
-
-            ChatDoc a = new ChatDoc(c);
+            string ci = Chat.ciAlumno(Convert.ToInt32(c));
+            ChatDoc a = new ChatDoc(ci);
             a.ShowDialog();
 
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            string[,] datosProf = (string[,])Chat.ObtenerDoc();
+            Chat z = new Chat();
+            string[,] codChat = (string[,])Chat.obtCodigosChat();
             int test = 0;
 
-            if (datosProf.Length != comparar.Length)
+            if (codChat.Length != comparar.Length)
             {
-                for (int x = 0; x < datosProf.GetLength(0); x++)
+                for (int x = 0; x < codChat.GetLength(0); x++)
                 {
-                    Chat z = new Chat();
 
-                    Panel chat = new Panel();
-                    chat.Height = 73;
-                    chat.Width = 500;
-                    panelChats.Controls.Add(chat);
-                    chat.Dock = DockStyle.Top;
-
-
-                    Label usuario = new Label();
-                    usuario.Visible = false;
-                    usuario.Text = Convert.ToString(datosProf[x, 0]);
-                    panelChats.Controls.Add(usuario);
-
-                    RichTextBox nomprof = new RichTextBox();
-                    nomprof.BackColor = Color.FromArgb(143, 131, 131);
-                    nomprof.ForeColor = Color.Black;
-                    nomprof.Text = Convert.ToString(datosProf[x, 1] + " " + datosProf[x, 2]);
-                    nomprof.Width = 500;
-                    chat.Controls.Add(nomprof);
-
-
-                    nomprof.Click += delegate (object enviar, EventArgs f)
+                    if (Convert.ToBoolean(codChat[x, 1]) == true)
                     {
-                        if (comboBox1.Text == "")
+
+
+                        Panel chat = new Panel();
+                        chat.Height = 73;
+                        chat.Width = 500;
+                        panelChats.Controls.Add(chat);
+                        chat.Dock = DockStyle.Top;
+
+
+                        Label cod = new Label();
+                        cod.Visible = false;
+                        cod.Text = Convert.ToString(codChat[x, 0]);
+                        panelChats.Controls.Add(cod);
+
+                        RichTextBox nomprof = new RichTextBox();
+                        nomprof.BackColor = Color.FromArgb(143, 131, 131);
+                        nomprof.ForeColor = Color.Black;
+                        nomprof.Text = Convert.ToString(codChat[x, 0]);
+                        nomprof.Width = 500;
+                        chat.Controls.Add(nomprof);
+
+
+                        nomprof.Click += delegate (object enviar, EventArgs f)
                         {
 
-                            MessageBox.Show("Debe seleccionar materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        }
-                        else
-                        {
-                            invChatDoc(enviar, f, Convert.ToString(usuario.Text));
+                            invChatDoc(enviar, f, Convert.ToString(cod.Text));
                             {
 
-                                chat.Controls.Add(nomprof);
-                                Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true);
 
+                                invChatDoc(enviar, f, Convert.ToString(cod.Text));
 
-                            };
+                            }
+                        };
+
+                    }
+                    else
+                    {
+                        if (mensaje == false)
+                        {
+                            mensaje = true;
+                            MessageBox.Show("xd");
                         }
-                    };
-
+                    }
+                    comparar = codChat;
                 }
-                comparar = datosProf;
             }
 
         }
@@ -101,6 +107,11 @@ namespace Inquiries.Presentación
         private void panelChats_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnSalirPrincipal_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

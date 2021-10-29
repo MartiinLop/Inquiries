@@ -107,9 +107,38 @@ namespace Inquiries
         {
             return ConBD.obtChatCod(); 
         }
+
+        public static Array obtCodigosChat()
+        {
+            MySqlDataAdapter chats = new MySqlDataAdapter();
+
+            chats = ConBD.ObtenerCodigosChat();
+            DataTable b = new DataTable();
+
+            chats.Fill(b);
+
+            string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+            for (int x = 0; x < b.Rows.Count; x++)
+            {
+                for (int y = 0; y < b.Columns.Count; y++)
+                {
+                    a[x, y] = Convert.ToString(b.Rows[x][y]);
+                }
+                
+            }
+
+            return a;
+        }
         public static void desactivarChat(int chcod)
         {
             ConBD.desChat(chcod);
+        }
+
+        public static string ciAlumno(int codChat)
+        {
+            string a = ConBD.obtCIAl(codChat);
+            return a;
         }
     }
 }

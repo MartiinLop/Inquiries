@@ -15,7 +15,7 @@ namespace Inquiries
     {
         public ChatDoc(string c)
         {
-            txtAlCI.Text = c;
+
             InitializeComponent();
             Timer r = new Timer
             {
@@ -23,6 +23,7 @@ namespace Inquiries
             };
             r.Enabled = true;
             r.Tick += new System.EventHandler(AcMen);
+            txtAlCI.Text = c;
         }
 
         private void button2_Click(object sender, EventArgs e)
