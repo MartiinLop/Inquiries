@@ -649,9 +649,23 @@ namespace Inquiries
 
         //Obtener códigos de chat
 
-        public static MySqlDataAdapter ObtCodigos()
+        public static int ObtCodigos(int codChat)
         {
-            string comando = "select "
+            int a = 0;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string t = "select alci from participa where chcod = '" + codChat + "';";
+            MySqlCommand codAs = new MySqlCommand(string.Format(t), conectar);
+            MySqlDataReader cod = codAs.ExecuteReader();
+            while (cod.Read())
+            {
+                a = cod.GetInt32("alci");
+            }
+            conectar.Close();
+
+
+            return a;
         }
 
         //Mostrar Datos
