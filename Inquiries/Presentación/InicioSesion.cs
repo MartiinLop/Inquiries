@@ -24,8 +24,8 @@ namespace Inquiries
         private void button1_Click(object sender, EventArgs e)
         {
 
-            try
-            {
+            //try
+            //{
                 //Inicio sesión
             if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
@@ -65,11 +65,11 @@ namespace Inquiries
 
                 }
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
             private void button2_Click(object sender, EventArgs e)

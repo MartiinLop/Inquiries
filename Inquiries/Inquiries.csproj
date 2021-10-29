@@ -244,6 +244,12 @@
     <Compile Include="Presentación\VerUsuAdmin.Designer.cs">
       <DependentUpon>VerUsuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="RJControls\InquiriesTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJControls\InquiriesTextBox.Designer.cs">
+      <DependentUpon>InquiriesTextBox.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Presentación\AdminConsultaAl.resx">
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\VerUsuAdmin.resx">
       <DependentUpon>VerUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJControls\InquiriesTextBox.resx">
+      <DependentUpon>InquiriesTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>

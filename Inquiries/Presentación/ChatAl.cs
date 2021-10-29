@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Inquiries.RJControls;
 
 namespace Inquiries
 {
@@ -62,11 +63,13 @@ namespace Inquiries
                     panel3.Controls.Add(mensajesEnviados);
                     mensajesEnviados.Dock = DockStyle.Bottom;
 
-                    RichTextBox txtE = new RichTextBox();
-                    txtE.BackColor = Color.Black;
+                    InquiriesTextBox txtE = new InquiriesTextBox();
+                    txtE.BackColor = Color.FromArgb(196, 196, 196);
                     txtE.Font = new Font("Roboto", 12);
-                    txtE.ForeColor = Color.White;
+                    txtE.ForeColor = Color.Black;
                     txtE.Text = a;
+                    txtE.BorderRadius = 5;
+                    txtE.Text = "hola";
 
                     mensajesEnviados.Controls.Add(txtE);
                     txtE.Location = new Point(600, 7);
@@ -79,11 +82,12 @@ namespace Inquiries
                     panel3.Controls.Add(mensajesReceptor);
                     mensajesReceptor.Dock = DockStyle.Bottom;
 
-                    RichTextBox txtR = new RichTextBox();
-                    txtR.BackColor = Color.Black;
+                    InquiriesTextBox txtR = new InquiriesTextBox();
+                    txtR.BackColor = Color.FromArgb(2,196,196,196);
                     txtR.Font = new Font("Roboto", 12);
-                    txtR.ForeColor = Color.White;
+                    txtR.ForeColor = Color.Black;
                     txtR.Text = a;
+                    txtR.BorderRadius = 5;
 
                     mensajesReceptor.Controls.Add(txtR);
                     txtR.Location = new Point(69, 7);
@@ -110,6 +114,11 @@ namespace Inquiries
         private void ChatAl_Load(object sender, EventArgs e)
         {
             txtDCI.Hide();
+        }
+
+        private void txtDCI_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

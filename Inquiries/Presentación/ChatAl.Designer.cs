@@ -32,8 +32,8 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDCI = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
+            this.txtDCI = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
@@ -79,13 +79,6 @@ namespace Inquiries
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // txtDCI
-            // 
-            this.txtDCI.Location = new System.Drawing.Point(27, 174);
-            this.txtDCI.Name = "txtDCI";
-            this.txtDCI.Size = new System.Drawing.Size(100, 20);
-            this.txtDCI.TabIndex = 10;
-            // 
             // btnSalirPrincipal
             // 
             this.btnSalirPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -101,6 +94,14 @@ namespace Inquiries
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
             this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
+            // 
+            // txtDCI
+            // 
+            this.txtDCI.Location = new System.Drawing.Point(27, 174);
+            this.txtDCI.Name = "txtDCI";
+            this.txtDCI.Size = new System.Drawing.Size(100, 20);
+            this.txtDCI.TabIndex = 10;
+            this.txtDCI.TextChanged += new System.EventHandler(this.txtDCI_TextChanged);
             // 
             // panel1
             // 
