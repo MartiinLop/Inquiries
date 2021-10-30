@@ -69,7 +69,7 @@ namespace Inquiries.Presentación
                         chat.Width = 500;
                         panelChats.Controls.Add(chat);
                         chat.Dock = DockStyle.Top;
-                        chat.Cursor = Cursors.Hand;
+                        chat.Cursor = Cursors.Default;
 
                         Panel color = new Panel();
                         Label estado = new Label();

@@ -64,7 +64,7 @@ namespace Inquiries
         private void btnChatAl_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MenuChatAl m1 = new MenuChatAl();
+            MenuPrincipalChatAl m1 = new MenuPrincipalChatAl();
             m1.ShowDialog();
             this.Show();
         }
@@ -77,6 +77,11 @@ namespace Inquiries
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MenuAlumnos_Load(object sender, EventArgs e)
         {
 
         }

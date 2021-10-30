@@ -29,6 +29,7 @@ namespace Inquiries.Presentación
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@ namespace Inquiries.Presentación
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +81,7 @@ namespace Inquiries.Presentación
             this.btnSalirPrincipal.TabIndex = 30;
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
+            this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
             // button1
             // 
@@ -92,6 +95,7 @@ namespace Inquiries.Presentación
             this.button1.TabIndex = 29;
             this.button1.Text = "Iniciar Chat";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelChats
             // 
@@ -187,6 +191,10 @@ namespace Inquiries.Presentación
             this.button5.Text = "GRUPOS";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MenuPrincipalChatAl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +208,7 @@ namespace Inquiries.Presentación
             this.Controls.Add(this.panel4);
             this.Name = "MenuPrincipalChatAl";
             this.Text = "MenuPrincipalChatAl";
+            this.Load += new System.EventHandler(this.MenuPrincipalChatAl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -221,5 +230,6 @@ namespace Inquiries.Presentación
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Timer timer1;
     }
 }

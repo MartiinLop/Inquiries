@@ -71,7 +71,7 @@ namespace Inquiries.Presentación
                         RichTextBox nomprof = new RichTextBox();
                         nomprof.BackColor = Color.FromArgb(143, 131, 131);
                         nomprof.ForeColor = Color.Black;
-                        nomprof.Text = Convert.ToString(codChat[x, 0]);
+                        nomprof.Text = Chat.ciAlumno(Convert.ToInt32(codChat[x, 0]));
                         nomprof.Width = 500;
                         chat.Controls.Add(nomprof);
 
