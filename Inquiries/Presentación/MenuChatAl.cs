@@ -9,8 +9,11 @@ namespace Inquiries.Presentación
 {
     public partial class MenuChatAl : Form
     {
-        private static string a;
-        private static string[,] comparar = new string[0, 0];
+        protected static string a;
+        protected static string[,] comparar = new string[0, 0];
+     
+        protected static string[,] datosProf = (string[,])Chat.ObtenerDoc();
+        protected string[] vector = new string[datosProf.GetLength(0)];
         public MenuChatAl()
         {
             InitializeComponent();
@@ -50,8 +53,8 @@ namespace Inquiries.Presentación
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            string[,] datosProf = (string[,])Chat.ObtenerDoc();
-            int test = 0;
+            
+                int test = 0;
             
                if (datosProf.Length != comparar.Length)
                {
@@ -65,6 +68,37 @@ namespace Inquiries.Presentación
                         panelChats.Controls.Add(chat);
                         chat.Dock = DockStyle.Top;
 
+                        Panel color = new Panel();
+                        color.Height = 20;
+                        color.Width = 20;
+                        chat.Controls.Add(color);
+                        color.Location = new Point(450, 22);
+                  
+
+                        Label estado = new Label();
+                        estado.Visible = true;
+                        chat.Controls.Add(estado);
+                        estado.Location = new Point(370, 25);
+                        estado.BackColor = Color.FromArgb(143, 131, 131);
+
+                        for (int i = 0; i < datosProf.GetLength(0); i++)
+                        {
+                            vector[i] = datosProf[i, 3];
+
+                            if (Convert.ToBoolean(vector[i]) == true)
+                            {
+
+                                estado.Text = "En línea";
+                                color.BackColor = Color.Green;
+                            }
+
+                    
+                            else
+                            {
+                                estado.Text = "Desconectado";
+                                 color.BackColor = Color.Red;
+                        }
+                        }
 
                         Label usuario = new Label();
                         usuario.Visible = false;
@@ -79,24 +113,32 @@ namespace Inquiries.Presentación
                         chat.Controls.Add(nomprof);
 
 
-                        nomprof.Click += delegate (object enviar, EventArgs f)
+                    
+
+
+                    nomprof.Click += delegate (object enviar, EventArgs f)
                         {
-                            if (comboBox1.Text == "")
-                            {
+                            if (comboBox1.Text == ""){
 
                                 MessageBox.Show("Debe seleccionar materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+                            }else{
+
+                                if (estado.Text == "En línea"){
+
+                                Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true);
+                                    invChatAl(enviar, f, Convert.ToString(usuario.Text));
+
+                                }
+                                else {
+                                MessageBox.Show("Este docente no está conectado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                            else
-                            {
-                                invChatAl(enviar, f, Convert.ToString(usuario.Text));
-                                {
-
-                                    chat.Controls.Add(nomprof);
-                                    Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true);
-
-
-                                };
+                            
+                           
+                            
+                                    
+                                
+                                
                             }
                         };
 

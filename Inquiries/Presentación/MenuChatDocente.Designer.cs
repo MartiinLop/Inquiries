@@ -57,9 +57,9 @@ namespace Inquiries.Presentación
             this.panel4.Controls.Add(this.button5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1685, 150);
+            this.panel4.Size = new System.Drawing.Size(1264, 122);
             this.panel4.TabIndex = 16;
             // 
             // button2
@@ -68,10 +68,10 @@ namespace Inquiries.Presentación
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1477, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.button2.Location = new System.Drawing.Point(1108, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 138);
+            this.button2.Size = new System.Drawing.Size(141, 112);
             this.button2.TabIndex = 6;
             this.button2.Text = "Perfil";
             this.button2.UseVisualStyleBackColor = true;
@@ -83,10 +83,10 @@ namespace Inquiries.Presentación
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(572, 6);
-            this.button3.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.button3.Location = new System.Drawing.Point(429, 5);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 138);
+            this.button3.Size = new System.Drawing.Size(132, 112);
             this.button3.TabIndex = 2;
             this.button3.Text = "CHAT";
             this.button3.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@ namespace Inquiries.Presentación
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(256, 6);
-            this.button4.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.button4.Location = new System.Drawing.Point(192, 5);
+            this.button4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(316, 138);
+            this.button4.Size = new System.Drawing.Size(237, 112);
             this.button4.TabIndex = 1;
             this.button4.Text = "CONSULTAS";
             this.button4.UseVisualStyleBackColor = false;
@@ -112,10 +112,10 @@ namespace Inquiries.Presentación
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(8, 6);
-            this.button5.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.button5.Location = new System.Drawing.Point(6, 5);
+            this.button5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(256, 138);
+            this.button5.Size = new System.Drawing.Size(192, 112);
             this.button5.TabIndex = 0;
             this.button5.Text = "GRUPOS";
             this.button5.UseVisualStyleBackColor = true;
@@ -125,19 +125,17 @@ namespace Inquiries.Presentación
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1363, 539);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(1022, 438);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 29);
+            this.label3.Size = new System.Drawing.Size(183, 24);
             this.label3.TabIndex = 24;
             this.label3.Text = "Ingrese título de chat";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(1332, 572);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(999, 465);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(313, 22);
+            this.textBox2.Size = new System.Drawing.Size(236, 20);
             this.textBox2.TabIndex = 23;
             // 
             // btnSalirPrincipal
@@ -148,10 +146,9 @@ namespace Inquiries.Presentación
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
-            this.btnSalirPrincipal.Location = new System.Drawing.Point(1519, 790);
-            this.btnSalirPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalirPrincipal.Location = new System.Drawing.Point(1139, 642);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
-            this.btnSalirPrincipal.Size = new System.Drawing.Size(128, 36);
+            this.btnSalirPrincipal.Size = new System.Drawing.Size(96, 29);
             this.btnSalirPrincipal.TabIndex = 22;
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
@@ -163,10 +160,9 @@ namespace Inquiries.Presentación
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(1325, 790);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(994, 642);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 36);
+            this.button1.Size = new System.Drawing.Size(124, 29);
             this.button1.TabIndex = 21;
             this.button1.Text = "Iniciar Chat";
             this.button1.UseVisualStyleBackColor = false;
@@ -176,10 +172,9 @@ namespace Inquiries.Presentación
             this.panelChats.AutoScroll = true;
             this.panelChats.AutoScrollMargin = new System.Drawing.Size(100, 100);
             this.panelChats.AutoScrollMinSize = new System.Drawing.Size(100, 100);
-            this.panelChats.Location = new System.Drawing.Point(0, 283);
-            this.panelChats.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelChats.Location = new System.Drawing.Point(0, 230);
             this.panelChats.Name = "panelChats";
-            this.panelChats.Size = new System.Drawing.Size(1289, 558);
+            this.panelChats.Size = new System.Drawing.Size(967, 453);
             this.panelChats.TabIndex = 18;
             this.panelChats.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChats_Paint);
             // 
@@ -189,10 +184,9 @@ namespace Inquiries.Presentación
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(36, 222);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(27, 180);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1611, 39);
+            this.textBox1.Size = new System.Drawing.Size(1208, 31);
             this.textBox1.TabIndex = 17;
             this.textBox1.Text = "Ingrese nombre de docente";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -202,10 +196,9 @@ namespace Inquiries.Presentación
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 150);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 122);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1685, 64);
+            this.panel1.Size = new System.Drawing.Size(1264, 52);
             this.panel1.TabIndex = 25;
             // 
             // label1
@@ -213,10 +206,9 @@ namespace Inquiries.Presentación
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(28, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(21, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 42);
+            this.label1.Size = new System.Drawing.Size(193, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio de Chat";
             // 
@@ -228,9 +220,9 @@ namespace Inquiries.Presentación
             // 
             // MenuChatDocente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
@@ -239,9 +231,9 @@ namespace Inquiries.Presentación
             this.Controls.Add(this.panelChats);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuChatDocente";
             this.Text = "MenuChatDocente";
+            this.Load += new System.EventHandler(this.MenuChatDocente_Load_1);
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

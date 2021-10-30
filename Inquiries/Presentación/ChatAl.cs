@@ -38,6 +38,7 @@ namespace Inquiries
             try
             {
                 Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Chat.getCIact(), Convert.ToString(txtMensaje.Text));
+                txtMensaje.Text = "";
             }
             catch (Exception)
             {

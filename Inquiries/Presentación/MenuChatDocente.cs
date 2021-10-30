@@ -56,7 +56,6 @@ namespace Inquiries.Presentación
                     if (Convert.ToBoolean(codChat[x, 1]) == true)
                     {
 
-
                         Panel chat = new Panel();
                         chat.Height = 73;
                         chat.Width = 500;
@@ -84,7 +83,7 @@ namespace Inquiries.Presentación
                             {
 
 
-                                invChatDoc(enviar, f, Convert.ToString(cod.Text));
+                                
 
                             }
                         };
@@ -112,6 +111,11 @@ namespace Inquiries.Presentación
         private void btnSalirPrincipal_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void MenuChatDocente_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,7 +32,6 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtAlCI = new System.Windows.Forms.TextBox();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
@@ -76,7 +75,6 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtAlCI);
             this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
@@ -87,16 +85,6 @@ namespace Inquiries
             this.groupBox1.Size = new System.Drawing.Size(245, 526);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Alumno CI:";
             // 
             // txtAlCI
             // 
@@ -276,7 +264,7 @@ namespace Inquiries
             this.listBox1.Size = new System.Drawing.Size(967, 130);
             this.listBox1.TabIndex = 20;
             // 
-            // MenuChatDoc
+            // ChatDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -288,7 +276,7 @@ namespace Inquiries
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "MenuChatDoc";
+            this.Name = "ChatDoc";
             this.Text = "MenuChatDoc";
             this.Load += new System.EventHandler(this.ChatDoc_Load);
             this.panel2.ResumeLayout(false);
@@ -319,7 +307,6 @@ namespace Inquiries
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.TextBox txtAlCI;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListBox listBox1;
     }

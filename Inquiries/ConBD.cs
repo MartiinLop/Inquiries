@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
 
 
         //Cargar cantidad de grupos
@@ -430,7 +430,7 @@ namespace Inquiries
 
         public static MySqlDataAdapter ObtDocentes()
         {
-            string comando = "select dci, dnom, dape, dconexion from docente";
+            string comando = "select dci, dnom, dape, dconexion from docente where destado = true";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -479,7 +479,7 @@ namespace Inquiries
         //Obtener codigos chat
         public static MySqlDataAdapter ObtenerCodigosChat()
         {
-            string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and chat.docente='"+obtCI+"';";
+            string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and chat.docente='"+obtCI+"' and chat.cestado = 1;";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
