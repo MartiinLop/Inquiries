@@ -181,6 +181,12 @@
     <Compile Include="Presentación\MenuPrincipalAdmin.Designer.cs">
       <DependentUpon>MenuPrincipalAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\MenuPrincipalChatAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\MenuPrincipalChatAl.Designer.cs">
+      <DependentUpon>MenuPrincipalChatAl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\MenuUsuAdminCompleto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuPrincipalAdmin.resx">
       <DependentUpon>MenuPrincipalAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\MenuPrincipalChatAl.resx">
+      <DependentUpon>MenuPrincipalChatAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuUsuAdminCompleto.resx">
       <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>

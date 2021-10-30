@@ -443,12 +443,12 @@ namespace Inquiries
         }
 
         //Crear Chat
-        public static void CrearChat(int codChat, int dci, int codMateria, Boolean cEstado)
+        public static void CrearChat(int codChat, int dci, int codMateria, string titulochat, Boolean cEstado)
         {
             MySqlConnection chat = new MySqlConnection(conexbd);
             chat.Open();
 
-            MySqlCommand insChat = new MySqlCommand("INSERT INTO chat (docente, chmate, fechacomienzo, cestado) values ('" + dci + "', '" + codMateria + "', now(), true); ", chat);
+            MySqlCommand insChat = new MySqlCommand("INSERT INTO chat (docente, chmate, titulochat, fechacomienzo, cestado) values ('" + dci + "', '" + codMateria + "', '"+ titulochat +"', now(), true); ", chat);
             insChat.ExecuteNonQuery();
 
             MySqlCommand cpart = new MySqlCommand("insert into participa (alci, chcod, rol) values ('" + obtCI + "','" + codChat + "', 'iniciador');", chat);
@@ -560,17 +560,17 @@ namespace Inquiries
 
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
+                comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
+                   "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
+                MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
+
 
                 MySqlConnection conectar4 = new MySqlConnection(conexbd);
                 conectar4.Open();
-
                 string b = "select emisor from mensaje order by mcod desc limit 1";
                 MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
 
-                comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                    "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
-                MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
-
+               
                 MySqlDataReader lnomusu = nusuario.ExecuteReader();
                 MySqlDataReader data = buscar.ExecuteReader();
 

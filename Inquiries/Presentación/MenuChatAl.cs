@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 
 
+
 namespace Inquiries.Presentación
 {
     public partial class MenuChatAl : Form
@@ -37,6 +38,7 @@ namespace Inquiries.Presentación
             {
                 comboBox1.Items.Add(Asignatura.devolverMaterias().Rows[i]["anom"]);
             }
+
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
@@ -67,40 +69,45 @@ namespace Inquiries.Presentación
                         chat.Width = 500;
                         panelChats.Controls.Add(chat);
                         chat.Dock = DockStyle.Top;
+                        chat.Cursor = Cursors.Hand;
 
                         Panel color = new Panel();
-                        color.Height = 20;
-                        color.Width = 20;
-                        chat.Controls.Add(color);
-                        color.Location = new Point(450, 22);
-                  
-
                         Label estado = new Label();
+
+                    if (Convert.ToBoolean(datosProf[x, 3]) == true) {
+
                         estado.Visible = true;
                         chat.Controls.Add(estado);
                         estado.Location = new Point(370, 25);
                         estado.BackColor = Color.FromArgb(143, 131, 131);
 
-                        for (int i = 0; i < datosProf.GetLength(0); i++)
-                        {
-                            vector[i] = datosProf[i, 3];
+                        color.Height = 10;
+                        color.Width = 10;
+                        chat.Controls.Add(color);
+                        color.Location = new Point(450, 22);
 
-                            if (Convert.ToBoolean(vector[i]) == true)
-                            {
+                        estado.Text = "En línea";
+                        color.BackColor = Color.Green;
 
-                                estado.Text = "En línea";
-                                color.BackColor = Color.Green;
-                            }
+                    }
+                    else
+                    {
+                        estado.Visible = true;
+                        chat.Controls.Add(estado);
+                        estado.Location = new Point(370, 25);
+                        estado.BackColor = Color.FromArgb(143, 131, 131);
 
-                    
-                            else
-                            {
-                                estado.Text = "Desconectado";
-                                 color.BackColor = Color.Red;
-                        }
-                        }
+                        color.Height = 10;
+                        color.Width = 10;
+                        chat.Controls.Add(color);
+                        color.Location = new Point(450, 22);
+                       
+                        estado.Text = "Desconectado";
+                        color.BackColor = Color.Red;
+                    }
 
-                        Label usuario = new Label();
+
+                    Label usuario = new Label();
                         usuario.Visible = false;
                         usuario.Text = Convert.ToString(datosProf[x, 0]);
                         panelChats.Controls.Add(usuario);
@@ -110,10 +117,9 @@ namespace Inquiries.Presentación
                         nomprof.ForeColor = Color.Black;
                         nomprof.Text = Convert.ToString(datosProf[x, 1] + " " + datosProf[x, 2]);
                         nomprof.Width = 500;
+                        nomprof.Cursor = Cursors.Hand;
                         chat.Controls.Add(nomprof);
 
-
-                    
 
 
                     nomprof.Click += delegate (object enviar, EventArgs f)
@@ -124,15 +130,24 @@ namespace Inquiries.Presentación
 
                             }else{
 
-                                if (estado.Text == "En línea"){
+                                    if (txtTitulo.Text != "") {
+                                        if (estado.Text == "En línea")
+                                        {
 
-                                Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), true);
-                                    invChatAl(enviar, f, Convert.ToString(usuario.Text));
+                                            Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), txtTitulo.Text, true);
+                                            invChatAl(enviar, f, Convert.ToString(usuario.Text));
 
-                                }
-                                else {
-                                MessageBox.Show("Este docente no está conectado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Este docente no está conectado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Debe ingresar título!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    }
+                                
                             
                            
                             

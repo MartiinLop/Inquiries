@@ -98,9 +98,9 @@ namespace Inquiries
             return a;
         }
 
-        public static void crearChat(int codChat, int dci, int codMateria, Boolean cEstado)
+        public static void crearChat(int codChat, int dci, int codMateria, string titulochat, Boolean cEstado)
         {
-            ConBD.CrearChat(codChat, dci, codMateria, cEstado);
+            ConBD.CrearChat(codChat, dci, codMateria, titulochat, cEstado);
         }
 
         public static int obtcodChat()

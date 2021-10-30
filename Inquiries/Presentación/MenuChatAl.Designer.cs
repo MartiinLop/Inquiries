@@ -44,7 +44,7 @@ namespace Inquiries.Presentación
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -52,6 +52,7 @@ namespace Inquiries.Presentación
             this.panelChats = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -226,8 +227,9 @@ namespace Inquiries.Presentación
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtTitulo);
             this.panel3.Controls.Add(this.btnSalirPrincipal);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.comboBox1);
@@ -245,18 +247,18 @@ namespace Inquiries.Presentación
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1022, 262);
+            this.label3.Location = new System.Drawing.Point(1025, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(183, 24);
             this.label3.TabIndex = 10;
             this.label3.Text = "Ingrese título de chat";
             // 
-            // textBox2
+            // txtTitulo
             // 
-            this.textBox2.Location = new System.Drawing.Point(999, 289);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(236, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtTitulo.Location = new System.Drawing.Point(997, 248);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(236, 20);
+            this.txtTitulo.TabIndex = 9;
             // 
             // btnSalirPrincipal
             // 
@@ -291,7 +293,7 @@ namespace Inquiries.Presentación
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1026, 128);
+            this.comboBox1.Location = new System.Drawing.Point(1029, 145);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(177, 21);
             this.comboBox1.TabIndex = 4;
@@ -299,10 +301,10 @@ namespace Inquiries.Presentación
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1047, 66);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1072, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 39);
+            this.label2.Size = new System.Drawing.Size(93, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Materia";
             // 
@@ -334,6 +336,16 @@ namespace Inquiries.Presentación
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1059, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 39);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Filtrar:";
             // 
             // MenuChatAl
             // 
@@ -373,7 +385,7 @@ namespace Inquiries.Presentación
         private System.Windows.Forms.Panel panelChats;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Button btnSalirPrincipal;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel4;
@@ -381,5 +393,6 @@ namespace Inquiries.Presentación
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label5;
     }
 }

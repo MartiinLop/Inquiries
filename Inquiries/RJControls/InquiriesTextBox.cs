@@ -154,7 +154,7 @@ namespace Inquiries.RJControls
             set
             {
                 base.BackColor = value;
-                textBox1.BackColor = value;
+                textBox1.BackColor = Color.White;
             }
         }
         [Category("Inquiries Advance")]
