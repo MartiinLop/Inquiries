@@ -442,7 +442,7 @@ namespace Inquiries
             return datos;
         }
 
-        //Crear Chat
+        //Crear Chat e inserción en participa
         public static void CrearChat(int codChat, int dci, int codMateria, string titulochat, Boolean cEstado)
         {
             MySqlConnection chat = new MySqlConnection(conexbd);
@@ -456,6 +456,41 @@ namespace Inquiries
 
             chat.Close();
 
+        }
+
+        //Crear resumen de chat
+        public static void CrearResumen(int codchat)
+        {
+            string test = null;
+            string query = "select contenido from mensaje where chcod = '" + codchat + "';";
+
+            MySqlConnection obtMensajes = new MySqlConnection(conexbd);
+            obtMensajes.Open();
+
+            MySqlCommand resumenChat = new MySqlCommand(string.Format(query), obtMensajes);
+            MySqlDataAdapter res = new MySqlDataAdapter(resumenChat);
+            DataTable datos = new DataTable();
+
+            res.Fill(datos);
+
+            string[] mensajes = new string[datos.Rows.Count];
+            for (int i = 0; i < mensajes.Length; i++)
+            {
+                mensajes[i] = Convert.ToString(datos.Rows[i][0]);
+               
+            }
+
+            test = string.Join("|||", mensajes);
+          
+            MySqlConnection resumen = new MySqlConnection(conexbd);
+            resumen.Open();
+
+
+            MySqlCommand resumenC = new MySqlCommand("update chat set resumen = '" + test + "' where chcod = '"+codchat+"';", resumen);
+            resumenC.ExecuteNonQuery();
+
+            obtMensajes.Close();
+            resumen.Close();
         }
         //Obtener Codigo Chat
         public static int obtChatCod()
@@ -476,14 +511,30 @@ namespace Inquiries
 
         }
 
-        //Obtener codigos chat
-        public static MySqlDataAdapter ObtenerCodigosChat()
+        //Obtener codigos chat para docente
+        public static MySqlDataAdapter ObtenerCodigosChatDoc()
         {
             string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and chat.docente='"+obtCI+"' and chat.cestado = 1;";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             
+            MySqlCommand cons = new MySqlCommand(string.Format(comando), conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+
+        }
+
+        //Obtener codigos chat para alumno
+        public static MySqlDataAdapter ObtenerCodigosChatAl()
+        {
+            string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and participa.rol = 'iniciador' and chat.cestado = 1;";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
             MySqlCommand cons = new MySqlCommand(string.Format(comando), conectar);
             MySqlDataAdapter datos = new MySqlDataAdapter(cons);
 
@@ -520,14 +571,13 @@ namespace Inquiries
             return a;
         }
         //Crear Mensaje
-        public static void CrearMensaje(int dci, int alci, string texto)
+        public static void CrearMensaje(string texto)
         {
             
-            // creacion de mensaje e insercion en participa
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
 
-            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,emisor,contenido) values (" + obtChatCod() + ",'" + obtCI + "','" + texto + "');",conectar3);
+            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,emisor,contenido, fecharealizado) values (" + obtChatCod() + ",'" + obtCI + "','" + texto + "', now());",conectar3);
             mens.ExecuteNonQuery();
             conectar3.Close();
 

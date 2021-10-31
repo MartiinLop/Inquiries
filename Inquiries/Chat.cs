@@ -58,9 +58,9 @@ namespace Inquiries
             return text;
         }
         
-        public static void EnviarMensaje(int dci,int alci, string texto)
+        public static void EnviarMensaje(string texto)
         {
-            ConBD.CrearMensaje(dci, alci, texto);
+            ConBD.CrearMensaje(texto);
         }
 
         public static int getCIact()
@@ -108,11 +108,11 @@ namespace Inquiries
             return ConBD.obtChatCod(); 
         }
 
-        public static Array obtCodigosChat()
+        public static Array obtCodigosChatDoc()
         {
             MySqlDataAdapter chats = new MySqlDataAdapter();
 
-            chats = ConBD.ObtenerCodigosChat();
+            chats = ConBD.ObtenerCodigosChatDoc();
             DataTable b = new DataTable();
 
             chats.Fill(b);
@@ -130,6 +130,29 @@ namespace Inquiries
 
             return a;
         }
+
+        public static Array obtCodigosChatAl()
+        {
+            MySqlDataAdapter chats = new MySqlDataAdapter();
+
+            chats = ConBD.ObtenerCodigosChatAl();
+            DataTable b = new DataTable();
+
+            chats.Fill(b);
+
+            string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+            for (int x = 0; x < b.Rows.Count; x++)
+            {
+                for (int y = 0; y < b.Columns.Count; y++)
+                {
+                    a[x, y] = Convert.ToString(b.Rows[x][y]);
+                }
+
+            }
+
+            return a;
+        }
         public static void desactivarChat(int chcod)
         {
             ConBD.desChat(chcod);
@@ -139,6 +162,11 @@ namespace Inquiries
         {
             string a = ConBD.obtCIAl(codChat);
             return a;
+        }
+
+        public static void CreRes(int codchat)
+        {
+            ConBD.CrearResumen(codchat);
         }
     }
 }

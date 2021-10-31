@@ -13,8 +13,8 @@ namespace Inquiries.Presentación
     public partial class MenuPrincipalChatAl : Form
     {
       
-        private static string[,] comparar = new string[0, 0];
-        private static Boolean mensaje = false;
+        protected static string[,] comparar = new string[0, 0];
+        protected static Boolean mensaje = false;
      
         public MenuPrincipalChatAl()
         {
@@ -38,10 +38,10 @@ namespace Inquiries.Presentación
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            Chat z = new Chat();
-            string[,] codChat = (string[,])Chat.obtCodigosChat();
 
+            Chat z = new Chat();
+            string[,] codChat = (string[,])Chat.obtCodigosChatAl();
+            
 
             if (codChat.Length != comparar.Length)
             {

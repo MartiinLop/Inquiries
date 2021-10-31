@@ -37,7 +37,7 @@ namespace Inquiries
          
             try
             {
-                Chat.EnviarMensaje(Convert.ToInt32(txtDCI.Text), Chat.getCIact(), Convert.ToString(txtMensaje.Text));
+                Chat.EnviarMensaje(Convert.ToString(txtMensaje.Text));
                 txtMensaje.Text = "";
             }
             catch (Exception)
@@ -68,7 +68,7 @@ namespace Inquiries
                     txtE.BackColor = Color.FromArgb(196, 196, 196);
                     txtE.Font = new Font("Roboto", 12);
                     txtE.ForeColor = Color.Black;
-                    txtE.Text = a;
+                    txtE.Text = Convert.ToString(a);
                     txtE.BorderRadius = 5;
 
 
@@ -87,8 +87,9 @@ namespace Inquiries
                     txtR.BackColor = Color.FromArgb(2,196,196,196);
                     txtR.Font = new Font("Roboto", 12);
                     txtR.ForeColor = Color.Black;
-                    txtR.Text = a;
+                    txtR.Texts = Convert.ToString(a);
                     txtR.BorderRadius = 5;
+    
 
                     mensajesReceptor.Controls.Add(txtR);
                     txtR.Location = new Point(69, 7);
@@ -109,6 +110,7 @@ namespace Inquiries
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             Chat.desactivarChat(Chat.obtcodChat());
+            Chat.CreRes(Chat.obtcodChat());
             this.Dispose();
         }
 

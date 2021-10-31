@@ -45,8 +45,8 @@ namespace Inquiries.Presentación
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             Chat z = new Chat();
-            string[,] codChat = (string[,])Chat.obtCodigosChat();
-
+            string[,] codChat = (string[,])Chat.obtCodigosChatDoc();
+            Console.WriteLine(codChat.Length);
 
             if (codChat.Length != comparar.Length)
             {
