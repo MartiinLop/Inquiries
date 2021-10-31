@@ -127,6 +127,12 @@
     <Compile Include="Presentación\ChatDoc.Designer.cs">
       <DependentUpon>ChatDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\MenuAdminInfoUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\MenuAdminInfoUsu.Designer.cs">
+      <DependentUpon>MenuAdminInfoUsu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\MenuChatAl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ChatDoc.resx">
       <DependentUpon>ChatDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\MenuAdminInfoUsu.resx">
+      <DependentUpon>MenuAdminInfoUsu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuChatAl.resx">
       <DependentUpon>MenuChatAl.cs</DependentUpon>

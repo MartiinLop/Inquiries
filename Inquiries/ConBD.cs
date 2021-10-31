@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
 
         //Cargar cantidad de grupos
@@ -792,6 +792,27 @@ namespace Inquiries
             conectar.Close();
         }
 
+        //Obtener todos los usuarios
+        public static MySqlDataAdapter ObtTodosUsu()
+        {
+            string comando1 = "select alci, algrupo from alumno";
+            string comando2 = "select * from docente";
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            MySqlConnection conectar1 = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando1, conectar);
+            MySqlDataAdapter datos1 = new MySqlDataAdapter(cons);
+            conectar.Close();
+
+            conectar1.Open();
+            MySqlCommand cons1 = new MySqlCommand(comando2, conectar1);
+            MySqlDataAdapter datos2 = new MySqlDataAdapter(cons1);
+            conectar1.Close();
+
+            return datos1;
+           
+        }
     }
 
 }

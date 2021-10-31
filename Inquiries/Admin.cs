@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Inquiries
 {
@@ -14,6 +16,10 @@ namespace Inquiries
         protected string AdNom;
         protected string AdApe;
         protected string AdCon;
+
+        public Admin()
+        {
+        }
 
 
         // Constructor completo
@@ -49,6 +55,28 @@ namespace Inquiries
         }
 
         //////////////////////////////
+        //Metodos
+
+        public static Array ObtenerUsuarios()
+        {
+            MySqlDataAdapter usuarios = new MySqlDataAdapter();
+
+            usuarios = ConBD.ObtTodosUsu();
+            DataTable a = new DataTable();
+
+            usuarios.Fill(a);
+
+            string[,] b = new string[a.Rows.Count,a.Rows.Count];
+            
+            for (int x=0; x < a.Rows.Count; x++)
+            {
+                for(int y=0; y < a.Columns.Count;y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+            return b;
+        }
     }
 }
 
