@@ -14,7 +14,7 @@ namespace Inquiries.Presentación
         protected static string[,] comparar = new string[0, 0];
      
         protected static string[,] datosProf = (string[,])Chat.ObtenerDoc();
-        protected string[] vector = new string[datosProf.GetLength(0)];
+        
         public MenuChatAl()
         {
             InitializeComponent();
@@ -56,8 +56,7 @@ namespace Inquiries.Presentación
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             
-                int test = 0;
-            
+                
                if (datosProf.Length != comparar.Length)
                {
                     for (int x = 0; x < datosProf.GetLength(0); x++)

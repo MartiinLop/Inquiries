@@ -70,7 +70,7 @@ namespace Inquiries
                     txtE.ForeColor = Color.Black;
                     txtE.Text = a;
                     txtE.BorderRadius = 5;
-                    txtE.Text = "hola";
+
 
                     mensajesEnviados.Controls.Add(txtE);
                     txtE.Location = new Point(600, 7);

@@ -43,6 +43,7 @@ namespace Inquiries.Presentación
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace Inquiries.Presentación
             this.panelChats = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -242,6 +242,16 @@ namespace Inquiries.Presentación
             this.panel3.Size = new System.Drawing.Size(1264, 507);
             this.panel3.TabIndex = 17;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1059, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 39);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Filtrar:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -336,16 +346,6 @@ namespace Inquiries.Presentación
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1059, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 39);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Filtrar:";
             // 
             // MenuChatAl
             // 

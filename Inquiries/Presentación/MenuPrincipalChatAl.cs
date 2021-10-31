@@ -12,12 +12,20 @@ namespace Inquiries.Presentación
 {
     public partial class MenuPrincipalChatAl : Form
     {
-        private static string a;
+      
         private static string[,] comparar = new string[0, 0];
         private static Boolean mensaje = false;
+     
         public MenuPrincipalChatAl()
         {
             InitializeComponent();
+            mensaje = false;
+            timer1.Enabled = true;
+
+        }
+        private void btnSalirPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
         private void invChatAl(object sender, EventArgs e, string c)
         {
@@ -27,28 +35,13 @@ namespace Inquiries.Presentación
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MenuChatAl f1 = new MenuChatAl();
-            f1.ShowDialog();
-        }
-
-        private void btnSalirPrincipal_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void MenuPrincipalChatAl_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             Chat z = new Chat();
             string[,] codChat = (string[,])Chat.obtCodigosChat();
-            int test = 0;
+
 
             if (codChat.Length != comparar.Length)
             {
@@ -71,6 +64,7 @@ namespace Inquiries.Presentación
                         panelChats.Controls.Add(cod);
 
                         RichTextBox nomprof = new RichTextBox();
+                        nomprof.Visible = true;
                         nomprof.BackColor = Color.FromArgb(143, 131, 131);
                         nomprof.ForeColor = Color.Black;
                         nomprof.Text = Convert.ToString(codChat[x, 0]);
@@ -82,12 +76,7 @@ namespace Inquiries.Presentación
                         {
 
                             invChatAl(enviar, f, Convert.ToString(cod.Text));
-                            {
-
-
-
-
-                            }
+                            
                         };
 
                     }
@@ -104,5 +93,19 @@ namespace Inquiries.Presentación
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuChatAl f1 = new MenuChatAl();
+            f1.ShowDialog();
+        }
+
+        private void MenuPrincipalChatAl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

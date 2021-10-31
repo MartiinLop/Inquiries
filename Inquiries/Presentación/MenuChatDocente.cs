@@ -12,7 +12,7 @@ namespace Inquiries.Presentación
 {
     public partial class MenuChatDocente : Form
     {
-        private static string a;
+
         private static string[,] comparar = new string[0,0];
         private static Boolean mensaje = false;
         public MenuChatDocente()
@@ -46,7 +46,7 @@ namespace Inquiries.Presentación
         {
             Chat z = new Chat();
             string[,] codChat = (string[,])Chat.obtCodigosChat();
-            int test = 0;
+
 
             if (codChat.Length != comparar.Length)
             {
@@ -80,12 +80,7 @@ namespace Inquiries.Presentación
                         {
 
                             invChatDoc(enviar, f, Convert.ToString(cod.Text));
-                            {
 
-
-                                
-
-                            }
                         };
 
                     }
