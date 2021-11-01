@@ -15,6 +15,7 @@ namespace Inquiries
     public partial class ChatAl : Form
     {
         
+        
         public ChatAl(string ci)
         {
             InitializeComponent();
@@ -58,26 +59,27 @@ namespace Inquiries
             {
                 if (Chat.EmioRec())
                 {
-                    listBox1.Items.Add(a);
                     Panel mensajesEnviados = new Panel();
                     mensajesEnviados.Height = 59;
                     panel3.Controls.Add(mensajesEnviados);
                     mensajesEnviados.Dock = DockStyle.Bottom;
 
                     InquiriesTextBox txtE = new InquiriesTextBox();
-                    txtE.BackColor = Color.FromArgb(196, 196, 196);
-                    txtE.Font = new Font("Roboto", 12);
+                    txtE.BackColor = Color.FromArgb(236, 236, 236);
                     txtE.ForeColor = Color.Black;
-                    txtE.Text = Convert.ToString(a);
-                    txtE.BorderRadius = 5;
-
-
+                    txtE.BorderSize = 1;
+                    txtE.Font = new Font("Roboto", 28);
+                    txtE.BorderColor = Color.FromArgb(0,0,0);
+                    txtE.Texts = a;
+                    txtE.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesEnviados.Controls.Add(txtE);
-                    txtE.Location = new Point(600, 7);
+                    txtE.Location = new Point(400, 7);
+
+
+
                 }
                 else
                 {
-                    listBox1.Items.Add(a);
                     Panel mensajesReceptor = new Panel();
                     mensajesReceptor.Height = 59;
                     panel3.Controls.Add(mensajesReceptor);
@@ -85,12 +87,13 @@ namespace Inquiries
 
                     InquiriesTextBox txtR = new InquiriesTextBox();
                     txtR.BackColor = Color.FromArgb(2,196,196,196);
-                    txtR.Font = new Font("Roboto", 12);
+                    txtR.BorderSize = 1;
+                    txtR.Font = new Font("Roboto", 28);
                     txtR.ForeColor = Color.Black;
                     txtR.Texts = Convert.ToString(a);
                     txtR.BorderRadius = 5;
-    
-
+                    txtR.Texts = a;
+                    txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesReceptor.Controls.Add(txtR);
                     txtR.Location = new Point(69, 7);
                 }

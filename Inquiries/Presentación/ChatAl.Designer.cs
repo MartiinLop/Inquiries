@@ -39,7 +39,6 @@ namespace Inquiries
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -72,6 +71,7 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.txtDCI);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
             this.groupBox1.Location = new System.Drawing.Point(1019, 156);
             this.groupBox1.Name = "groupBox1";
@@ -97,7 +97,7 @@ namespace Inquiries
             // 
             // txtDCI
             // 
-            this.txtDCI.Location = new System.Drawing.Point(27, 174);
+            this.txtDCI.Location = new System.Drawing.Point(192, 189);
             this.txtDCI.Name = "txtDCI";
             this.txtDCI.Size = new System.Drawing.Size(100, 20);
             this.txtDCI.TabIndex = 10;
@@ -174,14 +174,6 @@ namespace Inquiries
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(27, 489);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(967, 134);
-            this.listBox1.TabIndex = 16;
-            // 
             // txtMensaje
             // 
             this.txtMensaje.Location = new System.Drawing.Point(27, 639);
@@ -210,7 +202,7 @@ namespace Inquiries
             this.panel3.AutoScroll = true;
             this.panel3.Location = new System.Drawing.Point(27, 186);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(975, 287);
+            this.panel3.Size = new System.Drawing.Size(975, 441);
             this.panel3.TabIndex = 23;
             // 
             // ChatAl
@@ -218,11 +210,9 @@ namespace Inquiries
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.txtDCI);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtMensaje);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -232,6 +222,7 @@ namespace Inquiries
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,7 +241,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.TextBox txtDCI;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
