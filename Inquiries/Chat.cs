@@ -100,7 +100,16 @@ namespace Inquiries
 
         public static void crearChat(int codChat, int dci, int codMateria, string titulochat, Boolean cEstado)
         {
-            ConBD.CrearChat(codChat, dci, codMateria, titulochat, cEstado);
+
+                if (ConBD.checkMatGru())
+                {
+                    ConBD.CrearChat(codChat, dci, codMateria, titulochat, cEstado);
+                }
+                else
+                {
+                    throw new InvalidOperationException("Ya existe un chat con esta materia y grupo");
+                }
+         
         }
 
         public static int obtcodChat()

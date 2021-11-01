@@ -106,6 +106,9 @@ namespace Inquiries.Presentación
 
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

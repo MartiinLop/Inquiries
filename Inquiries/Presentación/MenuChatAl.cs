@@ -43,7 +43,7 @@ namespace Inquiries.Presentación
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
         private void invChatAl(object sender, EventArgs e, string c)
         {
@@ -55,10 +55,10 @@ namespace Inquiries.Presentación
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            
-                
-               if (datosProf.Length != comparar.Length)
-               {
+
+                datosProf = (string[,])Chat.ObtenerDoc();
+                if (datosProf.Length != comparar.Length)
+                {
                     for (int x = 0; x < datosProf.GetLength(0); x++)
                     {
                         Chat z = new Chat();
@@ -73,40 +73,41 @@ namespace Inquiries.Presentación
                         Panel color = new Panel();
                         Label estado = new Label();
 
-                    if (Convert.ToBoolean(datosProf[x, 3]) == true) {
+                        if (Convert.ToBoolean(datosProf[x, 3]) == true)
+                        {
 
-                        estado.Visible = true;
-                        chat.Controls.Add(estado);
-                        estado.Location = new Point(370, 25);
-                        estado.BackColor = Color.FromArgb(143, 131, 131);
+                            estado.Visible = true;
+                            chat.Controls.Add(estado);
+                            estado.Location = new Point(370, 25);
+                            estado.BackColor = Color.FromArgb(143, 131, 131);
 
-                        color.Height = 10;
-                        color.Width = 10;
-                        chat.Controls.Add(color);
-                        color.Location = new Point(450, 22);
+                            color.Height = 10;
+                            color.Width = 10;
+                            chat.Controls.Add(color);
+                            color.Location = new Point(450, 22);
 
-                        estado.Text = "En línea";
-                        color.BackColor = Color.Green;
+                            estado.Text = "En línea";
+                            color.BackColor = Color.Green;
 
-                    }
-                    else
-                    {
-                        estado.Visible = true;
-                        chat.Controls.Add(estado);
-                        estado.Location = new Point(370, 25);
-                        estado.BackColor = Color.FromArgb(143, 131, 131);
+                        }
+                        else
+                        {
+                            estado.Visible = true;
+                            chat.Controls.Add(estado);
+                            estado.Location = new Point(370, 25);
+                            estado.BackColor = Color.FromArgb(143, 131, 131);
 
-                        color.Height = 10;
-                        color.Width = 10;
-                        chat.Controls.Add(color);
-                        color.Location = new Point(450, 22);
-                       
-                        estado.Text = "Desconectado";
-                        color.BackColor = Color.Red;
-                    }
+                            color.Height = 10;
+                            color.Width = 10;
+                            chat.Controls.Add(color);
+                            color.Location = new Point(450, 22);
+
+                            estado.Text = "Desconectado";
+                            color.BackColor = Color.Red;
+                        }
 
 
-                    Label usuario = new Label();
+                        Label usuario = new Label();
                         usuario.Visible = false;
                         usuario.Text = Convert.ToString(datosProf[x, 0]);
                         panelChats.Controls.Add(usuario);
@@ -121,15 +122,19 @@ namespace Inquiries.Presentación
 
 
 
-                    nomprof.Click += delegate (object enviar, EventArgs f)
-                        {
-                            if (comboBox1.Text == ""){
+                        nomprof.Click += delegate (object enviar, EventArgs f)
+                            {
+                                if (comboBox1.Text == "")
+                                {
 
-                                MessageBox.Show("Debe seleccionar materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    MessageBox.Show("Debe seleccionar materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                            }else{
+                                }
+                                else
+                                {
 
-                                    if (txtTitulo.Text != "") {
+                                    if (txtTitulo.Text != "")
+                                    {
                                         if (estado.Text == "En línea")
                                         {
 
@@ -146,19 +151,19 @@ namespace Inquiries.Presentación
                                     {
                                         MessageBox.Show("Debe ingresar título!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                     }
-                                
-                            
-                           
-                            
-                                    
-                                
-                                
-                            }
-                        };
+
+
+
+
+
+
+
+                                }
+                            };
 
                     }
                     comparar = datosProf;
-               }
+                }
 
         }
     }

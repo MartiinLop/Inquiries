@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
 
 
         //Cargar cantidad de grupos
@@ -542,14 +542,50 @@ namespace Inquiries
             return datos;
 
         }
+        //Obtener grupo alumno
+        public static string ObtGrupoAl()
+        {
+            string comando = "select gnom from grupo, alumno where grupo.gcod = alumno.algrupo && alumno.alci = " + obtCI + ";";
+            string grupo=null;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(string.Format(comando), conectar);
+            MySqlDataReader g = cons.ExecuteReader();
+            while (g.Read())
+            {
+                grupo = g.GetString("gnom");
+            }
+            conectar.Close();
+            return grupo;
+
+        }
 
         //thing
         public static bool checkMatGru()
         {
-            string f = "select gnom, chat.chcod from grupo, chat, alumno, participa where chat.chcod = participa.chcod &&  = participa.alci && alumno.algrupo = grupo.gcod and cestado = 1;";
+            string res = null;
+            string f = "select gnom, chat.chcod from grupo, chat, alumno, participa where chat.chcod = participa.chcod && "+obtCI+" = participa.alci && '"+ObtGrupoAl()+"' = grupo.gnom && chat.cestado = 1 group by gnom;";
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
+            MySqlCommand cons = new MySqlCommand(string.Format(f), conectar);
+            MySqlDataReader a = cons.ExecuteReader();
+            while (a.Read())
+            {
+                res = a.GetString("chcod");
+            }
+
+            Console.WriteLine(res);
+            if (res == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         //Desactivar chat
         public static void desChat(int codChat)
