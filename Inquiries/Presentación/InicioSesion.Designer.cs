@@ -50,9 +50,10 @@ namespace Inquiries
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnIngresar.Location = new System.Drawing.Point(525, 514);
+            this.btnIngresar.Location = new System.Drawing.Point(700, 633);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(220, 57);
+            this.btnIngresar.Size = new System.Drawing.Size(293, 70);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -66,9 +67,10 @@ namespace Inquiries
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnVolver.Location = new System.Drawing.Point(1016, 582);
+            this.btnVolver.Location = new System.Drawing.Point(1355, 716);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(169, 46);
+            this.btnVolver.Size = new System.Drawing.Size(225, 57);
             this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "Volver\r\n";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -78,9 +80,10 @@ namespace Inquiries
             // 
             this.txtContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContra.ForeColor = System.Drawing.Color.Silver;
-            this.txtContra.Location = new System.Drawing.Point(423, 430);
+            this.txtContra.Location = new System.Drawing.Point(564, 529);
+            this.txtContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(409, 44);
+            this.txtContra.Size = new System.Drawing.Size(544, 53);
             this.txtContra.TabIndex = 1;
             this.txtContra.Text = "Contraseña";
             this.txtContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -91,9 +94,10 @@ namespace Inquiries
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.Silver;
-            this.txtUsuario.Location = new System.Drawing.Point(423, 361);
+            this.txtUsuario.Location = new System.Drawing.Point(564, 444);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(409, 44);
+            this.txtUsuario.Size = new System.Drawing.Size(544, 53);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Text = "Cédula de identidad";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -110,46 +114,52 @@ namespace Inquiries
             this.panel2.Controls.Add(this.txtContra);
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Controls.Add(this.txtUsuario);
-            this.panel2.Location = new System.Drawing.Point(33, 23);
+            this.panel2.Location = new System.Drawing.Point(44, 28);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1197, 640);
+            this.panel2.Size = new System.Drawing.Size(1596, 788);
             this.panel2.TabIndex = 36;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::Inquiries.Properties.Resources.lutu;
-            this.pictureBox2.Location = new System.Drawing.Point(139, 528);
+            this.pictureBox2.Location = new System.Drawing.Point(185, 650);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.Size = new System.Drawing.Size(133, 123);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Inquiries.Properties.Resources.wok2;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 528);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 650);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 123);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::Inquiries.Properties.Resources.inquiries;
-            this.panel1.Location = new System.Drawing.Point(486, 36);
+            this.panel1.Location = new System.Drawing.Point(648, 44);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 271);
+            this.panel1.Size = new System.Drawing.Size(368, 334);
             this.panel1.TabIndex = 7;
             // 
             // InicioSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InicioSesion";
             this.Text = "Inicio de Sesión";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InicioSesion_KeyPress);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

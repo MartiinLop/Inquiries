@@ -25,7 +25,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
 
 
         //Cargar cantidad de grupos
@@ -540,6 +540,15 @@ namespace Inquiries
 
             conectar.Close();
             return datos;
+
+        }
+
+        //thing
+        public static bool checkMatGru()
+        {
+            string f = "select gnom, chat.chcod from grupo, chat, alumno, participa where chat.chcod = participa.chcod &&  = participa.alci && alumno.algrupo = grupo.gcod and cestado = 1;";
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
 
         }
         //Desactivar chat
