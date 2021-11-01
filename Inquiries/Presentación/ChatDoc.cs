@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Inquiries.RJControls;
 
 namespace Inquiries
 {
@@ -51,35 +52,41 @@ namespace Inquiries
             {
                 if (Chat.EmioRec())
                 {
-                    listBox1.Items.Add(a);
                     Panel mensajesEnviados = new Panel();
                     mensajesEnviados.Height = 59;
                     panel3.Controls.Add(mensajesEnviados);
                     mensajesEnviados.Dock = DockStyle.Bottom;
 
-                    RichTextBox txtE = new RichTextBox();
-                    txtE.BackColor = Color.Black;
-                    txtE.Font = new Font("Roboto", 12);
-                    txtE.ForeColor = Color.White;
-                    txtE.Text = a;
+                    InquiriesTextBox txtE = new InquiriesTextBox();
+                    txtE.BackColor = Color.FromArgb(236, 236, 236);
+                    txtE.ForeColor = Color.Black;
+                    txtE.BorderSize = 1;
+                    txtE.Font = new Font("Roboto", 28);
+                    txtE.BorderColor = Color.FromArgb(0, 0, 0);
+                    txtE.BorderRadius = 10;
+                    txtE.Texts = a;
 
+                    txtE.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesEnviados.Controls.Add(txtE);
-                    txtE.Location = new Point(600, 7);
+                    txtE.Location = new Point(400, 7);
                 }
                 else
                 {
-                    listBox1.Items.Add(a);
                     Panel mensajesReceptor = new Panel();
                     mensajesReceptor.Height = 59;
                     panel3.Controls.Add(mensajesReceptor);
                     mensajesReceptor.Dock = DockStyle.Bottom;
 
-                    RichTextBox txtR = new RichTextBox();
-                    txtR.BackColor = Color.Black;
-                    txtR.Font = new Font("Roboto", 12);
-                    txtR.ForeColor = Color.White;
-                    txtR.Text = a;
+                    InquiriesTextBox txtR = new InquiriesTextBox();
+                    txtR.BackColor = Color.FromArgb(2, 196, 196, 196);
+                    txtR.BorderSize = 1;
+                    txtR.Font = new Font("Roboto", 28);
+                    txtR.ForeColor = Color.Black;
+                    txtR.Texts = Convert.ToString(a);
+                    txtR.BorderRadius = 10;
+                    txtR.Texts = a;
 
+                    txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesReceptor.Controls.Add(txtR);
                     txtR.Location = new Point(69, 7);
                 }

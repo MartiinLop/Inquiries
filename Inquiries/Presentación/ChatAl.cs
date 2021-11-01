@@ -70,7 +70,9 @@ namespace Inquiries
                     txtE.BorderSize = 1;
                     txtE.Font = new Font("Roboto", 28);
                     txtE.BorderColor = Color.FromArgb(0,0,0);
+                    txtE.BorderRadius = 10;
                     txtE.Texts = a;
+                    
                     txtE.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesEnviados.Controls.Add(txtE);
                     txtE.Location = new Point(400, 7);
@@ -91,8 +93,9 @@ namespace Inquiries
                     txtR.Font = new Font("Roboto", 28);
                     txtR.ForeColor = Color.Black;
                     txtR.Texts = Convert.ToString(a);
-                    txtR.BorderRadius = 5;
+                    txtR.BorderRadius = 10;
                     txtR.Texts = a;
+
                     txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesReceptor.Controls.Add(txtR);
                     txtR.Location = new Point(69, 7);

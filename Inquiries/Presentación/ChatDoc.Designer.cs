@@ -33,10 +33,7 @@ namespace Inquiries
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtAlCI = new System.Windows.Forms.TextBox();
-            this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
-            this.checkFiltro = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -46,7 +43,6 @@ namespace Inquiries
             this.button2 = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,10 +72,7 @@ namespace Inquiries
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.groupBox1.Controls.Add(this.txtAlCI);
-            this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
-            this.groupBox1.Controls.Add(this.checkFiltro);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(1019, 156);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 526);
@@ -92,15 +85,6 @@ namespace Inquiries
             this.txtAlCI.Name = "txtAlCI";
             this.txtAlCI.Size = new System.Drawing.Size(100, 20);
             this.txtAlCI.TabIndex = 22;
-            // 
-            // txtCodFiltro
-            // 
-            this.txtCodFiltro.Location = new System.Drawing.Point(63, 85);
-            this.txtCodFiltro.Name = "txtCodFiltro";
-            this.txtCodFiltro.Size = new System.Drawing.Size(122, 20);
-            this.txtCodFiltro.TabIndex = 8;
-            this.txtCodFiltro.Text = "Ingresar Materia";
-            this.txtCodFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSalirPrincipal
             // 
@@ -117,25 +101,6 @@ namespace Inquiries
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
             this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
-            // 
-            // checkFiltro
-            // 
-            this.checkFiltro.AutoSize = true;
-            this.checkFiltro.Location = new System.Drawing.Point(31, 91);
-            this.checkFiltro.Name = "checkFiltro";
-            this.checkFiltro.Size = new System.Drawing.Size(15, 14);
-            this.checkFiltro.TabIndex = 3;
-            this.checkFiltro.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Filtrar:";
             // 
             // panel1
             // 
@@ -252,17 +217,8 @@ namespace Inquiries
             this.panel3.AutoScroll = true;
             this.panel3.Location = new System.Drawing.Point(6, 175);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(975, 287);
+            this.panel3.Size = new System.Drawing.Size(975, 448);
             this.panel3.TabIndex = 22;
-            // 
-            // listBox1
-            // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(27, 485);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(967, 130);
-            this.listBox1.TabIndex = 20;
             // 
             // ChatDoc
             // 
@@ -272,12 +228,11 @@ namespace Inquiries
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtMensaje);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "ChatDoc";
-            this.Text = "MenuChatDoc";
+            this.Text = "ChatDoc";
             this.Load += new System.EventHandler(this.ChatDoc_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -294,10 +249,7 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCodFiltro;
         private System.Windows.Forms.Button btnSalirPrincipal;
-        private System.Windows.Forms.CheckBox checkFiltro;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPerfilDoc;
         private System.Windows.Forms.Button btnCerrar;
@@ -308,6 +260,5 @@ namespace Inquiries
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.TextBox txtAlCI;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
