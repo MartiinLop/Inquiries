@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Inquiries
 {
@@ -50,7 +51,7 @@ namespace Inquiries
 
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
-            Docente.ModPerfDoc(txtNombre.Text, txtContra.Text);
+            Docente.ModPerfDoc(txtNombre.Text, txtContra.Text, obtByte(pictureBox1.Image));
             MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -80,6 +81,27 @@ namespace Inquiries
         private void button4_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnArch_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog img = new OpenFileDialog();
+            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                txtNomImg.Text = img.FileName;
+
+                pictureBox1.Image = Image.FromFile(img.FileName);
+
+            }
+        }
+
+        public byte[] obtByte(System.Drawing.Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, img.RawFormat);
+            return ms.ToArray();
         }
     }
 }

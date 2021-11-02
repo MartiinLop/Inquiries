@@ -47,10 +47,10 @@ namespace Inquiries.Presentación
             comparar = new string[0, 0];
             this.Dispose();
         }
-        private void invChatAl(object sender, EventArgs e, string c)
+        private void invChatAl(object sender, EventArgs e, string c, int cod)
         {
             comparar = new string[0, 0];
-            ChatAl a = new ChatAl(c, Convert.ToString(Chat.obtcodChat()));
+            ChatAl a = new ChatAl(c, Convert.ToString(cod));
             a.ShowDialog();
 
         }
@@ -139,15 +139,17 @@ namespace Inquiries.Presentación
                                     {
                                         if (estado.Text == "En línea")
                                         {
-                                            try
-                                            {
-                                                Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), txtTitulo.Text, true);
-                                                invChatAl(enviar, f, Convert.ToString(usuario.Text));
-                                            }
-                                            catch (Exception)
-                                            {
-                                                MessageBox.Show("Usted ya ha creado un chat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            }
+                                            //try
+                                            //{
+                                            int a = Chat.crearChat(Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), txtTitulo.Text, true);
+                                            Chat.crearParticipa(a);
+                                            invChatAl(enviar, f, Convert.ToString(usuario.Text), a);
+                                         
+                                            //}
+                                            //catch (Exception)
+                                            //{
+                                            //    MessageBox.Show("Usted ya ha creado un chat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            //}
 
 
                                         }

@@ -52,9 +52,9 @@ namespace Inquiries
         //
 
         //Metodos
-        public static string RecibirMensaje()
+        public static string RecibirMensaje(int cod)
         {
-            string text = ConBD.LeerMensaje();
+            string text = ConBD.LeerMensaje(cod);
             return text;
         }
         
@@ -98,18 +98,23 @@ namespace Inquiries
             return a;
         }
 
-        public static void crearChat(int codChat, int dci, int codMateria, string titulochat, Boolean cEstado)
+        public static int crearChat(int dci, int codMateria, string titulochat, Boolean cEstado)
         {
-
+            int cod;
                 if (ConBD.checkMatGru())
                 {
-                    ConBD.CrearChat(codChat, dci, codMateria, titulochat, cEstado);
+                    cod = ConBD.CrearChat(dci, codMateria, titulochat, cEstado);
                 }
                 else
                 {
                     throw new Exception();
                 }
-         
+            return cod;
+        }
+
+        public static void crearParticipa(int codChat)
+        {
+            ConBD.crearParticipa(codChat);
         }
 
         public static int obtcodChat()
@@ -214,6 +219,7 @@ namespace Inquiries
             return a;
         }
 
+       
     }
 }
 

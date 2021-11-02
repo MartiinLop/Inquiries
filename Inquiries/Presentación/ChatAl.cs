@@ -59,25 +59,42 @@ namespace Inquiries
 
         private void AcMen(object source, EventArgs e)
         {
-            string a = Chat.RecibirMensaje();
+            
+            string a = Chat.RecibirMensaje(Convert.ToInt32(labelChCod.Text));
+            
             if (a != null)
             {
 
+                string[] dividir = a.Split(':');
+                string nomEm = dividir[0];
+                string menEm = dividir[1];
+
                 if (Chat.EmioRec())
                 {
+                    
+
                     Panel mensajesEnviados = new Panel();
                     mensajesEnviados.Height = 59;
                     panel3.Controls.Add(mensajesEnviados);
                     mensajesEnviados.Dock = DockStyle.Bottom;
 
+                    Label nomemisor = new Label();
+                    mensajesEnviados.Controls.Add(nomemisor);
+                    nomemisor.Location = new Point(660, 20);
+                    nomemisor.Text = nomEm;
+                    nomemisor.ForeColor = Color.Black;
+                    nomemisor.BackColor = Color.FromArgb(236, 236, 236);
+                    nomemisor.Font = new Font("Roboto", 16);
+                    nomemisor.Visible = true;
+
                     InquiriesTextBox txtE = new InquiriesTextBox();
                     txtE.BackColor = Color.FromArgb(236, 236, 236);
                     txtE.ForeColor = Color.Black;
                     txtE.BorderSize = 1;
-                    txtE.Font = new Font("Roboto", 28);
+                    txtE.Font = new Font("Roboto", 16);
                     txtE.BorderColor = Color.FromArgb(0,0,0);
                     txtE.BorderRadius = 10;
-                    txtE.Texts = a;
+                    txtE.Texts = menEm;
                     
                     txtE.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesEnviados.Controls.Add(txtE);
@@ -93,14 +110,23 @@ namespace Inquiries
                     panel3.Controls.Add(mensajesReceptor);
                     mensajesReceptor.Dock = DockStyle.Bottom;
 
+                    Label nomemisor = new Label();
+                    mensajesReceptor.Controls.Add(nomemisor);
+                    nomemisor.Location = new Point(660, 20);
+                    nomemisor.Text = nomEm;
+                    nomemisor.ForeColor = Color.Black;
+                    nomemisor.BackColor = Color.FromArgb(236, 236, 236);
+                    nomemisor.Font = new Font("Roboto", 16);
+                    nomemisor.Visible = true;
+
                     InquiriesTextBox txtR = new InquiriesTextBox();
                     txtR.BackColor = Color.FromArgb(196,196,196);
                     txtR.BorderSize = 1;
-                    txtR.Font = new Font("Roboto", 28);
+                    txtR.Font = new Font("Roboto", 16);
                     txtR.ForeColor = Color.Black;
                     txtR.Texts = Convert.ToString(a);
                     txtR.BorderRadius = 10;
-                    txtR.Texts = a;
+                    txtR.Texts = menEm;
 
                     txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesReceptor.Controls.Add(txtR);

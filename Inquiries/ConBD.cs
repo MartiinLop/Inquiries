@@ -137,13 +137,14 @@ namespace Inquiries
         }
 
         //Registro docente
-        public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año, Boolean dConexion, Boolean dEstado)
+        public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año, Boolean dConexion, Boolean dEstado, byte[] img)
         {
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado) VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ");", conectar);
+            MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado, dimagen) " +
+                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", '"+img+"');", conectar);
             nudoc.ExecuteNonQuery();
             conectar.Close();
         }
@@ -470,13 +471,37 @@ namespace Inquiries
         }
 
         //Crear Chat e inserción en participa
-        public static void CrearChat(int codChat, int dci, int codMateria, string titulochat, Boolean cEstado)
+        public static int CrearChat(int dci, int codMateria, string titulochat, Boolean cEstado)
         {
+            int codchat = 0;
             MySqlConnection chat = new MySqlConnection(conexbd);
             chat.Open();
 
             MySqlCommand insChat = new MySqlCommand("INSERT INTO chat (docente, chmate, titulochat, fechacomienzo, cestado) values ('" + dci + "', '" + codMateria + "', '" + titulochat + "', now(), true); ", chat);
             insChat.ExecuteNonQuery();
+
+            chat.Close();
+
+            MySqlConnection codigo = new MySqlConnection(conexbd);
+            codigo.Open();
+            string a = "select chcod from chat order by chcod desc limit 1";
+            MySqlCommand sel = new MySqlCommand(string.Format(a), codigo);
+            MySqlDataReader coda = sel.ExecuteReader();
+
+            if (coda.Read())
+            {
+                codchat = coda.GetInt32("chcod");
+            }
+
+            return codchat;
+
+        }
+
+        //insertar en participa
+        public static void crearParticipa(int codChat)
+        {
+            MySqlConnection chat = new MySqlConnection(conexbd);
+            chat.Open();
 
             MySqlCommand cpart = new MySqlCommand("insert into participa (alci, chcod, rol) values ('" + obtCI + "','" + codChat + "', 'iniciador');", chat);
             cpart.ExecuteNonQuery();
@@ -542,7 +567,7 @@ namespace Inquiries
                 int a = 0;
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
-                string t = "select chat.chcod from chat,participa where chat.chcod = participa.chcod && participa.alci=" + obtCI + " order by chcod desc limit 1;";
+                string t = "select chat.chcod from chat, participa where chat.chcod = participa.chcod && participa.alci=" + obtCI + " order by chcod desc limit 1;";
                 MySqlCommand part = new MySqlCommand(string.Format(t), conectar);
                 MySqlDataReader cod = part.ExecuteReader();
                 while (cod.Read())
@@ -551,6 +576,7 @@ namespace Inquiries
                 }
                 conectar.Close();
                 ccod = a;
+
                 return a;
 
             }
@@ -690,7 +716,7 @@ namespace Inquiries
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
 
-            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod,emisor,contenido, fecharealizado) values (" + obtChatCod() + ",'" + obtCI + "','" + texto + "', now());",conectar3);
+            MySqlCommand mens = new MySqlCommand("INSERT INTO mensaje (chcod, emisor, contenido, fecharealizado) values (" + obtChatCod() + ",'" + obtCI + "','" + texto + "', now());",conectar3);
             mens.ExecuteNonQuery();
             conectar3.Close();
 
@@ -727,7 +753,7 @@ namespace Inquiries
         }
 
         //Leer Mensaje
-        public static string LeerMensaje()
+        public static string LeerMensaje(int cod)
         {
             
             string comando;
@@ -746,57 +772,60 @@ namespace Inquiries
                 comparar = dat.GetInt32("alci");
             }
             conectar2.Close();
-            
-            if (obtCI == comparar)
+
+            if (cod != 0)
             {
+                if (obtCI == comparar)
+                {
 
-                MySqlConnection conectar = new MySqlConnection(conexbd);
-                conectar.Open();
-                comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                  "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
-                MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
+                    MySqlConnection conectar = new MySqlConnection(conexbd);
+                    conectar.Open();
+                    comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
+                      "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
+                    MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
 
 
-                MySqlConnection conectar4 = new MySqlConnection(conexbd);
-                conectar4.Open();
-                string b = "select emisor from mensaje order by mcod desc limit 1";
-                MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
+                    MySqlConnection conectar4 = new MySqlConnection(conexbd);
+                    conectar4.Open();
+                    string b = "select emisor from mensaje order by mcod desc limit 1";
+                    MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
 
-               
-                MySqlDataReader lnomusu = nusuario.ExecuteReader();
-                MySqlDataReader data = buscar.ExecuteReader();
 
-                if (lnomusu.Read()) textovich = lnomusu.GetString("emisor");
-                if (data.Read()) textovich = textovich + ": " + data.GetString("contenido");
-                conectar4.Close();
-                conectar.Close();
+                    MySqlDataReader lnomusu = nusuario.ExecuteReader();
+                    MySqlDataReader data = buscar.ExecuteReader();
 
+                    if (lnomusu.Read()) textovich = lnomusu.GetString("emisor");
+                    if (data.Read()) textovich = textovich + ": " + data.GetString("contenido");
+                    conectar4.Close();
+                    conectar.Close();
+                    
+
+                }
+                else
+                {
+                    MySqlConnection conectar = new MySqlConnection(conexbd);
+                    conectar.Open();
+
+                    MySqlConnection conectar4 = new MySqlConnection(conexbd);
+                    conectar4.Open();
+
+                    string b = "select emisor from mensaje order by mcod desc limit 1";
+                    MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
+
+
+                    comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
+                         "where participa.chcod = chat.chcod && chat.docente = " + obtCI + " order by mensaje.mcod desc limit 1;";
+                    MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
+
+                    MySqlDataReader lnomusu = nusuario.ExecuteReader();
+                    MySqlDataReader data = buscar.ExecuteReader();
+
+                    if (lnomusu.Read()) textovich = lnomusu.GetString("emisor");
+                    if (data.Read()) textovich = textovich + ": " + data.GetString("contenido");
+                    conectar4.Close();
+                    conectar.Close();
+                }
             }
-            else
-            {
-                MySqlConnection conectar = new MySqlConnection(conexbd);
-                conectar.Open();
-
-                MySqlConnection conectar4 = new MySqlConnection(conexbd);
-                conectar4.Open();
-
-                string b = "select emisor from mensaje order by mcod desc limit 1";
-                MySqlCommand nusuario = new MySqlCommand(string.Format(b), conectar4);
-
-
-                comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                     "where participa.chcod = chat.chcod && chat.docente = "+ obtCI +" order by mensaje.mcod desc limit 1;";
-                MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
-
-                MySqlDataReader lnomusu = nusuario.ExecuteReader();
-                MySqlDataReader data = buscar.ExecuteReader();
-                
-                if (lnomusu.Read()) textovich = lnomusu.GetString("emisor");
-                if (data.Read()) textovich = textovich +": "+ data.GetString("contenido");
-                conectar4.Close();
-                conectar.Close();
-            }
-            
 
             MySqlConnection conectar3 = new MySqlConnection(conexbd);
             conectar3.Open();
@@ -938,24 +967,24 @@ namespace Inquiries
         }
 
         //Modificar perfil alumno
-        public static void ModPerfilAl(string nombre, string apodo, string contraseña)
+        public static void ModPerfilAl(string nombre, string apodo, string contraseña, byte[] img)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand mod = new MySqlCommand("update alumno set alnom = '"+nombre+"', alnick = '"+apodo+"', alcon = '"+contraseña+"' where alci = "+obtCI+";",conectar);
+            MySqlCommand mod = new MySqlCommand("update alumno set alnom = '"+nombre+"', alnick = '"+apodo+"', alcon = '"+contraseña+"', aimagen = '" + img + "' where alci = "+obtCI+";",conectar);
             mod.ExecuteNonQuery();
             conectar.Close();
 
         }
 
         //Modificar perfil docente
-        public static void ModPerfilDoc(string nombre, string contraseña)
+        public static void ModPerfilDoc(string nombre, string contraseña, byte[] img)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "', dcon = '" + contraseña + "' where dci = " + obtCI + "; ",conectar);
+            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "', dcon = '" + contraseña + "', dimagen = '"+img+"' where dci = " + obtCI + "; ",conectar);
             mod.ExecuteNonQuery();
             conectar.Close();
         }

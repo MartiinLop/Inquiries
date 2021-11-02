@@ -32,7 +32,6 @@ namespace Inquiries
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnEliminarAl = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnGuardarDoc = new System.Windows.Forms.Button();
             this.btnEliminadoDoc = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -52,14 +51,19 @@ namespace Inquiries
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.txtNomImg = new System.Windows.Forms.TextBox();
+            this.btnArch = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -97,16 +101,6 @@ namespace Inquiries
             this.btnEliminarAl.Text = "Elminar Usuario";
             this.btnEliminarAl.UseVisualStyleBackColor = false;
             this.btnEliminarAl.Click += new System.EventHandler(this.btnEliminarAl_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(237, 451);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(255, 37);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Avatar Deseado:";
             // 
             // btnGuardarDoc
             // 
@@ -203,6 +197,9 @@ namespace Inquiries
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtNomImg);
+            this.panel3.Controls.Add(this.btnArch);
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(12, 182);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(207, 487);
@@ -338,21 +335,25 @@ namespace Inquiries
             this.panel5.Size = new System.Drawing.Size(333, 178);
             this.panel5.TabIndex = 47;
             // 
-            // btnConfirmar
+            // label7
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(50, 139);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(98, 29);
-            this.btnConfirmar.TabIndex = 48;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.button2_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(32, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(275, 29);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "desea eliminar su perfil?";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(45, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(228, 29);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Está seguro de que ";
             // 
             // button3
             // 
@@ -370,25 +371,21 @@ namespace Inquiries
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label4
+            // btnConfirmar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(228, 29);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Está seguro de que ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(275, 29);
-            this.label7.TabIndex = 50;
-            this.label7.Text = "desea eliminar su perfil?";
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.Location = new System.Drawing.Point(50, 139);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(98, 29);
+            this.btnConfirmar.TabIndex = 48;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnVolver
             // 
@@ -406,6 +403,31 @@ namespace Inquiries
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.button4_Click);
             // 
+            // txtNomImg
+            // 
+            this.txtNomImg.Location = new System.Drawing.Point(50, 175);
+            this.txtNomImg.Name = "txtNomImg";
+            this.txtNomImg.Size = new System.Drawing.Size(100, 20);
+            this.txtNomImg.TabIndex = 34;
+            // 
+            // btnArch
+            // 
+            this.btnArch.Location = new System.Drawing.Point(26, 212);
+            this.btnArch.Name = "btnArch";
+            this.btnArch.Size = new System.Drawing.Size(142, 25);
+            this.btnArch.TabIndex = 33;
+            this.btnArch.Text = "Seleccionar Archivo";
+            this.btnArch.UseVisualStyleBackColor = true;
+            this.btnArch.Click += new System.EventHandler(this.btnArch_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 143);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // ModPerfilDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,7 +440,6 @@ namespace Inquiries
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminarAl);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGuardarDoc);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
@@ -433,11 +454,14 @@ namespace Inquiries
             this.Name = "ModPerfilDocente";
             this.Text = "ModPerfilDocente";
             this.Load += new System.EventHandler(this.ModPerfilDocente_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,7 +472,6 @@ namespace Inquiries
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnEliminarAl;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGuardarDoc;
         private System.Windows.Forms.Button btnEliminadoDoc;
         private System.Windows.Forms.Panel panel6;
@@ -473,5 +496,8 @@ namespace Inquiries
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.TextBox txtNomImg;
+        private System.Windows.Forms.Button btnArch;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

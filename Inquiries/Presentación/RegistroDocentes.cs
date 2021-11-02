@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.IO;
 
 namespace Inquiries
 {
@@ -22,9 +23,9 @@ namespace Inquiries
         private void btnConfDoc_Click(object sender, EventArgs e)
         {
             Grupo a = new Grupo();
-            try
-            {
-                // Test de espacios vacíos 
+            //try
+            //{
+            //    // Test de espacios vacíos 
                 if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || txtMateDoc.Text == "" || comboBox1.Text == "" || txtContraConfDoc.Text == "")
                 {
                     throw new ArgumentNullException();
@@ -34,7 +35,7 @@ namespace Inquiries
                 {
 
                     Boolean est = true, con = false;
-                    ConBD.regdoc(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString()), con, est);
+                    Docente.registrar(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString()), con, est, obtByte(pictureBox1.Image));
 
                     txtCIDoc.Text = "";
                     txtNomDoc.Text = "";
@@ -53,11 +54,11 @@ namespace Inquiries
                     MessageBox.Show("Las contraseñas no son iguales!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
-            }catch(Exception) {
+            //}catch(Exception) {
 
-                MessageBox.Show("Faltan datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    MessageBox.Show("Faltan datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            }
+            //}
         }
 
     private void btnVolver_Click(object sender, EventArgs e)
@@ -79,6 +80,28 @@ namespace Inquiries
             {
                 comboBox1.Items.Add(Grupo.grupo().Rows[i]["gnom"]);
             }
+        }
+
+        private void btnArch_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog img = new OpenFileDialog();
+            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                txtNomImg.Text = img.FileName;
+
+                pictureBox1.Image = Image.FromFile(img.FileName);
+
+            }
+
+        }
+
+        public byte[] obtByte(System.Drawing.Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, img.RawFormat);
+            return ms.ToArray();
         }
     }
 }

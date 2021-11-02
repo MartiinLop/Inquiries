@@ -49,7 +49,6 @@ namespace Inquiries
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardarAl = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnEliminarAl = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,9 +59,14 @@ namespace Inquiries
             this.button3 = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnEliminadoAl = new System.Windows.Forms.Button();
+            this.txtNomImg = new System.Windows.Forms.TextBox();
+            this.btnArch = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,6 +176,9 @@ namespace Inquiries
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtNomImg);
+            this.panel3.Controls.Add(this.btnArch);
+            this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(10, 182);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(207, 487);
@@ -300,16 +307,6 @@ namespace Inquiries
             this.btnGuardarAl.UseVisualStyleBackColor = false;
             this.btnGuardarAl.Click += new System.EventHandler(this.btnGuardarAl_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(235, 393);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(255, 37);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Avatar Deseado:";
-            // 
             // btnEliminarAl
             // 
             this.btnEliminarAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -434,6 +431,33 @@ namespace Inquiries
             this.btnEliminadoAl.Text = "Volver";
             this.btnEliminadoAl.UseVisualStyleBackColor = false;
             // 
+            // txtNomImg
+            // 
+            this.txtNomImg.Location = new System.Drawing.Point(59, 186);
+            this.txtNomImg.Name = "txtNomImg";
+            this.txtNomImg.Size = new System.Drawing.Size(100, 20);
+            this.txtNomImg.TabIndex = 31;
+            this.txtNomImg.TextChanged += new System.EventHandler(this.txtNomImg_TextChanged);
+            // 
+            // btnArch
+            // 
+            this.btnArch.Location = new System.Drawing.Point(35, 223);
+            this.btnArch.Name = "btnArch";
+            this.btnArch.Size = new System.Drawing.Size(142, 25);
+            this.btnArch.TabIndex = 30;
+            this.btnArch.Text = "Seleccionar Archivo";
+            this.btnArch.UseVisualStyleBackColor = true;
+            this.btnArch.Click += new System.EventHandler(this.btnArch_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(21, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(174, 143);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ModPerfilAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +470,6 @@ namespace Inquiries
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminarAl);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGuardarAl);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.panel5);
@@ -467,8 +490,11 @@ namespace Inquiries
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,7 +522,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnGuardarAl;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEliminarAl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -507,5 +532,8 @@ namespace Inquiries
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnEliminadoAl;
+        private System.Windows.Forms.TextBox txtNomImg;
+        private System.Windows.Forms.Button btnArch;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

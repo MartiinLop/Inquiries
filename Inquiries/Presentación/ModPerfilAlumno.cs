@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Inquiries
 {
@@ -46,7 +47,7 @@ namespace Inquiries
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
                 Alumno m = new Alumno();
-                m.ModPerfAl(txtNombre.Text, txtApodo.Text, txtContra.Text);
+                m.ModPerfAl(txtNombre.Text, txtApodo.Text, txtContra.Text, obtByte(pictureBox1.Image));
                 MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
     private void panel4_Click(object sender, EventArgs e)
@@ -95,6 +96,35 @@ namespace Inquiries
             panel7.Hide();
         }
 
-      
+        private void btnArch_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog img = new OpenFileDialog();
+            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                txtNomImg.Text = img.FileName;
+
+                pictureBox1.Image = Image.FromFile(img.FileName);
+
+            }
+        }
+
+        public byte[] obtByte(System.Drawing.Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, img.RawFormat);
+            return ms.ToArray();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomImg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

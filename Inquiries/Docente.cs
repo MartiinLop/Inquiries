@@ -80,15 +80,20 @@ namespace Inquiries
             set { conectado = value; }
         }
 
+
+        public static void registrar(int dci, string dnom, string dape, string dcon, int año, Boolean dconexion, Boolean destado, byte[] img)
+        {
+            ConBD.regdoc(dci, dnom, dape, dcon, año, dconexion, destado, img);
+        }
         //Metodos
         public static void CSesionDoc()
         {
             ConBD.CerrarSesionDoc();
         }
 
-        public static void ModPerfDoc(string nombre, string contraseña)
+        public static void ModPerfDoc(string nombre, string contraseña, byte[] img)
         {
-            ConBD.ModPerfilDoc(nombre, contraseña);
+            ConBD.ModPerfilDoc(nombre, contraseña, img);
         }
         //////////////////////////////
 

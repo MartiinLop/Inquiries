@@ -92,11 +92,10 @@ namespace Inquiries
             ConBD.CerrarSesionAl();
         }
 
-        public void ModPerfAl(string nombre, string apodo, string contraseña)
+        public void ModPerfAl(string nombre, string apodo, string contraseña, byte[] img)
         {
-            ConBD.ModPerfilAl(nombre, apodo, contraseña);
+            ConBD.ModPerfilAl(nombre, apodo, contraseña, img);
         }
-
         public static void ElAl()
         {
             ConBD.EliminarAl();
