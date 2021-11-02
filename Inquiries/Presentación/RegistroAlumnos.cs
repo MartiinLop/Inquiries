@@ -179,11 +179,32 @@ namespace Inquiries
         public byte[] obtByte(System.Drawing.Image img)
         {
             MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
+           img.Save(ms, img.RawFormat);
             return ms.ToArray();   
         }
 
-     
+        //solucion 2 (convertir directamente de path)
+        //public byte[] imgPath(){
+        //
+        //    byte[] img = File.ReadAllBytes(txtNomImg.Text);
+        //    return img;
+        //}
+
+        //solucion 3 (imageconverter)
+        //public byte[] obtByte()
+        //{
+        //    System.Drawing.Image img = System.Drawing.Image.FromFile(txtNomImg.Text);
+        //    byte[] imagen = obtBytebyImageConverter(img);
+        //    return imagen;
+        //}
+        //public byte[] obtBytebyImageConverter(System.Drawing.Image imagensita)
+        //{
+        //    ImageConverter conv = new ImageConverter();
+        //    byte[] imgConvertir = (byte[])conv.ConvertTo(imagensita, typeof(byte[]));
+
+        //    return imgConvertir;
+        //}
+
 
     }
 }

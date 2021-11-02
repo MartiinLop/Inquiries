@@ -85,16 +85,16 @@ namespace Inquiries
 
         private void MenuAlumnos_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = obtImagen(Alumno.obtImgAl());
+            //pictureBox1.Image = obtImagen(Alumno.obtImgAl());
         }
 
  
-        //de byte a imagen
-        public Image obtImagen(byte[] img)
-        {
-            MemoryStream ms = new MemoryStream(img);
-            return Image.FromStream(ms);
-        }
+        ////de byte a imagen
+        //public Image obtImagen(byte[] img)
+        //{
+        //    MemoryStream ms = new MemoryStream(img);
+        //    return Image.FromStream(ms);
+        //}
 
     }
 }
