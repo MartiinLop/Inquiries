@@ -99,30 +99,22 @@ namespace Inquiries
         }
 
         //Registro alumnos
-        public static byte[] regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, string nomArch)
+        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] imagen)
         {
             alConexion = false;
             alEstado = true;
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            FileStream fs;
-            BinaryReader br;
-            byte[] imgDatos;
-
-            String nomImg = nomArch;
-            fs = new FileStream(nomImg, FileMode.Open, FileAccess.Read);
-            br = new BinaryReader(fs);
-            imgDatos = br.ReadBytes((int)fs.Length);
-            br.Close();
-            fs.Close();
+            
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '" + imgDatos + "');", conectar);
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '" + imagen + "');", conectar);
             nual.ExecuteNonQuery();
             conectar.Close();
-            return imgDatos;
         }
+
+       
 
         //Seleccionar imagen alumno
         public static byte[] imgAl()

@@ -101,10 +101,10 @@ namespace Inquiries
             ConBD.EliminarAl();
         }
 
-        public static byte[] regAlumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, string nomArch)
+        public static void regAlumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] imagen)
         {
 
-            return ConBD.regal(alCI, alNom, alApe, alCon, alGrupo, alNick, alConexion, alEstado, nomArch);
+            ConBD.regal(alCI, alNom, alApe, alCon, alGrupo, alNick, alConexion, alEstado, imagen);
 
         }
 

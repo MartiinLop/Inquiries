@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
 
 
 namespace Inquiries
@@ -84,18 +85,16 @@ namespace Inquiries
 
         private void MenuAlumnos_Load(object sender, EventArgs e)
         {
-
-            pictureBox1.Image = convertir(Alumno.obtImgAl());
-
+            pictureBox1.Image = obtImagen(Alumno.obtImgAl());
         }
 
-  
-
-        public Image convertir(byte[] imgEnBits)
+ 
+        //de byte a imagen
+        public Image obtImagen(byte[] img)
         {
-            MemoryStream leer = new MemoryStream(imgEnBits);
-            Image img = Image.FromStream(leer);
-            return img;
+            MemoryStream ms = new MemoryStream(img);
+            return Image.FromStream(ms);
         }
+
     }
 }

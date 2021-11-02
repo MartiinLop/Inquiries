@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Inquiries
 {
@@ -45,7 +46,7 @@ namespace Inquiries
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
                         Boolean est = true, con = false;
-                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, txtNomImg.Text);
+                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, obtByte(pictureBox1.Image));
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";
@@ -163,18 +164,26 @@ namespace Inquiries
         private void btnArch_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog img = new OpenFileDialog();
-            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp) | *.jpg; *.jpeg; *.gif; *.bmp";
+            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
 
             if (img.ShowDialog() == DialogResult.OK)
             {
                 txtNomImg.Text = img.FileName;
 
                 pictureBox1.Image = Image.FromFile(img.FileName);
-
                 
             }
         }
 
-       
+        //de imagen a byte
+        public byte[] obtByte(System.Drawing.Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, img.RawFormat);
+            return ms.ToArray();   
+        }
+
+     
+
     }
 }
