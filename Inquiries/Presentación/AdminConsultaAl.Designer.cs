@@ -44,13 +44,16 @@ namespace Inquiries
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnVerRespuesta = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
             this.btn_RCons = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConsulta = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
+            this.comboBoxAsig = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCodCon = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -174,6 +177,9 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.groupBox1.Controls.Add(this.txtCodCon);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.comboBoxAsig);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtDocPrueba);
             this.groupBox1.Location = new System.Drawing.Point(1019, 161);
@@ -264,6 +270,16 @@ namespace Inquiries
             this.label5.TabIndex = 15;
             this.label5.Text = "Respuesta:";
             // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRespuesta.Location = new System.Drawing.Point(720, 182);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(293, 248);
+            this.txtRespuesta.TabIndex = 14;
+            this.txtRespuesta.Text = "";
+            // 
             // btn_RCons
             // 
             this.btn_RCons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -272,7 +288,7 @@ namespace Inquiries
             this.btn_RCons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_RCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RCons.ForeColor = System.Drawing.Color.White;
-            this.btn_RCons.Location = new System.Drawing.Point(539, 453);
+            this.btn_RCons.Location = new System.Drawing.Point(539, 461);
             this.btn_RCons.Name = "btn_RCons";
             this.btn_RCons.Size = new System.Drawing.Size(143, 29);
             this.btn_RCons.TabIndex = 13;
@@ -334,15 +350,30 @@ namespace Inquiries
             this.panel3.TabIndex = 8;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // txtRespuesta
+            // comboBoxAsig
             // 
-            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRespuesta.Location = new System.Drawing.Point(720, 182);
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(293, 248);
-            this.txtRespuesta.TabIndex = 14;
-            this.txtRespuesta.Text = "";
+            this.comboBoxAsig.FormattingEnabled = true;
+            this.comboBoxAsig.Location = new System.Drawing.Point(38, 167);
+            this.comboBoxAsig.Name = "comboBoxAsig";
+            this.comboBoxAsig.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAsig.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Asignatura";
+            // 
+            // txtCodCon
+            // 
+            this.txtCodCon.Location = new System.Drawing.Point(63, 266);
+            this.txtCodCon.Name = "txtCodCon";
+            this.txtCodCon.Size = new System.Drawing.Size(100, 20);
+            this.txtCodCon.TabIndex = 19;
+            this.txtCodCon.Visible = false;
             // 
             // AdminConsultaAl
             // 
@@ -390,5 +421,8 @@ namespace Inquiries
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnVerRespuesta;
         private System.Windows.Forms.RichTextBox txtRespuesta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxAsig;
+        private System.Windows.Forms.TextBox txtCodCon;
     }
 }

@@ -7,63 +7,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
-namespace Inquiries
+namespace Inquiries.Presentación
 {
     public partial class MenuConsultaDoc : Form
     {
+        protected static string[,] comparar = new string[0, 0];
+        protected static Boolean mensaje = false;
         public MenuConsultaDoc()
         {
             InitializeComponent();
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            MenuDocentes a = (MenuDocentes)Application.OpenForms["MenuDocentes"];
-            a.Close();
-            this.Dispose();
-        }
-
-        private void btnConsultas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalirPrincipal_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            comparar = new string[0, 0];
+            mensaje = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Crear objeto vacio alumnos
-            Consulta c = new Consulta();
-            DataTable datos = new DataTable();
-            MySqlDataAdapter data = new MySqlDataAdapter();
+            string[,] infoConsulta = (string[,])Chat.obtCodigosChatAl();
 
-            data = c.LCon();
-            data.Fill(datos);
 
-            dataGridView1.DataSource = datos;
+            if (infoConsulta.Length != comparar.Length)
+            {
+                for (int x = 0; x < infoConsulta.GetLength(0); x++)
+                {
 
-         //Llamar al metodo para obtener consultas docente
-    }
+                    if (Convert.ToBoolean(infoConsulta[x, 1]) == true)
+                    {
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+                        Panel consulta = new Panel();
+                        consulta.Height = 73;
+                        consulta.Width = 500;
+                        panelConsultas.Controls.Add(consulta);
+                        consulta.Dock = DockStyle.Top;
+
+
+                        Label codConsulta = new Label();
+                        codConsulta.Visible = false;
+                        codConsulta.Text = Convert.ToString(infoConsulta[x, 0]);
+                        panelConsultas.Controls.Add(codConsulta);
+
+                        RichTextBox alCI = new RichTextBox();
+                        alCI.Visible = true;
+                        alCI.BackColor = Color.FromArgb(143, 131, 131);
+                        alCI.ForeColor = Color.Black;
+                        alCI.Text = Convert.ToString(infoConsulta[x, 2]);
+                        alCI.Width = 500;
+                        consulta.Controls.Add(alCI);
+
+
+                        alCI.Click += delegate (object enviar, EventArgs f)
+                        {
+
+                            invConDoc(Convert.ToInt32(alCI.Text), Convert.ToInt32(codConsulta.Text));
+
+                        };
+
+                    }
+                    else
+                    {
+                        if (mensaje == false)
+                        {
+                            mensaje = true;
+                            MessageBox.Show("xd");
+                        }
+                    }
+                    comparar = infoConsulta;
+                }
+            }
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void invConDoc(int alci, int cod)
         {
-            ConBD.Respuesta(Convert.ToInt32(txtAlCI.Text), txtRespuesta.Text);
-            MessageBox.Show("Respuesta Enviada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
+            AdminConsultaAl f = new AdminConsultaAl(alci, cod);
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

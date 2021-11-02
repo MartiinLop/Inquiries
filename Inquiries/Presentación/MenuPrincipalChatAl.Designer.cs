@@ -106,6 +106,7 @@ namespace Inquiries.Presentación
             this.panelChats.Name = "panelChats";
             this.panelChats.Size = new System.Drawing.Size(967, 453);
             this.panelChats.TabIndex = 28;
+            this.panelChats.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChats_Paint);
             // 
             // textBox1
             // 

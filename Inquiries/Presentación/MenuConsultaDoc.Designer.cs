@@ -1,5 +1,5 @@
 ﻿
-namespace Inquiries
+namespace Inquiries.Presentación
 {
     partial class MenuConsultaDoc
     {
@@ -29,33 +29,37 @@ namespace Inquiries
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
-            this.btnChatAl = new System.Windows.Forms.Button();
-            this.btnConsultas = new System.Windows.Forms.Button();
-            this.btnGruposAl = new System.Windows.Forms.Button();
             this.checkFiltro = new System.Windows.Forms.CheckBox();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnPerfilDoc = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAlCI = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChatAl = new System.Windows.Forms.Button();
+            this.btnConsultasAl = new System.Windows.Forms.Button();
+            this.btnCerrarAl = new System.Windows.Forms.Button();
+            this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
+            this.btnGruposAl = new System.Windows.Forms.Button();
+            this.panelConsultas = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(0, 117);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1264, 52);
+            this.panel2.TabIndex = 13;
             // 
             // label1
             // 
@@ -68,14 +72,44 @@ namespace Inquiries
             this.label1.TabIndex = 0;
             this.label1.Text = "Consultas Realizadas";
             // 
-            // panel2
+            // button3
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 116);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1264, 52);
-            this.panel2.TabIndex = 12;
+            this.button3.Location = new System.Drawing.Point(31, 36);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(176, 31);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Ver Listado Completo";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(63, 413);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 32);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "↻ Actualizar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtCodFiltro);
+            this.groupBox1.Controls.Add(this.btnSalirPrincipal);
+            this.groupBox1.Controls.Add(this.checkFiltro);
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(1019, 157);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(245, 526);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
             // 
             // txtCodFiltro
             // 
@@ -89,7 +123,7 @@ namespace Inquiries
             // btnSalirPrincipal
             // 
             this.btnSalirPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnSalirPrincipal.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSalirPrincipal.FlatAppearance.BorderSize = 0;
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,7 +134,33 @@ namespace Inquiries
             this.btnSalirPrincipal.TabIndex = 7;
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
-            this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
+            // 
+            // checkFiltro
+            // 
+            this.checkFiltro.AutoSize = true;
+            this.checkFiltro.Location = new System.Drawing.Point(31, 91);
+            this.checkFiltro.Name = "checkFiltro";
+            this.checkFiltro.Size = new System.Drawing.Size(15, 14);
+            this.checkFiltro.TabIndex = 3;
+            this.checkFiltro.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Location = new System.Drawing.Point(0, 254);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(251, 100);
+            this.panel4.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(74, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Filtrar:";
             // 
             // btnChatAl
             // 
@@ -116,59 +176,34 @@ namespace Inquiries
             this.btnChatAl.Text = "CHAT";
             this.btnChatAl.UseVisualStyleBackColor = true;
             // 
-            // btnConsultas
+            // btnConsultasAl
             // 
-            this.btnConsultas.BackColor = System.Drawing.Color.Gray;
-            this.btnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultas.FlatAppearance.BorderSize = 0;
-            this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultas.Location = new System.Drawing.Point(192, 5);
-            this.btnConsultas.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(237, 112);
-            this.btnConsultas.TabIndex = 1;
-            this.btnConsultas.Text = "CONSULTAS";
-            this.btnConsultas.UseVisualStyleBackColor = false;
-            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
+            this.btnConsultasAl.BackColor = System.Drawing.Color.Gray;
+            this.btnConsultasAl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultasAl.FlatAppearance.BorderSize = 0;
+            this.btnConsultasAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultasAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultasAl.Location = new System.Drawing.Point(192, 5);
+            this.btnConsultasAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnConsultasAl.Name = "btnConsultasAl";
+            this.btnConsultasAl.Size = new System.Drawing.Size(237, 112);
+            this.btnConsultasAl.TabIndex = 1;
+            this.btnConsultasAl.Text = "CONSULTAS";
+            this.btnConsultasAl.UseVisualStyleBackColor = false;
             // 
-            // btnGruposAl
+            // btnCerrarAl
             // 
-            this.btnGruposAl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGruposAl.FlatAppearance.BorderSize = 0;
-            this.btnGruposAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGruposAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGruposAl.Location = new System.Drawing.Point(6, 5);
-            this.btnGruposAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnGruposAl.Name = "btnGruposAl";
-            this.btnGruposAl.Size = new System.Drawing.Size(192, 112);
-            this.btnGruposAl.TabIndex = 0;
-            this.btnGruposAl.Text = "GRUPOS";
-            this.btnGruposAl.UseVisualStyleBackColor = true;
-            // 
-            // checkFiltro
-            // 
-            this.checkFiltro.AutoSize = true;
-            this.checkFiltro.Location = new System.Drawing.Point(31, 91);
-            this.checkFiltro.Name = "checkFiltro";
-            this.checkFiltro.Size = new System.Drawing.Size(15, 14);
-            this.checkFiltro.TabIndex = 3;
-            this.checkFiltro.UseVisualStyleBackColor = true;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(907, 4);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(203, 112);
-            this.btnCerrar.TabIndex = 5;
-            this.btnCerrar.Text = "Cerrar sesión";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrarAl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarAl.FlatAppearance.BorderSize = 0;
+            this.btnCerrarAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarAl.Location = new System.Drawing.Point(907, 4);
+            this.btnCerrarAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnCerrarAl.Name = "btnCerrarAl";
+            this.btnCerrarAl.Size = new System.Drawing.Size(203, 112);
+            this.btnCerrarAl.TabIndex = 5;
+            this.btnCerrarAl.Text = "Cerrar sesión";
+            this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
             // btnPerfilDoc
             // 
@@ -184,202 +219,80 @@ namespace Inquiries
             this.btnPerfilDoc.Text = "Perfil";
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Filtrar:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtAlCI);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtCodFiltro);
-            this.groupBox1.Controls.Add(this.btnSalirPrincipal);
-            this.groupBox1.Controls.Add(this.checkFiltro);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(1019, 156);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 526);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Cedula Alumno";
-            // 
-            // txtAlCI
-            // 
-            this.txtAlCI.BackColor = System.Drawing.Color.White;
-            this.txtAlCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAlCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlCI.Location = new System.Drawing.Point(31, 176);
-            this.txtAlCI.Name = "txtAlCI";
-            this.txtAlCI.Size = new System.Drawing.Size(179, 33);
-            this.txtAlCI.TabIndex = 17;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.No;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(31, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 66);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "⟳ ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(80, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 42);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.panel1.Controls.Add(this.btnPerfilDoc);
-            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.btnCerrarAl);
             this.panel1.Controls.Add(this.btnChatAl);
-            this.panel1.Controls.Add(this.btnConsultas);
+            this.panel1.Controls.Add(this.btnConsultasAl);
             this.panel1.Controls.Add(this.btnGruposAl);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 122);
-            this.panel1.TabIndex = 10;
+            this.panel1.TabIndex = 11;
             // 
-            // dataGridView1
+            // btnGruposAl
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(548, 247);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(449, 275);
-            this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.btnGruposAl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGruposAl.FlatAppearance.BorderSize = 0;
+            this.btnGruposAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruposAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGruposAl.Location = new System.Drawing.Point(6, 5);
+            this.btnGruposAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnGruposAl.Name = "btnGruposAl";
+            this.btnGruposAl.Size = new System.Drawing.Size(192, 112);
+            this.btnGruposAl.TabIndex = 0;
+            this.btnGruposAl.Text = "GRUPOS";
+            this.btnGruposAl.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // panelConsultas
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(552, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 31);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Consulta:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 203);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 31);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Su Respuesta:";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(323, 542);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 29);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Enviar Respuesta";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // txtRespuesta
-            // 
-            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRespuesta.Location = new System.Drawing.Point(33, 244);
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(481, 278);
-            this.txtRespuesta.TabIndex = 17;
-            this.txtRespuesta.Text = "";
+            this.panelConsultas.Location = new System.Drawing.Point(6, 176);
+            this.panelConsultas.Name = "panelConsultas";
+            this.panelConsultas.Size = new System.Drawing.Size(1007, 493);
+            this.panelConsultas.TabIndex = 14;
             // 
             // MenuConsultaDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.txtRespuesta);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelConsultas);
             this.Name = "MenuConsultaDoc";
-            this.Text = "MenuConsultaDoc";
+            this.Text = "Menu Consulta Docente";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCodFiltro;
         private System.Windows.Forms.Button btnSalirPrincipal;
-        private System.Windows.Forms.Button btnChatAl;
-        private System.Windows.Forms.Button btnConsultas;
-        private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.CheckBox checkFiltro;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnPerfilDoc;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnChatAl;
+        private System.Windows.Forms.Button btnConsultasAl;
+        private System.Windows.Forms.Button btnCerrarAl;
+        private System.Windows.Forms.Button btnPerfilDoc;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox txtRespuesta;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAlCI;
+        private System.Windows.Forms.Button btnGruposAl;
+        private System.Windows.Forms.Panel panelConsultas;
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
 namespace Inquiries
 {
     class ConBD
@@ -27,7 +29,8 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         //Cargar cantidad de grupos
@@ -99,27 +102,30 @@ namespace Inquiries
         }
 
         //Registro alumnos
-        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] imagen)
+        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, Image img)
         {
             alConexion = false;
             alEstado = true;
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            
+            MemoryStream ms = new MemoryStream();
+            ImageFormat imf = img.RawFormat;
+            img.Save(ms, imf);
+            ms.ToArray();
+
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '" + imagen + "');", conectar);
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '" + Convert.ToBase64String(ms.ToArray()) + "');", conectar);
             nual.ExecuteNonQuery();
             conectar.Close();
         }
-
-       
 
         //Seleccionar imagen alumno
         public static byte[] imgAl()
         {
             byte[] imagen = null;
+            
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             string com = "select aimagen from alumno where alci = " + obtCI + ";";
@@ -345,14 +351,14 @@ namespace Inquiries
         }
 
         //Crear Consulta
-        public static void Consulta(int dci, string contenido)
+        public static void Consulta(int dci, string contenido,string nasignatura)
         {
             MySqlConnection conexion = new MySqlConnection(conexbd);
             conexion.Open();
             MySqlConnection datos = new MySqlConnection(conexbd);
             datos.Open();
 
-            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, alci, dci) values ('realizada', now(), " + obtCI + ", " + dci + "); ", conexion);
+            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, alci, dci, nomasignatura) values ('realizada', now(), " + obtCI + ", " + dci + ","+nasignatura+"); ", conexion);
             con.ExecuteNonQuery();
 
             string obtCod = "select cod from consulta where alci = " + obtCI + " && " + "dci = " + dci + " order by cod desc limit 1;";
@@ -408,16 +414,49 @@ namespace Inquiries
         //Leer Consulta
         public static MySqlDataAdapter LeerConsulta() {
 
-            MySqlConnection conLeer = new MySqlConnection(conexbd);
-            conLeer.Open();
+            int comparar = 0;
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
 
-            string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where dci = " + obtCI + ";";
-            MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
+            string prueba = "select alci from alumno where alci = " + obtCI + "";
+            MySqlCommand pr = new MySqlCommand(string.Format(prueba), conectar2);
+            MySqlDataReader dat = pr.ExecuteReader();
 
-            MySqlDataAdapter data = new MySqlDataAdapter(cons);
+            if (dat.Read())
+            {
+                comparar = dat.GetInt32("alci");
+            }
+            conectar2.Close();
 
-            conLeer.Close();
-            return data;
+            if (comparar == obtCI)
+            {
+                MySqlConnection conLeer = new MySqlConnection(conexbd);
+                conLeer.Open();
+
+                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.dci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where alci = " + obtCI + ";";
+                MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
+
+                MySqlDataAdapter data = new MySqlDataAdapter(cons);
+
+                conLeer.Close();
+                return data;
+
+            }
+            else
+            {
+                MySqlConnection conLeer = new MySqlConnection(conexbd);
+                conLeer.Open();
+
+                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where dci = " + obtCI + ";";
+                MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
+
+                MySqlDataAdapter data = new MySqlDataAdapter(cons);
+
+                conLeer.Close();
+                return data;
+
+            }
+
 
         }
 

@@ -35,12 +35,25 @@ namespace Inquiries
         }
 
         //Leer consultas
-        public MySqlDataAdapter LCon()
+        public Array LCon()
         {
             MySqlDataAdapter cons = new MySqlDataAdapter();
             cons = ConBD.LeerConsulta();
+            DataTable b = new DataTable();
 
-            return cons;
+            cons.Fill(b);
+
+            string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+            for (int x = 0; x < b.Rows.Count; x++)
+            {
+                for (int y = 0; y < b.Columns.Count; y++)
+                {
+                    a[x, y] = Convert.ToString(b.Rows[x][y]);
+                }
+            }
+
+            return a;
             // Mandar cedula docente a ConBD y recibir todas las consultas que esten a nombre del profe
         }
 
@@ -50,5 +63,10 @@ namespace Inquiries
             return text;
         }
 
+        //Crear consulta
+        public static void CConsulta(int dci, string contenido, string nasignatura)
+        {
+            ConBD.Consulta(dci, contenido, nasignatura);
+        }
     }
 }

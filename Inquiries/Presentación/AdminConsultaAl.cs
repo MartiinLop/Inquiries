@@ -12,8 +12,10 @@ namespace Inquiries
 {
     public partial class AdminConsultaAl : Form
     {
-        public AdminConsultaAl()
+        public AdminConsultaAl(int dci, int cod)
         {
+            txtDocPrueba.Text = Convert.ToString(dci);
+            txtCodCon.Text = Convert.ToString(cod);
             InitializeComponent();
         }
 
@@ -31,7 +33,7 @@ namespace Inquiries
         {
             try
             {
-                ConBD.Consulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text);
+                Consulta.CConsulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text,comboBoxAsig.Text);
                 MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)

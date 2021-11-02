@@ -46,7 +46,7 @@ namespace Inquiries
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
                         Boolean est = true, con = false;
-                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, ImageToByteArray(pictureBox1.Image));
+                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, pictureBox1.Image);
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";
