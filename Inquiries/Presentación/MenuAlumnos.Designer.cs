@@ -38,8 +38,10 @@ namespace Inquiries
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -73,6 +75,7 @@ namespace Inquiries
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnCerrarAl);
             this.panel1.Controls.Add(this.btnChatAl);
@@ -159,6 +162,14 @@ namespace Inquiries
             this.btnGruposAl.UseVisualStyleBackColor = true;
             this.btnGruposAl.Click += new System.EventHandler(this.btnGrupos_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(988, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 103);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // MenuAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +184,7 @@ namespace Inquiries
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +200,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Button btnCerrarAl;
         private System.Windows.Forms.Button btnPerfilDoc;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

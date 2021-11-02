@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace Inquiries
@@ -51,7 +52,7 @@ namespace Inquiries
             MenuConsultaAl f1 = new MenuConsultaAl();
             f1.ShowDialog();
             this.Show();
-            
+
         }
 
         private void btnCerrarAl_Click(object sender, EventArgs e)
@@ -84,6 +85,17 @@ namespace Inquiries
         private void MenuAlumnos_Load(object sender, EventArgs e)
         {
 
+            pictureBox1.Image = convertir(Alumno.obtImgAl());
+
+        }
+
+  
+
+        public Image convertir(byte[] imgEnBits)
+        {
+            MemoryStream leer = new MemoryStream(imgEnBits);
+            Image img = Image.FromStream(leer);
+            return img;
         }
     }
 }

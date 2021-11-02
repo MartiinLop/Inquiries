@@ -72,6 +72,7 @@ namespace Inquiries
         private void button2_Click(object sender, EventArgs e)
         {
             Docente.ElDoc();
+            Docente.CSesionDoc();
             MessageBox.Show("Se ha eliminado su usuario correctamente!", "Eliminación usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             btnEliminadoDoc.Show();
         }

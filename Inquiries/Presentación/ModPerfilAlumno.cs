@@ -83,7 +83,9 @@ namespace Inquiries
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            Alumno a = new Alumno();
             Alumno.ElAl();
+            a.CSesionAl();
             MessageBox.Show("Se ha eliminado su usuario correctamente!", "Eliminación usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             btnEliminadoAl.Show();
         }
@@ -92,5 +94,7 @@ namespace Inquiries
         {
             panel7.Hide();
         }
+
+      
     }
 }

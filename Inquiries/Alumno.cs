@@ -12,7 +12,7 @@ namespace Inquiries
     class Alumno : Persona
     {
 
-        
+
         // Atributos
         protected int alCI;
         protected string alNom;
@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Constructor completo
-        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alEstado, Boolean Conectado): base(alCI, alNom, alApe, alCon)
+        public Alumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alEstado, Boolean Conectado) : base(alCI, alNom, alApe, alCon)
         {
 
             this.alCI = alCI;
@@ -99,6 +99,18 @@ namespace Inquiries
         public static void ElAl()
         {
             ConBD.EliminarAl();
+        }
+
+        public static byte[] regAlumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, string nomArch)
+        {
+
+            return ConBD.regal(alCI, alNom, alApe, alCon, alGrupo, alNick, alConexion, alEstado, nomArch);
+
+        }
+
+        public static byte[] obtImgAl()
+        {
+            return ConBD.imgAl();
         }
 
         ////////////////////////////

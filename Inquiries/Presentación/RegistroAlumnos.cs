@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing;
 
 namespace Inquiries
 {
@@ -30,8 +32,8 @@ namespace Inquiries
 
         private void btnConfAl_Click(object sender, EventArgs e)
         { Grupo a = new Grupo();
-            try
-            {
+            //try
+            //{
                 //Test de espacios vacíos
                 if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || comboBox1.Text == "" || txtContraConfAl.Text == "")
                 {
@@ -43,7 +45,7 @@ namespace Inquiries
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
                         Boolean est = true, con = false;
-                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est);
+                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, txtNomImg.Text);
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";
@@ -63,13 +65,13 @@ namespace Inquiries
 
                     }
                 }
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception)
+            //{
 
-                MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
+            //}
         }
 
 
@@ -152,5 +154,27 @@ namespace Inquiries
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnArch_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog img = new OpenFileDialog();
+            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp) | *.jpg; *.jpeg; *.gif; *.bmp";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                txtNomImg.Text = img.FileName;
+
+                pictureBox1.Image = Image.FromFile(img.FileName);
+
+                
+            }
+        }
+
+       
     }
 }

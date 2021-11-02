@@ -32,8 +32,9 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDCI = new System.Windows.Forms.TextBox();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
+            this.txtDCI = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace Inquiries
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.labelChCod = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,13 +81,12 @@ namespace Inquiries
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // txtDCI
+            // panelUsuarios
             // 
-            this.txtDCI.Location = new System.Drawing.Point(614, 5);
-            this.txtDCI.Name = "txtDCI";
-            this.txtDCI.Size = new System.Drawing.Size(10, 20);
-            this.txtDCI.TabIndex = 10;
-            this.txtDCI.TextChanged += new System.EventHandler(this.txtDCI_TextChanged);
+            this.panelUsuarios.Location = new System.Drawing.Point(7, 30);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(232, 447);
+            this.panelUsuarios.TabIndex = 8;
             // 
             // btnSalirPrincipal
             // 
@@ -104,6 +103,14 @@ namespace Inquiries
             this.btnSalirPrincipal.Text = "Volver";
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
             this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
+            // 
+            // txtDCI
+            // 
+            this.txtDCI.Location = new System.Drawing.Point(614, 5);
+            this.txtDCI.Name = "txtDCI";
+            this.txtDCI.Size = new System.Drawing.Size(10, 20);
+            this.txtDCI.TabIndex = 10;
+            this.txtDCI.TextChanged += new System.EventHandler(this.txtDCI_TextChanged);
             // 
             // panel1
             // 
@@ -207,13 +214,6 @@ namespace Inquiries
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(975, 441);
             this.panel3.TabIndex = 23;
-            // 
-            // panelUsuarios
-            // 
-            this.panelUsuarios.Location = new System.Drawing.Point(7, 30);
-            this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(232, 447);
-            this.panelUsuarios.TabIndex = 8;
             // 
             // labelChCod
             // 

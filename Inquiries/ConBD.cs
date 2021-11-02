@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.IO;
 namespace Inquiries
 {
     class ConBD
@@ -26,7 +27,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
 
 
         //Cargar cantidad de grupos
@@ -98,17 +99,49 @@ namespace Inquiries
         }
 
         //Registro alumnos
-        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado)
+        public static byte[] regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, string nomArch)
         {
             alConexion = false;
             alEstado = true;
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ");", conectar);
+            FileStream fs;
+            BinaryReader br;
+            byte[] imgDatos;
+
+            String nomImg = nomArch;
+            fs = new FileStream(nomImg, FileMode.Open, FileAccess.Read);
+            br = new BinaryReader(fs);
+            imgDatos = br.ReadBytes((int)fs.Length);
+            br.Close();
+            fs.Close();
+
+            MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '" + imgDatos + "');", conectar);
             nual.ExecuteNonQuery();
             conectar.Close();
+            return imgDatos;
+        }
+
+        //Seleccionar imagen alumno
+        public static byte[] imgAl()
+        {
+            byte[] imagen = null;
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string com = "select aimagen from alumno where alci = " + obtCI + ";";
+            MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
+
+            MySqlDataReader img = cons.ExecuteReader();
+            while (img.Read())
+            {
+                imagen = (byte[])(img["aimagen"]);
+            }
+
+
+            conectar.Close();
+            return imagen;
         }
 
         //Registro docente
@@ -941,7 +974,7 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand elim = new MySqlCommand("update docente set dconexion = false && destado = false where dci = "+obtCI+";", conectar);
+            MySqlCommand elim = new MySqlCommand("update docente set destado = false where dci = "+obtCI+";", conectar);
             elim.ExecuteNonQuery();
             conectar.Close();
 
@@ -953,7 +986,7 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand elim = new MySqlCommand("update alumno set alconexion = false && alestado = false where alci = " + obtCI + ";", conectar);
+            MySqlCommand elim = new MySqlCommand("update alumno set alestado = false where alci = " + obtCI + ";", conectar);
             elim.ExecuteNonQuery();
             conectar.Close();
         }
