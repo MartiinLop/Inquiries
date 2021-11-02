@@ -25,12 +25,14 @@ namespace Inquiries.Presentación
         }
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
+            comparar = new string[0, 0];
+            timer1.Enabled = false;
             this.Dispose();
         }
-        private void invChatAl(object sender, EventArgs e, string c)
+        private void invChatAl(object sender, EventArgs e, string c,string z)
         {
 
-            ChatAl a = new ChatAl(c);
+            ChatAl a = new ChatAl(c,z);
             a.ShowDialog();
 
         }
@@ -58,24 +60,24 @@ namespace Inquiries.Presentación
                         chat.Dock = DockStyle.Top;
 
 
-                        Label cod = new Label();
-                        cod.Visible = false;
-                        cod.Text = Convert.ToString(codChat[x, 0]);
-                        panelChats.Controls.Add(cod);
+                        Label CIProf = new Label();
+                        CIProf.Visible = false;
+                        CIProf.Text = Convert.ToString(codChat[x, 0]);
+                        panelChats.Controls.Add(CIProf);
 
-                        RichTextBox nomprof = new RichTextBox();
-                        nomprof.Visible = true;
-                        nomprof.BackColor = Color.FromArgb(143, 131, 131);
-                        nomprof.ForeColor = Color.Black;
-                        nomprof.Text = Convert.ToString(codChat[x, 0]);
-                        nomprof.Width = 500;
-                        chat.Controls.Add(nomprof);
+                        RichTextBox codCh = new RichTextBox();
+                        codCh.Visible = true;
+                        codCh.BackColor = Color.FromArgb(143, 131, 131);
+                        codCh.ForeColor = Color.Black;
+                        codCh.Text = Convert.ToString(codChat[x, 0]);
+                        codCh.Width = 500;
+                        chat.Controls.Add(codCh);
 
 
-                        nomprof.Click += delegate (object enviar, EventArgs f)
+                        codCh.Click += delegate (object enviar, EventArgs f)
                         {
 
-                            invChatAl(enviar, f, Convert.ToString(cod.Text));
+                            invChatAl(enviar, f, Convert.ToString(CIProf.Text),Convert.ToString(codCh.Text));
                             
                         };
 
@@ -96,6 +98,8 @@ namespace Inquiries.Presentación
 
         private void button1_Click(object sender, EventArgs e)
         {
+            comparar = new string[0, 0];
+            timer1.Enabled = false;
             this.Hide();
             MenuChatAl f1 = new MenuChatAl();
             f1.ShowDialog();

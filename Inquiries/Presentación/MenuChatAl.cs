@@ -17,6 +17,7 @@ namespace Inquiries.Presentación
         
         public MenuChatAl()
         {
+            comparar = new string[0, 0];
             InitializeComponent();
         }
 
@@ -43,12 +44,13 @@ namespace Inquiries.Presentación
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
-            this.Close();
+            comparar = new string[0, 0];
+            this.Dispose();
         }
         private void invChatAl(object sender, EventArgs e, string c)
         {
-
-            ChatAl a = new ChatAl(c);
+            comparar = new string[0, 0];
+            ChatAl a = new ChatAl(c, Convert.ToString(Chat.obtcodChat()));
             a.ShowDialog();
 
         }
@@ -137,9 +139,16 @@ namespace Inquiries.Presentación
                                     {
                                         if (estado.Text == "En línea")
                                         {
+                                            try
+                                            {
+                                                Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), txtTitulo.Text, true);
+                                                invChatAl(enviar, f, Convert.ToString(usuario.Text));
+                                            }
+                                            catch (Exception)
+                                            {
+                                                MessageBox.Show("Usted ya ha creado un chat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            }
 
-                                            Chat.crearChat(Chat.obtcodChat(), Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), txtTitulo.Text, true);
-                                            invChatAl(enviar, f, Convert.ToString(usuario.Text));
 
                                         }
                                         else
@@ -164,6 +173,11 @@ namespace Inquiries.Presentación
                     }
                     comparar = datosProf;
                 }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
 
         }
     }

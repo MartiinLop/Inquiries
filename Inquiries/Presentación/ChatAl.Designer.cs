@@ -32,8 +32,8 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.txtDCI = new System.Windows.Forms.TextBox();
+            this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
@@ -42,6 +42,8 @@ namespace Inquiries
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.labelChCod = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,13 +73,21 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.groupBox1.Controls.Add(this.txtDCI);
+            this.groupBox1.Controls.Add(this.panelUsuarios);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
             this.groupBox1.Location = new System.Drawing.Point(1019, 156);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 526);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // txtDCI
+            // 
+            this.txtDCI.Location = new System.Drawing.Point(614, 5);
+            this.txtDCI.Name = "txtDCI";
+            this.txtDCI.Size = new System.Drawing.Size(10, 20);
+            this.txtDCI.TabIndex = 10;
+            this.txtDCI.TextChanged += new System.EventHandler(this.txtDCI_TextChanged);
             // 
             // btnSalirPrincipal
             // 
@@ -95,17 +105,10 @@ namespace Inquiries
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
             this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
-            // txtDCI
-            // 
-            this.txtDCI.Location = new System.Drawing.Point(192, 189);
-            this.txtDCI.Name = "txtDCI";
-            this.txtDCI.Size = new System.Drawing.Size(100, 20);
-            this.txtDCI.TabIndex = 10;
-            this.txtDCI.TextChanged += new System.EventHandler(this.txtDCI_TextChanged);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.txtDCI);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnChatAl);
             this.panel1.Controls.Add(this.btnConsultas);
@@ -205,11 +208,29 @@ namespace Inquiries
             this.panel3.Size = new System.Drawing.Size(975, 441);
             this.panel3.TabIndex = 23;
             // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.Location = new System.Drawing.Point(7, 30);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(232, 447);
+            this.panelUsuarios.TabIndex = 8;
+            // 
+            // labelChCod
+            // 
+            this.labelChCod.AutoSize = true;
+            this.labelChCod.Location = new System.Drawing.Point(-3, 207);
+            this.labelChCod.Name = "labelChCod";
+            this.labelChCod.Size = new System.Drawing.Size(9, 13);
+            this.labelChCod.TabIndex = 11;
+            this.labelChCod.Text = "l";
+            this.labelChCod.Visible = false;
+            // 
             // ChatAl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.labelChCod);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtMensaje);
@@ -222,8 +243,8 @@ namespace Inquiries
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +265,7 @@ namespace Inquiries
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.Label labelChCod;
     }
 }

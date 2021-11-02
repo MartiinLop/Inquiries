@@ -105,6 +105,7 @@ namespace Inquiries.Presentación
 
         private void btnSalirPrincipal_Click_1(object sender, EventArgs e)
         {
+            comparar = new string[0, 0];
             this.Dispose();
         }
 

@@ -107,7 +107,7 @@ namespace Inquiries
                 }
                 else
                 {
-                    throw new InvalidOperationException("Ya existe un chat con esta materia y grupo");
+                    throw new Exception();
                 }
          
         }
@@ -177,5 +177,43 @@ namespace Inquiries
         {
             ConBD.CrearResumen(codchat);
         }
+
+        public static Array alConectados(string cod) 
+        {
+                DataTable b = ConBD.aChatConectados(cod);
+
+                string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+                for (int x = 0; x < b.Rows.Count; x++)
+                {
+                    for (int y = 0; y < b.Columns.Count; y++)
+                    {
+                        a[x, y] = Convert.ToString(b.Rows[x][y]);
+                    }
+
+                }
+
+                return a;
+        }
+
+        public static Array docConectados(string cod)
+        {
+            DataTable b = ConBD.dChatConectados(cod);
+
+            string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+            for (int x = 0; x < b.Rows.Count; x++)
+            {
+                for (int y = 0; y < b.Columns.Count; y++)
+                {
+                    a[x, y] = Convert.ToString(b.Rows[x][y]);
+                }
+
+            }
+
+            return a;
+        }
+
     }
 }
+

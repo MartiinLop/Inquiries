@@ -11,6 +11,7 @@ namespace Inquiries
     {
 
         static int obtCI;
+        static int ccod;
         static string mcod;
         static string lastmcod = null;
 
@@ -29,7 +30,6 @@ namespace Inquiries
 
 
         //Cargar cantidad de grupos
-
         public int contgrupos()
         {
             int num = 0;
@@ -62,6 +62,7 @@ namespace Inquiries
             conectar.Close();
             return datos;
         }
+
         //Cargar cantidad de materias
         public int contmaterias()
         {
@@ -80,6 +81,7 @@ namespace Inquiries
             conectar.Close();
             return num;
         }
+
         //Cargar materias
         public DataTable materias()
         {
@@ -293,6 +295,7 @@ namespace Inquiries
             conectar.Close();
             return false;
         }
+
         //Cerrar sesión alumno
         public static void CerrarSesionAl()
         {
@@ -427,7 +430,6 @@ namespace Inquiries
         }
 
         //Obtener docentes
-
         public static MySqlDataAdapter ObtDocentes()
         {
             string comando = "select dci, dnom, dape, dconexion from docente where destado = true";
@@ -448,7 +450,7 @@ namespace Inquiries
             MySqlConnection chat = new MySqlConnection(conexbd);
             chat.Open();
 
-            MySqlCommand insChat = new MySqlCommand("INSERT INTO chat (docente, chmate, titulochat, fechacomienzo, cestado) values ('" + dci + "', '" + codMateria + "', '"+ titulochat +"', now(), true); ", chat);
+            MySqlCommand insChat = new MySqlCommand("INSERT INTO chat (docente, chmate, titulochat, fechacomienzo, cestado) values ('" + dci + "', '" + codMateria + "', '" + titulochat + "', now(), true); ", chat);
             insChat.ExecuteNonQuery();
 
             MySqlCommand cpart = new MySqlCommand("insert into participa (alci, chcod, rol) values ('" + obtCI + "','" + codChat + "', 'iniciador');", chat);
@@ -477,48 +479,85 @@ namespace Inquiries
             for (int i = 0; i < mensajes.Length; i++)
             {
                 mensajes[i] = Convert.ToString(datos.Rows[i][0]);
-               
+
             }
 
             test = string.Join("|||", mensajes);
-          
+
             MySqlConnection resumen = new MySqlConnection(conexbd);
             resumen.Open();
 
 
-            MySqlCommand resumenC = new MySqlCommand("update chat set resumen = '" + test + "' where chcod = '"+codchat+"';", resumen);
+            MySqlCommand resumenC = new MySqlCommand("update chat set resumen = '" + test + "' where chcod = '" + codchat + "';", resumen);
             resumenC.ExecuteNonQuery();
 
             obtMensajes.Close();
             resumen.Close();
         }
+
         //Obtener Codigo Chat
         public static int obtChatCod()
         {
-            int a = 0;
-            MySqlConnection conectar = new MySqlConnection(conexbd);
-            conectar.Open();
-            string t = "select chcod from chat order by chcod desc limit 1;";
-            MySqlCommand part = new MySqlCommand(string.Format(t), conectar);
-            MySqlDataReader cod = part.ExecuteReader();
-            while (cod.Read())
-            {
-                a = cod.GetInt32("chcod");
-            }
-            conectar.Close();
+            int comparar = 0;
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
 
-            return a;
+            string prueba = "select alci from alumno where alci = " + obtCI + "";
+            MySqlCommand pr = new MySqlCommand(string.Format(prueba), conectar2);
+            MySqlDataReader dat = pr.ExecuteReader();
+
+            if (dat.Read())
+            {
+                comparar = dat.GetInt32("alci");
+            }
+            conectar2.Close();
+
+            if (obtCI == comparar)
+            {
+                int a = 0;
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+                string t = "select chat.chcod from chat,participa where chat.chcod = participa.chcod && participa.alci=" + obtCI + " order by chcod desc limit 1;";
+                MySqlCommand part = new MySqlCommand(string.Format(t), conectar);
+                MySqlDataReader cod = part.ExecuteReader();
+                while (cod.Read())
+                {
+                    a = cod.GetInt32("chcod");
+                }
+                conectar.Close();
+                ccod = a;
+                return a;
+
+            }
+            else
+            {
+                int a = 0;
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+                string t = "select chcod from chat where docente=" + obtCI + " order by chcod desc limit 1;";
+                MySqlCommand part = new MySqlCommand(string.Format(t), conectar);
+                MySqlDataReader cod = part.ExecuteReader();
+                while (cod.Read())
+                {
+                    a = cod.GetInt32("chcod");
+                }
+                conectar.Close();
+
+                ccod = a;
+                return a;
+
+            }
 
         }
 
         //Obtener codigos chat para docente
         public static MySqlDataAdapter ObtenerCodigosChatDoc()
         {
-            string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and chat.docente='"+obtCI+"' and chat.cestado = 1;";
+            string comando = "select chat.chcod, cestado from chat, participa where chat.chcod = participa.chcod and chat.docente='" + obtCI + "' and chat.cestado = 1;";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            
+
             MySqlCommand cons = new MySqlCommand(string.Format(comando), conectar);
             MySqlDataAdapter datos = new MySqlDataAdapter(cons);
 
@@ -542,11 +581,12 @@ namespace Inquiries
             return datos;
 
         }
+        
         //Obtener grupo alumno
         public static string ObtGrupoAl()
         {
             string comando = "select gnom from grupo, alumno where grupo.gcod = alumno.algrupo && alumno.alci = " + obtCI + ";";
-            string grupo=null;
+            string grupo = null;
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -562,11 +602,11 @@ namespace Inquiries
 
         }
 
-        //thing
+        //Revisar si alumno ha creado chats
         public static bool checkMatGru()
         {
             string res = null;
-            string f = "select gnom, chat.chcod from grupo, chat, alumno, participa where chat.chcod = participa.chcod && "+obtCI+" = participa.alci && '"+ObtGrupoAl()+"' = grupo.gnom && chat.cestado = 1 group by gnom;";
+            string f = "select gnom, chat.chcod from grupo, chat, alumno, participa where chat.chcod = participa.chcod && " + obtCI + " = participa.alci && '" + ObtGrupoAl() + "' = grupo.gnom && chat.cestado = 1 group by gnom;";
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
@@ -587,6 +627,7 @@ namespace Inquiries
                 return false;
             }
         }
+        
         //Desactivar chat
         public static void desChat(int codChat)
          {
@@ -597,6 +638,7 @@ namespace Inquiries
             mod.ExecuteNonQuery();
             conectar.Close();
         }
+        
         //Obtener asignatura
         public static int obtAsignatura(string nomAsig){
             int a = 0;
@@ -615,6 +657,7 @@ namespace Inquiries
 
             return a;
         }
+        
         //Crear Mensaje
         public static void CrearMensaje(string texto)
         {
@@ -626,6 +669,36 @@ namespace Inquiries
             mens.ExecuteNonQuery();
             conectar3.Close();
 
+        }
+
+        //Ver usuarios(alumnos) de chat
+        public static DataTable aChatConectados(string cod) 
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string a = "select alnom, alape from alumno, chat, participa where alumno.alci= participa.alci and participa.chcod = chat.chcod and chat.cestado = 1 and chat.chcod = "+cod+";";
+            MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
+            DataTable usuarios = new DataTable();
+            grupo.Fill(usuarios);
+
+            conectar.Close();
+            return usuarios;
+        }
+
+        //Ver usuarios(docentes) de chat
+        public static DataTable dChatConectados(string cod)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string a = "select dnom, dape from docente, chat where docente.dci = chat.docente and chat.cestado = 1 and chat.chcod = " + cod + "; ";
+            MySqlCommand comando = new MySqlCommand(string.Format(a), conectar);
+            MySqlDataAdapter grupo = new MySqlDataAdapter(comando);
+            DataTable usuarios = new DataTable();
+            grupo.Fill(usuarios);
+
+            conectar.Close();
+            return usuarios;
         }
 
         //Leer Mensaje
@@ -645,18 +718,17 @@ namespace Inquiries
 
             if (dat.Read())
             {
-
                 comparar = dat.GetInt32("alci");
-
             }
             conectar2.Close();
+            
             if (obtCI == comparar)
             {
 
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
                 comando = "select chat.docente, mensaje.contenido,participa.alci from chat, mensaje, participa " +
-                   "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
+                  "where participa.chcod = chat.chcod && participa.alci = " + obtCI + " order by mensaje.mcod desc limit 1;";
                 MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
 
 
@@ -728,8 +800,8 @@ namespace Inquiries
             }
 
         }
+        
         //Leer CI emisor mensaje
-
         public static Boolean CIEmisor()
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
@@ -759,7 +831,6 @@ namespace Inquiries
         }
 
         //Obtener CI de Alumno
-
         public static string obtCIAl(int codChat)
         {
             string a = null;
