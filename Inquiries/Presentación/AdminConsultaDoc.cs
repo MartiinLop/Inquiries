@@ -20,6 +20,10 @@ namespace Inquiries
             labelCodCon.Text = Convert.ToString(cod);
         }
 
+        public MenuConsultaDoc()
+        {
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             MenuDocentes a = (MenuDocentes)Application.OpenForms["MenuDocentes"];
@@ -49,8 +53,8 @@ namespace Inquiries
             DataTable datos = new DataTable();
             MySqlDataAdapter data = new MySqlDataAdapter();
 
-            data = c.LCon();
-            data.Fill(datos);
+           // data = c.obtCon();
+           // data.Fill(datos);
 
             dataGridView1.DataSource = datos;
 

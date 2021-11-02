@@ -265,6 +265,7 @@ namespace Inquiries.Presentación
             this.Controls.Add(this.panelConsultas);
             this.Name = "MenuConsultaDoc";
             this.Text = "Menu Consulta Docente";
+            this.Load += new System.EventHandler(this.MenuConsultaDoc_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

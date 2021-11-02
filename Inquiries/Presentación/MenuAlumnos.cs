@@ -50,8 +50,8 @@ namespace Inquiries
         private void btnConsultas_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MenuConsultaAl f1 = new MenuConsultaAl();
-            f1.ShowDialog();
+            MenuConsultaAl a = new MenuConsultaAl();
+            a.ShowDialog();
             this.Show();
 
         }

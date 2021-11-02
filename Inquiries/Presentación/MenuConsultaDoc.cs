@@ -55,13 +55,7 @@ namespace Inquiries.Presentación
                         consulta.Controls.Add(alCI);
 
 
-                        alCI.Click += delegate (object enviar, EventArgs f)
-                        {
-
-                            invConDoc(Convert.ToInt32(alCI.Text), Convert.ToInt32(codConsulta.Text));
-
-                        };
-
+                        
                     }
                     else
                     {
@@ -77,12 +71,17 @@ namespace Inquiries.Presentación
 
         }
 
-        public void invConDoc(int alci, int cod)
+        public void invConDoc()
         {
             this.Hide();
-            AdminConsultaAl f = new AdminConsultaAl(alci, cod);
+            AdminConsultaAl f = new AdminConsultaAl();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void MenuConsultaDoc_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

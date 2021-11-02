@@ -34,11 +34,11 @@ namespace Inquiries
             this.dci = dci;
         }
 
-        //Leer consultas
-        public Array LCon()
+        //Obtener Consultas
+        public Array obtCon()
         {
             MySqlDataAdapter cons = new MySqlDataAdapter();
-            cons = ConBD.LeerConsulta();
+            cons = ConBD.obtConsultas();
             DataTable b = new DataTable();
 
             cons.Fill(b);
@@ -54,7 +54,7 @@ namespace Inquiries
             }
 
             return a;
-            // Mandar cedula docente a ConBD y recibir todas las consultas que esten a nombre del profe
+            
         }
 
         public static string LRes()
@@ -64,9 +64,9 @@ namespace Inquiries
         }
 
         //Crear consulta
-        public static void CConsulta(int dci, string contenido, string nasignatura)
+        public static void CConsulta(int dci, string contenido, string titulo, int codasignatura)
         {
-            ConBD.Consulta(dci, contenido, nasignatura);
+            ConBD.Consulta(dci, contenido, titulo, codasignatura);
         }
     }
 }

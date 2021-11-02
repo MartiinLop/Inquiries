@@ -32,14 +32,11 @@ namespace Inquiries
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelConsultas = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.checkFiltro = new System.Windows.Forms.CheckBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
-            this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGruposAl = new System.Windows.Forms.Button();
@@ -85,21 +82,10 @@ namespace Inquiries
             this.panelConsultas.TabIndex = 10;
             this.panelConsultas.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Filtrar:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Location = new System.Drawing.Point(0, 148);
+            this.panel3.Location = new System.Drawing.Point(6, 52);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(251, 100);
             this.panel3.TabIndex = 1;
@@ -118,7 +104,7 @@ namespace Inquiries
             // panel4
             // 
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(0, 254);
+            this.panel4.Location = new System.Drawing.Point(6, 158);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(251, 100);
             this.panel4.TabIndex = 2;
@@ -133,16 +119,6 @@ namespace Inquiries
             this.button3.Text = "Ver Listado Completo";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // checkFiltro
-            // 
-            this.checkFiltro.AutoSize = true;
-            this.checkFiltro.Location = new System.Drawing.Point(31, 91);
-            this.checkFiltro.Name = "checkFiltro";
-            this.checkFiltro.Size = new System.Drawing.Size(15, 14);
-            this.checkFiltro.TabIndex = 3;
-            this.checkFiltro.UseVisualStyleBackColor = true;
-            this.checkFiltro.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btnSalirPrincipal
             // 
@@ -160,16 +136,6 @@ namespace Inquiries
             this.btnSalirPrincipal.UseVisualStyleBackColor = false;
             this.btnSalirPrincipal.Click += new System.EventHandler(this.btnSalirPrincipal_Click);
             // 
-            // txtCodFiltro
-            // 
-            this.txtCodFiltro.Location = new System.Drawing.Point(63, 85);
-            this.txtCodFiltro.Name = "txtCodFiltro";
-            this.txtCodFiltro.Size = new System.Drawing.Size(122, 20);
-            this.txtCodFiltro.TabIndex = 8;
-            this.txtCodFiltro.Text = "Ingresar código";
-            this.txtCodFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCodFiltro.TextChanged += new System.EventHandler(this.txtCodFiltro_TextChanged);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -177,7 +143,7 @@ namespace Inquiries
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(63, 413);
+            this.button1.Location = new System.Drawing.Point(62, 318);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 32);
             this.button1.TabIndex = 9;
@@ -189,12 +155,9 @@ namespace Inquiries
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtCodFiltro);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
-            this.groupBox1.Controls.Add(this.checkFiltro);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(1019, 157);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 526);
@@ -310,7 +273,6 @@ namespace Inquiries
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -321,14 +283,11 @@ namespace Inquiries
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelConsultas;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkFiltro;
         private System.Windows.Forms.Button btnSalirPrincipal;
-        private System.Windows.Forms.TextBox txtCodFiltro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnGruposAl;

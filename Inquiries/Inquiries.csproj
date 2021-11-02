@@ -93,6 +93,12 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="Asignatura.cs" />
     <Compile Include="Grupo.cs" />
+    <Compile Include="Presentación\ListadoConsAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ListadoConsAl.Designer.cs">
+      <DependentUpon>ListadoConsAl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\MenuConsultaDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ChatDoc.resx">
       <DependentUpon>ChatDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\ListadoConsAl.resx">
+      <DependentUpon>ListadoConsAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuAdminInfoUsu.resx">
       <DependentUpon>MenuAdminInfoUsu.cs</DependentUpon>

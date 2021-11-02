@@ -12,10 +12,8 @@ namespace Inquiries
 {
     public partial class AdminConsultaAl : Form
     {
-        public AdminConsultaAl(int dci, int cod)
+        public AdminConsultaAl()
         {
-            txtDocPrueba.Text = Convert.ToString(dci);
-            txtCodCon.Text = Convert.ToString(cod);
             InitializeComponent();
         }
 
@@ -33,7 +31,7 @@ namespace Inquiries
         {
             try
             {
-                Consulta.CConsulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text,comboBoxAsig.Text);
+                Consulta.CConsulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text, txtTitulo.Text, Asignatura.obtenerCodigo(comboBoxAsig.Text));
                 MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
@@ -79,11 +77,6 @@ namespace Inquiries
 
         private void btnCerrarAl_Click(object sender, EventArgs e)
         {
-            MenuAlumnos a = (MenuAlumnos)Application.OpenForms["MenuAlumnos"];
-            MenuConsultaAl b = (MenuConsultaAl)Application.OpenForms["MenuConsultaAl"];
-            a.Close();
-            b.Close();
-            this.Dispose();
         }
 
         private void btnPerfilDoc_Click(object sender, EventArgs e)
@@ -128,7 +121,16 @@ namespace Inquiries
 
         private void btnVerRespuesta_Click(object sender, EventArgs e)
         {
-            txtRespuesta.Text = Consulta.LRes();
+            
+        }
+
+        private void AdminConsultaAl_Load(object sender, EventArgs e)
+        {
+            int b = Asignatura.cantMaterias();
+            for (int i = 0; i < b; i++)
+            {
+                comboBoxAsig.Items.Add(Asignatura.devolverMaterias().Rows[i]["anom"]);
+            }
         }
     }
 }

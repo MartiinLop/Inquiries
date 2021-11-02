@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -351,14 +351,14 @@ namespace Inquiries
         }
 
         //Crear Consulta
-        public static void Consulta(int dci, string contenido,string nasignatura)
+        public static void Consulta(int dci, string contenido, string titulo, int codasignatura)
         {
             MySqlConnection conexion = new MySqlConnection(conexbd);
             conexion.Open();
             MySqlConnection datos = new MySqlConnection(conexbd);
             datos.Open();
 
-            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, alci, dci, nomasignatura) values ('realizada', now(), " + obtCI + ", " + dci + ","+nasignatura+"); ", conexion);
+            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, titulo, alci, dci, codasignatura) values ('realizada', now(), '" + titulo + "' " + obtCI + ", " + dci + ","+codasignatura+"); ", conexion);
             con.ExecuteNonQuery();
 
             string obtCod = "select cod from consulta where alci = " + obtCI + " && " + "dci = " + dci + " order by cod desc limit 1;";
@@ -411,8 +411,8 @@ namespace Inquiries
             datos.Close();
         }
 
-        //Leer Consulta
-        public static MySqlDataAdapter LeerConsulta() {
+        //Obtener consultas
+        public static MySqlDataAdapter obtConsultas() {
 
             int comparar = 0;
             MySqlConnection conectar2 = new MySqlConnection(conexbd);
@@ -433,7 +433,7 @@ namespace Inquiries
                 MySqlConnection conLeer = new MySqlConnection(conexbd);
                 conLeer.Open();
 
-                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.dci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where alci = " + obtCI + ";";
+                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.dci, estado from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where alci = " + obtCI + ";";
                 MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
 
                 MySqlDataAdapter data = new MySqlDataAdapter(cons);
@@ -447,7 +447,7 @@ namespace Inquiries
                 MySqlConnection conLeer = new MySqlConnection(conexbd);
                 conLeer.Open();
 
-                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where dci = " + obtCI + ";";
+                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.alci estado from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where dci = " + obtCI + ";";
                 MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
 
                 MySqlDataAdapter data = new MySqlDataAdapter(cons);
@@ -509,7 +509,7 @@ namespace Inquiries
             return datos;
         }
 
-        //Crear Chat e inserción en participa
+        //Crear Chat 
         public static int CrearChat(int dci, int codMateria, string titulochat, Boolean cEstado)
         {
             int codchat = 0;

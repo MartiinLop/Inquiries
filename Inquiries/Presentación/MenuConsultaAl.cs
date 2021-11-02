@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Inquiries.Presentación;
 
 namespace Inquiries
 {
     public partial class MenuConsultaAl : Form
     {
         protected static string[,] comparar = new string[0, 0];
-        protected static Boolean mensaje = false;
+        
         public MenuConsultaAl()
         {
             InitializeComponent();
             comparar = new string[0, 0];
-            mensaje = false;
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,11 +32,6 @@ namespace Inquiries
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -43,29 +39,9 @@ namespace Inquiries
 
         private void btnCerrarAl_Click(object sender, EventArgs e)
         {
-            MenuAlumnos a = (MenuAlumnos)Application.OpenForms["MenuAlumnos"];
+            MenuAlumnos a = new MenuAlumnos();
             a.Dispose();
             this.Dispose();
-        }
-
-        private void txtCodFiltro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodFiltro_Click(object sender, EventArgs e)
-        {
-
-            if (txtCodFiltro.Text == "Ingresar código")
-            {
-                txtCodFiltro.Text = "";
-            }
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void MenuConsultaAl_Load(object sender, EventArgs e)
@@ -75,7 +51,10 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AdminConsultaAl a = new AdminConsultaAl();
+            a.ShowDialog();
+            this.Show();
         }
 
 
@@ -112,7 +91,10 @@ namespace Inquiries
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            ListadoConsAl a = new ListadoConsAl();
+            a.ShowDialog();
+            this.Show();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -127,54 +109,80 @@ namespace Inquiries
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string[,] infoConsulta = (string[,])Chat.obtCodigosChatAl();
+            Consulta c = new Consulta();
+            string[,] infoConsulta = (string[,])c.obtCon();
 
 
             if (infoConsulta.Length != comparar.Length)
             {
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
                 {
-
-                    if (Convert.ToBoolean(infoConsulta[x, 1]) == true)
-                    {
-
-                        Panel consulta = new Panel();
-                        consulta.Height = 73;
-                        consulta.Width = 500;
-                        panelConsultas.Controls.Add(consulta);
-                        consulta.Dock = DockStyle.Top;
+                    Panel consulta = new Panel();
+                    consulta.Height = 73;
+                    consulta.Width = 500;
+                    panelConsultas.Controls.Add(consulta);
+                    consulta.Dock = DockStyle.Top;
 
 
-                        Label codConsulta = new Label();
-                        codConsulta.Visible = false;
-                        codConsulta.Text = Convert.ToString(infoConsulta[x, 0]);
-                        panelConsultas.Controls.Add(codConsulta);
+                    Label codConsulta = new Label();
+                    codConsulta.Visible = false;
+                    codConsulta.Text = Convert.ToString(infoConsulta[x, 0]);
+                    panelConsultas.Controls.Add(codConsulta);
 
-                        RichTextBox alCI = new RichTextBox();
-                        alCI.Visible = true;
-                        alCI.BackColor = Color.FromArgb(143, 131, 131);
-                        alCI.ForeColor = Color.Black;
-                        alCI.Text = Convert.ToString(infoConsulta[x, 2]);
-                        alCI.Width = 500;
-                        consulta.Controls.Add(alCI);
+                    RichTextBox alCI = new RichTextBox();
+                    alCI.Visible = true;
+                    alCI.BackColor = Color.FromArgb(196, 196, 196);
+                    alCI.ForeColor = Color.Black;
+                    alCI.Text = Convert.ToString(infoConsulta[x, 0]) + " - " + Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 2]);
+                    alCI.Width = 500;
+                    consulta.Controls.Add(alCI);
 
+                    Label lblEstado = new Label();
+                    lblEstado.Text = "Estado:";
+                    lblEstado.ForeColor = Color.Black;
+                    lblEstado.BackColor = Color.FromArgb(196, 196, 196);
+                    lblEstado.Location = new Point(340, 10);
+                    panelConsultas.Controls.Add(lblEstado);
+                    lblEstado.Visible = true;
+                    lblEstado.BringToFront();
+                    
 
-                        alCI.Click += delegate (object enviar, EventArgs f)
-                        {
+                    switch (Convert.ToString(infoConsulta[x, 3])) {
 
-                            invConAl(Convert.ToInt32(alCI.Text), Convert.ToInt32(codConsulta.Text));
+                        case "contestada":
+                            Label estadocon = new Label();
+                            estadocon.Text = Convert.ToString(infoConsulta[x, 3].ToUpper());
+                            estadocon.ForeColor = Color.Black;
+                            estadocon.BackColor = Color.Green;
+                            estadocon.Location = new Point(340, 30);
+                            panelConsultas.Controls.Add(estadocon);
+                            estadocon.Visible = true;
+                            estadocon.BringToFront();
+                            break;
 
-                        };
+                        case "recibida":
+                            Label estadore = new Label();
+                            estadore.Text = Convert.ToString(infoConsulta[x, 3].ToUpper());
+                            estadore.ForeColor = Color.Black;
+                            estadore.BackColor = Color.Yellow;
+                            estadore.Location = new Point(340, 30);
+                            panelConsultas.Controls.Add(estadore);
+                            estadore.Visible = true;
+                            estadore.BringToFront();
+                            break;
 
-                    }
-                    else
-                    {
-                        if (mensaje == false)
-                        {
-                            mensaje = true;
-                            MessageBox.Show("xd");
-                        }
-                    }
+                        case "realizada":
+                            Label estador = new Label();
+                            estador.Text = Convert.ToString(infoConsulta[x, 3].ToUpper());
+                            estador.ForeColor = Color.Black;
+                            estador.BackColor = Color.Red;
+                            estador.Location = new Point(340, 30);
+                            panelConsultas.Controls.Add(estador);
+                            estador.Visible = true;
+                            estador.BringToFront();
+                            break;
+                }
+
                     comparar = infoConsulta;
                 }
             }
@@ -185,13 +193,7 @@ namespace Inquiries
 
         }
 
-        private void invConAl(int dci,int cod)
-        {
-            this.Hide();
-            AdminConsultaAl f = new AdminConsultaAl(dci,cod);
-            f.ShowDialog();
-            this.Show();
-        }
+      
 
            
 
