@@ -68,8 +68,32 @@ namespace Inquiries.Presentación
                         alCI.ReadOnly = true;
                         consulta.Controls.Add(alCI);
 
+                    Label dnom = new Label();
+                    dnom.Visible = false;
+                    consulta.Controls.Add(dnom);
+                    dnom.Text = infoConsulta[x, 3];
 
-                        switch (Convert.ToString(infoConsulta[x, 5]))
+                    Label dape = new Label();
+                    dape.Visible = false;
+                    consulta.Controls.Add(dape);
+                    dape.Text = infoConsulta[x, 4];
+
+                    Label dmate = new Label();
+                    dmate.Visible = false;
+                    consulta.Controls.Add(dmate);
+                    dmate.Text = infoConsulta[x, 6];
+
+                    Label titulo = new Label();
+                    titulo.Visible = false;
+                    consulta.Controls.Add(titulo);
+                    titulo.Text = infoConsulta[x, 1];
+
+                    Label contenido = new Label();
+                    contenido.Visible = false;
+                    consulta.Controls.Add(contenido);
+                    contenido.Text = infoConsulta[x, 2];
+
+                    switch (Convert.ToString(infoConsulta[x, 5]))
                         {
 
                             case "contestada":
@@ -127,6 +151,14 @@ namespace Inquiries.Presentación
                         ejeY += 90;
                         ejeX = 0;
                     }
+
+                    alCI.Click += delegate (object enviar, EventArgs f)
+                    {
+
+                        VerConsultaAl a = new VerConsultaAl(dnom.Text, dape.Text, dmate.Text, titulo.Text, contenido.Text);
+                        a.ShowDialog();
+
+                    };
 
                     comparar = infoConsulta;
                 }
