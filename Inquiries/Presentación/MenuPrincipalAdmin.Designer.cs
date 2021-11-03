@@ -38,6 +38,7 @@ namespace Inquiries
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,10 +48,10 @@ namespace Inquiries
             this.btnGruposAl.FlatAppearance.BorderSize = 0;
             this.btnGruposAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGruposAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGruposAl.Location = new System.Drawing.Point(8, 6);
-            this.btnGruposAl.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.btnGruposAl.Location = new System.Drawing.Point(6, 5);
+            this.btnGruposAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnGruposAl.Name = "btnGruposAl";
-            this.btnGruposAl.Size = new System.Drawing.Size(256, 138);
+            this.btnGruposAl.Size = new System.Drawing.Size(192, 112);
             this.btnGruposAl.TabIndex = 0;
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
@@ -62,10 +63,10 @@ namespace Inquiries
             this.btnConsultasAl.FlatAppearance.BorderSize = 0;
             this.btnConsultasAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultasAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnConsultasAl.Location = new System.Drawing.Point(256, 6);
-            this.btnConsultasAl.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.btnConsultasAl.Location = new System.Drawing.Point(192, 5);
+            this.btnConsultasAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultasAl.Name = "btnConsultasAl";
-            this.btnConsultasAl.Size = new System.Drawing.Size(316, 138);
+            this.btnConsultasAl.Size = new System.Drawing.Size(237, 112);
             this.btnConsultasAl.TabIndex = 1;
             this.btnConsultasAl.Text = "USUARIOS";
             this.btnConsultasAl.UseVisualStyleBackColor = true;
@@ -77,10 +78,10 @@ namespace Inquiries
             this.btnChatAl.FlatAppearance.BorderSize = 0;
             this.btnChatAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChatAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnChatAl.Location = new System.Drawing.Point(560, 6);
-            this.btnChatAl.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.btnChatAl.Location = new System.Drawing.Point(420, 5);
+            this.btnChatAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnChatAl.Name = "btnChatAl";
-            this.btnChatAl.Size = new System.Drawing.Size(315, 138);
+            this.btnChatAl.Size = new System.Drawing.Size(236, 112);
             this.btnChatAl.TabIndex = 2;
             this.btnChatAl.Text = "HISTORIAL";
             this.btnChatAl.UseVisualStyleBackColor = true;
@@ -92,10 +93,10 @@ namespace Inquiries
             this.btnCerrarAl.FlatAppearance.BorderSize = 0;
             this.btnCerrarAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnCerrarAl.Location = new System.Drawing.Point(1191, 6);
-            this.btnCerrarAl.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.btnCerrarAl.Location = new System.Drawing.Point(893, 5);
+            this.btnCerrarAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCerrarAl.Name = "btnCerrarAl";
-            this.btnCerrarAl.Size = new System.Drawing.Size(271, 138);
+            this.btnCerrarAl.Size = new System.Drawing.Size(203, 112);
             this.btnCerrarAl.TabIndex = 5;
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
@@ -107,10 +108,10 @@ namespace Inquiries
             this.btnPerfilDoc.FlatAppearance.BorderSize = 0;
             this.btnPerfilDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfilDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnPerfilDoc.Location = new System.Drawing.Point(1477, 5);
-            this.btnPerfilDoc.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.btnPerfilDoc.Location = new System.Drawing.Point(1108, 4);
+            this.btnPerfilDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnPerfilDoc.Name = "btnPerfilDoc";
-            this.btnPerfilDoc.Size = new System.Drawing.Size(188, 138);
+            this.btnPerfilDoc.Size = new System.Drawing.Size(141, 112);
             this.btnPerfilDoc.TabIndex = 6;
             this.btnPerfilDoc.Text = "Perfil";
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
@@ -118,22 +119,24 @@ namespace Inquiries
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnCerrarAl);
             this.panel1.Controls.Add(this.btnChatAl);
             this.panel1.Controls.Add(this.btnConsultasAl);
             this.panel1.Controls.Add(this.btnGruposAl);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1685, 150);
+            this.panel1.Size = new System.Drawing.Size(1264, 122);
             this.panel1.TabIndex = 7;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(8, 159);
+            this.panel2.Location = new System.Drawing.Point(2, 124);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1313, 472);
+            this.panel2.Size = new System.Drawing.Size(985, 384);
             this.panel2.TabIndex = 8;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -142,16 +145,24 @@ namespace Inquiries
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.Location = new System.Drawing.Point(12, 130);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(939, 466);
+            this.panelUsuarios.TabIndex = 8;
+            this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsuarios_Paint);
+            // 
             // MenuPrincipalAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 838);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuPrincipalAdmin";
             this.Text = "MenuPrincipalAdmin";
+            this.Load += new System.EventHandler(this.MenuPrincipalAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -167,5 +178,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelUsuarios;
     }
 }

@@ -1071,25 +1071,33 @@ namespace Inquiries
         }
 
         //Obtener todos los usuarios
-        public static MySqlDataAdapter ObtTodosUsu()
+        public static MySqlDataAdapter ObtTodosAl()
         {
-            string comando1 = "select alci, algrupo from alumno";
-            string comando2 = "select * from docente";
+            string comando = "select alnom, alape, gnom from alumno, grupo where alumno.algrupo = grupo.gcod;";
+
             MySqlConnection conectar = new MySqlConnection(conexbd);
-            MySqlConnection conectar1 = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand cons = new MySqlCommand(comando1, conectar);
-            MySqlDataAdapter datos1 = new MySqlDataAdapter(cons);
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
             conectar.Close();
-
-            conectar1.Open();
-            MySqlCommand cons1 = new MySqlCommand(comando2, conectar1);
-            MySqlDataAdapter datos2 = new MySqlDataAdapter(cons1);
-            conectar1.Close();
-
-            return datos1;
+            return datos;
            
+        }
+
+        public static  MySqlDataAdapter ObtTodosDoc()
+        {
+            string comando = "select dnom, dape, gnom from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo;";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
         }
     }
 

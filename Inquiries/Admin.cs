@@ -57,11 +57,11 @@ namespace Inquiries
         //////////////////////////////
         //Metodos
 
-        public static Array ObtenerUsuarios()
+        public static Array ObtenerUsuariosAl()
         {
             MySqlDataAdapter usuarios = new MySqlDataAdapter();
 
-            usuarios = ConBD.ObtTodosUsu();
+            usuarios = ConBD.ObtTodosAl();
             DataTable a = new DataTable();
 
             usuarios.Fill(a);

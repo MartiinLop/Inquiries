@@ -88,7 +88,7 @@ namespace Inquiries
                         lusuarios.Height = 80;
                         lusuarios.Width = 80;
                         //if (lusuarios.)
-                        panel2.Controls.Add(lusuarios);
+                        panelUsuarios.Controls.Add(lusuarios);
                         lusuarios.Dock = DockStyle.Left;
                         
 
@@ -127,7 +127,17 @@ namespace Inquiries
                         comparar = usuario;
                     
                     }
-                }
+
+        private void MenuPrincipalAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelUsuarios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 
             }
 

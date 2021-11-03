@@ -29,8 +29,8 @@ namespace Inquiries
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -38,27 +38,6 @@ namespace Inquiries
             this.panel12 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -69,14 +48,9 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +58,7 @@ namespace Inquiries
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.panel2.Controls.Add(this.vScrollBar1);
+            this.panel2.Controls.Add(this.panelUsuarios);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.checkBox2);
@@ -92,13 +66,6 @@ namespace Inquiries
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.panel10);
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.panel11);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.splitter1);
             this.panel2.Controls.Add(this.btnVolver);
@@ -106,13 +73,6 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1238, 550);
             this.panel2.TabIndex = 12;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(867, 82);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 438);
-            this.vScrollBar1.TabIndex = 22;
             // 
             // textBox2
             // 
@@ -181,209 +141,6 @@ namespace Inquiries
             this.panel10.Size = new System.Drawing.Size(320, 10);
             this.panel10.TabIndex = 16;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Controls.Add(this.panel18);
-            this.panel8.Location = new System.Drawing.Point(11, 402);
-            this.panel8.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(826, 54);
-            this.panel8.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(666, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 25);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Eliminar";
-            // 
-            // panel18
-            // 
-            this.panel18.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel18.Location = new System.Drawing.Point(769, 5);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(33, 42);
-            this.panel18.TabIndex = 23;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel11.Controls.Add(this.label9);
-            this.panel11.Controls.Add(this.panel19);
-            this.panel11.Location = new System.Drawing.Point(11, 466);
-            this.panel11.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(826, 54);
-            this.panel11.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(666, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 25);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Eliminar";
-            // 
-            // panel19
-            // 
-            this.panel19.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel19.Location = new System.Drawing.Point(769, 6);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(33, 42);
-            this.panel19.TabIndex = 23;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.panel16);
-            this.panel6.Location = new System.Drawing.Point(11, 274);
-            this.panel6.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(826, 54);
-            this.panel6.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(663, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Eliminar";
-            // 
-            // panel16
-            // 
-            this.panel16.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel16.Location = new System.Drawing.Point(769, 5);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(33, 42);
-            this.panel16.TabIndex = 2;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel9.Controls.Add(this.label7);
-            this.panel9.Controls.Add(this.panel17);
-            this.panel9.Location = new System.Drawing.Point(11, 338);
-            this.panel9.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(826, 54);
-            this.panel9.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(666, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 25);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Eliminar";
-            // 
-            // panel17
-            // 
-            this.panel17.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel17.Location = new System.Drawing.Point(769, 5);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(33, 42);
-            this.panel17.TabIndex = 23;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.panel14);
-            this.panel5.Location = new System.Drawing.Point(11, 146);
-            this.panel5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(826, 54);
-            this.panel5.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(663, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Eliminar";
-            // 
-            // panel14
-            // 
-            this.panel14.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel14.Location = new System.Drawing.Point(769, 6);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(33, 42);
-            this.panel14.TabIndex = 2;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.panel15);
-            this.panel7.Location = new System.Drawing.Point(11, 210);
-            this.panel7.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(826, 54);
-            this.panel7.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(663, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Eliminar";
-            // 
-            // panel15
-            // 
-            this.panel15.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel15.Location = new System.Drawing.Point(769, 7);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(33, 42);
-            this.panel15.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel4.Controls.Add(this.panel13);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(11, 82);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(826, 54);
-            this.panel4.TabIndex = 10;
-            // 
-            // panel13
-            // 
-            this.panel13.BackgroundImage = global::Inquiries.Properties.Resources._33x42_basura;
-            this.panel13.Location = new System.Drawing.Point(769, 7);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(33, 42);
-            this.panel13.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(663, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Eliminar";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -427,6 +184,7 @@ namespace Inquiries
             this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // panel1
             // 
@@ -512,6 +270,19 @@ namespace Inquiries
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.Location = new System.Drawing.Point(4, 81);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(896, 459);
+            this.panelUsuarios.TabIndex = 22;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 300;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // BajaUsuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,20 +294,6 @@ namespace Inquiries
             this.Text = "BajaUsuAdmin";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -554,13 +311,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Splitter splitter1;
@@ -571,20 +321,7 @@ namespace Inquiries
         private System.Windows.Forms.Button btnConsultasAl;
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnCerrarAl;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.Timer timer1;
     }
 }
