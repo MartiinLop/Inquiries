@@ -138,7 +138,9 @@ namespace Inquiries
                     alCI.ForeColor = Color.Black;
                     alCI.Text = Convert.ToString(infoConsulta[x, 0]) + " - " + Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 6]) +  "\n" + Convert.ToString(infoConsulta[x, 2] + "\n" + Convert.ToString(infoConsulta[x, 3]) + " " + Convert.ToString(infoConsulta[x, 4]));
                     alCI.Width = 500;
+                    alCI.ReadOnly = true;
                     consulta.Controls.Add(alCI);
+
 
                     Label lblEstado = new Label();
                     lblEstado.Text = "Estado:";
@@ -148,7 +150,14 @@ namespace Inquiries
                     panelConsultas.Controls.Add(lblEstado);
                     lblEstado.Visible = true;
                     lblEstado.BringToFront();
-                    
+
+                    consulta.Click += delegate (object enviar, EventArgs f)
+                    {
+
+                        VerConsultaAl a = new VerConsultaAl(Convert.ToString(infoConsulta[x, 3]), Convert.ToString(infoConsulta[x, 4]), Convert.ToString(infoConsulta[x, 6]), Convert.ToString(infoConsulta[x, 1]), Convert.ToString(infoConsulta[x, 2]));
+                        a.ShowDialog();
+
+                    };
 
                     switch (Convert.ToString(infoConsulta[x, 5])) {
 
@@ -184,7 +193,13 @@ namespace Inquiries
                             estador.Visible = true;
                             estador.BringToFront();
                             break;
-                }
+
+                            default:
+
+                            break;
+                    }
+
+                    
 
                     comparar = infoConsulta;
                 }
@@ -196,7 +211,7 @@ namespace Inquiries
 
         }
 
-      
+        
 
            
 

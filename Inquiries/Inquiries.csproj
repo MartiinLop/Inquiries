@@ -274,6 +274,12 @@
     <Compile Include="RJControls\InquiriesTextBox.Designer.cs">
       <DependentUpon>InquiriesTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\VerConsultaAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\VerConsultaAl.Designer.cs">
+      <DependentUpon>VerConsultaAl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Presentación\AdminConsultaAl.resx">
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ModUsuAdmin.resx">
       <DependentUpon>ModUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\VerConsultaAl.resx">
+      <DependentUpon>VerConsultaAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
