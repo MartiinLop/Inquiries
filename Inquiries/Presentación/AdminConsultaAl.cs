@@ -155,10 +155,21 @@ namespace Inquiries
                     consultaDoc.ReadOnly = true;
                     docente.Controls.Add(consultaDoc);
 
+                    Label lbldocCONX0 = new Label();
+                    lbldocCONX0.Visible = false;
+                    docente.Controls.Add(lbldocCONX0);
+                    lbldocCONX0.Text = docCon[x, 0];
+
+                    Label lbldocCONX1 = new Label();
+                    lbldocCONX1.Visible = false;
+                    docente.Controls.Add(lbldocCONX1);
+                    lbldocCONX1.Text = docCon[x, 1];
+
+
                     consultaDoc.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        Consulta.CConsulta(Convert.ToInt32(docCon[x, 0]), txtConsulta.Text, txtTitulo.Text, Convert.ToInt32(docCon[x, 1]));
+                        Consulta.CConsulta(Convert.ToInt32(lbldocCONX0.Text), txtConsulta.Text, txtTitulo.Text, Convert.ToInt32(lbldocCONX1.Text));
                         MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     };

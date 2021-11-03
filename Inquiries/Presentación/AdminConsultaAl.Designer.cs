@@ -41,15 +41,15 @@ namespace Inquiries
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodCon = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDocPrueba = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelDoc = new System.Windows.Forms.Panel();
             this.btn_RCons = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConsulta = new System.Windows.Forms.RichTextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panelDoc = new System.Windows.Forms.Panel();
-            this.txtDocPrueba = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -206,6 +206,18 @@ namespace Inquiries
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtDocPrueba
+            // 
+            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocPrueba.Location = new System.Drawing.Point(675, 47);
+            this.txtDocPrueba.Name = "txtDocPrueba";
+            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
+            this.txtDocPrueba.TabIndex = 15;
+            this.txtDocPrueba.Visible = false;
+            this.txtDocPrueba.TextChanged += new System.EventHandler(this.txtDocPrueba_TextChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -223,6 +235,15 @@ namespace Inquiries
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // panelDoc
+            // 
+            this.panelDoc.AutoScroll = true;
+            this.panelDoc.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.panelDoc.Location = new System.Drawing.Point(1023, 60);
+            this.panelDoc.Name = "panelDoc";
+            this.panelDoc.Size = new System.Drawing.Size(229, 439);
+            this.panelDoc.TabIndex = 19;
             // 
             // btn_RCons
             // 
@@ -293,27 +314,6 @@ namespace Inquiries
             this.panel3.Size = new System.Drawing.Size(241, 290);
             this.panel3.TabIndex = 8;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // panelDoc
-            // 
-            this.panelDoc.AutoScroll = true;
-            this.panelDoc.AutoScrollMargin = new System.Drawing.Size(0, 1000);
-            this.panelDoc.Location = new System.Drawing.Point(1023, 60);
-            this.panelDoc.Name = "panelDoc";
-            this.panelDoc.Size = new System.Drawing.Size(229, 439);
-            this.panelDoc.TabIndex = 19;
-            // 
-            // txtDocPrueba
-            // 
-            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocPrueba.Location = new System.Drawing.Point(675, 47);
-            this.txtDocPrueba.Name = "txtDocPrueba";
-            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
-            this.txtDocPrueba.TabIndex = 15;
-            this.txtDocPrueba.Visible = false;
-            this.txtDocPrueba.TextChanged += new System.EventHandler(this.txtDocPrueba_TextChanged);
             // 
             // timer1
             // 

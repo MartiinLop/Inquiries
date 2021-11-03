@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -109,14 +109,14 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MemoryStream ms = new MemoryStream();
-            ImageFormat imf = img.RawFormat;
-            img.Save(ms, imf);
-            ms.ToArray();
+            //MemoryStream ms = new MemoryStream();
+            //ImageFormat imf = img.RawFormat;
+            //img.Save(ms, imf);
+            //ms.ToArray();
 
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '" + Convert.ToBase64String(ms.ToArray()) + "');", conectar);
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '  ');", conectar);
             nual.ExecuteNonQuery();
             conectar.Close();
         }
