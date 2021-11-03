@@ -46,8 +46,7 @@ namespace Inquiries.Presentación
         {
             Consulta c = new Consulta();
             string[,] infoConsulta = (string[,])c.obtCon();
-            int i = 40;
-            int y = 20;
+          
             if (infoConsulta.Length != comparar.Length)
             {
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
@@ -111,8 +110,7 @@ namespace Inquiries.Presentación
                                 panelConsultas.Controls.Add(estadocon);
                                 estadocon.Visible = true;
                                 estadocon.BringToFront();
-                            y += 100;
-                            i += 210;
+                            
                             break;
 
                             case "recibida":
@@ -125,8 +123,7 @@ namespace Inquiries.Presentación
                                 panelConsultas.Controls.Add(estadore);
                                 estadore.Visible = true;
                                 estadore.BringToFront();
-                            y += 100;
-                            i += 210;
+                           
                             break;
 
                             case "realizada":
@@ -139,8 +136,7 @@ namespace Inquiries.Presentación
                                 panelConsultas.Controls.Add(estador);
                                 estador.Visible = true;
                                 estador.BringToFront();
-                            y += 100;
-                            i += 210;
+                           
                             break;
                         }
 

@@ -109,12 +109,6 @@ namespace Inquiries
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            //MemoryStream ms = new MemoryStream();
-            //ImageFormat imf = img.RawFormat;
-            //img.Save(ms, imf);
-            //ms.ToArray();
-
-
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
                 " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", @aimagen);", conectar);
             nual.Parameters.AddWithValue("aimagen", img);
@@ -145,17 +139,24 @@ namespace Inquiries
         }
 
         //Registro docente
-        public static void regdoc(int dCI, string dNom, string dApe, string dCon, int año, Boolean dConexion, Boolean dEstado, byte[] img)
+        public static void regdoc(int dCI, string dNom, string dApe, string dCon, int grupo, Boolean dConexion, Boolean dEstado, byte[] img)
         {
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado, dimagen) " +
-                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", @dimagen);", conectar);
+            MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, dconexion, destado, dimagen) " +
+                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "', " + dConexion + "," + dEstado + ", @dimagen);", conectar);
             nudoc.Parameters.AddWithValue("dimagen", img);
             nudoc.ExecuteNonQuery();
             conectar.Close();
+
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
+
+            MySqlCommand grupos = new MySqlCommand("insert into gruposdocente (cidocente, dgrupo) values ('"+dCI+"', '"+grupo+"');", conectar2);
+            grupos.ExecuteReader();
+            conectar2.Close();
         }
 
         //Seleccionar imagen docente
@@ -243,7 +244,24 @@ namespace Inquiries
             conectar00.Close();
             return false;
         }
+        //Obtener nombre de usuario de alumno
+        public static string nomUsu()
+        {
+            string nomUsu = null;
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string cons = "select alnick from alumno where alci = " + obtCI + ";";
+            MySqlCommand comando = new MySqlCommand(string.Format(cons), conectar);
+            MySqlDataReader data = comando.ExecuteReader();
 
+            while (data.Read())
+            {
+                nomUsu = data.GetString("alnick");
+            }
+
+            conectar.Close();
+            return nomUsu;
+        }
         //Inicio sesión docente
         public static Boolean Insedoc(int dCI, string dCon)
         {
@@ -1084,7 +1102,7 @@ namespace Inquiries
         //Obtener todos los usuarios
         public static MySqlDataAdapter ObtTodosAl()
         {
-            string comando = "select alnom, alape, gnom from alumno, grupo where alumno.algrupo = grupo.gcod;";
+            string comando = "select alnom, alape, gnom, alumno.alci, alcon from alumno, grupo where alumno.algrupo = grupo.gcod;";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -1097,9 +1115,29 @@ namespace Inquiries
            
         }
 
+        public static byte[] obtImgAlParaAdmin(int ci)
+        {
+            byte[] imagen = null;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string com = "select aimagen from alumno where alci = " + ci + ";";
+            MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
+
+            MySqlDataReader img = cons.ExecuteReader();
+            while (img.Read())
+            {
+                imagen = (byte[])(img["aimagen"]);
+            }
+
+
+            conectar.Close();
+            return imagen;
+        }
+
         public static  MySqlDataAdapter ObtTodosDoc()
         {
-            string comando = "select dnom, dape, gnom from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo;";
+            string comando = "select dnom, dape, gnom, docente.dci, dcon from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo;";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
@@ -1109,6 +1147,26 @@ namespace Inquiries
 
             conectar.Close();
             return datos;
+        }
+
+        public static byte[] obtImgDocParaAdmin(int ci)
+        {
+            byte[] imagen = null;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string com = "select dimagen from docente where dci = " + ci + ";";
+            MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
+
+            MySqlDataReader img = cons.ExecuteReader();
+            while (img.Read())
+            {
+                imagen = (byte[])(img["dimagen"]);
+            }
+
+
+            conectar.Close();
+            return imagen;
         }
     }
 

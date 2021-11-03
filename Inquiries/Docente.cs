@@ -81,9 +81,9 @@ namespace Inquiries
         }
 
 
-        public static void registrar(int dci, string dnom, string dape, string dcon, int año, Boolean dconexion, Boolean destado, byte[] img)
+        public static void registrar(int dci, string dnom, string dape, string dcon, int grupo, Boolean dconexion, Boolean destado, byte[] img)
         {
-            ConBD.regdoc(dci, dnom, dape, dcon, año, dconexion, destado, img);
+            ConBD.regdoc(dci, dnom, dape, dcon, grupo, dconexion, destado, img);
         }
 
         public static byte[] obtImgDoc()

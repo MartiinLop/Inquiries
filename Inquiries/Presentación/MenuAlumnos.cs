@@ -21,6 +21,7 @@ namespace Inquiries
         {
             InitializeComponent();
             panel3.Hide();
+            lblNomUsu.Text = ConBD.nomUsu();
         }
 
         private void btnGrupos_Click(object sender, EventArgs e)
@@ -91,7 +92,7 @@ namespace Inquiries
             }
             catch (Exception)
             {
-                pictureBox1.Image = Image.FromFile("\\Resources\\imgPerf.jpg");
+                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
             }
             
             

@@ -100,17 +100,19 @@ namespace Inquiries
         {
             ConBD.EliminarAl();
         }
-
         public static void regAlumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] imagen)
         {
 
             ConBD.regal(alCI, alNom, alApe, alCon, alGrupo, alNick, alConexion, alEstado, imagen);
 
         }
-
         public static byte[] obtImgAl()
         {
             return ConBD.imgAl();
+        }
+        public static string nomUsu()
+        {
+            return ConBD.nomUsu();
         }
 
         ////////////////////////////

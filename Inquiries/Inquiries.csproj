@@ -262,12 +262,6 @@
     <Compile Include="Presentación\RegistroDocentes.Designer.cs">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentación\MenuUsuariosAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentación\MenuUsuariosAdmin.Designer.cs">
-      <DependentUpon>MenuUsuariosAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentación\VerUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -379,9 +373,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\RegistroDocentes.resx">
       <DependentUpon>RegistroDocentes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentación\MenuUsuariosAdmin.resx">
-      <DependentUpon>MenuUsuariosAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\VerUsuAdmin.resx">
       <DependentUpon>VerUsuAdmin.cs</DependentUpon>

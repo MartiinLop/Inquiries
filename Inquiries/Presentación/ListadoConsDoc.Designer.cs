@@ -41,7 +41,6 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +93,6 @@ namespace Inquiries
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnCerrarAl);
             this.panel1.Controls.Add(this.btnChatAl);
@@ -183,15 +181,6 @@ namespace Inquiries
             this.timer1.Interval = 700;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(570, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(359, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "preciso: cod, contenido, titulo, grupo, nombre y apellido alumno, asignatura";
-            // 
             // ListadoConsDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,7 +196,6 @@ namespace Inquiries
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,7 +212,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnConsultasAl;
         private System.Windows.Forms.Button btnGruposAl;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
     }
 }

@@ -30,8 +30,6 @@ namespace Inquiries
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblAlDoc = new System.Windows.Forms.Label();
             this.lblCédula = new System.Windows.Forms.Label();
             this.lblContra = new System.Windows.Forms.Label();
@@ -46,16 +44,19 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
+            this.lblGrupo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.lblGrupo);
             this.panel2.Controls.Add(this.lblAlDoc);
             this.panel2.Controls.Add(this.lblCédula);
             this.panel2.Controls.Add(this.lblContra);
@@ -68,31 +69,12 @@ namespace Inquiries
             this.panel2.Size = new System.Drawing.Size(1238, 550);
             this.panel2.TabIndex = 12;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(11, 89);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(173, 120);
-            this.panel4.TabIndex = 18;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "(Imagen)";
-            // 
             // lblAlDoc
             // 
             this.lblAlDoc.AutoSize = true;
             this.lblAlDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlDoc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAlDoc.Location = new System.Drawing.Point(217, 221);
+            this.lblAlDoc.Location = new System.Drawing.Point(217, 273);
             this.lblAlDoc.Name = "lblAlDoc";
             this.lblAlDoc.Size = new System.Drawing.Size(246, 33);
             this.lblAlDoc.TabIndex = 17;
@@ -148,9 +130,9 @@ namespace Inquiries
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Location = new System.Drawing.Point(3, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 39);
+            this.label1.Size = new System.Drawing.Size(343, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "USUARIOS";
+            this.label1.Text = "Información del Perfil";
             // 
             // splitter1
             // 
@@ -260,6 +242,26 @@ namespace Inquiries
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
+            // lblGrupo
+            // 
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblGrupo.Location = new System.Drawing.Point(217, 224);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(213, 33);
+            this.lblGrupo.TabIndex = 19;
+            this.lblGrupo.Text = "Grupo: (Grupo)";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(14, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 144);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // VerUsuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,13 +271,13 @@ namespace Inquiries
             this.Controls.Add(this.panel1);
             this.Name = "VerUsuAdmin";
             this.Text = "VerUsuAdmin";
+            this.Load += new System.EventHandler(this.VerUsuAdmin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +299,7 @@ namespace Inquiries
         private System.Windows.Forms.Label lblAlDoc;
         private System.Windows.Forms.Label lblCédula;
         private System.Windows.Forms.Label lblContra;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblGrupo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
