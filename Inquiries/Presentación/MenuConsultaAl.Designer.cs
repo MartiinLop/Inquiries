@@ -76,6 +76,8 @@ namespace Inquiries
             // 
             // panelConsultas
             // 
+            this.panelConsultas.AutoScroll = true;
+            this.panelConsultas.AutoScrollMargin = new System.Drawing.Size(0, 1000);
             this.panelConsultas.Location = new System.Drawing.Point(6, 176);
             this.panelConsultas.Name = "panelConsultas";
             this.panelConsultas.Size = new System.Drawing.Size(1007, 493);

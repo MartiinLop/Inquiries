@@ -46,7 +46,8 @@ namespace Inquiries.Presentación
         {
             Consulta c = new Consulta();
             string[,] infoConsulta = (string[,])c.obtCon();
-
+            int i = 40;
+            int y = 20;
             if (infoConsulta.Length != comparar.Length)
             {
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
@@ -56,25 +57,13 @@ namespace Inquiries.Presentación
                     consulta.Width = 200;
                     panelConsultas.Controls.Add(consulta);
                     
-                    if(ejeX < 900)
-                    {
-                        consulta.Location = new Point(ejeX, ejeY);
-                        ejeX += 90;
-                    }
-                    else
-                    {
-                        ejeY += 90;
-                        consulta.Location = new Point(ejeX, ejeY);
-                        ejeX = 0;
-                    }
-
                         
                         RichTextBox alCI = new RichTextBox();
                         alCI.Visible = true;
                         alCI.BackColor = Color.FromArgb(196, 196, 196);
                         alCI.ForeColor = Color.Black;
                         alCI.Text = Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 3]) + "\n" + Convert.ToString(infoConsulta[x, 6]);
-                        alCI.Width = 200;
+                        alCI.Width = 185;
                         alCI.Height = 50;
                         alCI.ReadOnly = true;
                         consulta.Controls.Add(alCI);
@@ -89,11 +78,13 @@ namespace Inquiries.Presentación
                                 estadocon.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                                 estadocon.ForeColor = Color.Black;
                                 estadocon.BackColor = Color.Green;
-                                estadocon.Location = new Point(95, 20);
+                                estadocon.Location = new Point(ejeX + 83, ejeY + 24);
                                 panelConsultas.Controls.Add(estadocon);
                                 estadocon.Visible = true;
                                 estadocon.BringToFront();
-                                break;
+                            y += 100;
+                            i += 210;
+                            break;
 
                             case "recibida":
                                 Label estadore = new Label();
@@ -101,11 +92,13 @@ namespace Inquiries.Presentación
                                 estadore.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                                 estadore.ForeColor = Color.Black;
                                 estadore.BackColor = Color.Yellow;
-                                estadore.Location = new Point(95, 20);
+                                estadore.Location = new Point(ejeX + 83, ejeY + 24);
                                 panelConsultas.Controls.Add(estadore);
                                 estadore.Visible = true;
                                 estadore.BringToFront();
-                                break;
+                            y += 100;
+                            i += 210;
+                            break;
 
                             case "realizada":
                                 Label estador = new Label();
@@ -113,13 +106,28 @@ namespace Inquiries.Presentación
                                 estador.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                                 estador.ForeColor = Color.Black;
                                 estador.BackColor = Color.Red;
-                                estador.Location = new Point(95, 20);
+                                estador.Location = new Point(ejeX + 83, ejeY + 24);
                                 panelConsultas.Controls.Add(estador);
                                 estador.Visible = true;
                                 estador.BringToFront();
-                                break;
+                            y += 100;
+                            i += 210;
+                            break;
                         }
-                    
+
+                    if (ejeX < 900)
+                    {
+                        consulta.Location = new Point(ejeX, ejeY);
+                        ejeX += 210;
+                    }
+                    else
+                    {
+                        
+                        consulta.Location = new Point(ejeX, ejeY);
+                        ejeY += 90;
+                        ejeX = 0;
+                    }
+
                     comparar = infoConsulta;
                 }
             }

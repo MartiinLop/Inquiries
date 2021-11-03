@@ -21,6 +21,7 @@ namespace Inquiries
             comparar = new string[0, 0];
             
             
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -196,7 +197,7 @@ namespace Inquiries
                             estadocon.Location = new Point(370, i);
                             estadocon.Visible = true;
                             estadocon.BringToFront();
-                            i += 60;
+                            i += 70;
                             break;
 
                         case "recibida":
@@ -208,7 +209,7 @@ namespace Inquiries
                             estadore.Location = new Point(370, i);
                             estadore.Visible = true;
                             estadore.BringToFront();
-                            i += 60;
+                            i += 70;
                             break;
 
                         case "realizada":
@@ -220,7 +221,7 @@ namespace Inquiries
                             estador.Location = new Point(370, i);
                             estador.Visible = true;
                             estador.BringToFront();
-                            i += 60;
+                            i += 70;
                             break;
 
                             default:

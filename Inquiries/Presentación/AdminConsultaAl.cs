@@ -16,6 +16,8 @@ namespace Inquiries
         public AdminConsultaAl()
         {
             InitializeComponent();
+            comparar = new string [0, 0];
+            timer1.Enabled = true;
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
@@ -168,10 +170,14 @@ namespace Inquiries
 
                     consultaDoc.Click += delegate (object enviar, EventArgs f)
                     {
-
-                        Consulta.CConsulta(Convert.ToInt32(lbldocCONX0.Text), txtConsulta.Text, txtTitulo.Text, Convert.ToInt32(lbldocCONX1.Text));
-                        MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        if (txtConsulta.Text == "" || txtTitulo.Text == "") {
+                            MessageBox.Show("Faltan datos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            Consulta.CConsulta(Convert.ToInt32(lbldocCONX0.Text), txtConsulta.Text, txtTitulo.Text, Convert.ToInt32(lbldocCONX1.Text));
+                            MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     };
 
                 }
