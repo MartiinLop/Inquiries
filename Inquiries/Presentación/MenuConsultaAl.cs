@@ -112,10 +112,11 @@ namespace Inquiries
         {
             Consulta c = new Consulta();
             string[,] infoConsulta = (string[,])c.obtCon();
-
+            int i = 40;
 
             if (infoConsulta.Length != comparar.Length)
             {
+                
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
                 {
                     
@@ -146,15 +147,40 @@ namespace Inquiries
                     lblEstado.Text = "Estado:";
                     lblEstado.ForeColor = Color.Black;
                     lblEstado.BackColor = Color.FromArgb(196, 196, 196);
-                    lblEstado.Location = new Point(370, 25);
+                    lblEstado.Location = new Point(300, i);
                     panelConsultas.Controls.Add(lblEstado);
                     lblEstado.Visible = true;
                     lblEstado.BringToFront();
 
-                    consulta.Click += delegate (object enviar, EventArgs f)
+                    Label dnom = new Label();
+                    dnom.Visible = false;
+                    consulta.Controls.Add(dnom);
+                    dnom.Text = infoConsulta[x, 3];
+
+                    Label dape = new Label();
+                    dape.Visible = false;
+                    consulta.Controls.Add(dape);
+                    dape.Text = infoConsulta[x, 4];
+
+                    Label dmate = new Label();
+                    dmate.Visible = false;
+                    consulta.Controls.Add(dmate);
+                    dmate.Text = infoConsulta[x, 6];
+
+                    Label titulo = new Label();
+                    titulo.Visible = false;
+                    consulta.Controls.Add(titulo);
+                    titulo.Text = infoConsulta[x, 1];
+
+                    Label contenido = new Label();
+                    contenido.Visible = false;
+                    consulta.Controls.Add(contenido);
+                    contenido.Text = infoConsulta[x, 2];
+
+                    alCI.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        VerConsultaAl a = new VerConsultaAl(Convert.ToString(infoConsulta[x, 3]), Convert.ToString(infoConsulta[x, 4]), Convert.ToString(infoConsulta[x, 6]), Convert.ToString(infoConsulta[x, 1]), Convert.ToString(infoConsulta[x, 2]));
+                        VerConsultaAl a = new VerConsultaAl(dnom.Text, dape.Text, dmate.Text, titulo.Text, contenido.Text);
                         a.ShowDialog();
 
                     };
@@ -166,10 +192,11 @@ namespace Inquiries
                             estadocon.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                             estadocon.ForeColor = Color.Black;
                             estadocon.BackColor = Color.Green;
-                            estadocon.Location = new Point(370, 40);
                             panelConsultas.Controls.Add(estadocon);
+                            estadocon.Location = new Point(370, i);
                             estadocon.Visible = true;
                             estadocon.BringToFront();
+                            i += 60;
                             break;
 
                         case "recibida":
@@ -177,10 +204,11 @@ namespace Inquiries
                             estadore.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                             estadore.ForeColor = Color.Black;
                             estadore.BackColor = Color.Yellow;
-                            estadore.Location = new Point(370, 40);
                             panelConsultas.Controls.Add(estadore);
+                            estadore.Location = new Point(370, i);
                             estadore.Visible = true;
                             estadore.BringToFront();
+                            i += 60;
                             break;
 
                         case "realizada":
@@ -188,10 +216,11 @@ namespace Inquiries
                             estador.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                             estador.ForeColor = Color.Black;
                             estador.BackColor = Color.Red;
-                            estador.Location = new Point(370, 40);
                             panelConsultas.Controls.Add(estador);
+                            estador.Location = new Point(370, i);
                             estador.Visible = true;
                             estador.BringToFront();
+                            i += 60;
                             break;
 
                             default:
