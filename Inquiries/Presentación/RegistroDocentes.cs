@@ -84,9 +84,18 @@ namespace Inquiries
 
         public byte[] obtByte(Image img)
         {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            return ms.ToArray();
+            if (img != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).Save(ms, Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).RawFormat);
+                return ms.ToArray();
+            }
         }
 
         private void btnArch_Click(object sender, EventArgs e)

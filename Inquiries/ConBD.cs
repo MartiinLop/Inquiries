@@ -133,11 +133,12 @@ namespace Inquiries
             MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
 
             MySqlDataReader img = cons.ExecuteReader();
-            while (img.Read())
-            {
-                imagen = (byte[])(img["aimagen"]);
-            }
 
+                while (img.Read())
+                {
+                    imagen = (byte[])(img["aimagen"]);
+                }
+           
 
             conectar.Close();
             return imagen;
@@ -413,7 +414,8 @@ namespace Inquiries
             MySqlCommand conCont = new MySqlCommand("insert into respuestaconsulta (cod, respuesta, dci) values (" + codigo + ", '" + contenido + "',"+obtCI+");", conexion);
 
             conCont.ExecuteNonQuery();
-
+            MySqlCommand updateEstado = new MySqlCommand("update consulta set estado = 'contestada' where cod =" + codigo + "; ",conexion);
+            updateEstado.ExecuteNonQuery();
             conexion.Close();
 
         }
@@ -503,33 +505,19 @@ namespace Inquiries
             return gru;
         }
         //Leer respuesta para el alumno
-        public static string LeerRespuesta()
+        public static string LeerRespuesta(int codigo)
         {
 
             string comando;
-            int codigo = 0;
             string textovich = null;
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            MySqlConnection conectar2 = new MySqlConnection(conexbd);
-            conectar2.Open();
 
-            string consulta = "select cod, dci from consulta where alci = " + obtCI + " order by cod desc limit 1";
-            MySqlCommand codigoCons = new MySqlCommand(string.Format(consulta), conectar);
-            MySqlDataReader dat = codigoCons.ExecuteReader();
-
-            if (dat.Read())
-            {
-
-                codigo = dat.GetInt32("cod");
-
-            }
-
-            comando = "select respuesta from respuestaconsulta where cod = " + codigo + ";";
-            MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar2);
-
+            comando = "select respuesta from respuestaconsulta where cod = "+codigo+";";
+            MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
             MySqlDataReader data = buscar.ExecuteReader();
+
             if (data.Read()) textovich = data.GetString("respuesta");
 
             conectar.Close();

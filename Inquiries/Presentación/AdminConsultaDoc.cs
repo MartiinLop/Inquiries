@@ -13,13 +13,26 @@ namespace Inquiries
 {
     public partial class AdminConsultaDoc : Form
     {
-        public AdminConsultaDoc(string codcon,string alnom, string alape, string materia, string titulo, string contenido)
+        public AdminConsultaDoc(string codcon,string alnom, string alape, string materia, string titulo, string contenido,string estado)
         {
             InitializeComponent();
             lblCon.Text = alnom + " " + alape + " - " + materia;
             txtConsulta.Text = contenido;
             lblTCon.Text = titulo;
             lblCodCon.Text = codcon;
+
+            if(estado == "contestada")
+            {
+                txtRespuesta.Text = Consulta.LRes(Convert.ToInt32(codcon));
+                button3.Visible = false;
+                txtRespuesta.ReadOnly = true;
+            }
+            else
+            {
+                button3.Visible = true;
+                txtRespuesta.ReadOnly = false;
+            }
+
         }
 
         public AdminConsultaDoc()

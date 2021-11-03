@@ -413,6 +413,7 @@
     <None Include="Resources\nuevousuario.jpg" />
     <None Include="Resources\lapis.jpg" />
     <None Include="Resources\33x42 basura.jpg" />
+    <Content Include="Resources\imgPerf.jpg" />
     <Content Include="Resources\libroconsultas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

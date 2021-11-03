@@ -57,9 +57,9 @@ namespace Inquiries
             
         }
 
-        public static string LRes()
+        public static string LRes(int codigo)
         {
-            string text = ConBD.LeerRespuesta();
+            string text = ConBD.LeerRespuesta(codigo);
             return text;
         }
 

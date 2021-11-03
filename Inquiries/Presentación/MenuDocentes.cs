@@ -23,7 +23,14 @@ namespace Inquiries
         private void MenuDocentes_Load(object sender, EventArgs e)
         {
             panel3.Hide();
-            pictureBox1.Image = obtImagen(Docente.obtImgDoc());
+            try
+            {
+                pictureBox1.Image = obtImagen(Docente.obtImgDoc());
+            }
+            catch (Exception)
+            {
+                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+            }
 
         }
 

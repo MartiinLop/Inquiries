@@ -85,7 +85,16 @@ namespace Inquiries
 
         private void MenuAlumnos_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = obtImagen(Alumno.obtImgAl());
+            try
+            {
+                pictureBox1.Image = obtImagen(Alumno.obtImgAl());
+            }
+            catch (Exception)
+            {
+                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+            }
+            
+            
         }
 
 

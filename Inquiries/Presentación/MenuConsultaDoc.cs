@@ -28,9 +28,11 @@ namespace Inquiries.Presentación
             Consulta c = new Consulta();
             string[,] infoConsulta = (string[,])c.obtCon();
             int i = 40;
-
+            int pto = 1;
+               
             if (infoConsulta.Length != comparar.Length)
             {
+                panelConsultas.Controls.Clear();
 
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
                 {
@@ -40,8 +42,8 @@ namespace Inquiries.Presentación
                     consulta.Height = 73;
                     consulta.Width = 500;
                     panelConsultas.Controls.Add(consulta);
-                    consulta.Dock = DockStyle.Top;
-
+                    consulta.Location = new Point(1, pto);
+                    pto+=73;
 
                     Label codConsulta = new Label();
                     codConsulta.Visible = false;
@@ -97,12 +99,20 @@ namespace Inquiries.Presentación
                     consulta.Controls.Add(codconsulta);
                     codconsulta.Text = infoConsulta[x, 0];
 
+                    Label econsulta = new Label();
+                    econsulta.Visible = false;
+                    econsulta.Controls.Add(codconsulta);
+                    econsulta.Text = infoConsulta[x, 5];
 
                     dCI.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        AdminConsultaDoc a = new AdminConsultaDoc(codconsulta.Text ,alnom.Text, algrupo.Text, almate.Text, titulo.Text, contenido.Text);
+                        AdminConsultaDoc a = new AdminConsultaDoc(codconsulta.Text ,alnom.Text, algrupo.Text, almate.Text, titulo.Text, contenido.Text,econsulta.Text);
                         a.ShowDialog();
+                        comparar = new string[0, 0];
+                        mensaje = false;
+                        infoConsulta = new string[0, 0];
+                        panelConsultas.Controls.Clear();
 
                     };
 
@@ -149,9 +159,6 @@ namespace Inquiries.Presentación
 
                             break;
                     }
-
-
-
                     comparar = infoConsulta;
                 }
             }
@@ -169,6 +176,11 @@ namespace Inquiries.Presentación
         private void MenuConsultaDoc_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalirPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
-
+using Inquiries;
 namespace Inquiries
 {
     public partial class RegistroAlumnos : Form
@@ -92,9 +92,19 @@ namespace Inquiries
         //de imagen a byte
         public byte[] obtByte(Image img)
         {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            return ms.ToArray();
+            if (img != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).Save(ms, Image.FromFile(Path.Combine(Environment.CurrentDirectory,"imgPerf.jpg")).RawFormat);
+                return ms.ToArray();
+            }
+
         }
 
         private void label7_Click(object sender, EventArgs e)
