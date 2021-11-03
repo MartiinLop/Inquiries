@@ -78,5 +78,10 @@ namespace Inquiries
             Consulta.RCDocente(lblCodCon.Text, txtRespuesta.Text);
             MessageBox.Show("Respuesta Enviada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void lblCon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

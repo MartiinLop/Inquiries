@@ -19,6 +19,7 @@ namespace Inquiries
             txtConsulta.Text = contenido;
             txtTitulo.Text = titulo;
             txtRespuesta.Text = Consulta.LRes(ccod);
+            
         }
 
         private void VerConsultaAl_Load(object sender, EventArgs e)

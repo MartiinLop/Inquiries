@@ -169,5 +169,10 @@ namespace Inquiries.Presentación
                 }
             }
         }
+
+        private void btnConsultasAl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
