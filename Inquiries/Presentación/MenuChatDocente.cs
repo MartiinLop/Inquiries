@@ -12,7 +12,7 @@ namespace Inquiries.Presentación
 {
     public partial class MenuChatDocente : Form
     {
-
+        protected static string cod;
         private static string[,] comparar = new string[0,0];
         private static Boolean mensaje = false;
         public MenuChatDocente()
@@ -36,8 +36,9 @@ namespace Inquiries.Presentación
         }
         private void invChatDoc(object sender, EventArgs e, string c)
         {
+            cod = Convert.ToString(Chat.obtcodChat());
             string ci = Chat.ciAlumno(Convert.ToInt32(c));
-            ChatDoc a = new ChatDoc(ci);
+            ChatDoc a = new ChatDoc(ci, cod);
             a.ShowDialog();
 
         }

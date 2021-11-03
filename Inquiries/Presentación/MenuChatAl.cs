@@ -139,17 +139,17 @@ namespace Inquiries.Presentación
                                     {
                                         if (estado.Text == "En línea")
                                         {
-                                            //try
-                                            //{
+                                            try
+                                            {
                                             int a = Chat.crearChat(Convert.ToInt32(usuario.Text), Asignatura.obtenerCodigo(comboBox1.Text), txtTitulo.Text, true);
                                             Chat.crearParticipa(a);
                                             invChatAl(enviar, f, Convert.ToString(usuario.Text), a);
                                          
-                                            //}
-                                            //catch (Exception)
-                                            //{
-                                            //    MessageBox.Show("Usted ya ha creado un chat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            //}
+                                            }
+                                            catch (Exception)
+                                            {
+                                                MessageBox.Show("Usted ya ha creado un chat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            }
 
 
                                         }

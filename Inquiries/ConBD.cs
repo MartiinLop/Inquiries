@@ -30,7 +30,7 @@ namespace Inquiries
 
         //Contraseña a base de datos
         private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         //Cargar cantidad de grupos
@@ -125,7 +125,7 @@ namespace Inquiries
         public static byte[] imgAl()
         {
             byte[] imagen = null;
-            
+
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
             string com = "select aimagen from alumno where alci = " + obtCI + ";";
@@ -150,7 +150,7 @@ namespace Inquiries
             conectar.Open();
 
             MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado, dimagen) " +
-                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", '"+img+"');", conectar);
+                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", '" + img + "');", conectar);
             nudoc.ExecuteNonQuery();
             conectar.Close();
         }
@@ -358,10 +358,10 @@ namespace Inquiries
             MySqlConnection datos = new MySqlConnection(conexbd);
             datos.Open();
 
-            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, titulo, alci, dci, codasignatura) values ('realizada', now(), '" + titulo + "' " + obtCI + ", " + dci + ","+codasignatura+"); ", conexion);
+            MySqlCommand con = new MySqlCommand("insert into consulta (estado, fecharealizada, titulo, alci, dci, codasignatura) values ('realizada', now(), '" + titulo + "', " + obtCI + ", " + dci + "," + codasignatura + "); ", conexion);
             con.ExecuteNonQuery();
 
-            string obtCod = "select cod from consulta where alci = " + obtCI + " && " + "dci = " + dci + " order by cod desc limit 1;";
+            string obtCod = "select cod from consulta where alci = " + obtCI + " and " + "dci = " + dci + " order by cod desc limit 1;";
             MySqlCommand obtenCod = new MySqlCommand(string.Format(obtCod), datos);
             MySqlDataReader cod = obtenCod.ExecuteReader();
 
@@ -433,7 +433,7 @@ namespace Inquiries
                 MySqlConnection conLeer = new MySqlConnection(conexbd);
                 conLeer.Open();
 
-                string consulta = "select contenidoconsulta.cod , contenidoconsulta.contenido, consulta.dci, estado from contenidoconsulta inner join consulta on contenidoconsulta.cod = consulta.cod where alci = " + obtCI + ";";
+                string consulta = "select contenidoconsulta.cod, consulta.titulo, contenidoconsulta.contenido, docente.dnom, docente.dape, estado, asignatura.anom from consulta, contenidoconsulta, docente, asignatura where contenidoconsulta.cod = consulta.cod and consulta.dci = docente.dci and asignatura.acod = consulta.codasignatura and consulta.alci = " + obtCI + ";";
                 MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
 
                 MySqlDataAdapter data = new MySqlDataAdapter(cons);
@@ -460,6 +460,41 @@ namespace Inquiries
 
         }
 
+
+        //Obtener docentes para crear consulta
+        public static MySqlDataAdapter docCons(string grupo){
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string cons = "select dci, gruposdocente.dgrupo, dnom, dape, asignatura.anom from docente, gruposdocente, grupo, materiasdocente, asignatura " +
+                "where docente.dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo and materiasdocente.cidocente = docente.dci and asignatura.acod = materiasdocente.dmateria and grupo.gnom = '" + grupo + "'; ";
+            MySqlCommand comando = new MySqlCommand(string.Format(cons), conectar);
+
+            MySqlDataAdapter data = new MySqlDataAdapter(comando);
+
+            conectar.Close();
+            return data;
+
+        }
+
+        //Obtener grupo de alumno para comparar
+        public static string alGrupo()
+        {
+            string gru = null;
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string cons = "select alci, gnom from alumno, grupo where grupo.gcod = alumno.algrupo and alci = " + obtCI + ";";
+            MySqlCommand comando = new MySqlCommand(string.Format(cons), conectar);
+            MySqlDataReader data = comando.ExecuteReader();
+
+            while (data.Read())
+            {
+                gru = data.GetString("gnom");
+            }
+
+            conectar.Close();
+            return gru;
+        }
         //Leer respuesta para el alumno
         public static string LeerRespuesta()
         {

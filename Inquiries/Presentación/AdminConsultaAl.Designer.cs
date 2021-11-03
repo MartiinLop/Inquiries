@@ -29,6 +29,7 @@ namespace Inquiries
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
@@ -37,11 +38,8 @@ namespace Inquiries
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtCodCon = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxAsig = new System.Windows.Forms.ComboBox();
-            this.txtDocPrueba = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_RCons = new System.Windows.Forms.Button();
@@ -50,9 +48,10 @@ namespace Inquiries
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panelDoc = new System.Windows.Forms.Panel();
+            this.txtDocPrueba = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -171,16 +170,16 @@ namespace Inquiries
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
             this.btnPerfilDoc.Click += new System.EventHandler(this.btnPerfilDoc_Click);
             // 
-            // groupBox1
+            // label4
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(1019, 161);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 521);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1045, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 29);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Elegir Docente:";
             // 
             // txtCodCon
             // 
@@ -189,35 +188,6 @@ namespace Inquiries
             this.txtCodCon.Size = new System.Drawing.Size(100, 20);
             this.txtCodCon.TabIndex = 19;
             this.txtCodCon.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(889, 84);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Asignatura";
-            // 
-            // comboBoxAsig
-            // 
-            this.comboBoxAsig.FormattingEnabled = true;
-            this.comboBoxAsig.Location = new System.Drawing.Point(883, 107);
-            this.comboBoxAsig.Name = "comboBoxAsig";
-            this.comboBoxAsig.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxAsig.TabIndex = 17;
-            // 
-            // txtDocPrueba
-            // 
-            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocPrueba.Location = new System.Drawing.Point(675, 47);
-            this.txtDocPrueba.Name = "txtDocPrueba";
-            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
-            this.txtDocPrueba.TabIndex = 15;
-            this.txtDocPrueba.Visible = false;
-            this.txtDocPrueba.TextChanged += new System.EventHandler(this.txtDocPrueba_TextChanged);
             // 
             // panel1
             // 
@@ -239,10 +209,9 @@ namespace Inquiries
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.groupBox2.Controls.Add(this.panelDoc);
             this.groupBox2.Controls.Add(this.btn_RCons);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBoxAsig);
             this.groupBox2.Controls.Add(this.txtConsulta);
             this.groupBox2.Controls.Add(this.txtTitulo);
             this.groupBox2.Controls.Add(this.label2);
@@ -250,7 +219,7 @@ namespace Inquiries
             this.groupBox2.Controls.Add(this.btnSalirPrincipal);
             this.groupBox2.Location = new System.Drawing.Point(0, 170);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1019, 510);
+            this.groupBox2.Size = new System.Drawing.Size(1264, 510);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -325,37 +294,53 @@ namespace Inquiries
             this.panel3.TabIndex = 8;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // label4
+            // panelDoc
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 29);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Elegir Docente:";
+            this.panelDoc.AutoScroll = true;
+            this.panelDoc.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.panelDoc.Location = new System.Drawing.Point(1023, 60);
+            this.panelDoc.Name = "panelDoc";
+            this.panelDoc.Size = new System.Drawing.Size(229, 439);
+            this.panelDoc.TabIndex = 19;
+            // 
+            // txtDocPrueba
+            // 
+            this.txtDocPrueba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtDocPrueba.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocPrueba.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocPrueba.Location = new System.Drawing.Point(675, 47);
+            this.txtDocPrueba.Name = "txtDocPrueba";
+            this.txtDocPrueba.Size = new System.Drawing.Size(179, 33);
+            this.txtDocPrueba.TabIndex = 15;
+            this.txtDocPrueba.Visible = false;
+            this.txtDocPrueba.TextChanged += new System.EventHandler(this.txtDocPrueba_TextChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 700;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AdminConsultaAl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
             this.Name = "AdminConsultaAl";
             this.Text = "CrearConsulta";
             this.Load += new System.EventHandler(this.AdminConsultaAl_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -369,7 +354,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Button btnCerrarAl;
         private System.Windows.Forms.Button btnPerfilDoc;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel3;
@@ -378,10 +362,10 @@ namespace Inquiries
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtConsulta;
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.TextBox txtDocPrueba;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBoxAsig;
         private System.Windows.Forms.TextBox txtCodCon;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panelDoc;
+        private System.Windows.Forms.TextBox txtDocPrueba;
+        private System.Windows.Forms.Timer timer1;
     }
 }

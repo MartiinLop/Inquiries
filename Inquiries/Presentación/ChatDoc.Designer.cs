@@ -43,6 +43,8 @@ namespace Inquiries
             this.button2 = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.labelChCod = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,7 +73,7 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.groupBox1.Controls.Add(this.txtAlCI);
+            this.groupBox1.Controls.Add(this.panelUsuarios);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
             this.groupBox1.Location = new System.Drawing.Point(1019, 156);
             this.groupBox1.Name = "groupBox1";
@@ -81,7 +83,7 @@ namespace Inquiries
             // 
             // txtAlCI
             // 
-            this.txtAlCI.Location = new System.Drawing.Point(74, 155);
+            this.txtAlCI.Location = new System.Drawing.Point(694, 34);
             this.txtAlCI.Name = "txtAlCI";
             this.txtAlCI.Size = new System.Drawing.Size(100, 20);
             this.txtAlCI.TabIndex = 22;
@@ -105,6 +107,8 @@ namespace Inquiries
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.labelChCod);
+            this.panel1.Controls.Add(this.txtAlCI);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.btnChatAl);
@@ -217,8 +221,24 @@ namespace Inquiries
             this.panel3.AutoScroll = true;
             this.panel3.Location = new System.Drawing.Point(6, 175);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(975, 448);
+            this.panel3.Size = new System.Drawing.Size(1007, 448);
             this.panel3.TabIndex = 22;
+            // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.Location = new System.Drawing.Point(7, 20);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(232, 447);
+            this.panelUsuarios.TabIndex = 8;
+            // 
+            // labelChCod
+            // 
+            this.labelChCod.AutoSize = true;
+            this.labelChCod.Location = new System.Drawing.Point(694, 70);
+            this.labelChCod.Name = "labelChCod";
+            this.labelChCod.Size = new System.Drawing.Size(35, 13);
+            this.labelChCod.TabIndex = 23;
+            this.labelChCod.Text = "label2";
             // 
             // ChatDoc
             // 
@@ -237,8 +257,8 @@ namespace Inquiries
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +280,7 @@ namespace Inquiries
         private System.Windows.Forms.TextBox txtMensaje;
         private System.Windows.Forms.TextBox txtAlCI;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.Label labelChCod;
     }
 }

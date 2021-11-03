@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Inquiries.Presentación;
+
 
 namespace Inquiries.Presentación
 {
@@ -74,8 +76,8 @@ namespace Inquiries.Presentación
         public void invConDoc()
         {
             this.Hide();
-            AdminConsultaAl f = new AdminConsultaAl();
-            f.ShowDialog();
+            //AdminConsultaDoc f = new AdminConsultaDoc();
+            //f.ShowDialog();
             this.Show();
         }
 

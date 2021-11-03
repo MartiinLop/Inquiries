@@ -14,11 +14,15 @@ namespace Inquiries
 {
     public partial class ChatDoc : Form
     {
-        public ChatDoc(string c)
+        protected static string[,] comparar = new string[0, 0];
+        protected static string[,] comparar0 = new string[0, 0];
+        public ChatDoc(string c, string cod)
         {
 
             InitializeComponent();
             txtAlCI.Hide();
+            labelChCod.Hide();
+            labelChCod.Text = cod;
             Timer r = new Timer
             {
                 Interval = 300
@@ -114,6 +118,7 @@ namespace Inquiries
                     txtR.Location = new Point(69, 7);
                 }
             }
+            obtParticipantes(source, e);
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
@@ -124,6 +129,61 @@ namespace Inquiries
         private void ChatDoc_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void obtParticipantes(object source, EventArgs e)
+        {
+            string[,] a = (string[,])Chat.alConectados(Convert.ToString(labelChCod.Text));
+            if (a.Length != comparar.Length)
+            {
+                for (int x = 0; x < a.GetLength(0); x++)
+                {
+                    Panel AConectados = new Panel();
+                    panelUsuarios.Controls.Add(AConectados);
+                    AConectados.Dock = DockStyle.Top;
+
+                    InquiriesTextBox usuariosA = new InquiriesTextBox();
+                    usuariosA.BackColor = Color.FromArgb(236, 236, 236);
+                    usuariosA.ForeColor = Color.Black;
+                    usuariosA.BorderSize = 1;
+                    usuariosA.Font = new Font("Roboto", 16);
+                    usuariosA.BorderColor = Color.FromArgb(0, 0, 0);
+                    usuariosA.BorderRadius = 10;
+                    usuariosA.Texts = a[x, 0] + " " + a[x, 1] + " - (Alumno)";
+
+                    usuariosA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                    AConectados.Controls.Add(usuariosA);
+                    usuariosA.Location = new Point(7, 7);
+
+                }
+                comparar = a;
+            }
+
+            string[,] b = (string[,])Chat.docConectados(Convert.ToString(labelChCod.Text));
+            if (b.Length != comparar0.Length)
+            {
+                for (int x = 0; x < b.GetLength(0); x++)
+                {
+                    Panel DConectados = new Panel();
+                    panelUsuarios.Controls.Add(DConectados);
+                    DConectados.Dock = DockStyle.Top;
+
+                    InquiriesTextBox usuariosD = new InquiriesTextBox();
+                    usuariosD.BackColor = Color.FromArgb(236, 236, 236);
+                    usuariosD.ForeColor = Color.Black;
+                    usuariosD.BorderSize = 1;
+                    usuariosD.Font = new Font("Roboto", 16);
+                    usuariosD.BorderColor = Color.FromArgb(0, 0, 0);
+                    usuariosD.BorderRadius = 10;
+                    usuariosD.Texts = b[x, 0] + " " + b[x, 1] + " - (Docente)";
+
+                    usuariosD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                    DConectados.Controls.Add(usuariosD);
+                    usuariosD.Location = new Point(7, 7);
+
+                }
+                comparar0 = b;
+            }
         }
     }
 }

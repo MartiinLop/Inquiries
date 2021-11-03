@@ -20,6 +20,7 @@ namespace Inquiries
             InitializeComponent();
             comparar = new string[0, 0];
             
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -117,6 +118,8 @@ namespace Inquiries
             {
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
                 {
+                    
+
                     Panel consulta = new Panel();
                     consulta.Height = 73;
                     consulta.Width = 500;
@@ -133,7 +136,7 @@ namespace Inquiries
                     alCI.Visible = true;
                     alCI.BackColor = Color.FromArgb(196, 196, 196);
                     alCI.ForeColor = Color.Black;
-                    alCI.Text = Convert.ToString(infoConsulta[x, 0]) + " - " + Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 2]);
+                    alCI.Text = Convert.ToString(infoConsulta[x, 0]) + " - " + Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 6]) +  "\n" + Convert.ToString(infoConsulta[x, 2] + "\n" + Convert.ToString(infoConsulta[x, 3]) + " " + Convert.ToString(infoConsulta[x, 4]));
                     alCI.Width = 500;
                     consulta.Controls.Add(alCI);
 
@@ -141,20 +144,20 @@ namespace Inquiries
                     lblEstado.Text = "Estado:";
                     lblEstado.ForeColor = Color.Black;
                     lblEstado.BackColor = Color.FromArgb(196, 196, 196);
-                    lblEstado.Location = new Point(340, 10);
+                    lblEstado.Location = new Point(370, 25);
                     panelConsultas.Controls.Add(lblEstado);
                     lblEstado.Visible = true;
                     lblEstado.BringToFront();
                     
 
-                    switch (Convert.ToString(infoConsulta[x, 3])) {
+                    switch (Convert.ToString(infoConsulta[x, 5])) {
 
                         case "contestada":
                             Label estadocon = new Label();
-                            estadocon.Text = Convert.ToString(infoConsulta[x, 3].ToUpper());
+                            estadocon.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                             estadocon.ForeColor = Color.Black;
                             estadocon.BackColor = Color.Green;
-                            estadocon.Location = new Point(340, 30);
+                            estadocon.Location = new Point(370, 40);
                             panelConsultas.Controls.Add(estadocon);
                             estadocon.Visible = true;
                             estadocon.BringToFront();
@@ -162,10 +165,10 @@ namespace Inquiries
 
                         case "recibida":
                             Label estadore = new Label();
-                            estadore.Text = Convert.ToString(infoConsulta[x, 3].ToUpper());
+                            estadore.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                             estadore.ForeColor = Color.Black;
                             estadore.BackColor = Color.Yellow;
-                            estadore.Location = new Point(340, 30);
+                            estadore.Location = new Point(370, 40);
                             panelConsultas.Controls.Add(estadore);
                             estadore.Visible = true;
                             estadore.BringToFront();
@@ -173,10 +176,10 @@ namespace Inquiries
 
                         case "realizada":
                             Label estador = new Label();
-                            estador.Text = Convert.ToString(infoConsulta[x, 3].ToUpper());
+                            estador.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
                             estador.ForeColor = Color.Black;
                             estador.BackColor = Color.Red;
-                            estador.Location = new Point(340, 30);
+                            estador.Location = new Point(370, 40);
                             panelConsultas.Controls.Add(estador);
                             estador.Visible = true;
                             estador.BringToFront();

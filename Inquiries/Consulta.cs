@@ -68,5 +68,33 @@ namespace Inquiries
         {
             ConBD.Consulta(dci, contenido, titulo, codasignatura);
         }
+
+        //Obtener docentes para consulta
+
+        public static Array obtDocCon(string grupo)
+        {
+            MySqlDataAdapter cons = new MySqlDataAdapter();
+            cons = ConBD.docCons(grupo);
+            DataTable b = new DataTable();
+
+            cons.Fill(b);
+
+            string[,] a = new string[b.Rows.Count, b.Columns.Count];
+
+            for (int x = 0; x < b.Rows.Count; x++)
+            {
+                for (int y = 0; y < b.Columns.Count; y++)
+                {
+                    a[x, y] = Convert.ToString(b.Rows[x][y]);
+                }
+            }
+
+            return a;
+        }
+
+        public static string gruAl()
+        {
+            return ConBD.alGrupo();
+        }
     }
 }

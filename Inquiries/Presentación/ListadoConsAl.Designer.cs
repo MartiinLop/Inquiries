@@ -48,9 +48,11 @@ namespace Inquiries.Presentación
             // 
             // panelConsultas
             // 
-            this.panelConsultas.Location = new System.Drawing.Point(6, 175);
+            this.panelConsultas.AutoScroll = true;
+            this.panelConsultas.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.panelConsultas.Location = new System.Drawing.Point(0, 175);
             this.panelConsultas.Name = "panelConsultas";
-            this.panelConsultas.Size = new System.Drawing.Size(1258, 455);
+            this.panelConsultas.Size = new System.Drawing.Size(1264, 455);
             this.panelConsultas.TabIndex = 14;
             // 
             // panel2
@@ -191,6 +193,8 @@ namespace Inquiries.Presentación
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 700;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ListadoConsAl

@@ -12,6 +12,7 @@ namespace Inquiries
 {
     public partial class AdminConsultaAl : Form
     {
+        protected static string[,] comparar = new string[0, 0];
         public AdminConsultaAl()
         {
             InitializeComponent();
@@ -29,17 +30,16 @@ namespace Inquiries
 
         private void btn_RCons_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Consulta.CConsulta(Convert.ToInt32(txtDocPrueba.Text), txtConsulta.Text, txtTitulo.Text, Asignatura.obtenerCodigo(comboBoxAsig.Text));
-                MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al realizar consulta", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{
+            
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error al realizar consulta", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -121,16 +121,53 @@ namespace Inquiries
 
         private void btnVerRespuesta_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void AdminConsultaAl_Load(object sender, EventArgs e)
         {
-            int b = Asignatura.cantMaterias();
-            for (int i = 0; i < b; i++)
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string grupAl = Consulta.gruAl();
+
+            string[,] docCon = (string[,])Consulta.obtDocCon(grupAl);
+
+
+            if (docCon.Length != comparar.Length)
             {
-                comboBoxAsig.Items.Add(Asignatura.devolverMaterias().Rows[i]["anom"]);
+                for (int x = 0; x < docCon.GetLength(0); x++)
+                {
+                    Panel docente = new Panel();
+                    docente.Height = 50;
+                    docente.Width = 200;
+                    panelDoc.Controls.Add(docente);
+
+                    RichTextBox consultaDoc = new RichTextBox();
+                    consultaDoc.Visible = true;
+                    consultaDoc.BackColor = Color.FromArgb(196, 196, 196);
+                    consultaDoc.ForeColor = Color.Black;
+                    consultaDoc.Text = docCon[x, 2] + " " + docCon[x, 3] + "\n" + docCon[x, 4];
+                    consultaDoc.Width = 200;
+                    consultaDoc.Height = 50;
+                    consultaDoc.ReadOnly = true;
+                    docente.Controls.Add(consultaDoc);
+
+                    consultaDoc.Click += delegate (object enviar, EventArgs f)
+                    {
+
+                        Consulta.CConsulta(Convert.ToInt32(docCon[x, 0]), txtConsulta.Text, txtTitulo.Text, Convert.ToInt32(docCon[x, 1]));
+                        MessageBox.Show("Consulta Realizada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    };
+
+                }
+                comparar = docCon;
             }
         }
-    }
+
+            
+}
 }

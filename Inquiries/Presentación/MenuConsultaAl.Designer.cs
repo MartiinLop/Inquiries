@@ -97,7 +97,7 @@ namespace Inquiries
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 31);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Administrar Consultas";
+            this.button2.Text = "Realizar Consulta";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

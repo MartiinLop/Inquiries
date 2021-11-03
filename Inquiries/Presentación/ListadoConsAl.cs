@@ -12,9 +12,16 @@ namespace Inquiries.Presentación
 {
     public partial class ListadoConsAl : Form
     {
+
+        protected int ejeX = 0;
+        protected int ejeY = 0;
+
+        protected static string[,] comparar = new string[0, 0];
         public ListadoConsAl()
         {
             InitializeComponent();
+            ejeX = 0;
+            ejeY = 0;
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
@@ -37,7 +44,85 @@ namespace Inquiries.Presentación
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            Consulta c = new Consulta();
+            string[,] infoConsulta = (string[,])c.obtCon();
 
+            if (infoConsulta.Length != comparar.Length)
+            {
+                for (int x = 0; x < infoConsulta.GetLength(0); x++)
+                {
+                    Panel consulta = new Panel();
+                    consulta.Height = 50;
+                    consulta.Width = 200;
+                    panelConsultas.Controls.Add(consulta);
+                    
+                    if(ejeX < 900)
+                    {
+                        consulta.Location = new Point(ejeX, ejeY);
+                        ejeX += 90;
+                    }
+                    else
+                    {
+                        ejeY += 90;
+                        consulta.Location = new Point(ejeX, ejeY);
+                        ejeX = 0;
+                    }
+
+                        
+                        RichTextBox alCI = new RichTextBox();
+                        alCI.Visible = true;
+                        alCI.BackColor = Color.FromArgb(196, 196, 196);
+                        alCI.ForeColor = Color.Black;
+                        alCI.Text = Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 3]) + "\n" + Convert.ToString(infoConsulta[x, 6]);
+                        alCI.Width = 200;
+                        alCI.Height = 50;
+                        alCI.ReadOnly = true;
+                        consulta.Controls.Add(alCI);
+
+
+                        switch (Convert.ToString(infoConsulta[x, 5]))
+                        {
+
+                            case "contestada":
+                                Label estadocon = new Label();
+                                
+                                estadocon.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
+                                estadocon.ForeColor = Color.Black;
+                                estadocon.BackColor = Color.Green;
+                                estadocon.Location = new Point(95, 20);
+                                panelConsultas.Controls.Add(estadocon);
+                                estadocon.Visible = true;
+                                estadocon.BringToFront();
+                                break;
+
+                            case "recibida":
+                                Label estadore = new Label();
+                                
+                                estadore.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
+                                estadore.ForeColor = Color.Black;
+                                estadore.BackColor = Color.Yellow;
+                                estadore.Location = new Point(95, 20);
+                                panelConsultas.Controls.Add(estadore);
+                                estadore.Visible = true;
+                                estadore.BringToFront();
+                                break;
+
+                            case "realizada":
+                                Label estador = new Label();
+                               
+                                estador.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
+                                estador.ForeColor = Color.Black;
+                                estador.BackColor = Color.Red;
+                                estador.Location = new Point(95, 20);
+                                panelConsultas.Controls.Add(estador);
+                                estador.Visible = true;
+                                estador.BringToFront();
+                                break;
+                        }
+                    
+                    comparar = infoConsulta;
+                }
+            }
         }
     }
 }
