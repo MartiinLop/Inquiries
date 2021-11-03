@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
-
+using Inquiries;
 namespace Inquiries
 {
     public partial class RegistroAlumnos : Form
@@ -46,7 +46,7 @@ namespace Inquiries
                     if (txtContraAl.Text == txtContraConfAl.Text)
                     {
                         Boolean est = true, con = false;
-                        ConBD.regal(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, pictureBox1.Image);
+                        Alumno.regAlumno(Convert.ToInt32(txtCIAl.Text), txtNomAl.Text, txtApeAl.Text, txtContraAl.Text, Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString(), txtNickAl.Text, con, est, obtByte(pictureBox1.Image));
 
                         txtCIAl.Text = "";
                         txtNomAl.Text = "";
@@ -75,6 +75,37 @@ namespace Inquiries
             //}
         }
 
+        private void btnArch_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog img = new OpenFileDialog();
+            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
+
+            if (img.ShowDialog() == DialogResult.OK)
+            {
+                txtNomImg.Text = img.FileName;
+
+                pictureBox1.Image = Image.FromFile(img.FileName);
+
+            }
+        }
+
+        //de imagen a byte
+        public byte[] obtByte(Image img)
+        {
+            if (img != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).Save(ms, Image.FromFile(Path.Combine(Environment.CurrentDirectory,"imgPerf.jpg")).RawFormat);
+                return ms.ToArray();
+            }
+
+        }
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -161,57 +192,7 @@ namespace Inquiries
             
         }
 
-        private void btnArch_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog img = new OpenFileDialog();
-            img.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png) | *.jpg; *.jpeg; *.gif; *.bmp; *.png";
-
-            if (img.ShowDialog() == DialogResult.OK)
-            {
-                txtNomImg.Text = img.FileName;
-
-                pictureBox1.Image = Image.FromFile(img.FileName);
-                
-            }
-        }
-
-        //de imagen a byte
-        public byte[] obtByte(System.Drawing.Image img)
-        {
-            MemoryStream ms = new MemoryStream();
-           img.Save(ms, img.RawFormat);
-            return ms.ToArray();   
-        }
-
-        //solucion 2 (convertir directamente de path)
-        //public byte[] imgPath(){
-        //
-        //    byte[] img = File.ReadAllBytes(txtNomImg.Text);
-        //    return img;
-        //}
-
-        //solucion 3 (imageconverter)
-        //public byte[] obtByte()
-        //{
-        //    System.Drawing.Image img = System.Drawing.Image.FromFile(txtNomImg.Text);
-        //    byte[] imagen = obtBytebyImageConverter(img);
-        //    return imagen;
-        //}
-        //public byte[] obtBytebyImageConverter(System.Drawing.Image imagensita)
-        //{
-        //    ImageConverter conv = new ImageConverter();
-        //    byte[] imgConvertir = (byte[])conv.ConvertTo(imagensita, typeof(byte[]));
-
-        //    return imgConvertir;
-        //}
-
-        public byte[] ImageToByteArray(Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            ImageFormat imf = imageIn.RawFormat;
-            imageIn.Save(ms, imf);
-            return ms.ToArray();
-        }
+        
 
 
     }

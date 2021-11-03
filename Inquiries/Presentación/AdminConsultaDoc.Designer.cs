@@ -38,6 +38,7 @@ namespace Inquiries
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCodCon = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCon = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@ namespace Inquiries
             this.txtRespuesta = new System.Windows.Forms.RichTextBox();
             this.txtConsulta = new System.Windows.Forms.RichTextBox();
             this.lblTCon = new System.Windows.Forms.Label();
-            this.lblCodCon = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,9 +58,9 @@ namespace Inquiries
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(21, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 33);
+            this.label1.Size = new System.Drawing.Size(317, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Consultas Realizadas";
+            this.label1.Text = "Respuesta de Consulta";
             // 
             // panel2
             // 
@@ -79,7 +79,7 @@ namespace Inquiries
             this.btnSalirPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalirPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalirPrincipal.ForeColor = System.Drawing.Color.White;
-            this.btnSalirPrincipal.Location = new System.Drawing.Point(113, 483);
+            this.btnSalirPrincipal.Location = new System.Drawing.Point(650, 639);
             this.btnSalirPrincipal.Name = "btnSalirPrincipal";
             this.btnSalirPrincipal.Size = new System.Drawing.Size(120, 29);
             this.btnSalirPrincipal.TabIndex = 7;
@@ -163,17 +163,29 @@ namespace Inquiries
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.groupBox1.Controls.Add(this.lblCodCon);
-            this.groupBox1.Controls.Add(this.btnSalirPrincipal);
-            this.groupBox1.Location = new System.Drawing.Point(1019, 156);
+            this.groupBox1.Controls.Add(this.lblTCon);
+            this.groupBox1.Controls.Add(this.txtConsulta);
+            this.groupBox1.Controls.Add(this.lblCon);
+            this.groupBox1.Location = new System.Drawing.Point(826, 156);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 526);
+            this.groupBox1.Size = new System.Drawing.Size(438, 526);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
+            // 
+            // lblCodCon
+            // 
+            this.lblCodCon.AutoSize = true;
+            this.lblCodCon.Location = new System.Drawing.Point(761, 60);
+            this.lblCodCon.Name = "lblCodCon";
+            this.lblCodCon.Size = new System.Drawing.Size(9, 13);
+            this.lblCodCon.TabIndex = 19;
+            this.lblCodCon.Text = "l";
+            this.lblCodCon.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.lblCodCon);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.btnChatAl);
@@ -189,11 +201,12 @@ namespace Inquiries
             // 
             this.lblCon.AutoSize = true;
             this.lblCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCon.Location = new System.Drawing.Point(580, 210);
+            this.lblCon.Location = new System.Drawing.Point(15, 61);
             this.lblCon.Name = "lblCon";
             this.lblCon.Size = new System.Drawing.Size(88, 24);
             this.lblCon.TabIndex = 14;
             this.lblCon.Text = "Consulta:";
+            this.lblCon.Click += new System.EventHandler(this.lblCon_Click);
             // 
             // label4
             // 
@@ -213,7 +226,7 @@ namespace Inquiries
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(323, 542);
+            this.button3.Location = new System.Drawing.Point(453, 639);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(191, 29);
             this.button3.TabIndex = 12;
@@ -227,7 +240,7 @@ namespace Inquiries
             this.txtRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRespuesta.Location = new System.Drawing.Point(33, 244);
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(481, 278);
+            this.txtRespuesta.Size = new System.Drawing.Size(747, 370);
             this.txtRespuesta.TabIndex = 17;
             this.txtRespuesta.Text = "";
             // 
@@ -235,9 +248,9 @@ namespace Inquiries
             // 
             this.txtConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
             this.txtConsulta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsulta.Location = new System.Drawing.Point(560, 256);
+            this.txtConsulta.Location = new System.Drawing.Point(14, 89);
             this.txtConsulta.Name = "txtConsulta";
-            this.txtConsulta.Size = new System.Drawing.Size(428, 289);
+            this.txtConsulta.Size = new System.Drawing.Size(413, 424);
             this.txtConsulta.TabIndex = 18;
             this.txtConsulta.Text = "";
             // 
@@ -245,33 +258,21 @@ namespace Inquiries
             // 
             this.lblTCon.AutoSize = true;
             this.lblTCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTCon.Location = new System.Drawing.Point(538, 171);
+            this.lblTCon.Location = new System.Drawing.Point(6, 30);
             this.lblTCon.Name = "lblTCon";
             this.lblTCon.Size = new System.Drawing.Size(130, 31);
             this.lblTCon.TabIndex = 19;
             this.lblTCon.Text = "Consulta:";
-            // 
-            // lblCodCon
-            // 
-            this.lblCodCon.AutoSize = true;
-            this.lblCodCon.Location = new System.Drawing.Point(52, 256);
-            this.lblCodCon.Name = "lblCodCon";
-            this.lblCodCon.Size = new System.Drawing.Size(9, 13);
-            this.lblCodCon.TabIndex = 19;
-            this.lblCodCon.Text = "l";
-            this.lblCodCon.Visible = false;
             // 
             // AdminConsultaDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.lblTCon);
-            this.Controls.Add(this.txtConsulta);
             this.Controls.Add(this.txtRespuesta);
+            this.Controls.Add(this.btnSalirPrincipal);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblCon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -282,6 +283,7 @@ namespace Inquiries
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

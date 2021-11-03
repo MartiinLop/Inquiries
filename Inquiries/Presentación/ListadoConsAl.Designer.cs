@@ -138,13 +138,14 @@ namespace Inquiries.Presentación
             this.btnConsultasAl.FlatAppearance.BorderSize = 0;
             this.btnConsultasAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultasAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultasAl.Location = new System.Drawing.Point(192, 5);
+            this.btnConsultasAl.Location = new System.Drawing.Point(192, 0);
             this.btnConsultasAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultasAl.Name = "btnConsultasAl";
-            this.btnConsultasAl.Size = new System.Drawing.Size(237, 112);
+            this.btnConsultasAl.Size = new System.Drawing.Size(237, 117);
             this.btnConsultasAl.TabIndex = 1;
             this.btnConsultasAl.Text = "CONSULTAS";
             this.btnConsultasAl.UseVisualStyleBackColor = false;
+            this.btnConsultasAl.Click += new System.EventHandler(this.btnConsultasAl_Click);
             // 
             // btnGruposAl
             // 

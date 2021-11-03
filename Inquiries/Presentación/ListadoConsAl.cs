@@ -68,6 +68,11 @@ namespace Inquiries.Presentación
                         alCI.ReadOnly = true;
                         consulta.Controls.Add(alCI);
 
+                    Label ccod = new Label();
+                    ccod.Visible = false;
+                    consulta.Controls.Add(ccod);
+                    ccod.Text = infoConsulta[x, 0];
+
                     Label dnom = new Label();
                     dnom.Visible = false;
                     consulta.Controls.Add(dnom);
@@ -155,7 +160,7 @@ namespace Inquiries.Presentación
                     alCI.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        VerConsultaAl a = new VerConsultaAl(dnom.Text, dape.Text, dmate.Text, titulo.Text, contenido.Text);
+                        VerConsultaAl a = new VerConsultaAl(dnom.Text, dape.Text, dmate.Text, titulo.Text, contenido.Text, Convert.ToInt32(ccod.Text));
                         a.ShowDialog();
 
                     };
@@ -163,6 +168,11 @@ namespace Inquiries.Presentación
                     comparar = infoConsulta;
                 }
             }
+        }
+
+        private void btnConsultasAl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

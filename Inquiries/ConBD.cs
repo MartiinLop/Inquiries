@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -102,7 +102,7 @@ namespace Inquiries
         }
 
         //Registro alumnos
-        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, Image img)
+        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] img)
         {
             alConexion = false;
             alEstado = true;
@@ -116,7 +116,8 @@ namespace Inquiries
 
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '  ');", conectar);
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", @aimagen);", conectar);
+            nual.Parameters.AddWithValue("aimagen", img);
             nual.ExecuteNonQuery();
             conectar.Close();
         }
@@ -132,11 +133,12 @@ namespace Inquiries
             MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
 
             MySqlDataReader img = cons.ExecuteReader();
-            while (img.Read())
-            {
-                imagen = (byte[])(img["aimagen"]);
-            }
 
+                while (img.Read())
+                {
+                    imagen = (byte[])(img["aimagen"]);
+                }
+           
 
             conectar.Close();
             return imagen;
@@ -150,9 +152,31 @@ namespace Inquiries
             conectar.Open();
 
             MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado, dimagen) " +
-                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", '" + img + "');", conectar);
+                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", @dimagen);", conectar);
+            nudoc.Parameters.AddWithValue("dimagen", img);
             nudoc.ExecuteNonQuery();
             conectar.Close();
+        }
+
+        //Seleccionar imagen docente
+        public static byte[] imgDoc()
+        {
+            byte[] imagen = null;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string com = "select dimagen from docente where dci = " + obtCI + ";";
+            MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
+
+            MySqlDataReader img = cons.ExecuteReader();
+            while (img.Read())
+            {
+                imagen = (byte[])(img["dimagen"]);
+            }
+
+
+            conectar.Close();
+            return imagen;
         }
 
         //Inicio sesión alumno
@@ -390,7 +414,8 @@ namespace Inquiries
             MySqlCommand conCont = new MySqlCommand("insert into respuestaconsulta (cod, respuesta, dci) values (" + codigo + ", '" + contenido + "',"+obtCI+");", conexion);
 
             conCont.ExecuteNonQuery();
-
+            MySqlCommand updateEstado = new MySqlCommand("update consulta set estado = 'contestada' where cod =" + codigo + "; ",conexion);
+            updateEstado.ExecuteNonQuery();
             conexion.Close();
 
         }
@@ -431,7 +456,7 @@ namespace Inquiries
                 MySqlConnection conLeer = new MySqlConnection(conexbd);
                 conLeer.Open();
 
-                string consulta = "select contenidoconsulta.cod, consulta.titulo, contenidoconsulta.contenido, alumno.alnom, alumno.alape, estado, grupo.gnom from consulta, contenidoconsulta, alumno, grupo where contenidoconsulta.cod = consulta.cod and consulta.alci = alumno.alci and grupo.gcod = alumno.algrupo and consulta.dci ="+obtCI+"; ";
+                string consulta = "select contenidoconsulta.cod, consulta.titulo, contenidoconsulta.contenido, alumno.alnom, alumno.alape, estado, grupo.gnom, asignatura.anom from consulta, contenidoconsulta, alumno, grupo, asignatura where contenidoconsulta.cod = consulta.cod and consulta.alci = alumno.alci and grupo.gcod = alumno.algrupo and asignatura.acod = consulta.codasignatura and consulta.dci = "+obtCI+"; ";
                 MySqlCommand cons = new MySqlCommand(string.Format(consulta), conLeer);
 
                 MySqlDataAdapter data = new MySqlDataAdapter(cons);
@@ -480,33 +505,19 @@ namespace Inquiries
             return gru;
         }
         //Leer respuesta para el alumno
-        public static string LeerRespuesta()
+        public static string LeerRespuesta(int codigo)
         {
 
             string comando;
-            int codigo = 0;
             string textovich = null;
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            MySqlConnection conectar2 = new MySqlConnection(conexbd);
-            conectar2.Open();
 
-            string consulta = "select cod, dci from consulta where alci = " + obtCI + " order by cod desc limit 1";
-            MySqlCommand codigoCons = new MySqlCommand(string.Format(consulta), conectar);
-            MySqlDataReader dat = codigoCons.ExecuteReader();
-
-            if (dat.Read())
-            {
-
-                codigo = dat.GetInt32("cod");
-
-            }
-
-            comando = "select respuesta from respuestaconsulta where cod = " + codigo + ";";
-            MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar2);
-
+            comando = "select respuesta from respuestaconsulta where cod = "+codigo+";";
+            MySqlCommand buscar = new MySqlCommand(string.Format(comando), conectar);
             MySqlDataReader data = buscar.ExecuteReader();
+
             if (data.Read()) textovich = data.GetString("respuesta");
 
             conectar.Close();

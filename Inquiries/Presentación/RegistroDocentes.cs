@@ -82,6 +82,22 @@ namespace Inquiries
             }
         }
 
+        public byte[] obtByte(Image img)
+        {
+            if (img != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).Save(ms, Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).RawFormat);
+                return ms.ToArray();
+            }
+        }
+
         private void btnArch_Click(object sender, EventArgs e)
         {
             OpenFileDialog img = new OpenFileDialog();
@@ -97,11 +113,6 @@ namespace Inquiries
 
         }
 
-        public byte[] obtByte(System.Drawing.Image img)
-        {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            return ms.ToArray();
-        }
+        
     }
 }

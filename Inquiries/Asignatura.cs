@@ -26,6 +26,11 @@ namespace Inquiries
             this.nom = nom;
             this.grupo = grupo;
         }
+
+        public Asignatura()
+        {
+
+        }
         public int Cod
         {
             get { return cod; }

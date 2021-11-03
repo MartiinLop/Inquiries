@@ -85,25 +85,27 @@ namespace Inquiries
 
         private void MenuAlumnos_Load(object sender, EventArgs e)
         {
-            //    pictureBox1.Image = ByteArrayToImage(Alumno.obtImgAl());
+            try
+            {
+                pictureBox1.Image = obtImagen(Alumno.obtImgAl());
+            }
+            catch (Exception)
+            {
+                pictureBox1.Image = Image.FromFile("\\Resources\\imgPerf.jpg");
+            }
+            
+            
         }
 
 
-    //////de byte a imagen
-    //public Image obtImagen(byte[] img)
-    //{
-    //    MemoryStream ms = new MemoryStream(img);
-    //    return Image.FromStream(ms);
-    //}
+    //de byte a imagen
+    public Image obtImagen(byte[] img)
+    {
+        MemoryStream ms = new MemoryStream(img);
+        return Image.FromStream(ms);
+    }
 
-    //public Image ByteArrayToImage(byte[] byteArrayIn)
-    //{
-
-
-    //        MemoryStream ms = new MemoryStream(byteArrayIn);
-    //        return Image.FromStream(ms);
-
-    //}
+    
         
     }
 }

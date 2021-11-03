@@ -85,6 +85,11 @@ namespace Inquiries
         {
             ConBD.regdoc(dci, dnom, dape, dcon, año, dconexion, destado, img);
         }
+
+        public static byte[] obtImgDoc()
+        {
+            return ConBD.imgDoc();
+        }
         //Metodos
         public static void CSesionDoc()
         {

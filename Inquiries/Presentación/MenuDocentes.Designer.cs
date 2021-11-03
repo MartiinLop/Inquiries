@@ -30,6 +30,7 @@ namespace Inquiries
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPerfilAl = new System.Windows.Forms.Button();
             this.btnCerrarDoc = new System.Windows.Forms.Button();
             this.btnChatDoc = new System.Windows.Forms.Button();
@@ -39,22 +40,34 @@ namespace Inquiries
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnPerfilAl);
             this.panel1.Controls.Add(this.btnCerrarDoc);
             this.panel1.Controls.Add(this.btnChatDoc);
             this.panel1.Controls.Add(this.btnConsultasDoc);
             this.panel1.Controls.Add(this.btnGruposDoc);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.panel1.Location = new System.Drawing.Point(-9, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 122);
+            this.panel1.Size = new System.Drawing.Size(1280, 110);
             this.panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(1012, 7);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // btnPerfilAl
             // 
@@ -62,10 +75,10 @@ namespace Inquiries
             this.btnPerfilAl.FlatAppearance.BorderSize = 0;
             this.btnPerfilAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfilAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerfilAl.Location = new System.Drawing.Point(1108, 4);
-            this.btnPerfilAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnPerfilAl.Location = new System.Drawing.Point(1134, 6);
+            this.btnPerfilAl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPerfilAl.Name = "btnPerfilAl";
-            this.btnPerfilAl.Size = new System.Drawing.Size(141, 112);
+            this.btnPerfilAl.Size = new System.Drawing.Size(137, 95);
             this.btnPerfilAl.TabIndex = 7;
             this.btnPerfilAl.Text = "Perfil";
             this.btnPerfilAl.UseVisualStyleBackColor = true;
@@ -77,10 +90,10 @@ namespace Inquiries
             this.btnCerrarDoc.FlatAppearance.BorderSize = 0;
             this.btnCerrarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarDoc.Location = new System.Drawing.Point(573, 4);
-            this.btnCerrarDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnCerrarDoc.Location = new System.Drawing.Point(844, 4);
+            this.btnCerrarDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrarDoc.Name = "btnCerrarDoc";
-            this.btnCerrarDoc.Size = new System.Drawing.Size(203, 112);
+            this.btnCerrarDoc.Size = new System.Drawing.Size(152, 101);
             this.btnCerrarDoc.TabIndex = 4;
             this.btnCerrarDoc.Text = "Cerrar sesión";
             this.btnCerrarDoc.UseVisualStyleBackColor = true;
@@ -92,10 +105,10 @@ namespace Inquiries
             this.btnChatDoc.FlatAppearance.BorderSize = 0;
             this.btnChatDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChatDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChatDoc.Location = new System.Drawing.Point(420, 5);
-            this.btnChatDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnChatDoc.Location = new System.Drawing.Point(472, 11);
+            this.btnChatDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChatDoc.Name = "btnChatDoc";
-            this.btnChatDoc.Size = new System.Drawing.Size(141, 112);
+            this.btnChatDoc.Size = new System.Drawing.Size(168, 86);
             this.btnChatDoc.TabIndex = 2;
             this.btnChatDoc.Text = "CHAT";
             this.btnChatDoc.UseVisualStyleBackColor = true;
@@ -107,10 +120,10 @@ namespace Inquiries
             this.btnConsultasDoc.FlatAppearance.BorderSize = 0;
             this.btnConsultasDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultasDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultasDoc.Location = new System.Drawing.Point(192, 5);
-            this.btnConsultasDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnConsultasDoc.Location = new System.Drawing.Point(229, 12);
+            this.btnConsultasDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultasDoc.Name = "btnConsultasDoc";
-            this.btnConsultasDoc.Size = new System.Drawing.Size(237, 112);
+            this.btnConsultasDoc.Size = new System.Drawing.Size(247, 86);
             this.btnConsultasDoc.TabIndex = 1;
             this.btnConsultasDoc.Text = "CONSULTAS";
             this.btnConsultasDoc.UseVisualStyleBackColor = true;
@@ -122,10 +135,10 @@ namespace Inquiries
             this.btnGruposDoc.FlatAppearance.BorderSize = 0;
             this.btnGruposDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGruposDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGruposDoc.Location = new System.Drawing.Point(6, 5);
-            this.btnGruposDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnGruposDoc.Location = new System.Drawing.Point(22, 14);
+            this.btnGruposDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGruposDoc.Name = "btnGruposDoc";
-            this.btnGruposDoc.Size = new System.Drawing.Size(192, 112);
+            this.btnGruposDoc.Size = new System.Drawing.Size(207, 80);
             this.btnGruposDoc.TabIndex = 0;
             this.btnGruposDoc.Text = "GRUPOS";
             this.btnGruposDoc.UseVisualStyleBackColor = true;
@@ -135,9 +148,10 @@ namespace Inquiries
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 130);
+            this.panel2.Location = new System.Drawing.Point(5, 116);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1240, 60);
+            this.panel2.Size = new System.Drawing.Size(930, 46);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -145,7 +159,8 @@ namespace Inquiries
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Location = new System.Drawing.Point(2, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 33);
             this.label1.TabIndex = 0;
@@ -154,9 +169,10 @@ namespace Inquiries
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel3.Location = new System.Drawing.Point(6, 125);
+            this.panel3.Location = new System.Drawing.Point(7, 124);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1196, 525);
+            this.panel3.Size = new System.Drawing.Size(897, 401);
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -170,10 +186,12 @@ namespace Inquiries
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MenuDocentes";
             this.Text = "Menu de Docentes";
             this.Load += new System.EventHandler(this.MenuDocentes_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -191,5 +209,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCerrarDoc;
         private System.Windows.Forms.Button btnPerfilAl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
