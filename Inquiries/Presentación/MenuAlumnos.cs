@@ -91,7 +91,7 @@ namespace Inquiries
             }
             catch (Exception)
             {
-                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+                pictureBox1.Image = Image.FromFile("\\Resources\\imgPerf.jpg");
             }
             
             

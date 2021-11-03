@@ -165,13 +165,6 @@ namespace Inquiries.Presentación
 
         }
 
-        public void invConDoc()
-        {
-            this.Hide();
-            //AdminConsultaDoc f = new AdminConsultaDoc();
-            //f.ShowDialog();
-            this.Show();
-        }
 
         private void MenuConsultaDoc_Load(object sender, EventArgs e)
         {
@@ -181,6 +174,14 @@ namespace Inquiries.Presentación
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ListadoConsDoc f = new ListadoConsDoc();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }
