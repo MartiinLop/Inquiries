@@ -82,6 +82,13 @@ namespace Inquiries
             }
         }
 
+        public byte[] obtByte(Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, img.RawFormat);
+            return ms.ToArray();
+        }
+
         private void btnArch_Click(object sender, EventArgs e)
         {
             OpenFileDialog img = new OpenFileDialog();
@@ -97,11 +104,6 @@ namespace Inquiries
 
         }
 
-        public byte[] obtByte(System.Drawing.Image img)
-        {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            return ms.ToArray();
-        }
+        
     }
 }

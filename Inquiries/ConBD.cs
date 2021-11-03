@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -102,7 +102,7 @@ namespace Inquiries
         }
 
         //Registro alumnos
-        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, Image img)
+        public static void regal(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] img)
         {
             alConexion = false;
             alEstado = true;
@@ -116,7 +116,8 @@ namespace Inquiries
 
 
             MySqlCommand nual = new MySqlCommand("INSERT INTO alumno (alci, alnom, alape, alcon, algrupo, alnick, alconexion, alestado, aimagen) VALUES" +
-                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", '  ');", conectar);
+                " ('" + alCI + "','" + alNom + "','" + alApe + "','" + alCon + "'," + alGrupo + ",'" + alNick + "', " + alConexion + "," + alEstado + ", @aimagen);", conectar);
+            nual.Parameters.AddWithValue("aimagen", img);
             nual.ExecuteNonQuery();
             conectar.Close();
         }
@@ -150,9 +151,31 @@ namespace Inquiries
             conectar.Open();
 
             MySqlCommand nudoc = new MySqlCommand("INSERT INTO docente (dci, dnom, dape, dcon, año, dconexion, destado, dimagen) " +
-                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", '" + img + "');", conectar);
+                "VALUES ('" + dCI + "','" + dNom + "','" + dApe + "','" + dCon + "','" + año + "', " + dConexion + "," + dEstado + ", @dimagen);", conectar);
+            nudoc.Parameters.AddWithValue("dimagen", img);
             nudoc.ExecuteNonQuery();
             conectar.Close();
+        }
+
+        //Seleccionar imagen docente
+        public static byte[] imgDoc()
+        {
+            byte[] imagen = null;
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+            string com = "select dimagen from docente where dci = " + obtCI + ";";
+            MySqlCommand cons = new MySqlCommand(string.Format(com), conectar);
+
+            MySqlDataReader img = cons.ExecuteReader();
+            while (img.Read())
+            {
+                imagen = (byte[])(img["dimagen"]);
+            }
+
+
+            conectar.Close();
+            return imagen;
         }
 
         //Inicio sesión alumno

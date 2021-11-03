@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inquiries.Presentación;
+using System.IO;
 
 namespace Inquiries
 {
@@ -22,6 +23,14 @@ namespace Inquiries
         private void MenuDocentes_Load(object sender, EventArgs e)
         {
             panel3.Hide();
+            pictureBox1.Image = obtImagen(Docente.obtImgDoc());
+
+        }
+
+        public Image obtImagen(byte[] img)
+        {
+            MemoryStream ms = new MemoryStream(img);
+            return Image.FromStream(ms);
         }
 
         private void btnGrupos_Click(object sender, EventArgs e)

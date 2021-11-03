@@ -38,13 +38,16 @@ namespace Inquiries
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnPerfilAl);
             this.panel1.Controls.Add(this.btnCerrarDoc);
             this.panel1.Controls.Add(this.btnChatDoc);
@@ -77,7 +80,7 @@ namespace Inquiries
             this.btnCerrarDoc.FlatAppearance.BorderSize = 0;
             this.btnCerrarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarDoc.Location = new System.Drawing.Point(573, 4);
+            this.btnCerrarDoc.Location = new System.Drawing.Point(659, 4);
             this.btnCerrarDoc.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCerrarDoc.Name = "btnCerrarDoc";
             this.btnCerrarDoc.Size = new System.Drawing.Size(203, 112);
@@ -147,7 +150,7 @@ namespace Inquiries
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 33);
+            this.label1.Size = new System.Drawing.Size(332, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "NOTIFICACIONES";
             // 
@@ -160,9 +163,17 @@ namespace Inquiries
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(977, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 113);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // MenuDocentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1264, 681);
@@ -176,6 +187,7 @@ namespace Inquiries
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,5 +203,6 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCerrarDoc;
         private System.Windows.Forms.Button btnPerfilAl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
