@@ -1,7 +1,7 @@
 ﻿
 namespace Inquiries
 {
-    partial class MenuConsultaDoc
+    partial class AdminConsultaDoc
     {
         /// <summary>
         /// Required designer variable.
@@ -31,31 +31,24 @@ namespace Inquiries
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtCodFiltro = new System.Windows.Forms.TextBox();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
-            this.checkFiltro = new System.Windows.Forms.CheckBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAlCI = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCon = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.txtRespuesta = new System.Windows.Forms.RichTextBox();
-            this.labelCodCon = new System.Windows.Forms.Label();
+            this.txtConsulta = new System.Windows.Forms.RichTextBox();
+            this.lblTCon = new System.Windows.Forms.Label();
+            this.lblCodCon = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,15 +70,6 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1264, 52);
             this.panel2.TabIndex = 12;
-            // 
-            // txtCodFiltro
-            // 
-            this.txtCodFiltro.Location = new System.Drawing.Point(63, 85);
-            this.txtCodFiltro.Name = "txtCodFiltro";
-            this.txtCodFiltro.Size = new System.Drawing.Size(122, 20);
-            this.txtCodFiltro.TabIndex = 8;
-            this.txtCodFiltro.Text = "Ingresar código";
-            this.txtCodFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSalirPrincipal
             // 
@@ -147,15 +131,6 @@ namespace Inquiries
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
             // 
-            // checkFiltro
-            // 
-            this.checkFiltro.AutoSize = true;
-            this.checkFiltro.Location = new System.Drawing.Point(31, 91);
-            this.checkFiltro.Name = "checkFiltro";
-            this.checkFiltro.Size = new System.Drawing.Size(15, 14);
-            this.checkFiltro.TabIndex = 3;
-            this.checkFiltro.UseVisualStyleBackColor = true;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -185,84 +160,16 @@ namespace Inquiries
             this.btnPerfilDoc.Text = "Perfil";
             this.btnPerfilDoc.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Filtrar:";
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.groupBox1.Controls.Add(this.labelCodCon);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtAlCI);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtCodFiltro);
+            this.groupBox1.Controls.Add(this.lblCodCon);
             this.groupBox1.Controls.Add(this.btnSalirPrincipal);
-            this.groupBox1.Controls.Add(this.checkFiltro);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(1019, 156);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 526);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Cedula Alumno";
-            // 
-            // txtAlCI
-            // 
-            this.txtAlCI.BackColor = System.Drawing.Color.White;
-            this.txtAlCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAlCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlCI.Location = new System.Drawing.Point(31, 176);
-            this.txtAlCI.Name = "txtAlCI";
-            this.txtAlCI.Size = new System.Drawing.Size(179, 33);
-            this.txtAlCI.TabIndex = 17;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.No;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(31, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 66);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "⟳ ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(80, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 42);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -278,24 +185,15 @@ namespace Inquiries
             this.panel1.Size = new System.Drawing.Size(1264, 122);
             this.panel1.TabIndex = 10;
             // 
-            // dataGridView1
+            // lblCon
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(548, 247);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(449, 275);
-            this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(552, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 31);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Consulta:";
+            this.lblCon.AutoSize = true;
+            this.lblCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCon.Location = new System.Drawing.Point(580, 210);
+            this.lblCon.Name = "lblCon";
+            this.lblCon.Size = new System.Drawing.Size(88, 24);
+            this.lblCon.TabIndex = 14;
+            this.lblCon.Text = "Consulta:";
             // 
             // label4
             // 
@@ -333,36 +231,57 @@ namespace Inquiries
             this.txtRespuesta.TabIndex = 17;
             this.txtRespuesta.Text = "";
             // 
-            // labelCodCon
+            // txtConsulta
             // 
-            this.labelCodCon.AutoSize = true;
-            this.labelCodCon.Location = new System.Drawing.Point(52, 256);
-            this.labelCodCon.Name = "labelCodCon";
-            this.labelCodCon.Size = new System.Drawing.Size(9, 13);
-            this.labelCodCon.TabIndex = 19;
-            this.labelCodCon.Text = "l";
+            this.txtConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.txtConsulta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConsulta.Location = new System.Drawing.Point(560, 256);
+            this.txtConsulta.Name = "txtConsulta";
+            this.txtConsulta.Size = new System.Drawing.Size(428, 289);
+            this.txtConsulta.TabIndex = 18;
+            this.txtConsulta.Text = "";
             // 
-            // MenuConsultaDoc
+            // lblTCon
+            // 
+            this.lblTCon.AutoSize = true;
+            this.lblTCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTCon.Location = new System.Drawing.Point(538, 171);
+            this.lblTCon.Name = "lblTCon";
+            this.lblTCon.Size = new System.Drawing.Size(130, 31);
+            this.lblTCon.TabIndex = 19;
+            this.lblTCon.Text = "Consulta:";
+            // 
+            // lblCodCon
+            // 
+            this.lblCodCon.AutoSize = true;
+            this.lblCodCon.Location = new System.Drawing.Point(52, 256);
+            this.lblCodCon.Name = "lblCodCon";
+            this.lblCodCon.Size = new System.Drawing.Size(9, 13);
+            this.lblCodCon.TabIndex = 19;
+            this.lblCodCon.Text = "l";
+            this.lblCodCon.Visible = false;
+            // 
+            // AdminConsultaDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblTCon);
+            this.Controls.Add(this.txtConsulta);
             this.Controls.Add(this.txtRespuesta);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblCon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "MenuConsultaDoc";
+            this.Name = "AdminConsultaDoc";
             this.Text = "AdminConsultaDoc";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,26 +291,20 @@ namespace Inquiries
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtCodFiltro;
         private System.Windows.Forms.Button btnSalirPrincipal;
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnGruposAl;
-        private System.Windows.Forms.CheckBox checkFiltro;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnPerfilDoc;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RichTextBox txtRespuesta;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAlCI;
-        private System.Windows.Forms.Label labelCodCon;
+        private System.Windows.Forms.RichTextBox txtConsulta;
+        private System.Windows.Forms.Label lblTCon;
+        private System.Windows.Forms.Label lblCodCon;
     }
 }

@@ -96,5 +96,10 @@ namespace Inquiries
         {
             return ConBD.alGrupo();
         }
+
+        public static void RCDocente(string codigo, string contenido)
+        {
+            ConBD.Respuesta(codigo , contenido);
+        }
     }
 }

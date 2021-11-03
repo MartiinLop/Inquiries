@@ -11,16 +11,18 @@ using MySql.Data.MySqlClient;
 
 namespace Inquiries
 {
-    public partial class MenuConsultaDoc : Form
+    public partial class AdminConsultaDoc : Form
     {
-        public MenuConsultaDoc(int alci, int cod)
+        public AdminConsultaDoc(string codcon,string alnom, string alape, string materia, string titulo, string contenido)
         {
             InitializeComponent();
-            txtAlCI.Text = Convert.ToString(alci);
-            labelCodCon.Text = Convert.ToString(cod);
+            lblCon.Text = alnom + " " + alape + " - " + materia;
+            txtConsulta.Text = contenido;
+            lblTCon.Text = titulo;
+            lblCodCon.Text = codcon;
         }
 
-        public MenuConsultaDoc()
+        public AdminConsultaDoc()
         {
         }
 
@@ -48,15 +50,7 @@ namespace Inquiries
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Crear objeto vacio alumnos
-            Consulta c = new Consulta();
-            DataTable datos = new DataTable();
-            MySqlDataAdapter data = new MySqlDataAdapter();
 
-           // data = c.obtCon();
-           // data.Fill(datos);
-
-            dataGridView1.DataSource = datos;
 
          //Llamar al metodo para obtener consultas docente
     }
@@ -68,7 +62,7 @@ namespace Inquiries
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ConBD.Respuesta(Convert.ToInt32(txtAlCI.Text), txtRespuesta.Text);
+            Consulta.RCDocente(lblCodCon.Text, txtRespuesta.Text);
             MessageBox.Show("Respuesta Enviada Satisfactoriamente!", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

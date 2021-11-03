@@ -25,48 +25,133 @@ namespace Inquiries.Presentación
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[,] infoConsulta = (string[,])Chat.obtCodigosChatAl();
-
+            Consulta c = new Consulta();
+            string[,] infoConsulta = (string[,])c.obtCon();
+            int i = 40;
 
             if (infoConsulta.Length != comparar.Length)
             {
+
                 for (int x = 0; x < infoConsulta.GetLength(0); x++)
                 {
 
-                    if (Convert.ToBoolean(infoConsulta[x, 1]) == true)
+
+                    Panel consulta = new Panel();
+                    consulta.Height = 73;
+                    consulta.Width = 500;
+                    panelConsultas.Controls.Add(consulta);
+                    consulta.Dock = DockStyle.Top;
+
+
+                    Label codConsulta = new Label();
+                    codConsulta.Visible = false;
+                    codConsulta.Text = Convert.ToString(infoConsulta[x, 0]);
+                    panelConsultas.Controls.Add(codConsulta);
+
+                    RichTextBox dCI = new RichTextBox();
+                    dCI.Visible = true;
+                    dCI.BackColor = Color.FromArgb(196, 196, 196);
+                    dCI.ForeColor = Color.Black;
+                    dCI.Text = Convert.ToString(infoConsulta[x, 0]) + " - " + Convert.ToString(infoConsulta[x, 1]) + " - " + Convert.ToString(infoConsulta[x, 6]) + "\n" + Convert.ToString(infoConsulta[x, 2] + "\n" + Convert.ToString(infoConsulta[x, 3]) + " " + Convert.ToString(infoConsulta[x, 4]));
+                    dCI.Width = 500;
+                    dCI.ReadOnly = true;
+                    consulta.Controls.Add(dCI);
+
+
+                    Label lblEstado = new Label();
+                    lblEstado.Text = "Estado:";
+                    lblEstado.ForeColor = Color.Black;
+                    lblEstado.BackColor = Color.FromArgb(196, 196, 196);
+                    lblEstado.Location = new Point(300, i);
+                    panelConsultas.Controls.Add(lblEstado);
+                    lblEstado.Visible = true;
+                    lblEstado.BringToFront();
+
+                    Label alnom = new Label();
+                    alnom.Visible = false;
+                    consulta.Controls.Add(alnom);
+                    alnom.Text = infoConsulta[x, 3];
+
+                    Label algrupo = new Label();
+                    algrupo.Visible = false;
+                    consulta.Controls.Add(algrupo);
+                    algrupo.Text = infoConsulta[x, 4];
+
+                    Label almate = new Label();
+                    almate.Visible = false;
+                    consulta.Controls.Add(almate);
+                    almate.Text = infoConsulta[x, 6];
+
+                    Label titulo = new Label();
+                    titulo.Visible = false;
+                    consulta.Controls.Add(titulo);
+                    titulo.Text = infoConsulta[x, 1];
+
+                    Label contenido = new Label();
+                    contenido.Visible = false;
+                    consulta.Controls.Add(contenido);
+                    contenido.Text = infoConsulta[x, 2];
+
+                    Label codconsulta = new Label();
+                    codconsulta.Visible = false;
+                    consulta.Controls.Add(codconsulta);
+                    codconsulta.Text = infoConsulta[x, 0];
+
+
+                    dCI.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        Panel consulta = new Panel();
-                        consulta.Height = 73;
-                        consulta.Width = 500;
-                        panelConsultas.Controls.Add(consulta);
-                        consulta.Dock = DockStyle.Top;
+                        AdminConsultaDoc a = new AdminConsultaDoc(codconsulta.Text ,alnom.Text, algrupo.Text, almate.Text, titulo.Text, contenido.Text);
+                        a.ShowDialog();
 
+                    };
 
-                        Label codConsulta = new Label();
-                        codConsulta.Visible = false;
-                        codConsulta.Text = Convert.ToString(infoConsulta[x, 0]);
-                        panelConsultas.Controls.Add(codConsulta);
-
-                        RichTextBox alCI = new RichTextBox();
-                        alCI.Visible = true;
-                        alCI.BackColor = Color.FromArgb(143, 131, 131);
-                        alCI.ForeColor = Color.Black;
-                        alCI.Text = Convert.ToString(infoConsulta[x, 2]);
-                        alCI.Width = 500;
-                        consulta.Controls.Add(alCI);
-
-
-                        
-                    }
-                    else
+                    switch (Convert.ToString(infoConsulta[x, 5]))
                     {
-                        if (mensaje == false)
-                        {
-                            mensaje = true;
-                            MessageBox.Show("xd");
-                        }
+
+                        case "contestada":
+                            Label estadocon = new Label();
+                            estadocon.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
+                            estadocon.ForeColor = Color.Black;
+                            estadocon.BackColor = Color.Green;
+                            panelConsultas.Controls.Add(estadocon);
+                            estadocon.Location = new Point(370, i);
+                            estadocon.Visible = true;
+                            estadocon.BringToFront();
+                            i += 70;
+                            break;
+
+                        case "recibida":
+                            Label estadore = new Label();
+                            estadore.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
+                            estadore.ForeColor = Color.Black;
+                            estadore.BackColor = Color.Yellow;
+                            panelConsultas.Controls.Add(estadore);
+                            estadore.Location = new Point(370, i);
+                            estadore.Visible = true;
+                            estadore.BringToFront();
+                            i += 70;
+                            break;
+
+                        case "realizada":
+                            Label estador = new Label();
+                            estador.Text = Convert.ToString(infoConsulta[x, 5].ToUpper());
+                            estador.ForeColor = Color.Black;
+                            estador.BackColor = Color.Red;
+                            panelConsultas.Controls.Add(estador);
+                            estador.Location = new Point(370, i);
+                            estador.Visible = true;
+                            estador.BringToFront();
+                            i += 70;
+                            break;
+
+                        default:
+
+                            break;
                     }
+
+
+
                     comparar = infoConsulta;
                 }
             }
