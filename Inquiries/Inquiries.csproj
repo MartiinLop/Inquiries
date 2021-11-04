@@ -92,6 +92,18 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="Asignatura.cs" />
+    <Compile Include="Presentación\FORPanelModifUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelModifUsuAdmin.Designer.cs">
+      <DependentUpon>FORPanelModifUsuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FORPanelElimUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelElimUsuAdmin.Designer.cs">
+      <DependentUpon>FORPanelElimUsuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grupo.cs" />
     <Compile Include="Presentación\FORPanelDatosUsuAdmin.cs">
       <SubType>Form</SubType>
@@ -286,6 +298,12 @@
     <Compile Include="Presentación\VerConsultaAl.Designer.cs">
       <DependentUpon>VerConsultaAl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Presentación\FORPanelModifUsuAdmin.resx">
+      <DependentUpon>FORPanelModifUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelElimUsuAdmin.resx">
+      <DependentUpon>FORPanelElimUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\AdminConsultaAl.resx">
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </EmbeddedResource>

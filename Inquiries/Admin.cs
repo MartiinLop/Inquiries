@@ -158,6 +158,16 @@ namespace Inquiries
 
             return b;
         }
+
+        public static void EliminarAl(int ci)
+        {
+            ConBD.EliminarAlAdmin(ci);
+        }
+        
+        public static void EliminarDoc(int ci)
+        {
+            ConBD.EliminarDocAdmin(ci);
+        }
     }
 }
 

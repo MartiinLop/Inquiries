@@ -13,7 +13,7 @@ namespace Inquiries
 {
     public partial class ModPerfilAlumno : Form
     {
-        public ModPerfilAlumno()
+        public ModPerfilAlumno(int ci, Boolean u)
         {
             InitializeComponent();
             panel7.Hide();
@@ -27,6 +27,8 @@ namespace Inquiries
             txtNombre.Text = resultado[0];
             txtApodo.Text = resultado[1];
             txtContra.Text = resultado[2];
+
+            if(Boolean )
         }
 
         private void label1_Click(object sender, EventArgs e)

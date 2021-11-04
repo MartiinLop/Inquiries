@@ -13,7 +13,7 @@ namespace Inquiries
 {
     public partial class ModPerfilDocente : Form
     {
-        public ModPerfilDocente()
+        public ModPerfilDocente(int ci,Boolean u)
         {
             InitializeComponent();
             panel5.Hide();
@@ -25,6 +25,14 @@ namespace Inquiries
             String[] resultado = sdatos.Split('|');
             txtNombre.Text = resultado[0];
             txtContra.Text = resultado[1];
+            if (u = true)
+            {
+                panel4.Show();
+            }
+            else
+            {
+                panel4.Hide();
+            }
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -102,6 +110,16 @@ namespace Inquiries
             MemoryStream ms = new MemoryStream();
             img.Save(ms, img.RawFormat);
             return ms.ToArray();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

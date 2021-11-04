@@ -37,10 +37,13 @@ namespace Inquiries
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            BajaUsuAdmin f = new BajaUsuAdmin();
+            f.ShowDialog();
+            this.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnModifi_Click(object sender, EventArgs e)
         {
             this.Hide();
             EditarUsuAdmin f = new EditarUsuAdmin();
@@ -61,8 +64,6 @@ namespace Inquiries
         private void timer1_Tick(object sender, EventArgs e)
         {
             string[,] alumnos = (string[,])Admin.ObtenerUsuariosAl();
-
-
 
 
             if (alumnos.Length != comparar.Length)
