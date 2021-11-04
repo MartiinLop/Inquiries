@@ -148,10 +148,10 @@ namespace Inquiries
                     }
                     else
                     {
-
-                        consulta.Location = new Point(ejeX, ejeY);
                         ejeY += 90;
                         ejeX = 0;
+                        consulta.Location = new Point(ejeX, ejeY);
+                        ejeX += 210;
                     }
 
                     consultaAl.Click += delegate (object enviar, EventArgs f)

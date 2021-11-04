@@ -92,11 +92,11 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="Asignatura.cs" />
-    <Compile Include="Presentación\FORPanelModifUsuAdmin.cs">
+    <Compile Include="Presentación\FORPanelModUsuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentación\FORPanelModifUsuAdmin.Designer.cs">
-      <DependentUpon>FORPanelModifUsuAdmin.cs</DependentUpon>
+    <Compile Include="Presentación\FORPanelModUsuAdmin.Designer.cs">
+      <DependentUpon>FORPanelModUsuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\FORPanelElimUsuAdmin.cs">
       <SubType>Form</SubType>
@@ -151,12 +151,6 @@
       <DependentUpon>AdminConsultaAl.cs</DependentUpon>
     </Compile>
     <Compile Include="Docente.cs" />
-    <Compile Include="Presentación\EditarUsuAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentación\EditarUsuAdmin.Designer.cs">
-      <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentación\ChatAl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,8 +292,8 @@
     <Compile Include="Presentación\VerConsultaAl.Designer.cs">
       <DependentUpon>VerConsultaAl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Presentación\FORPanelModifUsuAdmin.resx">
-      <DependentUpon>FORPanelModifUsuAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Presentación\FORPanelModUsuAdmin.resx">
+      <DependentUpon>FORPanelModUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelElimUsuAdmin.resx">
       <DependentUpon>FORPanelElimUsuAdmin.cs</DependentUpon>
@@ -309,9 +303,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\BajaUsuAdmin.resx">
       <DependentUpon>BajaUsuAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentación\EditarUsuAdmin.resx">
-      <DependentUpon>EditarUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ChatAl.resx">
       <DependentUpon>ChatAl.cs</DependentUpon>
@@ -440,7 +431,8 @@
     <None Include="Resources\nuevousuario.jpg" />
     <None Include="Resources\lapis.jpg" />
     <None Include="Resources\33x42 basura.jpg" />
-    <Content Include="Resources\imgPerf.jpg" />
+    <None Include="Resources\imagen_pdef.jpg" />
+    <Content Include="Resources\imgperf.jpg" />
     <Content Include="Resources\libroconsultas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

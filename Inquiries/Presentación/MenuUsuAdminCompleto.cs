@@ -46,7 +46,7 @@ namespace Inquiries
         private void btnModifi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            EditarUsuAdmin f = new EditarUsuAdmin();
+            ModUsuAdmin f = new ModUsuAdmin();
             f.ShowDialog();
             this.Show();
         }

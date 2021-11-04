@@ -12,10 +12,11 @@ using Inquiries;
 
 namespace TemplateParteAdmin
 {
-    public partial class FORPanelModifUsuAdmin : Form
+    public partial class FORPanelModUsuAdmin : Form
     {
-        
-        public FORPanelModifUsuAdmin(string nom,string ape, string grup, string tipo, int ci)
+
+
+        public FORPanelModUsuAdmin(string nom,string ape, string grup, string tipo, int ci)
         {
 
             InitializeComponent();
@@ -23,14 +24,13 @@ namespace TemplateParteAdmin
             labelNA.Text = nom +" "+ape;
             labelG.Text = grup;
             labelTipo.Text = tipo;
-            pictureBox1.Image = Resources.imgPerf;
+            pictureBox1.Image = Resources.imagen_pdef;
             lblCedula.Text = Convert.ToString(ci);
         }
 
-        private void btnElim_Click(object sender, EventArgs e)
+        private void btnMod_Click(object sender, EventArgs e)
         {
-            if (labelTipo.Text == "Alumno")
-            {
+            if (labelTipo.Text == "Alumno") {
                 ModPerfilAlumno a = new ModPerfilAlumno(Convert.ToInt32(lblCedula.Text), true);
                 this.Hide();
                 a.ShowDialog();
@@ -38,7 +38,7 @@ namespace TemplateParteAdmin
             }
             else
             {
-                ModPerfilDocente a = new ModPerfilDocente(Convert.ToInt32(lblCedula.Text), true);
+                ModPerfilDocente a = new ModPerfilDocente(Convert.ToInt32(lblCedula.Text),true);
                 this.Hide();
                 a.ShowDialog();
                 this.Show();

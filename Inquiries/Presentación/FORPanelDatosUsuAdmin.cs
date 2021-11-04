@@ -21,7 +21,7 @@ namespace TemplateParteAdmin
             labelNA.Text = na;
             labelG.Text = grup;
             labelTipo.Text = tipo;
-            pictureBox1.Image = Resources.imgPerf;
+            pictureBox1.Image = Resources.imagen_pdef;
         }
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inquiries.Presentación;
 using System.IO;
+using Inquiries;
+using Inquiries.Properties;
 
 namespace Inquiries
 {
@@ -29,7 +31,7 @@ namespace Inquiries
             }
             catch (Exception)
             {
-                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+                pictureBox1.Image = Properties.Resources.imagen_pdef;
             }
 
         }
@@ -99,8 +101,9 @@ namespace Inquiries
 
         private void btnPerfilAl_Click(object sender, EventArgs e)
         {
+            Persona a = new Persona();
             this.Hide();
-            ModPerfilDocente f1 = new ModPerfilDocente();
+            ModPerfilDocente f1 = new ModPerfilDocente(a.obtCedulaActual(), false);
             f1.ShowDialog();
             this.Show();
         }

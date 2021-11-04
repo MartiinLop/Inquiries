@@ -23,7 +23,7 @@ namespace TemplateParteAdmin
             labelNA.Text = nom +" "+ape;
             labelG.Text = grup;
             labelTipo.Text = tipo;
-            pictureBox1.Image = Resources.imgPerf;
+            pictureBox1.Image = Resources.imagen_pdef;
             lblCedula.Text = Convert.ToString(ci);
         }
 

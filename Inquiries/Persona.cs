@@ -53,14 +53,21 @@ namespace Inquiries
             }
         
             //Metodos
-            public static string Mdatos()
+            public static string Mdatos(int ci)
             {
-            string basadoendatos = ConBD.MostrarDatosPerf();
+            string basadoendatos = ConBD.MostrarDatosPerf(ci);
             return basadoendatos;
             }
 
 
-            //////////////////////////////
+        public int obtCedulaActual()
+        {
+            ConBD a = new ConBD();
+            return a.obtci;
         }
+
+
+        //////////////////////////////
+    }
     }
 

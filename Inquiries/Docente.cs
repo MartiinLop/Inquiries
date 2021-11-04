@@ -96,9 +96,9 @@ namespace Inquiries
             ConBD.CerrarSesionDoc();
         }
 
-        public static void ModPerfDoc(string nombre, string contraseña, byte[] img)
+        public static void ModPerfDoc(string nombre, string apellido, string contraseña, byte[] img)
         {
-            ConBD.ModPerfilDoc(nombre, contraseña, img);
+            ConBD.ModPerfilDoc(nombre, apellido, contraseña, img);
         }
         //////////////////////////////
 

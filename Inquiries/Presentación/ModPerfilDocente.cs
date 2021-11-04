@@ -19,13 +19,16 @@ namespace Inquiries
             panel5.Hide();
             label6.Hide();
             label8.Hide();
+            label10.Hide();
             btnEliminadoDoc.Hide();
             string sdatos;
-            sdatos = Persona.Mdatos();
+            sdatos = Persona.Mdatos(ci);
             String[] resultado = sdatos.Split('|');
             txtNombre.Text = resultado[0];
-            txtContra.Text = resultado[1];
-            if (u = true)
+            txtApe.Text = resultado[1];
+            txtModContra.Text = resultado[2];
+            txtModCI.Text = resultado[3];
+            if (u == true)
             {
                 panel4.Show();
             }
@@ -35,15 +38,12 @@ namespace Inquiries
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void panel4_Paint(object sender, EventArgs e)
         {
-
+            txtNombre.ReadOnly = false;
+            label6.Show();
         }
 
-        private void ModPerfilDocente_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel4_Click(object sender, EventArgs e)
         {
@@ -53,13 +53,13 @@ namespace Inquiries
 
         private void panel6_Click(object sender, EventArgs e)
         {
-            txtContra.ReadOnly = false;
+            txtModContra.ReadOnly = false;
             label8.Show();
         }
 
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
-            Docente.ModPerfDoc(txtNombre.Text, txtContra.Text, obtByte(pictureBox1.Image));
+            Docente.ModPerfDoc(txtNombre.Text,txtApe.Text, txtModContra.Text, obtByte(pictureBox1.Image));
             MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -105,21 +105,39 @@ namespace Inquiries
             }
         }
 
-        public byte[] obtByte(System.Drawing.Image img)
+        public byte[] obtByte(Image img)
         {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            return ms.ToArray();
+            if (img != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Properties.Resources.imagen_pdef.Save(ms, Properties.Resources.imagen_pdef.RawFormat);
+                return ms.ToArray();
+            }
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void panelModApe_Paint(object sender, EventArgs e)
         {
-
+            txtApe.ReadOnly = false;
+            label10.Show();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void panel6_Paint(object sender, EventArgs e)
         {
+            txtModContra.ReadOnly = false;
+            label8.Show();
+        }
 
+
+        private void panelModCedula_CliCk(object sender, EventArgs e)
+        {
+            txtModCI.ReadOnly = false;
+            label5.Show();
         }
     }
 }

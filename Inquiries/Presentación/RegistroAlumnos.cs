@@ -101,7 +101,7 @@ namespace Inquiries
             else
             {
                 MemoryStream ms = new MemoryStream();
-                Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).Save(ms, Image.FromFile(Path.Combine(Environment.CurrentDirectory,"imgPerf.jpg")).RawFormat);
+                Properties.Resources.imagen_pdef.Save(ms, Properties.Resources.imagen_pdef.RawFormat);
                 return ms.ToArray();
             }
 

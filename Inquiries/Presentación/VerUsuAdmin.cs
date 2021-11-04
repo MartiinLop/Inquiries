@@ -54,7 +54,7 @@ namespace Inquiries
                     lblContra.Text = "Contraseña: " + contra;
                     lblGrupo.Text = "Grupo: " + grupo;
                     lblAlDoc.Text = tipo;
-                    pictureBox1.Image = Properties.Resources.imgPerf;
+                    pictureBox1.Image = Properties.Resources.imagen_pdef;
 
 
                 }
@@ -65,7 +65,7 @@ namespace Inquiries
                     lblContra.Text = "Contraseña: " + contra;
                     lblGrupo.Text = "Grupo: " + grupo;
                     lblAlDoc.Text = tipo;
-                    pictureBox1.Image = Properties.Resources.imgPerf;
+                    pictureBox1.Image = Properties.Resources.imagen_pdef;
 
 
                 }

@@ -1,7 +1,7 @@
 ﻿
 namespace TemplateParteAdmin
 {
-    partial class FORPanelModifUsuAdmin
+    partial class FORPanelModUsuAdmin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -33,7 +33,7 @@ namespace TemplateParteAdmin
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelG = new System.Windows.Forms.Label();
             this.labelTipo = new System.Windows.Forms.Label();
-            this.btnModif = new System.Windows.Forms.Button();
+            this.btnMod = new System.Windows.Forms.Button();
             this.lblCedula = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@ namespace TemplateParteAdmin
             this.labelNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNA.Location = new System.Drawing.Point(82, 6);
             this.labelNA.Name = "labelNA";
-            this.labelNA.Size = new System.Drawing.Size(325, 39);
+            this.labelNA.Size = new System.Drawing.Size(257, 31);
             this.labelNA.TabIndex = 0;
             this.labelNA.Text = "Nombre y Apellido - ";
             // 
@@ -63,7 +63,7 @@ namespace TemplateParteAdmin
             this.labelG.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelG.Location = new System.Drawing.Point(332, 5);
             this.labelG.Name = "labelG";
-            this.labelG.Size = new System.Drawing.Size(131, 39);
+            this.labelG.Size = new System.Drawing.Size(105, 31);
             this.labelG.TabIndex = 2;
             this.labelG.Text = "Grupo -";
             // 
@@ -73,46 +73,46 @@ namespace TemplateParteAdmin
             this.labelTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTipo.Location = new System.Drawing.Point(444, 6);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(269, 39);
+            this.labelTipo.Size = new System.Drawing.Size(215, 31);
             this.labelTipo.TabIndex = 3;
             this.labelTipo.Text = "Alumno/Docente";
             // 
-            // btnModif
+            // btnMod
             // 
-            this.btnModif.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModif.Location = new System.Drawing.Point(738, 6);
-            this.btnModif.Name = "btnModif";
-            this.btnModif.Size = new System.Drawing.Size(142, 32);
-            this.btnModif.TabIndex = 4;
-            this.btnModif.Text = "Modificar";
-            this.btnModif.UseVisualStyleBackColor = true;
-            this.btnModif.Click += new System.EventHandler(this.btnElim_Click);
+            this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMod.Location = new System.Drawing.Point(738, 6);
+            this.btnMod.Name = "btnMod";
+            this.btnMod.Size = new System.Drawing.Size(142, 32);
+            this.btnMod.TabIndex = 4;
+            this.btnMod.Text = "Modificar";
+            this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // lblCedula
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Location = new System.Drawing.Point(180, 6);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(50, 17);
+            this.lblCedula.Size = new System.Drawing.Size(39, 13);
             this.lblCedula.TabIndex = 5;
             this.lblCedula.Text = "cedula";
             this.lblCedula.Visible = false;
             // 
-            // FORPanelModifUsuAdmin
+            // FORPanelModUsuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.ClientSize = new System.Drawing.Size(892, 44);
             this.ControlBox = false;
             this.Controls.Add(this.lblCedula);
-            this.Controls.Add(this.btnModif);
+            this.Controls.Add(this.btnMod);
             this.Controls.Add(this.labelTipo);
             this.Controls.Add(this.labelG);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelNA);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Name = "FORPanelModifUsuAdmin";
+            this.Name = "FORPanelModUsuAdmin";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FORPanelDatosUsuAdmin";
@@ -129,7 +129,7 @@ namespace TemplateParteAdmin
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelG;
         private System.Windows.Forms.Label labelTipo;
-        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnMod;
         private System.Windows.Forms.Label lblCedula;
     }
 }

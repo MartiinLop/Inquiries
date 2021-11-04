@@ -92,13 +92,13 @@ namespace Inquiries
             ConBD.CerrarSesionAl();
         }
 
-        public void ModPerfAl(string nombre, string apodo, string contraseña, byte[] img)
+        public void ModPerfAl(string nombre, string apellido, string apodo, string contraseña, byte[] img)
         {
-            ConBD.ModPerfilAl(nombre, apodo, contraseña, img);
+            ConBD.ModPerfilAl(nombre, apellido, apodo, contraseña, img);
         }
-        public static void ElAl()
+        public static void ElAl(int ci)
         {
-            ConBD.EliminarAl();
+            ConBD.EliminarAl(ci);
         }
         public static void regAlumno(int alCI, string alNom, string alApe, string alCon, string alGrupo, string alNick, Boolean alConexion, Boolean alEstado, byte[] imagen)
         {

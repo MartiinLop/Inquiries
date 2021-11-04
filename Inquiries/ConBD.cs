@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -185,8 +185,8 @@ namespace Inquiries
         {
             MySqlConnection conectar00 = new MySqlConnection(conexbd);
             conectar00.Open();
-            Boolean comp;
-            string check = "select alestado from alumno where alci = " + obtCI + ";";
+            Boolean comp=false;
+            string check = "select alestado from alumno where alci = " + alCI + ";";
             MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar00);
             MySqlDataReader revisar = chequear.ExecuteReader();
 
@@ -196,7 +196,7 @@ namespace Inquiries
             }
 
 
-            if (comp = true) {
+            if (comp == true) {
 
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
@@ -270,8 +270,8 @@ namespace Inquiries
 
             MySqlConnection conectar0 = new MySqlConnection(conexbd);
             conectar0.Open();
-            Boolean comp;
-            string check = "select destado from docente where dci = " + obtCI + ";";
+            Boolean comp=false;
+            string check = "select destado from docente where dci = " + dCI + ";";
             MySqlCommand chequear = new MySqlCommand(string.Format(check), conectar0);
             MySqlDataReader revisar = chequear.ExecuteReader();
 
@@ -281,7 +281,7 @@ namespace Inquiries
             }
 
 
-            if (comp = true)
+            if (comp == true)
             {
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
@@ -1016,7 +1016,6 @@ namespace Inquiries
                 string datote3 = null;
                 string datote4 = null;
                 string datote5 = null;
-                string datote6 = null;
                 string datotef = null;
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
@@ -1027,14 +1026,12 @@ namespace Inquiries
                 while (datito.Read()) 
                 { 
                     datote1 = datito.GetString("alnom");
-                    datote6 = datito.GetString("alape");
+                    datote5 = datito.GetString("alape");
                     datote2 = datito.GetString("alnick"); 
                     datote3 = datito.GetString("alcon");
                     datote4 = datito.GetString("alci");
-                    datote5 = datito.GetString("gnom");
-
                 }
-                datotef = $"{datote1}|{datote6}|{datote2}|{datote3}|{datote4}|{datote5}";
+                datotef = $"{datote1}|{datote5}|{datote2}|{datote3}|{datote4}";
 
                 conectar.Close();
                 return datotef;
@@ -1045,7 +1042,6 @@ namespace Inquiries
                 string datote2 = null;
                 string datote3 = null;
                 string datote4 = null;
-                string datote5 = null;
                 string datotef = null;
                 MySqlConnection conectar = new MySqlConnection(conexbd);
                 conectar.Open();
@@ -1058,10 +1054,9 @@ namespace Inquiries
                     datote1 = datito.GetString("dnom"); 
                     datote2 = datito.GetString("dape");
                     datote3 = datito.GetString("dcon");
-                    datote4 = datito.GetString("dgrupo");
-                    datote5 = datito.GetString("dci");
+                    datote4 = datito.GetString("dci");
                 }
-                datotef = $"{datote1}|{datote2}|{datote3}|{datote4}|{datote5}";
+                datotef = $"{datote1}|{datote2}|{datote3}|{datote4}|";
                 conectar.Close();
                 return datotef;
             }
@@ -1069,24 +1064,47 @@ namespace Inquiries
         }
 
         //Modificar perfil alumno
-        public static void ModPerfilAl(string nombre, string apodo, string contraseña, byte[] img)
+        public static void ModPerfilAl(string nombre,string apellido, string apodo, string contraseña, byte[] img)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand mod = new MySqlCommand("update alumno set alnom = '"+nombre+"', alnick = '"+apodo+"', alcon = '"+contraseña+"', aimagen = '" + img + "' where alci = "+obtCI+";",conectar);
+            MySqlCommand mod = new MySqlCommand("update alumno set alnom = '"+nombre+"',alape = '"+apellido+"', alnick = '"+apodo+"', alcon = '"+contraseña+"', aimagen = '" + img + "' where alci = "+obtCI+";",conectar);
             mod.ExecuteNonQuery();
             conectar.Close();
 
         }
 
         //Modificar perfil docente
-        public static void ModPerfilDoc(string nombre, string contraseña, byte[] img)
+        public static void ModPerfilDoc(string nombre,string apellido, string contraseña, byte[] img)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "', dcon = '" + contraseña + "', dimagen = '"+img+"' where dci = " + obtCI + "; ",conectar);
+            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "',dape= '"+apellido+"', dcon = '" + contraseña + "', dimagen = '"+img+"' where dci = " + obtCI + "; ",conectar);
+            mod.ExecuteNonQuery();
+            conectar.Close();
+        }
+
+        //Modificar perfil alumno desde admin
+        public static void ModPerfilAlAdmin(string nombre, string apellido, string apodo, string ci, string contraseña, byte[] img)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand mod = new MySqlCommand("update alumno set alnom = '" + nombre + "',alape = '" + apellido + "',alci = "+ci+", alnick = '" + apodo + "', alcon = '" + contraseña + "', aimagen = '" + img + "' where alci = " + ci+ ";", conectar);
+            mod.ExecuteNonQuery();
+            conectar.Close();
+
+        }
+
+        //Modificar perfil docente desde admin
+        public static void ModPerfilDocAdmin(string nombre, string apellido, string ci,string contraseña, byte[] img)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand mod = new MySqlCommand("update docente set dnom = '" + nombre + "',dape= '" + apellido + "',dci = "+ ci +", dcon = '" + contraseña + "', dimagen = '" + img + "' where dci = " + ci+ "; ", conectar);
             mod.ExecuteNonQuery();
             conectar.Close();
         }
@@ -1104,12 +1122,12 @@ namespace Inquiries
         }
 
         //Eliminar perfil alumno
-        public static void EliminarAl()
+        public static void EliminarAl(int ci)
         {
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
 
-            MySqlCommand elim = new MySqlCommand("update alumno set alestado = false where alci = " + obtCI + ";", conectar);
+            MySqlCommand elim = new MySqlCommand("update alumno set alestado = false where alci = " + ci + ";", conectar);
             elim.ExecuteNonQuery();
             conectar.Close();
         }
@@ -1138,7 +1156,7 @@ namespace Inquiries
         //Obtener todos los alumnos
         public static MySqlDataAdapter ObtTodosAl()
         {
-            string comando = "select alnom, alape, gnom, alumno.alci, alcon from alumno, grupo where alumno.algrupo = grupo.gcod;";
+            string comando = "select alnom, alape, gnom, alumno.alci, alcon, alnick from alumno, grupo where alumno.algrupo = grupo.gcod;";
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();

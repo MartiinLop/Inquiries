@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 using System.IO;
+using Inquiries.Properties;
 
 namespace Inquiries
 {
@@ -93,7 +94,7 @@ namespace Inquiries
             else
             {
                 MemoryStream ms = new MemoryStream();
-                Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).Save(ms, Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg")).RawFormat);
+                Resources.imagen_pdef.Save(ms, Resources.imagen_pdef.RawFormat);
                 return ms.ToArray();
             }
         }

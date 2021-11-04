@@ -14,12 +14,12 @@ namespace TemplateParteAdmin
 {
     public partial class MiniUsuExpandir : Form
     {
-        private static string nombre;
-        private static string apellido;
-        private static string cedula;
-        private static string grupo;
-        private static string Tipo;
-        private static string Contra;
+        private  string nombre;
+        private  string apellido;
+        private string cedula;
+        private  string grupo;
+        private  string Tipo;
+        private  string Contra;
 
         public MiniUsuExpandir(string nom,string ape,string ci,string grup,string tipo, string contra)
         {
@@ -28,7 +28,8 @@ namespace TemplateParteAdmin
 
             lblNA.Text = nom+" "+ape;
             lblTipoGrup.Text = tipo+" - "+grup;
-            pictureBox1.Image = Resources.imgPerf;
+            pictureBox1.Image = Resources.imagen_pdef;
+
 
             nombre = nom;
             apellido = ape;

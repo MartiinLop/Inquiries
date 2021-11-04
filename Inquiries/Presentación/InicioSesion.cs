@@ -27,7 +27,7 @@ namespace Inquiries
             //try
             //{
                 //Inicio sesión
-            if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
                     txtUsuario.Text = "Cédula de identidad";
                     txtContra.Text = "Contraseña";

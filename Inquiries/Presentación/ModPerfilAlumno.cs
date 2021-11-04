@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Inquiries.Properties;
 
 namespace Inquiries
 {
@@ -16,19 +17,26 @@ namespace Inquiries
         public ModPerfilAlumno(int ci, Boolean u)
         {
             InitializeComponent();
+            
             panel7.Hide();
-            label6.Hide();
-            label7.Hide();
-            label8.Hide();
+            
             btnEliminadoAl.Hide();
             string sdatos;
-            sdatos = Persona.Mdatos();
+            sdatos = Persona.Mdatos(ci);
             String[] resultado = sdatos.Split('|');
             txtNombre.Text = resultado[0];
-            txtApodo.Text = resultado[1];
-            txtContra.Text = resultado[2];
-
-            if(Boolean )
+            txtApe.Text = resultado[1];
+            txtApodo.Text = resultado[2];
+            txtModContra.Text = resultado[3];
+            txtModCI.Text = resultado[4];
+            if(u == true)
+            {
+                panel4.Visible = true;
+            }
+            else
+            {
+                panel4.Visible = false;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -49,26 +57,11 @@ namespace Inquiries
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
                 Alumno m = new Alumno();
-                m.ModPerfAl(txtNombre.Text, txtApodo.Text, txtContra.Text, obtByte(pictureBox1.Image));
+                m.ModPerfAl(txtNombre.Text,txtApe.Text, txtApodo.Text, txtModContra.Text, obtByte(pictureBox1.Image));
                 MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
-    private void panel4_Click(object sender, EventArgs e)
-        {
-            txtNombre.ReadOnly = false;
-            label6.Show();
-        }
+ 
         
-        private void panel5_Click(object sender, EventArgs e)
-        {
-            txtApodo.ReadOnly = false;
-            label7.Show();
-        }
-        
-        private void panel6_Click(object sender, EventArgs e)
-        {
-            txtContra.ReadOnly = false;
-            label8.Show();
-        }
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
            
@@ -86,11 +79,13 @@ namespace Inquiries
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            Persona p = new Persona();
             Alumno a = new Alumno();
-            Alumno.ElAl();
+            Alumno.ElAl(p.obtCedulaActual());
             a.CSesionAl();
             MessageBox.Show("Se ha eliminado su usuario correctamente!", "Eliminación usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             btnEliminadoAl.Show();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -112,11 +107,20 @@ namespace Inquiries
             }
         }
 
-        public byte[] obtByte(System.Drawing.Image img)
+        public byte[] obtByte(Image img)
         {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, img.RawFormat);
-            return ms.ToArray();
+            if (img != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                img.Save(ms, img.RawFormat);
+                return ms.ToArray();
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Resources.imagen_pdef.Save(ms, Resources.imagen_pdef.RawFormat);
+                return ms.ToArray();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -127,6 +131,41 @@ namespace Inquiries
         private void txtNomImg_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelModNick_Paint(object sender, EventArgs e)
+        {
+            txtApodo.ReadOnly = false;
+            label7.Show();
+        }
+
+        private void panelModContra_Paint(object sender, EventArgs e)
+        {
+            txtModContra.ReadOnly = false;
+            label12.Show();
+        }
+
+        private void panelModCI_Click(object sender, EventArgs e)
+        {
+            txtModCI.ReadOnly = false;
+            label8.Show();
+        }
+
+        private void panelModApe_Paint(object sender, EventArgs e)
+        {
+            txtApe.ReadOnly = false;
+            label5.Show();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelModNom_Paint(object sender, EventArgs e)
+        {
+            txtNombre.ReadOnly = false;
+            label6.Show();
         }
     }
 }

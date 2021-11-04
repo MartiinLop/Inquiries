@@ -55,9 +55,20 @@ namespace Inquiries.Presentación
                     consulta.Height = 50;
                     consulta.Width = 200;
                     panelConsultas.Controls.Add(consulta);
-                    
-                        
-                        RichTextBox alCI = new RichTextBox();
+
+                    if (ejeX < 900)
+                    {
+                        consulta.Location = new Point(ejeX, ejeY);
+                    }
+                    else
+                    {
+                        ejeY += 90;
+                        ejeX = 0;
+                        consulta.Location = new Point(ejeX, ejeY);
+
+                    }
+
+                    RichTextBox alCI = new RichTextBox();
                         alCI.Visible = true;
                         alCI.BackColor = Color.FromArgb(196, 196, 196);
                         alCI.ForeColor = Color.Black;
@@ -97,6 +108,9 @@ namespace Inquiries.Presentación
                     consulta.Controls.Add(contenido);
                     contenido.Text = infoConsulta[x, 2];
 
+
+
+
                     switch (Convert.ToString(infoConsulta[x, 5]))
                         {
 
@@ -110,7 +124,8 @@ namespace Inquiries.Presentación
                                 panelConsultas.Controls.Add(estadocon);
                                 estadocon.Visible = true;
                                 estadocon.BringToFront();
-                            
+                                ejeX += 210;
+
                             break;
 
                             case "recibida":
@@ -123,7 +138,8 @@ namespace Inquiries.Presentación
                                 panelConsultas.Controls.Add(estadore);
                                 estadore.Visible = true;
                                 estadore.BringToFront();
-                           
+                                ejeX += 210;
+
                             break;
 
                             case "realizada":
@@ -136,22 +152,11 @@ namespace Inquiries.Presentación
                                 panelConsultas.Controls.Add(estador);
                                 estador.Visible = true;
                                 estador.BringToFront();
-                           
+                                ejeX += 210;
+
                             break;
                         }
 
-                    if (ejeX < 900)
-                    {
-                        consulta.Location = new Point(ejeX, ejeY);
-                        ejeX += 210;
-                    }
-                    else
-                    {
-                        
-                        consulta.Location = new Point(ejeX, ejeY);
-                        ejeY += 90;
-                        ejeX = 0;
-                    }
 
                     alCI.Click += delegate (object enviar, EventArgs f)
                     {

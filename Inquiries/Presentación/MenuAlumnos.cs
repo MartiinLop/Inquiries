@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
-
+using Inquiries.Properties;
 
 namespace Inquiries
 {
@@ -74,8 +74,9 @@ namespace Inquiries
 
         private void btnPerfilDoc_Click(object sender, EventArgs e)
         {
+            Persona a = new Persona();
             this.Hide();
-            ModPerfilAlumno f1 = new ModPerfilAlumno();
+            ModPerfilAlumno f1 = new ModPerfilAlumno(a.obtCedulaActual(),false);
             f1.ShowDialog();
         }
 
@@ -92,7 +93,7 @@ namespace Inquiries
             }
             catch (Exception)
             {
-                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+                pictureBox1.Image = Resources.imagen_pdef;
             }
             
             

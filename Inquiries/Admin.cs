@@ -159,6 +159,15 @@ namespace Inquiries
             return b;
         }
 
+        public static void ModPerfAl(string nombre, string apellido, string apodo, string ci, string contraseña, byte[] img)
+        {
+            ConBD.ModPerfilAlAdmin(nombre, apellido, apodo, ci, contraseña, img);
+        }
+
+        public static void ModPerfDoc(string nombre, string apellido, string ci, string contraseña, byte[] img)
+        {
+            ConBD.ModPerfilDocAdmin(nombre, apellido, ci, contraseña, img);
+        }
         public static void EliminarAl(int ci)
         {
             ConBD.EliminarAlAdmin(ci);

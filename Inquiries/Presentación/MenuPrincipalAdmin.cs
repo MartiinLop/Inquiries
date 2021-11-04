@@ -90,9 +90,6 @@ namespace Inquiries
         {
             string[,] alumnos = (string[,])Admin.ObtenerUsuariosAl();
 
-
-
-
             if (alumnos.Length != comparar.Length)
             {
                 for (int x = 0; x < alumnos.GetLength(0); x++)
@@ -112,6 +109,7 @@ namespace Inquiries
                         ejeY += 121;
                         ejeX = 0;
                         lAlumnos.Location = new Point(ejeX, ejeY);
+                        ejeX += 219;
                     }
 
 
@@ -183,6 +181,7 @@ namespace Inquiries
                         ejeY += 121;
                         ejeX = 0;
                         lDocentes.Location = new Point(ejeX, ejeY);
+                        ejeX += 219;
                     }
 
                     Label dCi = new Label();
@@ -211,7 +210,7 @@ namespace Inquiries
                     panel1.Controls.Add(dCon);
 
 
-                    TemplateParteAdmin.MiniUsuExpandir a = new TemplateParteAdmin.MiniUsuExpandir(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Alumno", dCon.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    TemplateParteAdmin.MiniUsuExpandir a = new TemplateParteAdmin.MiniUsuExpandir(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dCon.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lDocentes.Controls.Add(a);
                     a.Show();
 
@@ -229,8 +228,7 @@ namespace Inquiries
         private void timer1_Tick(object sender, EventArgs e)
         {
                 
-                    
-                    }
+        }
 
         private void MenuPrincipalAdmin_Load(object sender, EventArgs e)
         {
@@ -252,6 +250,11 @@ namespace Inquiries
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlUsu_Paint(object sender, PaintEventArgs e)
         {
 
         }

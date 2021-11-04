@@ -157,6 +157,7 @@ namespace Inquiries
             this.pnlUsu.Name = "pnlUsu";
             this.pnlUsu.Size = new System.Drawing.Size(986, 449);
             this.pnlUsu.TabIndex = 11;
+            this.pnlUsu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUsu_Paint);
             // 
             // btnVerUsuarios
             // 
