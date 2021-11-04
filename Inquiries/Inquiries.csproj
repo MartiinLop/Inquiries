@@ -99,6 +99,12 @@
     <Compile Include="Presentación\FORPanelDatosUsuAdmin.Designer.cs">
       <DependentUpon>FORPanelDatosUsuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\FORPanelMiniUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelMiniUsuAdmin.Designer.cs">
+      <DependentUpon>FORPanelMiniUsuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\ListadoConsDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelDatosUsuAdmin.resx">
       <DependentUpon>FORPanelDatosUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelMiniUsuAdmin.resx">
+      <DependentUpon>FORPanelMiniUsuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ListadoConsAl.resx">
       <DependentUpon>ListadoConsAl.cs</DependentUpon>

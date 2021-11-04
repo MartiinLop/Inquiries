@@ -98,32 +98,22 @@ namespace Inquiries
                 for (int x = 0; x < alumnos.GetLength(0); x++)
                 {
                     Panel lAlumnos = new Panel();
-                    lAlumnos.Height = 50;
-                    lAlumnos.Width = 200;
+                    lAlumnos.Height = 111;
+                    lAlumnos.Width = 209;
                     lAlumnos.BackColor = Color.FromArgb(196, 196, 196);
                     pnlUsu.Controls.Add(lAlumnos);
                     if (ejeX < 800)
                     {
                         lAlumnos.Location = new Point(ejeX, ejeY);
-                        ejeX += 210;
+                        ejeX += 219;
                     }
                     else
                     {
-                        ejeY += 90;
+                        ejeY += 121;
                         ejeX = 0;
                         lAlumnos.Location = new Point(ejeX, ejeY);
                     }
 
-
-                    RichTextBox datosAl = new RichTextBox();
-                    datosAl.Visible = true;
-                    datosAl.BackColor = Color.FromArgb(143, 131, 131);
-                    datosAl.ForeColor = Color.Black;
-                    datosAl.Text = alumnos[x, 0] + " " + alumnos[x, 1] + "\n" + alumnos[x, 2] + " - Alumno";
-                    datosAl.Width = 185;
-                    datosAl.Height = 85;
-                    datosAl.ReadOnly = true;
-                    lAlumnos.Controls.Add(datosAl);
 
                     Label alCi = new Label();
                     alCi.Visible = false;
@@ -151,11 +141,15 @@ namespace Inquiries
                     panel1.Controls.Add(alCon);
 
 
-                    datosAl.Click += delegate (object enviar, EventArgs f)
+                    TemplateParteAdmin.MiniUsuExpandir a = new TemplateParteAdmin.MiniUsuExpandir(alNom.Text, alApe.Text, alCi.Text, alGru.Text, "Alumno", alCon.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    lAlumnos.Controls.Add(a);
+                    a.Show();
+
+                    a.Click += delegate (object enviar, EventArgs f)
                         {
 
-                                VerUsuAdmin a = new VerUsuAdmin(alNom.Text, alApe.Text, alCi.Text, alGru.Text, "Alumno", alCon.Text);
-                                a.ShowDialog();
+                                VerUsuAdmin b = new VerUsuAdmin(alNom.Text, alApe.Text, alCi.Text, alGru.Text, "Alumno", alCon.Text);
+                                b.ShowDialog();
                             
                         };
 
@@ -175,31 +169,21 @@ namespace Inquiries
                 {
                     
                     Panel lDocentes = new Panel();
-                    lDocentes.Height = 50;
-                    lDocentes.Width = 200;
+                    lDocentes.Height = 111;
+                    lDocentes.Width = 209;
                     lDocentes.BackColor = Color.FromArgb(196, 196, 196);
                     pnlUsu.Controls.Add(lDocentes);
                     if (ejeX < 800)
                     {
                         lDocentes.Location = new Point(ejeX, ejeY);
-                        ejeX += 210;
+                        ejeX += 219;
                     }
                     else
                     {
-                        ejeY += 90;
+                        ejeY += 121;
                         ejeX = 0;
                         lDocentes.Location = new Point(ejeX, ejeY);
                     }
-
-                    RichTextBox datosDoc = new RichTextBox();
-                    datosDoc.Visible = true;
-                    datosDoc.BackColor = Color.FromArgb(143, 131, 131);
-                    datosDoc.ForeColor = Color.Black;
-                    datosDoc.Text = docentes[x, 0] + " " + docentes[x, 1] + "\n" + docentes[x, 2] + " - Docente";
-                    datosDoc.Width = 185;
-                    datosDoc.Height = 85;
-                    datosDoc.ReadOnly = true;
-                    lDocentes.Controls.Add(datosDoc);
 
                     Label dCi = new Label();
                     dCi.Visible = false;
@@ -227,10 +211,15 @@ namespace Inquiries
                     panel1.Controls.Add(dCon);
 
 
-                    datosDoc.Click += delegate (object enviar, EventArgs f)
+                    TemplateParteAdmin.MiniUsuExpandir a = new TemplateParteAdmin.MiniUsuExpandir(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Alumno", dCon.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    lDocentes.Controls.Add(a);
+                    a.Show();
+
+
+                    a.Click += delegate (object enviar, EventArgs f)
                     {
-                          VerUsuAdmin a = new VerUsuAdmin(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dCon.Text);
-                          a.ShowDialog();
+                          VerUsuAdmin b = new VerUsuAdmin(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dCon.Text);
+                          b.ShowDialog();
                         
                     };
                 }
