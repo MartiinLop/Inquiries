@@ -93,6 +93,12 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="Asignatura.cs" />
     <Compile Include="Grupo.cs" />
+    <Compile Include="Presentación\FORPanelDatosUsuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelDatosUsuAdmin.Designer.cs">
+      <DependentUpon>FORPanelDatosUsuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\ListadoConsDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +150,6 @@
     </Compile>
     <Compile Include="Presentación\ChatDoc.Designer.cs">
       <DependentUpon>ChatDoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentación\MenuAdminInfoUsu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentación\MenuAdminInfoUsu.Designer.cs">
-      <DependentUpon>MenuAdminInfoUsu.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\MenuChatAl.cs">
       <SubType>Form</SubType>
@@ -295,14 +295,14 @@
     <EmbeddedResource Include="Presentación\ChatDoc.resx">
       <DependentUpon>ChatDoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelDatosUsuAdmin.resx">
+      <DependentUpon>FORPanelDatosUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ListadoConsAl.resx">
       <DependentUpon>ListadoConsAl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ListadoConsDoc.resx">
       <DependentUpon>ListadoConsDoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentación\MenuAdminInfoUsu.resx">
-      <DependentUpon>MenuAdminInfoUsu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuChatAl.resx">
       <DependentUpon>MenuChatAl.cs</DependentUpon>

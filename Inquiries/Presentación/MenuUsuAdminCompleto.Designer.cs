@@ -29,6 +29,7 @@ namespace Inquiries
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
@@ -36,31 +37,25 @@ namespace Inquiries
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtFNom = new System.Windows.Forms.TextBox();
+            this.txtFCedula = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnFCedula = new System.Windows.Forms.Button();
+            this.btnFNom = new System.Windows.Forms.Button();
+            this.btnEFiltros = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -153,72 +148,28 @@ namespace Inquiries
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.panel2.Controls.Add(this.vScrollBar1);
+            this.panel2.Controls.Add(this.btnEFiltros);
+            this.panel2.Controls.Add(this.btnFNom);
+            this.panel2.Controls.Add(this.btnFCedula);
+            this.panel2.Controls.Add(this.panelUsuarios);
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.panel15);
             this.panel2.Controls.Add(this.panel13);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.txtFNom);
+            this.panel2.Controls.Add(this.txtFCedula);
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.panel10);
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Controls.Add(this.panel11);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.splitter1);
             this.panel2.Controls.Add(this.btnVolver);
             this.panel2.Location = new System.Drawing.Point(14, 127);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1238, 550);
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(867, 84);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 438);
-            this.vScrollBar1.TabIndex = 25;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel14.BackgroundImage = global::Inquiries.Properties.Resources.nuevousuario;
-            this.panel14.Location = new System.Drawing.Point(949, 357);
-            this.panel14.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(66, 66);
-            this.panel14.TabIndex = 12;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel15.BackgroundImage = global::Inquiries.Properties.Resources.nuevousuario;
-            this.panel15.Location = new System.Drawing.Point(950, 433);
-            this.panel15.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(66, 66);
-            this.panel15.TabIndex = 12;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel13.BackgroundImage = global::Inquiries.Properties.Resources.nuevousuario;
-            this.panel13.Location = new System.Drawing.Point(950, 281);
-            this.panel13.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(66, 66);
-            this.panel13.TabIndex = 11;
             // 
             // button3
             // 
@@ -268,47 +219,27 @@ namespace Inquiries
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // txtFNom
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(1012, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 19);
-            this.textBox2.TabIndex = 21;
-            this.textBox2.Text = "Ingresar Nombre";
+            this.txtFNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtFNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFNom.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtFNom.Location = new System.Drawing.Point(1088, 175);
+            this.txtFNom.Name = "txtFNom";
+            this.txtFNom.Size = new System.Drawing.Size(139, 19);
+            this.txtFNom.TabIndex = 21;
             // 
-            // textBox1
+            // txtFCedula
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(1012, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 19);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.Text = "Ingresar Cédula";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(977, 211);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(977, 172);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 18;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtFCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.txtFCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFCedula.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtFCedula.Location = new System.Drawing.Point(1088, 142);
+            this.txtFCedula.Name = "txtFCedula";
+            this.txtFCedula.Size = new System.Drawing.Size(139, 19);
+            this.txtFCedula.TabIndex = 20;
             // 
             // panel12
             // 
@@ -335,69 +266,6 @@ namespace Inquiries
             this.panel10.Size = new System.Drawing.Size(320, 10);
             this.panel10.TabIndex = 16;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel8.Location = new System.Drawing.Point(11, 402);
-            this.panel8.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(826, 54);
-            this.panel8.TabIndex = 13;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel11.Location = new System.Drawing.Point(11, 466);
-            this.panel11.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(826, 54);
-            this.panel11.TabIndex = 12;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel6.Location = new System.Drawing.Point(11, 274);
-            this.panel6.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(826, 54);
-            this.panel6.TabIndex = 13;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel9.Location = new System.Drawing.Point(11, 338);
-            this.panel9.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(826, 54);
-            this.panel9.TabIndex = 12;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel5.Location = new System.Drawing.Point(11, 146);
-            this.panel5.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(826, 54);
-            this.panel5.TabIndex = 11;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel7.Location = new System.Drawing.Point(11, 210);
-            this.panel7.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(826, 54);
-            this.panel7.TabIndex = 12;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.panel4.Location = new System.Drawing.Point(11, 82);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(826, 54);
-            this.panel4.TabIndex = 10;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -419,14 +287,6 @@ namespace Inquiries
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIOS";
             // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(918, 550);
-            this.splitter1.TabIndex = 14;
-            this.splitter1.TabStop = false;
-            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
@@ -442,6 +302,95 @@ namespace Inquiries
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.AutoScroll = true;
+            this.panelUsuarios.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.panelUsuarios.Location = new System.Drawing.Point(4, 81);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(908, 459);
+            this.panelUsuarios.TabIndex = 25;
+            this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.panel14.BackgroundImage = global::Inquiries.Properties.Resources.nuevousuario;
+            this.panel14.Location = new System.Drawing.Point(949, 357);
+            this.panel14.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(66, 66);
+            this.panel14.TabIndex = 12;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.panel15.BackgroundImage = global::Inquiries.Properties.Resources.nuevousuario;
+            this.panel15.Location = new System.Drawing.Point(950, 433);
+            this.panel15.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(66, 66);
+            this.panel15.TabIndex = 12;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.panel13.BackgroundImage = global::Inquiries.Properties.Resources.nuevousuario;
+            this.panel13.Location = new System.Drawing.Point(950, 281);
+            this.panel13.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(66, 66);
+            this.panel13.TabIndex = 11;
+            // 
+            // btnFCedula
+            // 
+            this.btnFCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnFCedula.FlatAppearance.BorderSize = 0;
+            this.btnFCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFCedula.ForeColor = System.Drawing.Color.White;
+            this.btnFCedula.Location = new System.Drawing.Point(929, 142);
+            this.btnFCedula.Name = "btnFCedula";
+            this.btnFCedula.Size = new System.Drawing.Size(127, 23);
+            this.btnFCedula.TabIndex = 26;
+            this.btnFCedula.Text = "Filtrar por Cedula";
+            this.btnFCedula.UseVisualStyleBackColor = false;
+            this.btnFCedula.Click += new System.EventHandler(this.btnFCedula_Click);
+            // 
+            // btnFNom
+            // 
+            this.btnFNom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnFNom.FlatAppearance.BorderSize = 0;
+            this.btnFNom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFNom.ForeColor = System.Drawing.Color.White;
+            this.btnFNom.Location = new System.Drawing.Point(929, 175);
+            this.btnFNom.Name = "btnFNom";
+            this.btnFNom.Size = new System.Drawing.Size(127, 23);
+            this.btnFNom.TabIndex = 27;
+            this.btnFNom.Text = "Filtrar por Nombre";
+            this.btnFNom.UseVisualStyleBackColor = false;
+            // 
+            // btnEFiltros
+            // 
+            this.btnEFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnEFiltros.FlatAppearance.BorderSize = 0;
+            this.btnEFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEFiltros.ForeColor = System.Drawing.Color.White;
+            this.btnEFiltros.Location = new System.Drawing.Point(1023, 219);
+            this.btnEFiltros.Name = "btnEFiltros";
+            this.btnEFiltros.Size = new System.Drawing.Size(127, 23);
+            this.btnEFiltros.TabIndex = 28;
+            this.btnEFiltros.Text = "Eliminar Filtros";
+            this.btnEFiltros.UseVisualStyleBackColor = false;
             // 
             // MenuUsuAdminCompleto
             // 
@@ -470,8 +419,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnConsultasAl;
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVolver;
@@ -479,21 +426,17 @@ namespace Inquiries
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtFNom;
+        private System.Windows.Forms.TextBox txtFCedula;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnEFiltros;
+        private System.Windows.Forms.Button btnFNom;
+        private System.Windows.Forms.Button btnFCedula;
     }
 }

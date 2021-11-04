@@ -38,12 +38,9 @@ namespace Inquiries
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelUsuarios = new System.Windows.Forms.Panel();
-            this.pnlAl = new System.Windows.Forms.Panel();
+            this.pnlUsu = new System.Windows.Forms.Panel();
             this.btnVerUsuarios = new System.Windows.Forms.Button();
-            this.pnlDoc = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             this.SuspendLayout();
@@ -152,27 +149,14 @@ namespace Inquiries
             this.timer1.Interval = 700;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panelUsuarios
+            // pnlUsu
             // 
-            this.panelUsuarios.Controls.Add(this.label2);
-            this.panelUsuarios.Controls.Add(this.label1);
-            this.panelUsuarios.Controls.Add(this.pnlDoc);
-            this.panelUsuarios.Controls.Add(this.pnlAl);
-            this.panelUsuarios.Controls.Add(this.btnVerUsuarios);
-            this.panelUsuarios.Location = new System.Drawing.Point(12, 124);
-            this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(1011, 517);
-            this.panelUsuarios.TabIndex = 8;
-            this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsuarios_Paint);
-            // 
-            // pnlAl
-            // 
-            this.pnlAl.AutoScroll = true;
-            this.pnlAl.AutoScrollMargin = new System.Drawing.Size(0, 1000);
-            this.pnlAl.Location = new System.Drawing.Point(12, 18);
-            this.pnlAl.Name = "pnlAl";
-            this.pnlAl.Size = new System.Drawing.Size(986, 221);
-            this.pnlAl.TabIndex = 11;
+            this.pnlUsu.AutoScroll = true;
+            this.pnlUsu.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.pnlUsu.Location = new System.Drawing.Point(3, 3);
+            this.pnlUsu.Name = "pnlUsu";
+            this.pnlUsu.Size = new System.Drawing.Size(986, 449);
+            this.pnlUsu.TabIndex = 11;
             // 
             // btnVerUsuarios
             // 
@@ -181,7 +165,7 @@ namespace Inquiries
             this.btnVerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnVerUsuarios.Location = new System.Drawing.Point(881, 487);
+            this.btnVerUsuarios.Location = new System.Drawing.Point(862, 480);
             this.btnVerUsuarios.Name = "btnVerUsuarios";
             this.btnVerUsuarios.Size = new System.Drawing.Size(127, 25);
             this.btnVerUsuarios.TabIndex = 10;
@@ -189,32 +173,15 @@ namespace Inquiries
             this.btnVerUsuarios.UseVisualStyleBackColor = false;
             this.btnVerUsuarios.Click += new System.EventHandler(this.btnVerUsuarios_Click);
             // 
-            // pnlDoc
+            // panelUsuarios
             // 
-            this.pnlDoc.AutoScroll = true;
-            this.pnlDoc.AutoScrollMargin = new System.Drawing.Size(0, 1000);
-            this.pnlDoc.Location = new System.Drawing.Point(12, 259);
-            this.pnlDoc.Name = "pnlDoc";
-            this.pnlDoc.Size = new System.Drawing.Size(986, 221);
-            this.pnlDoc.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Docentes";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Alumnos";
+            this.panelUsuarios.Controls.Add(this.pnlUsu);
+            this.panelUsuarios.Controls.Add(this.btnVerUsuarios);
+            this.panelUsuarios.Location = new System.Drawing.Point(12, 124);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(1011, 517);
+            this.panelUsuarios.TabIndex = 8;
+            this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsuarios_Paint);
             // 
             // MenuPrincipalAdmin
             // 
@@ -228,7 +195,6 @@ namespace Inquiries
             this.Load += new System.EventHandler(this.MenuPrincipalAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panelUsuarios.ResumeLayout(false);
-            this.panelUsuarios.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -243,11 +209,8 @@ namespace Inquiries
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panelUsuarios;
         private System.Windows.Forms.Button btnVerUsuarios;
-        private System.Windows.Forms.Panel pnlAl;
-        private System.Windows.Forms.Panel pnlDoc;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlUsu;
+        private System.Windows.Forms.Panel panelUsuarios;
     }
 }

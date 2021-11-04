@@ -30,6 +30,8 @@ namespace Inquiries
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblGrupo = new System.Windows.Forms.Label();
             this.lblAlDoc = new System.Windows.Forms.Label();
             this.lblCédula = new System.Windows.Forms.Label();
             this.lblContra = new System.Windows.Forms.Label();
@@ -44,12 +46,10 @@ namespace Inquiries
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
-            this.lblGrupo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,6 +68,27 @@ namespace Inquiries
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1238, 550);
             this.panel2.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(14, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 144);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lblGrupo
+            // 
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblGrupo.Location = new System.Drawing.Point(217, 224);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(213, 33);
+            this.lblGrupo.TabIndex = 19;
+            this.lblGrupo.Text = "Grupo: (Grupo)";
             // 
             // lblAlDoc
             // 
@@ -242,26 +263,6 @@ namespace Inquiries
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
-            // lblGrupo
-            // 
-            this.lblGrupo.AutoSize = true;
-            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrupo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblGrupo.Location = new System.Drawing.Point(217, 224);
-            this.lblGrupo.Name = "lblGrupo";
-            this.lblGrupo.Size = new System.Drawing.Size(213, 33);
-            this.lblGrupo.TabIndex = 19;
-            this.lblGrupo.Text = "Grupo: (Grupo)";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(14, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
             // VerUsuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,10 +275,10 @@ namespace Inquiries
             this.Load += new System.EventHandler(this.VerUsuAdmin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

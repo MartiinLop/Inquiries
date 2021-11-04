@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -244,6 +244,7 @@ namespace Inquiries
             conectar00.Close();
             return false;
         }
+
         //Obtener nombre de usuario de alumno
         public static string nomUsu()
         {
@@ -262,6 +263,7 @@ namespace Inquiries
             conectar.Close();
             return nomUsu;
         }
+
         //Inicio sesión docente
         public static Boolean Insedoc(int dCI, string dCon)
         {
@@ -487,7 +489,6 @@ namespace Inquiries
 
         }
 
-
         //Obtener docentes para crear consulta
         public static MySqlDataAdapter docCons(string grupo){
 
@@ -522,6 +523,7 @@ namespace Inquiries
             conectar.Close();
             return gru;
         }
+
         //Leer respuesta para el alumno
         public static string LeerRespuesta(int codigo)
         {
@@ -1099,7 +1101,7 @@ namespace Inquiries
             conectar.Close();
         }
 
-        //Obtener todos los usuarios
+        //Obtener todos los alumnos
         public static MySqlDataAdapter ObtTodosAl()
         {
             string comando = "select alnom, alape, gnom, alumno.alci, alcon from alumno, grupo where alumno.algrupo = grupo.gcod;";
@@ -1115,6 +1117,82 @@ namespace Inquiries
            
         }
 
+        //Obtener todos los docentes
+        public static MySqlDataAdapter ObtTodosDoc()
+        {
+            string comando = "select dnom, dape, gnom, docente.dci, dcon from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo;";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
+
+        //Filtrar obtener docentes
+        public static MySqlDataAdapter FltTodosDoc(string ci, string nom)
+        {
+            if (nom == null)
+            {
+                string comando = "select dnom, dape, gnom, docente.dci, dcon from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo && docente.dci ="+ci+";";
+
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+
+                MySqlCommand cons = new MySqlCommand(comando, conectar);
+                MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+                conectar.Close();
+                return datos;
+            }
+            else 
+            {
+                string comando = "select dnom, dape, gnom, docente.dci, dcon from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo && docente.dnom ='"+nom+"';";
+
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+
+                MySqlCommand cons = new MySqlCommand(comando, conectar);
+                MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+                conectar.Close();
+                return datos;
+            }
+        }
+
+        //Filtrar obtener alumnos
+        public static MySqlDataAdapter FltTodosAl(string ci, string nom)
+        {
+            if (nom == null)
+            {
+                string comando = "select alnom, alape, gnom, alumno.alci, alcon from alumno, grupo where alumno.algrupo = grupo.gcod && alumno.alci ="+ci+";";
+
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+
+                MySqlCommand cons = new MySqlCommand(comando, conectar);
+                MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+                conectar.Close();
+                return datos;
+            }
+            else
+            {
+                string comando = "select alnom, alape, gnom, alumno.alci, alcon from alumno, grupo where alumno.algrupo = grupo.gcod && alumno.alnom='"+nom+"';";
+
+                MySqlConnection conectar = new MySqlConnection(conexbd);
+                conectar.Open();
+
+                MySqlCommand cons = new MySqlCommand(comando, conectar);
+                MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+                conectar.Close();
+                return datos;
+            }
+        }
         public static byte[] obtImgAlParaAdmin(int ci)
         {
             byte[] imagen = null;
@@ -1135,19 +1213,7 @@ namespace Inquiries
             return imagen;
         }
 
-        public static  MySqlDataAdapter ObtTodosDoc()
-        {
-            string comando = "select dnom, dape, gnom, docente.dci, dcon from docente, grupo, gruposdocente where dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo;";
 
-            MySqlConnection conectar = new MySqlConnection(conexbd);
-            conectar.Open();
-
-            MySqlCommand cons = new MySqlCommand(comando, conectar);
-            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
-
-            conectar.Close();
-            return datos;
-        }
 
         public static byte[] obtImgDocParaAdmin(int ci)
         {

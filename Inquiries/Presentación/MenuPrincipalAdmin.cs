@@ -32,7 +32,8 @@ namespace Inquiries
             op = 0;
             ejeX = 0;
             ejeY = 0;
-           
+            panelUsuarios.Hide();
+
             r.Enabled = true;
 
         }
@@ -40,33 +41,30 @@ namespace Inquiries
         private void btnGruposAl_Click(object sender, EventArgs e)
         {
 
-            if (v == 1)
-            {
-                panel2.Show();
-                timer1.Enabled = true;
-            }
-            if (v == 0)
-            {
-                panel2.Hide();
-                timer1.Enabled = false;
-            }
 
-            if (v == 1)
-            {
-                v = 0;
-            }
-            else
-            {
-                v = 1;
-            }
+
         }
 
         private void btnConsultasAl_Click(object sender, EventArgs e)
         {
 
-         
-               
+            if (v == 0)
+            {
+                v = 1;
                 r.Tick += new System.EventHandler(crearPaneles);
+                pnlUsu.Show();
+                panelUsuarios.Show();
+                timer1.Enabled = true;
+            }
+            else
+            {
+                v = 0;
+                pnlUsu.Hide();
+                panelUsuarios.Hide();
+                timer1.Enabled = false;
+            }
+
+
                
 
            
@@ -90,9 +88,10 @@ namespace Inquiries
 
         private void crearPaneles(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            label2.Visible = true;
             string[,] alumnos = (string[,])Admin.ObtenerUsuariosAl();
+
+
+
 
             if (alumnos.Length != comparar.Length)
             {
@@ -102,8 +101,19 @@ namespace Inquiries
                     lAlumnos.Height = 50;
                     lAlumnos.Width = 200;
                     lAlumnos.BackColor = Color.FromArgb(196, 196, 196);
-                    pnlAl.Controls.Add(lAlumnos);
-                    lAlumnos.Dock = DockStyle.Left;
+                    pnlUsu.Controls.Add(lAlumnos);
+                    if (ejeX < 800)
+                    {
+                        lAlumnos.Location = new Point(ejeX, ejeY);
+                        ejeX += 210;
+                    }
+                    else
+                    {
+                        ejeY += 90;
+                        ejeX = 0;
+                        lAlumnos.Location = new Point(ejeX, ejeY);
+                    }
+
 
                     RichTextBox datosAl = new RichTextBox();
                     datosAl.Visible = true;
@@ -141,19 +151,6 @@ namespace Inquiries
                     panel1.Controls.Add(alCon);
 
 
-                    if (ejeX < 900)
-                    {
-                        lAlumnos.Location = new Point(ejeX, ejeY);
-                        ejeX += 210;
-                    }
-                    else
-                    {
-
-                        lAlumnos.Location = new Point(ejeX, ejeY);
-                        ejeY += 90;
-                        ejeX = 0;
-                    }
-
                     datosAl.Click += delegate (object enviar, EventArgs f)
                         {
 
@@ -176,12 +173,23 @@ namespace Inquiries
             {
                 for (int x = 0; x < docentes.GetLength(0); x++)
                 {
+                    
                     Panel lDocentes = new Panel();
                     lDocentes.Height = 50;
                     lDocentes.Width = 200;
                     lDocentes.BackColor = Color.FromArgb(196, 196, 196);
-                    pnlDoc.Controls.Add(lDocentes);
-                    lDocentes.Dock = DockStyle.Left;
+                    pnlUsu.Controls.Add(lDocentes);
+                    if (ejeX < 800)
+                    {
+                        lDocentes.Location = new Point(ejeX, ejeY);
+                        ejeX += 210;
+                    }
+                    else
+                    {
+                        ejeY += 90;
+                        ejeX = 0;
+                        lDocentes.Location = new Point(ejeX, ejeY);
+                    }
 
                     RichTextBox datosDoc = new RichTextBox();
                     datosDoc.Visible = true;
@@ -219,19 +227,6 @@ namespace Inquiries
                     panel1.Controls.Add(dCon);
 
 
-                    if (ejeX < 900)
-                    {
-                        lDocentes.Location = new Point(ejeX, ejeY);
-                        ejeX += 210;
-                    }
-                    else
-                    {
-
-                        lDocentes.Location = new Point(ejeX, ejeY);
-                        ejeY += 90;
-                        ejeX = 0;
-                    }
-
                     datosDoc.Click += delegate (object enviar, EventArgs f)
                     {
                           VerUsuAdmin a = new VerUsuAdmin(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dCon.Text);
@@ -250,8 +245,8 @@ namespace Inquiries
 
         private void MenuPrincipalAdmin_Load(object sender, EventArgs e)
         {
-            label1.Visible = false;
-            label2.Visible = false;
+
+
         }
 
         private void panelUsuarios_Paint(object sender, PaintEventArgs e)
@@ -260,6 +255,14 @@ namespace Inquiries
         }
 
         private void btnVerUsuarios_Click(object sender, EventArgs e)
+        {
+            MenuUsuAdminCompleto f = new MenuUsuAdminCompleto();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

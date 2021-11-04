@@ -112,6 +112,52 @@ namespace Inquiries
         {
             return ConBD.obtImgDocParaAdmin(ci);
         }
+
+        public static Array FiltrarDatosAlumno(string ci, string nom)
+        {
+
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.FltTodosAl(ci,nom);
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
+
+        public static Array FiltrarDatosDocente(string ci, string nom)
+        {
+
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.FltTodosDoc(ci, nom);
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
     }
 }
 

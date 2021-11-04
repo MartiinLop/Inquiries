@@ -54,6 +54,7 @@ namespace Inquiries.Presentación
             this.panelConsultas.Name = "panelConsultas";
             this.panelConsultas.Size = new System.Drawing.Size(1264, 455);
             this.panelConsultas.TabIndex = 14;
+            this.panelConsultas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConsultas_Paint);
             // 
             // panel2
             // 

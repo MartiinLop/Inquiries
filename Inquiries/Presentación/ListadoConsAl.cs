@@ -170,5 +170,10 @@ namespace Inquiries.Presentación
         {
 
         }
+
+        private void panelConsultas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

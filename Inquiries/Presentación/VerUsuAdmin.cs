@@ -54,7 +54,7 @@ namespace Inquiries
                     lblContra.Text = "Contraseña: " + contra;
                     lblGrupo.Text = "Grupo: " + grupo;
                     lblAlDoc.Text = tipo;
-                    pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+                    pictureBox1.Image = Properties.Resources.imgPerf;
 
 
                 }
@@ -65,7 +65,7 @@ namespace Inquiries
                     lblContra.Text = "Contraseña: " + contra;
                     lblGrupo.Text = "Grupo: " + grupo;
                     lblAlDoc.Text = tipo;
-                    pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "imgPerf.jpg"));
+                    pictureBox1.Image = Properties.Resources.imgPerf;
 
 
                 }
@@ -92,6 +92,10 @@ namespace Inquiries
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
     
