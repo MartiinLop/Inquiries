@@ -32,7 +32,7 @@ namespace Inquiries
             this.components = new System.ComponentModel.Container();
             this.btnGruposAl = new System.Windows.Forms.Button();
             this.btnConsultasAl = new System.Windows.Forms.Button();
-            this.btnChatAl = new System.Windows.Forms.Button();
+            this.btnHistorial = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
             this.btnPerfilDoc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,8 +41,13 @@ namespace Inquiries
             this.pnlUsu = new System.Windows.Forms.Panel();
             this.btnVerUsuarios = new System.Windows.Forms.Button();
             this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.panelHistorial = new System.Windows.Forms.Panel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panelHistorialMain = new System.Windows.Forms.Panel();
+            this.btnVHistorial = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
+            this.panelHistorialMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGruposAl
@@ -75,20 +80,20 @@ namespace Inquiries
             this.btnConsultasAl.UseVisualStyleBackColor = true;
             this.btnConsultasAl.Click += new System.EventHandler(this.btnConsultasAl_Click);
             // 
-            // btnChatAl
+            // btnHistorial
             // 
-            this.btnChatAl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChatAl.FlatAppearance.BorderSize = 0;
-            this.btnChatAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChatAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnChatAl.Location = new System.Drawing.Point(441, 4);
-            this.btnChatAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnChatAl.Name = "btnChatAl";
-            this.btnChatAl.Size = new System.Drawing.Size(263, 112);
-            this.btnChatAl.TabIndex = 2;
-            this.btnChatAl.Text = "HISTORIAL";
-            this.btnChatAl.UseVisualStyleBackColor = true;
-            this.btnChatAl.Click += new System.EventHandler(this.btnChatAl_Click);
+            this.btnHistorial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHistorial.FlatAppearance.BorderSize = 0;
+            this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.btnHistorial.Location = new System.Drawing.Point(441, 4);
+            this.btnHistorial.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.Size = new System.Drawing.Size(263, 112);
+            this.btnHistorial.TabIndex = 2;
+            this.btnHistorial.Text = "HISTORIAL";
+            this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // btnCerrarAl
             // 
@@ -125,7 +130,7 @@ namespace Inquiries
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnPerfilDoc);
             this.panel1.Controls.Add(this.btnCerrarAl);
-            this.panel1.Controls.Add(this.btnChatAl);
+            this.panel1.Controls.Add(this.btnHistorial);
             this.panel1.Controls.Add(this.btnConsultasAl);
             this.panel1.Controls.Add(this.btnGruposAl);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -184,11 +189,48 @@ namespace Inquiries
             this.panelUsuarios.TabIndex = 8;
             this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsuarios_Paint);
             // 
+            // panelHistorial
+            // 
+            this.panelHistorial.Location = new System.Drawing.Point(13, 14);
+            this.panelHistorial.Name = "panelHistorial";
+            this.panelHistorial.Size = new System.Drawing.Size(1081, 449);
+            this.panelHistorial.TabIndex = 9;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 700;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // panelHistorialMain
+            // 
+            this.panelHistorialMain.Controls.Add(this.btnVHistorial);
+            this.panelHistorialMain.Controls.Add(this.panelHistorial);
+            this.panelHistorialMain.Location = new System.Drawing.Point(155, 124);
+            this.panelHistorialMain.Name = "panelHistorialMain";
+            this.panelHistorialMain.Size = new System.Drawing.Size(1109, 505);
+            this.panelHistorialMain.TabIndex = 9;
+            this.panelHistorialMain.Visible = false;
+            // 
+            // btnVHistorial
+            // 
+            this.btnVHistorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnVHistorial.FlatAppearance.BorderSize = 0;
+            this.btnVHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVHistorial.ForeColor = System.Drawing.Color.White;
+            this.btnVHistorial.Location = new System.Drawing.Point(799, 469);
+            this.btnVHistorial.Name = "btnVHistorial";
+            this.btnVHistorial.Size = new System.Drawing.Size(127, 33);
+            this.btnVHistorial.TabIndex = 11;
+            this.btnVHistorial.Text = "Ver Historial";
+            this.btnVHistorial.UseVisualStyleBackColor = false;
+            // 
             // MenuPrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panelHistorialMain);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panel1);
             this.Name = "MenuPrincipalAdmin";
@@ -196,6 +238,7 @@ namespace Inquiries
             this.Load += new System.EventHandler(this.MenuPrincipalAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panelUsuarios.ResumeLayout(false);
+            this.panelHistorialMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -204,7 +247,7 @@ namespace Inquiries
 
         private System.Windows.Forms.Button btnGruposAl;
         private System.Windows.Forms.Button btnConsultasAl;
-        private System.Windows.Forms.Button btnChatAl;
+        private System.Windows.Forms.Button btnHistorial;
         private System.Windows.Forms.Button btnCerrarAl;
         private System.Windows.Forms.Button btnPerfilDoc;
         private System.Windows.Forms.Panel panel1;
@@ -213,5 +256,9 @@ namespace Inquiries
         private System.Windows.Forms.Button btnVerUsuarios;
         private System.Windows.Forms.Panel pnlUsu;
         private System.Windows.Forms.Panel panelUsuarios;
+        private System.Windows.Forms.Panel panelHistorial;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Panel panelHistorialMain;
+        private System.Windows.Forms.Button btnVHistorial;
     }
 }

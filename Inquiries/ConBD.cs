@@ -1286,6 +1286,34 @@ namespace Inquiries
             conectar.Close();
             return imagen;
         }
+
+        public static MySqlDataAdapter obtHistorialCons()
+        {
+            string comando = "select consulta.cod, consulta.alci, consulta.dci, docente.dnom, docente.dape, asignatura.anom, grupo.gori, grupo.gnom, alumno.alnom, alumno.alape from consulta, asignatura, grupo, docente, alumno, gruposdocente where consulta.codasignatura = asignatura.acod and asignatura.agrupo = grupo.gcod and consulta.alci = alumno.alci and consulta.dci = docente.dci and docente.dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo and alumno.algrupo = gruposdocente.dgrupo";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
+
+        public static MySqlDataAdapter obtHistorialChat()
+        {
+            string comando = "select chat.chcod, chat.docente, participa.alci, asignatura.anom, alumno.alnom, alumno.alape, docente.dnom, docente.dape, grupo.gnom, grupo.gori from chat, participa, asignatura, alumno, docente, grupo, gruposdocente where chat.chcod = participa.chcod and chat.chmate = asignatura.acod and participa.alci = alumno.alci and chat.docente = docente.dci and alumno.algrupo = grupo.gcod and docente.dci = gruposdocente.cidocente and alumno.algrupo = gruposdocente.dgrupo group by chcod";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
     }
 
 }

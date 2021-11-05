@@ -177,6 +177,50 @@ namespace Inquiries
         {
             ConBD.EliminarDocAdmin(ci);
         }
+
+        public static Array HistorialCon()
+        {
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.obtHistorialCons();
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
+
+        public static Array HistorialChat()
+        {
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.obtHistorialChat();
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
     }
 }
 

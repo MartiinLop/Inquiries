@@ -117,10 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAH0AAACKCAYAAACHF0WEAAAABGdBTUEAALGPC/xhBQAAA39JREFUeF7t
+        2jFv2lAYheH+w2xIHYgyhCzQyVOZwpJmqbJUREqkSB1QMqB0SDKx8cdcvkqZckwAX+Bzzzs867Uvr+/F
+        xnxZLpc1vBDdENENEd0Q0Q0Vj75YLOq319f6cTZDAfF5qs+5jSLR4+SuJpN6NBjUX09OUFg1GtX306n8
+        7HfRKvrd6kRG5+fyRFHeRb9fJP5O0WNlxwmoE8P+/VjtqqrLpraOHtu4OhEc1uV4LPtsYuPocUNRDYfy
+        BHAcu674jaNzk5bT0+qrVvVaZ6PobOl5xZ29arbOp9HjDl0dDHlsu9rXRn97eeEuvQNiJ1b9mqyN/vP6
+        Wh4EucTCVP2arI3OKu8O1a9JY3S+y7sl3neojkpj9O9VJQdHTkWin/V6cnDk1Dr683wuB0ZeraPHCxU1
+        MPJqHZ2buO5pHZ3n8+4huiGiGyK6IaIbIrohohsiuqHORh9X1b+T/x+p+ZYUx1AtlVTR2/ytNzs135KI
+        npCab0lET0jNtySiJ6TmWxLRE1LzLYnoCan5lkT0hNR8SyJ6Qmq+JRE9ITXfkoiekJpvSURPSM23pM5G
+        57f33cUxVEslVXTsjuiGiG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiG
+        iG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiG
+        iG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiGiG6I6IaIbojohohuiOiGiG7o6NGr0ai+mkzqXzc3
+        9d10igNYLBYfOjYpGn00GGx1xeE4ikW/OD3d6mrD8RSLzgrvjiLRv622dTUOcioSfVxVH8ZAXkWiX47H
+        H8ZAXkQ3JKPH87WK24TtvVtk9HjYV3GbnPV6PK51iIz+PJ/LuOvE7qDGQj4yeqxaFXadWO1/VheLGg+5
+        yOjhot+XcT8TN3WxU6gxkUNj9HhhoqJuKlZ+XDg4jNZv2cLTbCZjIqci0UM1HMoDIJ9i0Vnt3VEsemC1
+        d0PR6DFY3JSpAyGPotED23x+xaOH+9tbeTDksJfo4ffDA1t9UnuLHmLw+D+cOjCOZ6/R392ttnvi53GQ
+        6O8ifvz1WZ0IDueg0d/FQeMCiN/s49k+LgT1GzH24yjR0R1EN0R0Q0Q3RHQ7y/ovVHBkXx8LpOMAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
 </root>

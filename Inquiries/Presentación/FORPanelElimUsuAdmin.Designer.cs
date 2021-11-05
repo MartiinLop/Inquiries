@@ -44,7 +44,7 @@ namespace TemplateParteAdmin
             this.labelNA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNA.Location = new System.Drawing.Point(82, 6);
             this.labelNA.Name = "labelNA";
-            this.labelNA.Size = new System.Drawing.Size(325, 39);
+            this.labelNA.Size = new System.Drawing.Size(257, 31);
             this.labelNA.TabIndex = 0;
             this.labelNA.Text = "Nombre y Apellido - ";
             // 
@@ -63,7 +63,7 @@ namespace TemplateParteAdmin
             this.labelG.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelG.Location = new System.Drawing.Point(332, 5);
             this.labelG.Name = "labelG";
-            this.labelG.Size = new System.Drawing.Size(131, 39);
+            this.labelG.Size = new System.Drawing.Size(105, 31);
             this.labelG.TabIndex = 2;
             this.labelG.Text = "Grupo -";
             // 
@@ -73,7 +73,7 @@ namespace TemplateParteAdmin
             this.labelTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTipo.Location = new System.Drawing.Point(444, 6);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(269, 39);
+            this.labelTipo.Size = new System.Drawing.Size(215, 31);
             this.labelTipo.TabIndex = 3;
             this.labelTipo.Text = "Alumno/Docente";
             // 
@@ -93,14 +93,14 @@ namespace TemplateParteAdmin
             this.lblCedula.AutoSize = true;
             this.lblCedula.Location = new System.Drawing.Point(180, 6);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(50, 17);
+            this.lblCedula.Size = new System.Drawing.Size(39, 13);
             this.lblCedula.TabIndex = 5;
             this.lblCedula.Text = "cedula";
             this.lblCedula.Visible = false;
             // 
             // FORPanelElimUsuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.ClientSize = new System.Drawing.Size(892, 44);
@@ -112,6 +112,7 @@ namespace TemplateParteAdmin
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelNA);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FORPanelElimUsuAdmin";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -87,6 +87,7 @@ namespace TemplateParteAdmin
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelNA);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FORPanelDatosUsuAdmin";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -14,13 +14,16 @@ namespace Inquiries
     {
         private static string[,] comparar = new string[0, 0];
         private static string[,] comparar2 = new string[0, 0];
-        private int v = 0;
+        private static string[,] comparar3 = new string[0, 0];
+        private static string[,] comparar4 = new string[0, 0];
+
+        private bool v = false;
+        private bool b = false;
         protected int ejeX = 0;
         protected int ejeY = 0;
-        int op = 0;
         Timer r = new Timer
         {
-            Interval = 500
+            Interval = 600
             
         };
 
@@ -29,12 +32,12 @@ namespace Inquiries
         public MenuPrincipalAdmin()
         {
             InitializeComponent();
-            op = 0;
             ejeX = 0;
             ejeY = 0;
             panelUsuarios.Hide();
 
-            r.Enabled = true;
+            r.Enabled = false;
+            r.Tick += new System.EventHandler(crearPaneles);
 
         }
 
@@ -48,30 +51,71 @@ namespace Inquiries
         private void btnConsultasAl_Click(object sender, EventArgs e)
         {
 
-            if (v == 0)
+            if (v == false)
             {
-                v = 1;
-                r.Tick += new System.EventHandler(crearPaneles);
+                b = false;
+                timer2.Enabled = false;
+                panelHistorialMain.Hide();
+                panelHistorial.Controls.Clear();
+                comparar3 = new string[0, 0];
+                comparar4 = new string[0, 0];
+                ejeX = 0;
+                ejeY = 0;
+                /////////////////////
+                v = true;
+                r.Enabled = true;
                 pnlUsu.Show();
                 panelUsuarios.Show();
                 timer1.Enabled = true;
+ 
             }
             else
             {
-                v = 0;
+                v = false;
+                r.Enabled = false;
                 pnlUsu.Hide();
                 panelUsuarios.Hide();
                 timer1.Enabled = false;
-            }
+                comparar = new string[0, 0];
+                comparar2 = new string[0, 0];
+                ejeX = 0;
+                ejeY = 0;
 
-
-               
-
+            } 
            
         }
 
-        private void btnChatAl_Click(object sender, EventArgs e)
+        private void btnHistorial_Click(object sender, EventArgs e)
         {
+            if (b == false)
+            {
+                v = false;
+                r.Enabled = false;
+                timer1.Enabled = false;
+                pnlUsu.Controls.Clear();
+                panelUsuarios.Hide();
+                comparar = new string[0, 0];
+                comparar2 = new string[0, 0];
+                /////////////////////////
+                b = true;
+                timer2.Enabled = true;
+                panelHistorial.Show();
+                panelHistorialMain.Show();
+                ejeX = 0;
+                ejeY = 0;
+            }
+            else
+            {
+                b = false;
+                timer2.Enabled = false;
+                panelHistorial.Hide();
+                panelHistorialMain.Hide();
+                comparar3 = new string[0, 0];
+                comparar4 = new string[0, 0];
+                ejeX = 0;
+                ejeY = 0;
+
+            }
 
         }
 
@@ -189,10 +233,10 @@ namespace Inquiries
                     dCi.Text = Convert.ToString(docentes[x, 3]);
                     panel1.Controls.Add(dCi);
 
-                    Label dNom = new Label();
-                    dNom.Visible = false;
-                    dNom.Text = Convert.ToString(docentes[x, 0]);
-                    panel1.Controls.Add(dNom);
+                    Label cod = new Label();
+                    cod.Visible = false;
+                    cod.Text = Convert.ToString(docentes[x, 0]);
+                    panel1.Controls.Add(cod);
 
                     Label dApe = new Label();
                     dApe.Visible = false;
@@ -204,20 +248,22 @@ namespace Inquiries
                     dGru.Text = Convert.ToString(docentes[x, 2]);
                     panel1.Controls.Add(dGru);
 
-                    Label dCon = new Label();
-                    dCon.Visible = false;
-                    dCon.Text = Convert.ToString(docentes[x, 4]);
-                    panel1.Controls.Add(dCon);
+                    Label dNom = new Label();
+                    dNom.Visible = false;
+                    dNom.Text = Convert.ToString(docentes[x, 4]);
+                    panel1.Controls.Add(dNom);
 
 
-                    TemplateParteAdmin.MiniUsuExpandir a = new TemplateParteAdmin.MiniUsuExpandir(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dCon.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+
+
+                    TemplateParteAdmin.MiniUsuExpandir a = new TemplateParteAdmin.MiniUsuExpandir(cod.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dNom.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lDocentes.Controls.Add(a);
                     a.Show();
 
 
                     a.Click += delegate (object enviar, EventArgs f)
                     {
-                          VerUsuAdmin b = new VerUsuAdmin(dNom.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dCon.Text);
+                          VerUsuAdmin b = new VerUsuAdmin(cod.Text, dApe.Text, dCi.Text, dGru.Text, "Docente", dNom.Text);
                           b.ShowDialog();
                         
                     };
@@ -258,7 +304,178 @@ namespace Inquiries
         {
 
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            string[,] historialCon = (string[,])Admin.HistorialCon();
+
+            if (historialCon.Length != comparar3.Length)
+            {
+                for (int x = 0; x < historialCon.GetLength(0); x++)
+                {
+                    Panel lHistorial = new Panel();
+                    lHistorial.Height = 49;
+                    lHistorial.Width = 846;
+                    lHistorial.BackColor = Color.FromArgb(196, 196, 196);
+                    panelHistorial.Controls.Add(lHistorial);
+                        lHistorial.Location = new Point(0, ejeY);
+                        ejeY += 49;
+
+
+                    Label cod = new Label();
+                    cod.Visible = false;
+                    cod.Text = Convert.ToString(historialCon[x, 0]);
+                    panel1.Controls.Add(cod);
+
+                    Label ali = new Label();
+                    ali.Visible = false;
+                    ali.Text = Convert.ToString(historialCon[x, 1]);
+                    panel1.Controls.Add(ali);
+
+                    Label dCi = new Label();
+                    dCi.Visible = false;
+                    dCi.Text = Convert.ToString(historialCon[x, 2]);
+                    panel1.Controls.Add(dCi);
+
+                    Label dNom = new Label();
+                    dNom.Visible = false;
+                    dNom.Text = Convert.ToString(historialCon[x, 3]);
+                    panel1.Controls.Add(dNom);
+
+                    Label dApe = new Label();
+                    dApe.Visible = false;
+                    dApe.Text = Convert.ToString(historialCon[x, 4]);
+                    panel1.Controls.Add(dApe);
+
+                    Label aNom = new Label();
+                    aNom.Visible = false;
+                    aNom.Text = Convert.ToString(historialCon[x, 5]);
+                    panel1.Controls.Add(aNom);
+
+                    Label gOri = new Label();
+                    gOri.Visible = false;
+                    gOri.Text = Convert.ToString(historialCon[x, 6]);
+                    panel1.Controls.Add(gOri);
+
+                    Label gNom = new Label();
+                    gNom.Visible = false;
+                    gNom.Text = Convert.ToString(historialCon[x, 7]);
+                    panel1.Controls.Add(gNom);
+
+                    Label alNom = new Label();
+                    alNom.Visible = false;
+                    alNom.Text = Convert.ToString(historialCon[x, 8]);
+                    panel1.Controls.Add(alNom);
+
+                    Label alApe = new Label();
+                    alApe.Visible = false;
+                    alApe.Text = Convert.ToString(historialCon[x, 9]);
+                    panel1.Controls.Add(alApe);
+
+
+                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(dNom.Text+" "+dApe.Text, aNom.Text, gOri.Text, gNom.Text, alNom+" "+alApe.Text, "Consulta") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    lHistorial.Controls.Add(a);
+                    a.Show();
+
+                    a.Click += delegate (object enviar, EventArgs f)
+                    {
+
+                        VerUsuAdmin b = new VerUsuAdmin(cod.Text, ali.Text, dNom.Text, dCi.Text, "Alumno", dApe.Text);
+                        b.ShowDialog();
+
+                    };
+
+                }
+            }
+            comparar3 = historialCon;
+
+            string[,] historialChat = (string[,])Admin.HistorialChat();
+
+            if (historialChat.Length != comparar4.Length)
+            {
+                for (int x = 0; x < historialChat.GetLength(0); x++)
+                {
+                    Panel lHistorial = new Panel();
+                    lHistorial.Height = 49;
+                    lHistorial.Width = 846;
+                    lHistorial.BackColor = Color.FromArgb(196, 196, 196);
+                    panelHistorial.Controls.Add(lHistorial);
+                    lHistorial.Location = new Point(0, ejeY);
+                    ejeY += 49;
+
+
+                    Label chCod = new Label();
+                    chCod.Visible = false;
+                    chCod.Text = Convert.ToString(historialChat[x, 0]);
+                    panel1.Controls.Add(chCod);
+
+                    Label docente = new Label();
+                    docente.Visible = false;
+                    docente.Text = Convert.ToString(historialChat[x, 1]);
+                    panel1.Controls.Add(docente);
+
+                    Label AlCi = new Label();
+                    AlCi.Visible = false;
+                    AlCi.Text = Convert.ToString(historialChat[x, 2]);
+                    panel1.Controls.Add(AlCi);
+
+                    Label ANom = new Label();
+                    ANom.Visible = false;
+                    ANom.Text = Convert.ToString(historialChat[x, 3]);
+                    panel1.Controls.Add(ANom);
+
+                    Label AlNom = new Label();
+                    AlNom.Visible = false;
+                    AlNom.Text = Convert.ToString(historialChat[x, 4]);
+                    panel1.Controls.Add(AlNom);
+
+                    Label AlApe = new Label();
+                    AlApe.Visible = false;
+                    AlApe.Text = Convert.ToString(historialChat[x, 5]);
+                    panel1.Controls.Add(AlApe);
+
+                    Label DNom = new Label();
+                    DNom.Visible = false;
+                    DNom.Text = Convert.ToString(historialChat[x, 6]);
+                    panel1.Controls.Add(DNom);
+
+                    Label DApe = new Label();
+                    DApe.Visible = false;
+                    DApe.Text = Convert.ToString(historialChat[x, 7]);
+                    panel1.Controls.Add(DApe);
+
+                    Label GNom = new Label();
+                    GNom.Visible = false;
+                    GNom.Text = Convert.ToString(historialChat[x, 8]);
+                    panel1.Controls.Add(GNom);
+
+                    Label GOri = new Label();
+                    GOri.Visible = false;
+                    GOri.Text = Convert.ToString(historialChat[x, 8]);
+                    panel1.Controls.Add(GOri);
+
+                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(DNom.Text + " " + DApe.Text, ANom.Text, GOri.Text, GNom.Text, ANom.Text + " " + AlApe.Text, "Chat") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    lHistorial.Controls.Add(a);
+                    a.Show();
+
+                    a.Click += delegate (object enviar, EventArgs f)
+                    {
+
+                        VerUsuAdmin b = new VerUsuAdmin(chCod.Text, docente.Text, ANom.Text, AlCi.Text, "Alumno", AlNom.Text);
+                        b.ShowDialog();
+
+                    };
+
+                }
+            }
+            comparar4 = historialChat;
+        }
+
+
+    }
     }
 
-}
+    
+
+
 
