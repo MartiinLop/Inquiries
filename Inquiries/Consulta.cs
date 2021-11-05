@@ -101,5 +101,15 @@ namespace Inquiries
         {
             ConBD.Respuesta(codigo , contenido);
         }
+
+        public static string Texto(int cod)
+        {
+            return ConBD.obttxtConsulta(cod);
+        }
+
+        public static string TextoRespuesta(int cod)
+        {
+            return ConBD.obttxtResConsulta(cod);
+        }
     }
 }

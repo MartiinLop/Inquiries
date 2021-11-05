@@ -219,7 +219,10 @@ namespace Inquiries
             return a;
         }
 
-       
+       public static string obtHisChat(int cod)
+        {
+            return ConBD.obttxtHistorialChat(cod);
+        }
     }
 }
 

@@ -123,6 +123,12 @@
     <Compile Include="Presentación\FORPanelMiniUsuAdmin.Designer.cs">
       <DependentUpon>FORPanelMiniUsuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\HistorialChatConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\HistorialChatConsulta.Designer.cs">
+      <DependentUpon>HistorialChatConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\ListadoConsDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelMiniUsuAdmin.resx">
       <DependentUpon>FORPanelMiniUsuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\HistorialChatConsulta.resx">
+      <DependentUpon>HistorialChatConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ListadoConsAl.resx">
       <DependentUpon>ListadoConsAl.cs</DependentUpon>

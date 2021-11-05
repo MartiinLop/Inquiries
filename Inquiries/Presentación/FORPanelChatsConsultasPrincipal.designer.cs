@@ -30,15 +30,75 @@ namespace TemplateParteAdmin
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FORPanelChatsConsultasPrincipal));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDocente = new System.Windows.Forms.Label();
             this.lblMateria = new System.Windows.Forms.Label();
             this.lblOrientacion = new System.Windows.Forms.Label();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.lblAlumno = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblDocente
+            // 
+            this.lblDocente.AutoSize = true;
+            this.lblDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocente.Location = new System.Drawing.Point(54, 9);
+            this.lblDocente.Name = "lblDocente";
+            this.lblDocente.Size = new System.Drawing.Size(92, 24);
+            this.lblDocente.TabIndex = 1;
+            this.lblDocente.Text = "Docente -";
+            // 
+            // lblMateria
+            // 
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateria.Location = new System.Drawing.Point(194, 9);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(87, 24);
+            this.lblMateria.TabIndex = 2;
+            this.lblMateria.Text = "Materia - ";
+            // 
+            // lblOrientacion
+            // 
+            this.lblOrientacion.AutoSize = true;
+            this.lblOrientacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrientacion.Location = new System.Drawing.Point(299, 9);
+            this.lblOrientacion.Name = "lblOrientacion";
+            this.lblOrientacion.Size = new System.Drawing.Size(118, 24);
+            this.lblOrientacion.TabIndex = 3;
+            this.lblOrientacion.Text = "Orientación -";
+            // 
+            // lblGrupo
+            // 
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupo.Location = new System.Drawing.Point(434, 9);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(74, 24);
+            this.lblGrupo.TabIndex = 4;
+            this.lblGrupo.Text = "Grupo -";
+            // 
+            // lblAlumno
+            // 
+            this.lblAlumno.AutoSize = true;
+            this.lblAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlumno.Location = new System.Drawing.Point(514, 9);
+            this.lblAlumno.Name = "lblAlumno";
+            this.lblAlumno.Size = new System.Drawing.Size(87, 24);
+            this.lblAlumno.TabIndex = 5;
+            this.lblAlumno.Text = "Alumno -";
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(708, 11);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(126, 24);
+            this.lblTipo.TabIndex = 6;
+            this.lblTipo.Text = "Consulta/Chat";
             // 
             // pictureBox1
             // 
@@ -50,72 +110,12 @@ namespace TemplateParteAdmin
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lblDocente
-            // 
-            this.lblDocente.AutoSize = true;
-            this.lblDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocente.Location = new System.Drawing.Point(52, 11);
-            this.lblDocente.Name = "lblDocente";
-            this.lblDocente.Size = new System.Drawing.Size(117, 29);
-            this.lblDocente.TabIndex = 1;
-            this.lblDocente.Text = "Docente -";
-            // 
-            // lblMateria
-            // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria.Location = new System.Drawing.Point(166, 11);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(113, 29);
-            this.lblMateria.TabIndex = 2;
-            this.lblMateria.Text = "Materia - ";
-            // 
-            // lblOrientacion
-            // 
-            this.lblOrientacion.AutoSize = true;
-            this.lblOrientacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrientacion.Location = new System.Drawing.Point(266, 11);
-            this.lblOrientacion.Name = "lblOrientacion";
-            this.lblOrientacion.Size = new System.Drawing.Size(151, 29);
-            this.lblOrientacion.TabIndex = 3;
-            this.lblOrientacion.Text = "Orientación -";
-            // 
-            // lblGrupo
-            // 
-            this.lblGrupo.AutoSize = true;
-            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrupo.Location = new System.Drawing.Point(413, 11);
-            this.lblGrupo.Name = "lblGrupo";
-            this.lblGrupo.Size = new System.Drawing.Size(94, 29);
-            this.lblGrupo.TabIndex = 4;
-            this.lblGrupo.Text = "Grupo -";
-            // 
-            // lblAlumno
-            // 
-            this.lblAlumno.AutoSize = true;
-            this.lblAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlumno.Location = new System.Drawing.Point(510, 11);
-            this.lblAlumno.Name = "lblAlumno";
-            this.lblAlumno.Size = new System.Drawing.Size(108, 29);
-            this.lblAlumno.TabIndex = 5;
-            this.lblAlumno.Text = "Alumno -";
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(624, 11);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(163, 29);
-            this.lblTipo.TabIndex = 6;
-            this.lblTipo.Text = "Consulta/Chat";
-            // 
             // FORPanelChatsConsultasPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.ClientSize = new System.Drawing.Size(846, 49);
+            this.ClientSize = new System.Drawing.Size(850, 49);
             this.ControlBox = false;
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblAlumno);

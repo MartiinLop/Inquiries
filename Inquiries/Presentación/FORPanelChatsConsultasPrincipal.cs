@@ -28,5 +28,10 @@ namespace TemplateParteAdmin
         {
 
         }
+
+        private void metodo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

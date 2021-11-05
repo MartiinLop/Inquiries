@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Inquiries.Presentación;
 
 namespace Inquiries
 {
@@ -315,7 +316,7 @@ namespace Inquiries
                 {
                     Panel lHistorial = new Panel();
                     lHistorial.Height = 49;
-                    lHistorial.Width = 846;
+                    lHistorial.Width = 850;
                     lHistorial.BackColor = Color.FromArgb(196, 196, 196);
                     panelHistorial.Controls.Add(lHistorial);
                         lHistorial.Location = new Point(0, ejeY);
@@ -372,16 +373,26 @@ namespace Inquiries
                     alApe.Text = Convert.ToString(historialCon[x, 9]);
                     panel1.Controls.Add(alApe);
 
+                    Label tCon = new Label();
+                    tCon.Visible = false;
+                    tCon.Text = Convert.ToString(historialCon[x, 10]);
+                    panel1.Controls.Add(alApe);
 
-                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(dNom.Text+" "+dApe.Text, aNom.Text, gOri.Text, gNom.Text, alNom+" "+alApe.Text, "Consulta") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(dNom.Text+" "+dApe.Text, aNom.Text, gOri.Text, gNom.Text, alNom.Text+" "+alApe.Text, "Consulta") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lHistorial.Controls.Add(a);
                     a.Show();
 
                     a.Click += delegate (object enviar, EventArgs f)
                     {
+                        string[,] b = (string[,])(Admin.HistorialCon());
 
-                        VerUsuAdmin b = new VerUsuAdmin(cod.Text, ali.Text, dNom.Text, dCi.Text, "Alumno", dApe.Text);
-                        b.ShowDialog();
+                        string texto = alNom.Text + " " + alApe.Text +" - "+aNom.Text+" - "+tCon.Text+"\n";
+                        texto += Consulta.Texto(Convert.ToInt32(cod.Text))+"\n";
+                        texto += "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n";
+                        texto += dNom.Text + " " + dApe.Text + "\n";
+                        texto += Consulta.TextoRespuesta(Convert.ToInt32(cod.Text));
+                        HistorialChatConsulta c = new HistorialChatConsulta(texto);
+                        c.ShowDialog();
 
                     };
 
@@ -397,7 +408,7 @@ namespace Inquiries
                 {
                     Panel lHistorial = new Panel();
                     lHistorial.Height = 49;
-                    lHistorial.Width = 846;
+                    lHistorial.Width = 850;
                     lHistorial.BackColor = Color.FromArgb(196, 196, 196);
                     panelHistorial.Controls.Add(lHistorial);
                     lHistorial.Location = new Point(0, ejeY);
@@ -451,18 +462,20 @@ namespace Inquiries
 
                     Label GOri = new Label();
                     GOri.Visible = false;
-                    GOri.Text = Convert.ToString(historialChat[x, 8]);
+                    GOri.Text = Convert.ToString(historialChat[x, 9]);
                     panel1.Controls.Add(GOri);
 
-                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(DNom.Text + " " + DApe.Text, ANom.Text, GOri.Text, GNom.Text, ANom.Text + " " + AlApe.Text, "Chat") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(DNom.Text + " " + DApe.Text, ANom.Text, GOri.Text, GNom.Text, AlNom.Text + " " + AlApe.Text, "Chat") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lHistorial.Controls.Add(a);
                     a.Show();
 
                     a.Click += delegate (object enviar, EventArgs f)
                     {
+                        string[,] b = (string[,])(Admin.HistorialCon());
 
-                        VerUsuAdmin b = new VerUsuAdmin(chCod.Text, docente.Text, ANom.Text, AlCi.Text, "Alumno", AlNom.Text);
-                        b.ShowDialog();
+                        string texto = Chat.obtHisChat(Convert.ToInt32(chCod.Text));
+                        HistorialChatConsulta c = new HistorialChatConsulta(texto);
+                        c.ShowDialog();
 
                     };
 

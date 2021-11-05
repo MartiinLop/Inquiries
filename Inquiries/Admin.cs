@@ -221,6 +221,50 @@ namespace Inquiries
 
             return b;
         }
+
+        public static Array ConsultaHis()
+        {
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.obtCosultaH();
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
+
+        public static Array ChatHis()
+        {
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.obtChatH();
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
     }
 }
 
