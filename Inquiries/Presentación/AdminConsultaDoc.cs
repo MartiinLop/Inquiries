@@ -65,8 +65,8 @@ namespace Inquiries
         {
 
 
-         //Llamar al metodo para obtener consultas docente
-    }
+
+         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

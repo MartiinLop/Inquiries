@@ -265,6 +265,42 @@ namespace Inquiries
 
             return b;
         }
+
+        public static void ElimConsulta(int cod)
+        {
+            ConBD.elimConsultaCod(cod);
+        }
+
+        public static void ElimChat(int cod)
+        {
+            ConBD.elimChatCod(cod);
+        }
+
+        public static Array obtGrupos()
+        {
+            MySqlDataAdapter grupos = new MySqlDataAdapter();
+
+            grupos = ConBD.obtGrupos();
+            DataTable a = new DataTable();
+
+            grupos.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
+        public Boolean inSesAd(int alci, string alcon)
+        {
+            return ConBD.Insead(alci, alcon);
+        }
     }
 }
 

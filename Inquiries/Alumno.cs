@@ -115,6 +115,11 @@ namespace Inquiries
             return ConBD.nomUsu();
         }
 
+        public Boolean inSesAl(int alci, string alcon)
+        {
+            return ConBD.Inseal(alci, alcon);
+        }
+
         ////////////////////////////
     }
 }

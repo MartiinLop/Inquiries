@@ -23,11 +23,13 @@ namespace Inquiries
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            //try
-            //{
+            Alumno aAl = new Alumno();
+            Docente aDoc = new Docente();
+            Admin aAd = new Admin();
+            try
+            {
                 //Inicio sesión
-                if (ConBD.Inseal(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                if (aAl.inSesAl(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                 {
                     txtUsuario.Text = "Cédula de identidad";
                     txtContra.Text = "Contraseña";
@@ -39,7 +41,7 @@ namespace Inquiries
                 }
                 else
                 {
-                    if (ConBD.Insedoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                    if (aDoc.inSesDoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                     {
                         txtUsuario.Text = "Cédula de identidad";
                         txtContra.Text = "Contraseña";
@@ -50,7 +52,7 @@ namespace Inquiries
                     }
                     else
                     {
-                        if (ConBD.Insead(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                        if (aAd.inSesAd(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                         {
                             txtUsuario.Text = "Cédula de identidad";
                             txtContra.Text = "Contraseña";
@@ -65,11 +67,11 @@ namespace Inquiries
 
                 }
 
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
             private void button2_Click(object sender, EventArgs e)

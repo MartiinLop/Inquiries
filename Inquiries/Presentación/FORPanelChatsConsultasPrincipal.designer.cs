@@ -49,6 +49,7 @@ namespace TemplateParteAdmin
             this.lblDocente.Size = new System.Drawing.Size(92, 24);
             this.lblDocente.TabIndex = 1;
             this.lblDocente.Text = "Docente -";
+            this.lblDocente.Click += new System.EventHandler(this.metodo_Click);
             // 
             // lblMateria
             // 
@@ -59,6 +60,7 @@ namespace TemplateParteAdmin
             this.lblMateria.Size = new System.Drawing.Size(87, 24);
             this.lblMateria.TabIndex = 2;
             this.lblMateria.Text = "Materia - ";
+            this.lblMateria.Click += new System.EventHandler(this.metodo_Click);
             // 
             // lblOrientacion
             // 
@@ -69,6 +71,7 @@ namespace TemplateParteAdmin
             this.lblOrientacion.Size = new System.Drawing.Size(118, 24);
             this.lblOrientacion.TabIndex = 3;
             this.lblOrientacion.Text = "Orientación -";
+            this.lblOrientacion.Click += new System.EventHandler(this.metodo_Click);
             // 
             // lblGrupo
             // 
@@ -79,6 +82,7 @@ namespace TemplateParteAdmin
             this.lblGrupo.Size = new System.Drawing.Size(74, 24);
             this.lblGrupo.TabIndex = 4;
             this.lblGrupo.Text = "Grupo -";
+            this.lblGrupo.Click += new System.EventHandler(this.metodo_Click);
             // 
             // lblAlumno
             // 
@@ -89,6 +93,7 @@ namespace TemplateParteAdmin
             this.lblAlumno.Size = new System.Drawing.Size(87, 24);
             this.lblAlumno.TabIndex = 5;
             this.lblAlumno.Text = "Alumno -";
+            this.lblAlumno.Click += new System.EventHandler(this.metodo_Click);
             // 
             // lblTipo
             // 
@@ -99,6 +104,7 @@ namespace TemplateParteAdmin
             this.lblTipo.Size = new System.Drawing.Size(126, 24);
             this.lblTipo.TabIndex = 6;
             this.lblTipo.Text = "Consulta/Chat";
+            this.lblTipo.Click += new System.EventHandler(this.metodo_Click);
             // 
             // pictureBox1
             // 

@@ -1250,7 +1250,7 @@ namespace Inquiries
             }
         }
 
-        //Obtener Imagen para administrador
+        //Obtener Imagen de alumno para administrador
         public static byte[] obtImgAlParaAdmin(int ci)
         {
             byte[] imagen = null;
@@ -1270,7 +1270,8 @@ namespace Inquiries
             conectar.Close();
             return imagen;
         }
-
+        
+        //Obtener imagen de docente para administrador
         public static byte[] obtImgDocParaAdmin(int ci)
         {
             byte[] imagen = null;
@@ -1401,6 +1402,120 @@ namespace Inquiries
             conectar.Close();
 
             return a;
+        }
+
+        //Eliminar chat con código
+        public static void elimChatCod(int cod)
+        {
+            string comando1 = "delete mcod, chcod, emisor, contenido, fecharealizado from mensaje where chcod = " + cod + ";";
+            string comando2 = "delete alci, chcod, rol from participa where chcod = " + cod + ";";
+            string comando3 = "delete chcod, docente, chmate, resumen, titulochat, fechacomienzo, cestado from chat where cod = " + cod + ";";
+
+            MySqlConnection conectar1 = new MySqlConnection(conexbd);
+            conectar1.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+            cons.ExecuteNonQuery();
+            conectar1.Close();
+
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
+
+            MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
+            cons2.ExecuteNonQuery();
+            conectar2.Close();
+
+            MySqlConnection conectar3= new MySqlConnection(conexbd);
+            conectar3.Open();
+
+            MySqlCommand cons3 = new MySqlCommand(comando3, conectar2);
+            cons3.ExecuteNonQuery();
+            conectar3.Close();
+
+        }
+
+        //Eliminar consulta con código
+        public static void elimConsultaCod(int cod)
+        {
+            string comando1 = "delete cod, respuesta from respuestaconsulta where chcod = " + cod + ";";
+            string comando2 = "delete cod, contenido from contenidoconsulta where chcod = " + cod + ";";
+            string comando3 = "delete cod, estado, fecharealizada, titulo, alci, dci, codasignatura from consulta where cod = " + cod + ";";
+
+
+
+            MySqlConnection conectar1 = new MySqlConnection(conexbd);
+            conectar1.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+            cons.ExecuteNonQuery();
+            conectar1.Close();
+
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
+
+            MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
+            cons2.ExecuteNonQuery();
+            conectar2.Close();
+
+            MySqlConnection conectar3 = new MySqlConnection(conexbd);
+            conectar3.Open();
+
+            MySqlCommand cons3 = new MySqlCommand(comando3, conectar2);
+            cons3.ExecuteNonQuery();
+            conectar3.Close();
+
+        }
+
+        //Obtener grupos
+        public static MySqlDataAdapter obtGrupos()
+        {
+            string comando = "select asignatura.anom, grupo.gnom, grupo.gcod from asignatura, grupo where grupo.gnom = asignatura.agrupo";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
+
+        //Modificar grupos
+        public static void modGrupo(string gCod, string asignatura, string docente, string integrantes, string gNom)
+        {
+            if(gNom != null)
+            {
+
+            }
+
+            if(asignatura != null)
+            {
+               string comando3 = "update asignatura set agrupo = "+gCod+" where acod = "+asignatura+";";
+            }
+
+            if(docente != null)
+            {
+                MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                conectar2.Open();
+
+                string comando2 = "update gruposdocente set gruposdocente.dgrupo = " + gCod + " where cidocente =" + docente + ";";
+                
+                MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
+                cons2.ExecuteNonQuery();
+                conectar2.Close();
+            }
+
+            if(integrantes != null)
+            {
+                string comando1 = "update alumno set algrupo ="+gCod+" where alci = "+integrantes+";";
+                MySqlConnection conectar1 = new MySqlConnection(conexbd);
+                conectar1.Open();
+
+                MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+                cons.ExecuteNonQuery();
+                conectar1.Close();
+            }
         }
     }
 }

@@ -12,20 +12,36 @@ namespace Inquiries.Presentación
 {
     public partial class HistorialChatConsulta : Form
     {
-        public HistorialChatConsulta(string texto)
+        private string Tipo;
+        private int Cod;
+        public HistorialChatConsulta(string texto,string tipo,int cod)
         {
             InitializeComponent();
             rtxtHistorial.Text = texto;
+            label1.Text = "Infomración de " + tipo;
+            Tipo = tipo;
+            Cod = cod;
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Tipo == "Consulta")
+            {
+                Admin.ElimConsulta(Cod);
+            }
+            else
+            {
+                Admin.ElimChat(Cod);
+            }
+
+            MessageBox.Show("Se ha eliminado " + Tipo + " correctamente");
         }
     }
 }

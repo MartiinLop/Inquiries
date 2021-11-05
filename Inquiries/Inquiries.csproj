@@ -92,11 +92,41 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="Asignatura.cs" />
+    <Compile Include="Presentación\CrearGrupoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\CrearGrupoAdmin.designer.cs">
+      <DependentUpon>CrearGrupoAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\ElimGruposAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ElimGruposAdmin.designer.cs">
+      <DependentUpon>ElimGruposAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\FORPanelChatsConsultasPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentación\FORPanelChatsConsultasPrincipal.designer.cs">
       <DependentUpon>FORPanelChatsConsultasPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FORPanelMiniGrupAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelMiniGrupAdmin.Designer.cs">
+      <DependentUpon>FORPanelMiniGrupAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FORPanelElimGruposAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelElimGruposAdmin.designer.cs">
+      <DependentUpon>FORPanelElimGruposAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FORPanelModGruposAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelModGruposAdmin.designer.cs">
+      <DependentUpon>FORPanelModGruposAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\FORPanelModUsuAdmin.cs">
       <SubType>Form</SubType>
@@ -140,6 +170,18 @@
     </Compile>
     <Compile Include="Presentación\ListadoConsAl.Designer.cs">
       <DependentUpon>ListadoConsAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\ListadoModAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ListadoModAdmin.designer.cs">
+      <DependentUpon>ListadoModAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\ListarPartGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ListarPartGrupo.designer.cs">
+      <DependentUpon>ListarPartGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\MenuConsultaDoc.cs">
       <SubType>Form</SubType>
@@ -235,11 +277,23 @@
     <Compile Include="Presentación\MenuPrincipalChatAl.Designer.cs">
       <DependentUpon>MenuPrincipalChatAl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\MenuPrincipalGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\MenuPrincipalGrupos.designer.cs">
+      <DependentUpon>MenuPrincipalGrupos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\MenuUsuAdminCompleto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentación\MenuUsuAdminCompleto.Designer.cs">
       <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\ModificarGrupoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\ModificarGrupoAdmin.designer.cs">
+      <DependentUpon>ModificarGrupoAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\ModPerfilAlumno.cs">
       <SubType>Form</SubType>
@@ -304,8 +358,20 @@
     <Compile Include="Presentación\VerConsultaAl.Designer.cs">
       <DependentUpon>VerConsultaAl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Presentación\ElimGruposAdmin.resx">
+      <DependentUpon>ElimGruposAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelChatsConsultasPrincipal.resx">
       <DependentUpon>FORPanelChatsConsultasPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelMiniGrupAdmin.resx">
+      <DependentUpon>FORPanelMiniGrupAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelElimGruposAdmin.resx">
+      <DependentUpon>FORPanelElimGruposAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelModGruposAdmin.resx">
+      <DependentUpon>FORPanelModGruposAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelModUsuAdmin.resx">
       <DependentUpon>FORPanelModUsuAdmin.cs</DependentUpon>
@@ -340,6 +406,12 @@
     <EmbeddedResource Include="Presentación\ListadoConsDoc.resx">
       <DependentUpon>ListadoConsDoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\ListadoModAdmin.resx">
+      <DependentUpon>ListadoModAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\ListarPartGrupo.resx">
+      <DependentUpon>ListarPartGrupo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuChatAl.resx">
       <DependentUpon>MenuChatAl.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuPrincipalChatAl.resx">
       <DependentUpon>MenuPrincipalChatAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\MenuPrincipalGrupos.resx">
+      <DependentUpon>MenuPrincipalGrupos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\MenuUsuAdminCompleto.resx">
       <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
@@ -446,11 +521,16 @@
     <None Include="Resources\inquiries.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\librogrupos_invertidopng.png" />
+    <None Include="Resources\librogrupos.png" />
     <None Include="Resources\nuevousuario.jpg" />
     <None Include="Resources\lapis.jpg" />
     <None Include="Resources\33x42 basura.jpg" />
     <None Include="Resources\imagen_pdef.jpg" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\Eliminar.png" />
     <Content Include="Resources\imgperf.jpg" />
+    <None Include="Resources\lapisHD.png" />
     <Content Include="Resources\libroconsultas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

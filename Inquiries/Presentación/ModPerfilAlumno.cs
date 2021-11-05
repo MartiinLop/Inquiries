@@ -20,7 +20,6 @@ namespace Inquiries
             
             panel7.Hide();
             
-            btnEliminadoAl.Hide();
             string sdatos;
             sdatos = Persona.Mdatos(ci);
             String[] resultado = sdatos.Split('|');
@@ -57,9 +56,18 @@ namespace Inquiries
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
                 Alumno m = new Alumno();
-                m.ModPerfAl(txtNombre.Text,txtApe.Text, txtApodo.Text, txtModContra.Text, obtByte(pictureBox1.Image));
+            if (txtNombre.Text == "" || txtApe.Text == "" || txtApodo.Text == "" || txtModContra.Text == "")
+            {
+                MessageBox.Show("Hay campos vacíos!", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                m.ModPerfAl(txtNombre.Text, txtApe.Text, txtApodo.Text, txtModContra.Text, obtByte(pictureBox1.Image));
+
                 MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
+            }
+
+        }
  
         
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -84,7 +92,6 @@ namespace Inquiries
             Alumno.ElAl(p.obtCedulaActual());
             a.CSesionAl();
             MessageBox.Show("Se ha eliminado su usuario correctamente!", "Eliminación usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            btnEliminadoAl.Show();
 
         }
 

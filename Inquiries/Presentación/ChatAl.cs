@@ -112,7 +112,7 @@ namespace Inquiries
 
                     Label nomemisor = new Label();
                     mensajesReceptor.Controls.Add(nomemisor);
-                    nomemisor.Location = new Point(660, 20);
+                    nomemisor.Location = new Point(370, 20);
                     nomemisor.Text = nomEm;
                     nomemisor.ForeColor = Color.Black;
                     nomemisor.BackColor = Color.FromArgb(236, 236, 236);

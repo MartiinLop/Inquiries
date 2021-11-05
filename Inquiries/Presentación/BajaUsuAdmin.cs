@@ -14,7 +14,6 @@ namespace Inquiries
     {
         private static string[,] comparar = new string[0, 0];
         private static string[,] comparar2 = new string[0, 0];
-        private int v = 0;
         protected int ejeX = 0;
         protected int ejeY = 0;
         public BajaUsuAdmin()
@@ -141,6 +140,11 @@ namespace Inquiries
                 }
             }
             comparar2 = docentes;
+        }
+
+        private void btnFCedula_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

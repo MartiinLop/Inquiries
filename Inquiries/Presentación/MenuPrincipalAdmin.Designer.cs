@@ -45,9 +45,14 @@ namespace Inquiries
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panelHistorialMain = new System.Windows.Forms.Panel();
             this.btnVHistorial = new System.Windows.Forms.Button();
+            this.panelGrupos = new System.Windows.Forms.Panel();
+            this.panelMainGrupos = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             this.panelHistorialMain.SuspendLayout();
+            this.panelGrupos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGruposAl
@@ -74,7 +79,7 @@ namespace Inquiries
             this.btnConsultasAl.Location = new System.Drawing.Point(210, 4);
             this.btnConsultasAl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultasAl.Name = "btnConsultasAl";
-            this.btnConsultasAl.Size = new System.Drawing.Size(237, 112);
+            this.btnConsultasAl.Size = new System.Drawing.Size(237, 118);
             this.btnConsultasAl.TabIndex = 1;
             this.btnConsultasAl.Text = "USUARIOS";
             this.btnConsultasAl.UseVisualStyleBackColor = true;
@@ -225,11 +230,49 @@ namespace Inquiries
             this.btnVHistorial.Text = "Ver Historial";
             this.btnVHistorial.UseVisualStyleBackColor = false;
             // 
+            // panelGrupos
+            // 
+            this.panelGrupos.Controls.Add(this.panelMainGrupos);
+            this.panelGrupos.Controls.Add(this.button1);
+            this.panelGrupos.Location = new System.Drawing.Point(18, 124);
+            this.panelGrupos.Name = "panelGrupos";
+            this.panelGrupos.Size = new System.Drawing.Size(1172, 534);
+            this.panelGrupos.TabIndex = 0;
+            this.panelGrupos.Visible = false;
+            // 
+            // panelMainGrupos
+            // 
+            this.panelMainGrupos.Location = new System.Drawing.Point(4, 7);
+            this.panelMainGrupos.Name = "panelMainGrupos";
+            this.panelMainGrupos.Size = new System.Drawing.Size(1165, 485);
+            this.panelMainGrupos.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1011, 498);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 33);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Ver Grupos";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 600;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // MenuPrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panelGrupos);
             this.Controls.Add(this.panelHistorialMain);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.panel1);
@@ -239,6 +282,7 @@ namespace Inquiries
             this.panel1.ResumeLayout(false);
             this.panelUsuarios.ResumeLayout(false);
             this.panelHistorialMain.ResumeLayout(false);
+            this.panelGrupos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,5 +304,9 @@ namespace Inquiries
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Panel panelHistorialMain;
         private System.Windows.Forms.Button btnVHistorial;
+        private System.Windows.Forms.Panel panelGrupos;
+        private System.Windows.Forms.Panel panelMainGrupos;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer3;
     }
 }

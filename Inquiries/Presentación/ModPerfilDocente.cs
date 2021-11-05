@@ -20,7 +20,6 @@ namespace Inquiries
             label6.Hide();
             label8.Hide();
             label10.Hide();
-            btnEliminadoDoc.Hide();
             string sdatos;
             sdatos = Persona.Mdatos(ci);
             String[] resultado = sdatos.Split('|');
@@ -59,8 +58,15 @@ namespace Inquiries
 
         private void btnGuardarAl_Click(object sender, EventArgs e)
         {
-            Docente.ModPerfDoc(txtNombre.Text,txtApe.Text, txtModContra.Text, obtByte(pictureBox1.Image));
-            MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (txtNombre.Text == "" || txtApe.Text == ""  || txtModContra.Text == "")
+            {
+                MessageBox.Show("Hay campos vacíos!", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Docente.ModPerfDoc(txtNombre.Text, txtApe.Text, txtModContra.Text, obtByte(pictureBox1.Image));
+                MessageBox.Show("Modificaciones de perfil realizadas correctamente", "Modificación de perfil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -83,7 +89,6 @@ namespace Inquiries
             Docente.ElDoc();
             Docente.CSesionDoc();
             MessageBox.Show("Se ha eliminado su usuario correctamente!", "Eliminación usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            btnEliminadoDoc.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -73,6 +73,26 @@ namespace Inquiries.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editar {
+            get {
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Eliminar {
+            get {
+                object obj = ResourceManager.GetObject("Eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagen_pdef {
             get {
                 object obj = ResourceManager.GetObject("imagen_pdef", resourceCulture);
@@ -113,9 +133,39 @@ namespace Inquiries.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lapisHD {
+            get {
+                object obj = ResourceManager.GetObject("lapisHD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap libroconsultas {
             get {
                 object obj = ResourceManager.GetObject("libroconsultas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap librogrupos {
+            get {
+                object obj = ResourceManager.GetObject("librogrupos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap librogrupos_invertidopng {
+            get {
+                object obj = ResourceManager.GetObject("librogrupos_invertidopng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

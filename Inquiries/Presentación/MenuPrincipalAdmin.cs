@@ -17,9 +17,11 @@ namespace Inquiries
         private static string[,] comparar2 = new string[0, 0];
         private static string[,] comparar3 = new string[0, 0];
         private static string[,] comparar4 = new string[0, 0];
+        private static string[,] comparar5 = new string[0, 0];
 
         private bool v = false;
         private bool b = false;
+        private bool n = false;
         protected int ejeX = 0;
         protected int ejeY = 0;
         Timer r = new Timer
@@ -36,6 +38,7 @@ namespace Inquiries
             ejeX = 0;
             ejeY = 0;
             panelUsuarios.Hide();
+            
 
             r.Enabled = false;
             r.Tick += new System.EventHandler(crearPaneles);
@@ -45,7 +48,43 @@ namespace Inquiries
         private void btnGruposAl_Click(object sender, EventArgs e)
         {
 
+            if (n == false)
+            {
+                b = false;
+                v = false;
+                timer2.Enabled = false;
+                panelHistorialMain.Hide();
+                panelHistorial.Controls.Clear();
+                comparar3 = new string[0, 0];
+                comparar4 = new string[0, 0];
+                timer2.Enabled = false;
+                r.Enabled = false;
+                timer1.Enabled = false;
+                pnlUsu.Controls.Clear();
+                panelUsuarios.Hide();
+                comparar = new string[0, 0];
+                comparar2 = new string[0, 0];
+                ejeX = 0;
+                ejeY = 0;
+                /////////////////////
+                n = true;
+                timer3.Enabled = true;
+                panelGrupos.Show();
+                panelMainGrupos.Show();
+                timer1.Enabled = true;
 
+            }
+            else
+            {
+                n = false;
+                panelMainGrupos.Hide();
+                panelGrupos.Hide();
+                timer3.Enabled = false;
+                comparar5 = new string[0, 0];
+                ejeX = 0;
+                ejeY = 0;
+
+            }
 
         }
 
@@ -62,6 +101,11 @@ namespace Inquiries
                 comparar4 = new string[0, 0];
                 ejeX = 0;
                 ejeY = 0;
+                n = false;
+                panelMainGrupos.Hide();
+                panelGrupos.Hide();
+                timer3.Enabled = false;
+                comparar5 = new string[0, 0];
                 /////////////////////
                 v = true;
                 r.Enabled = true;
@@ -97,6 +141,13 @@ namespace Inquiries
                 panelUsuarios.Hide();
                 comparar = new string[0, 0];
                 comparar2 = new string[0, 0];
+                n = false;
+                panelMainGrupos.Hide();
+                panelGrupos.Hide();
+                timer3.Enabled = false;
+                comparar5 = new string[0, 0];
+                ejeX = 0;
+                ejeY = 0;
                 /////////////////////////
                 b = true;
                 timer2.Enabled = true;
@@ -378,21 +429,23 @@ namespace Inquiries
                     tCon.Text = Convert.ToString(historialCon[x, 10]);
                     panel1.Controls.Add(alApe);
 
-                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(dNom.Text+" "+dApe.Text, aNom.Text, gOri.Text, gNom.Text, alNom.Text+" "+alApe.Text, "Consulta") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    string[,] b = (string[,])(Admin.HistorialCon());
+
+                    string texto = alNom.Text + " " + alApe.Text + " - " + aNom.Text + " - " + tCon.Text + "\n";
+                    texto += Consulta.Texto(Convert.ToInt32(cod.Text)) + "\n";
+                    texto += "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n";
+                    texto += dNom.Text + " " + dApe.Text + "\n";
+                    texto += Consulta.TextoRespuesta(Convert.ToInt32(cod.Text));
+                    HistorialChatConsulta c = new HistorialChatConsulta(texto,"Consulta",Convert.ToInt32(cod.Text));
+
+                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(dNom.Text+" "+dApe.Text, aNom.Text, gOri.Text, gNom.Text, alNom.Text+" "+alApe.Text, "Consulta",texto,Convert.ToInt32(cod.Text)) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lHistorial.Controls.Add(a);
                     a.Show();
 
                     a.Click += delegate (object enviar, EventArgs f)
                     {
-                        string[,] b = (string[,])(Admin.HistorialCon());
-
-                        string texto = alNom.Text + " " + alApe.Text +" - "+aNom.Text+" - "+tCon.Text+"\n";
-                        texto += Consulta.Texto(Convert.ToInt32(cod.Text))+"\n";
-                        texto += "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" + "\n";
-                        texto += dNom.Text + " " + dApe.Text + "\n";
-                        texto += Consulta.TextoRespuesta(Convert.ToInt32(cod.Text));
-                        HistorialChatConsulta c = new HistorialChatConsulta(texto);
-                        c.ShowDialog();
+                        HistorialChatConsulta z = new HistorialChatConsulta(texto,"Consulta", Convert.ToInt32(cod.Text));
+                        z.ShowDialog();
 
                     };
 
@@ -465,16 +518,19 @@ namespace Inquiries
                     GOri.Text = Convert.ToString(historialChat[x, 9]);
                     panel1.Controls.Add(GOri);
 
-                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(DNom.Text + " " + DApe.Text, ANom.Text, GOri.Text, GNom.Text, AlNom.Text + " " + AlApe.Text, "Chat") { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    string[,] b = (string[,])(Admin.HistorialCon());
+
+                    string texto = Chat.obtHisChat(Convert.ToInt32(chCod.Text));
+
+                    TemplateParteAdmin.FORPanelChatsConsultasPrincipal a = new TemplateParteAdmin.FORPanelChatsConsultasPrincipal(DNom.Text + " " + DApe.Text, ANom.Text, GOri.Text, GNom.Text, AlNom.Text + " " + AlApe.Text, "Chat",texto ,Convert.ToInt32(chCod.Text)) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lHistorial.Controls.Add(a);
                     a.Show();
 
+
                     a.Click += delegate (object enviar, EventArgs f)
                     {
-                        string[,] b = (string[,])(Admin.HistorialCon());
 
-                        string texto = Chat.obtHisChat(Convert.ToInt32(chCod.Text));
-                        HistorialChatConsulta c = new HistorialChatConsulta(texto);
+                        HistorialChatConsulta c = new HistorialChatConsulta(texto,"Chat",Convert.ToInt32(chCod.Text));
                         c.ShowDialog();
 
                     };
@@ -484,7 +540,76 @@ namespace Inquiries
             comparar4 = historialChat;
         }
 
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            string[,] Grupos = (string[,])Admin.obtGrupos();
 
+            if (Grupos.Length != comparar5.Length)
+            {
+                for (int x = 0; x < Grupos.GetLength(0); x++)
+                {
+                    Panel lGrupos = new Panel();
+                    lGrupos.Height = 111;
+                    lGrupos.Width = 209;
+                    lGrupos.BackColor = Color.FromArgb(196, 196, 196);
+                    panelMainGrupos.Controls.Add(lGrupos);
+  
+                    if (ejeX < 800)
+                    {
+                        lGrupos.Location = new Point(ejeX, ejeY);
+                        ejeX += 219;
+                    }
+                    else
+                    {
+                        ejeY += 121;
+                        ejeX = 0;
+                        lGrupos.Location = new Point(ejeX, ejeY);
+                        ejeX += 219;
+                    }
+                    
+
+
+                    Label aNom = new Label();
+                    aNom.Visible = false;
+                    aNom.Text = Convert.ToString(Grupos[x, 0]);
+                    panel1.Controls.Add(aNom);
+
+                    Label gNom = new Label();
+                    gNom.Visible = false;
+                    gNom.Text = Convert.ToString(Grupos[x, 1]);
+                    panel1.Controls.Add(gNom);
+
+                    Label gCod = new Label();
+                    gCod.Visible = false;
+                    gCod.Text = Convert.ToString(Grupos[x, 1]);
+                    panel1.Controls.Add(gCod);
+
+
+                    TemplateParteAdmin.FORPanelMiniGrupAdmin a = new TemplateParteAdmin.FORPanelMiniGrupAdmin(gNom.Text,aNom.Text) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    lGrupos.Controls.Add(a);
+                    a.Show();
+
+
+                    a.Click += delegate (object enviar, EventArgs f)
+                    {
+
+                        TemplateParteAdmin.ListarPartGrupo c = new TemplateParteAdmin.ListarPartGrupo(gCod.Text);
+                        c.ShowDialog();
+
+                    };
+
+                }
+            }
+            comparar5 = Grupos;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuPrincipalGrupos c = new MenuPrincipalGrupos();
+            c.ShowDialog();
+            this.Show();
+        }
     }
     }
 

@@ -107,5 +107,9 @@ namespace Inquiries
             ConBD.EliminarDoc();
         }
 
+        public Boolean inSesDoc(int alci, string alcon)
+        {
+            return ConBD.Insedoc(alci, alcon);
+        }
     }
 }

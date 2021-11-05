@@ -1,7 +1,7 @@
 ﻿ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace Inquiries
 {
@@ -60,7 +60,15 @@ namespace Inquiries
         
         public static void EnviarMensaje(string texto)
         {
-            ConBD.CrearMensaje(texto);
+            if (texto == "")
+            {
+                MessageBox.Show("El mensaje no puede ser vacío!", "Chat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ConBD.CrearMensaje(texto);
+
+            }
         }
 
         public static int getCIact()

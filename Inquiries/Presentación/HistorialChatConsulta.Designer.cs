@@ -147,7 +147,6 @@ namespace Inquiries.Presentación
             this.label1.Size = new System.Drawing.Size(510, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Información de Consulta/Chat";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnVolver
             // 
@@ -179,6 +178,7 @@ namespace Inquiries.Presentación
             this.button1.TabIndex = 61;
             this.button1.Text = "Eliminar Historial";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rtxtHistorial
             // 

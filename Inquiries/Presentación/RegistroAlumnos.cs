@@ -33,12 +33,12 @@ namespace Inquiries
 
         private void btnConfAl_Click(object sender, EventArgs e)
         { Grupo a = new Grupo();
-            //try
-            //{
+            try
+            {
                 //Test de espacios vacíos
                 if (txtCIAl.Text == "" || txtNomAl.Text == "" || txtApeAl.Text == "" || txtContraAl.Text == "" || txtNickAl.Text == "" || comboBox1.Text == "" || txtContraConfAl.Text == "")
                 {
-                    throw new ArgumentNullException();
+                    MessageBox.Show("Faltan datos!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -66,13 +66,13 @@ namespace Inquiries
 
                     }
                 }
-            //}
-            //catch (Exception)
-            //{
+            }
+            catch (System.FormatException)
+            {
 
-            //    MessageBox.Show("Faltan datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La cédula debe contener números!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            //}
+            }
         }
 
         private void btnArch_Click_1(object sender, EventArgs e)

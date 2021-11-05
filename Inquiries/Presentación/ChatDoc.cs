@@ -82,7 +82,7 @@ namespace Inquiries
                     txtE.Font = new Font("Roboto", 28);
                     txtE.BorderColor = Color.FromArgb(0, 0, 0);
                     txtE.BorderRadius = 10;
-                    txtE.Texts = a;
+                    txtE.Texts = dividir[1];
 
                     txtE.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesEnviados.Controls.Add(txtE);
@@ -97,7 +97,7 @@ namespace Inquiries
 
                     Label nomemisor = new Label();
                     mensajesReceptor.Controls.Add(nomemisor);
-                    nomemisor.Location = new Point(660, 20);
+                    nomemisor.Location = new Point(370, 30);
                     nomemisor.Text = nomEm;
                     nomemisor.ForeColor = Color.Black;
                     nomemisor.BackColor = Color.FromArgb(236, 236, 236);
@@ -111,7 +111,7 @@ namespace Inquiries
                     txtR.ForeColor = Color.Black;
                     txtR.Texts = Convert.ToString(a);
                     txtR.BorderRadius = 10;
-                    txtR.Texts = a;
+                    txtR.Texts = dividir[1];
 
                     txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
                     mensajesReceptor.Controls.Add(txtR);

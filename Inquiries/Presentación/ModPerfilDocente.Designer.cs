@@ -33,7 +33,6 @@ namespace Inquiries
             this.label6 = new System.Windows.Forms.Label();
             this.btnEliminarAl = new System.Windows.Forms.Button();
             this.btnGuardarDoc = new System.Windows.Forms.Button();
-            this.btnEliminadoDoc = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelModNom = new System.Windows.Forms.Panel();
             this.txtModContra = new System.Windows.Forms.TextBox();
@@ -127,22 +126,6 @@ namespace Inquiries
             this.btnGuardarDoc.Text = "Guardar";
             this.btnGuardarDoc.UseVisualStyleBackColor = false;
             this.btnGuardarDoc.Click += new System.EventHandler(this.btnGuardarAl_Click);
-            // 
-            // btnEliminadoDoc
-            // 
-            this.btnEliminadoDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnEliminadoDoc.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnEliminadoDoc.FlatAppearance.BorderSize = 0;
-            this.btnEliminadoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminadoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminadoDoc.ForeColor = System.Drawing.Color.White;
-            this.btnEliminadoDoc.Location = new System.Drawing.Point(759, 640);
-            this.btnEliminadoDoc.Name = "btnEliminadoDoc";
-            this.btnEliminadoDoc.Size = new System.Drawing.Size(96, 29);
-            this.btnEliminadoDoc.TabIndex = 39;
-            this.btnEliminadoDoc.Text = "Volver";
-            this.btnEliminadoDoc.UseVisualStyleBackColor = false;
-            this.btnEliminadoDoc.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // panel6
             // 
@@ -558,7 +541,6 @@ namespace Inquiries
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnEliminadoDoc);
             this.Name = "ModPerfilDocente";
             this.Text = "ModPerfilDocente";
             this.panel3.ResumeLayout(false);
@@ -582,7 +564,6 @@ namespace Inquiries
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnEliminarAl;
         private System.Windows.Forms.Button btnGuardarDoc;
-        private System.Windows.Forms.Button btnEliminadoDoc;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panelModNom;
         private System.Windows.Forms.TextBox txtModContra;

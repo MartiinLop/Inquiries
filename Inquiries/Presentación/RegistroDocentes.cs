@@ -24,12 +24,12 @@ namespace Inquiries
         private void btnConfDoc_Click(object sender, EventArgs e)
         {
             Grupo a = new Grupo();
-            //try
-            //{
-            //    // Test de espacios vacíos 
+            try
+            {
+                //    // Test de espacios vacíos 
                 if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || txtMateDoc.Text == "" || comboBox1.Text == "" || txtContraConfDoc.Text == "")
                 {
-                    throw new ArgumentNullException();
+                    MessageBox.Show("Faltan datos!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 if (txtContraDoc.Text == txtContraConfDoc.Text)
@@ -55,11 +55,13 @@ namespace Inquiries
                     MessageBox.Show("Las contraseñas no son iguales!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
-            //}catch(Exception) {
+            }
+            catch (Exception)
+            {
 
-            //    MessageBox.Show("Faltan datos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La cédula debe contener números!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            //}
+            }
         }
 
     private void btnVolver_Click(object sender, EventArgs e)

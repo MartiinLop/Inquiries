@@ -52,7 +52,6 @@ namespace Inquiries
             this.label10 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnEliminadoAl = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panelModApe = new System.Windows.Forms.Panel();
@@ -363,21 +362,6 @@ namespace Inquiries
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // btnEliminadoAl
-            // 
-            this.btnEliminadoAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnEliminadoAl.Cursor = System.Windows.Forms.Cursors.No;
-            this.btnEliminadoAl.FlatAppearance.BorderSize = 0;
-            this.btnEliminadoAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminadoAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminadoAl.ForeColor = System.Drawing.Color.White;
-            this.btnEliminadoAl.Location = new System.Drawing.Point(748, 630);
-            this.btnEliminadoAl.Name = "btnEliminadoAl";
-            this.btnEliminadoAl.Size = new System.Drawing.Size(96, 29);
-            this.btnEliminadoAl.TabIndex = 48;
-            this.btnEliminadoAl.Text = "Volver";
-            this.btnEliminadoAl.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label3);
@@ -582,7 +566,6 @@ namespace Inquiries
             this.Controls.Add(this.txtApe);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.btnEliminadoAl);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminarAl);
@@ -637,7 +620,6 @@ namespace Inquiries
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Button btnEliminadoAl;
         private System.Windows.Forms.TextBox txtNomImg;
         private System.Windows.Forms.Button btnArch;
         private System.Windows.Forms.PictureBox pictureBox1;
