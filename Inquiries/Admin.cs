@@ -301,6 +301,62 @@ namespace Inquiries
         {
             return ConBD.Insead(alci, alcon);
         }
+
+
+        public static Array obtDocentesGrup(string gcod)
+        {
+
+            MySqlDataAdapter docentes = new MySqlDataAdapter();
+
+            docentes = ConBD.obtDocGrupos(Convert.ToInt32(gcod));
+            DataTable a = new DataTable();
+
+            docentes.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
+        public static Array obtAlumnosGrup(string gcod)
+        {
+
+            MySqlDataAdapter alumnos = new MySqlDataAdapter();
+
+            alumnos = ConBD.obtAlGrupos(Convert.ToInt32(gcod));
+            DataTable a = new DataTable();
+
+            alumnos.Fill(a);
+
+            string[,] b = new string[a.Rows.Count, a.Columns.Count];
+
+            for (int x = 0; x < a.Rows.Count; x++)
+            {
+                for (int y = 0; y < a.Columns.Count; y++)
+                {
+                    b[x, y] = Convert.ToString(a.Rows[x][y]);
+                };
+            };
+
+            return b;
+        }
+
+        public static string crearGrupo(string nombre, string ori)
+        {
+           return ConBD.crearGrupoAdmin(nombre, ori);
+        }
+
+        public static void argegarAGrupo(string gcod, string asignatura, string docente, string integrantes, string nombregrupo)
+        {
+            ConBD.modGrupo(gcod, asignatura, docente, integrantes, nombregrupo);
+        }
     }
 }
 

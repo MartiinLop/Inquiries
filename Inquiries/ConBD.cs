@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -432,7 +432,7 @@ namespace Inquiries
             MySqlConnection conexion = new MySqlConnection(conexbd);
             conexion.Open();
 
-            MySqlCommand conCont = new MySqlCommand("insert into respuestaconsulta (cod, respuesta, dci) values (" + codigo + ", '" + contenido + "'," + obtCI + ");", conexion);
+            MySqlCommand conCont = new MySqlCommand("insert into respuestaconsulta (cod, respuesta) values (" + codigo + ", '" + contenido + "');", conexion);
 
             conCont.ExecuteNonQuery();
             MySqlCommand updateEstado = new MySqlCommand("update consulta set estado = 'contestada' where cod =" + codigo + "; ", conexion);
@@ -497,8 +497,8 @@ namespace Inquiries
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            string cons = "select dci, gruposdocente.dgrupo, dnom, dape, asignatura.anom from docente, gruposdocente, grupo, materiasdocente, asignatura " +
-                "where docente.dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo and materiasdocente.cidocente = docente.dci and asignatura.acod = materiasdocente.dmateria and grupo.gnom = '" + grupo + "'; ";
+            string cons = "select dci, gruposdocente.dgrupo, dnom, dape, asignatura.anom from docente, gruposdocente, grupo, enseña, asignatura " +
+                "where docente.dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo and enseña.dci = docente.dci and asignatura.acod = enseña.acod and grupo.gnom = '" + grupo + "'; ";
             MySqlCommand comando = new MySqlCommand(string.Format(cons), conectar);
 
             MySqlDataAdapter data = new MySqlDataAdapter(comando);
@@ -1482,16 +1482,12 @@ namespace Inquiries
         }
 
         //Modificar grupos
-        public static void modGrupo(string gCod, string asignatura, string docente, string integrantes, string gNom)
+        public static void modGrupo(string gCod, string asignatura, string docente, string integrantes, string nombregrupo)
         {
-            if(gNom != null)
-            {
-
-            }
 
             if(asignatura != null)
             {
-               string comando3 = "update asignatura set agrupo = "+gCod+" where acod = "+asignatura+";";
+               string comando3 = "update asignatura set agrupo = "+nombregrupo+" where acod = "+asignatura+";";
             }
 
             if(docente != null)
@@ -1499,7 +1495,7 @@ namespace Inquiries
                 MySqlConnection conectar2 = new MySqlConnection(conexbd);
                 conectar2.Open();
 
-                string comando2 = "update gruposdocente set gruposdocente.dgrupo = " + gCod + " where cidocente =" + docente + ";";
+                string comando2 = "update gruposdocente set dgrupo = " + gCod + " where cidocente =" + docente + ";";
                 
                 MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
                 cons2.ExecuteNonQuery();
@@ -1535,5 +1531,61 @@ namespace Inquiries
 
             return cant;
         }
+
+        public static MySqlDataAdapter obtAlGrupos(int gCod)
+        {
+            string comando = "select grupo.gnom, alci, alnom, alape from alumno, grupo where grupo.gcod = alumno.algrupo and grupo.gcod = " + gCod+";";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
+
+        public static MySqlDataAdapter obtDocGrupos(int gCod)
+        {
+            string comando = "select grupo.gnom, dci, dnom, dape from docente, grupo, gruposdocente where grupo.gcod = gruposdocente.dgrupo and docente.dci = gruposdocente.cidocente and grupo.gcod = "+gCod+";";
+
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando, conectar);
+            MySqlDataAdapter datos = new MySqlDataAdapter(cons);
+
+            conectar.Close();
+            return datos;
+        }
+
+        public static string crearGrupoAdmin(string nombre, string ori)
+        {
+            string a=null;
+            string comando1 = "insert into grupo (gnom, gori) values ("+nombre+", "+ori+");";
+            MySqlConnection conectar1 = new MySqlConnection(conexbd);
+            conectar1.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+            cons.ExecuteNonQuery();
+            conectar1.Close();
+
+            string comando2 = "select gcod from grupo order by gcod desc limit 1;";
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
+
+            MySqlCommand codAs = new MySqlCommand(string.Format(comando2), conectar2);
+            MySqlDataReader mensaje = codAs.ExecuteReader();
+            while (mensaje.Read())
+            {
+                a += mensaje.GetString("emisor") + ": " + mensaje.GetString("contenido") + "\n";
+            }
+            conectar2.Close();
+
+            return a;
+        }
+
+
     }
 }

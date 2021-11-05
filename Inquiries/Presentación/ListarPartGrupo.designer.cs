@@ -29,6 +29,7 @@ namespace TemplateParteAdmin
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelPartGrupo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@ namespace TemplateParteAdmin
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -278,6 +280,12 @@ namespace TemplateParteAdmin
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 600;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ListarPartGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,5 +327,6 @@ namespace TemplateParteAdmin
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnCerrarAl;
         private System.Windows.Forms.Panel panelPartGrupo;
+        private System.Windows.Forms.Timer timer1;
     }
 }

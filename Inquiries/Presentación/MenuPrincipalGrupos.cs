@@ -14,6 +14,8 @@ namespace Inquiries
     public partial class MenuPrincipalGrupos : Form
     {
         private static string[,] comparar = new string[0, 0];
+        private string gnom;
+        private string gcod;
 
         public MenuPrincipalGrupos()
         {
@@ -58,15 +60,17 @@ namespace Inquiries
 
                     Label gCod = new Label();
                     gCod.Visible = false;
-                    gCod.Text = Convert.ToString(grupos[x, 0]);
+                    gCod.Text = Convert.ToString(grupos[x, 2]);
                     panel1.Controls.Add(gCod);
+                    gcod = gCod.Text;
+                    gnom = gNom.Text;
 
 
 
                     a.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        TemplateParteAdmin.ListarPartGrupo b = new TemplateParteAdmin.ListarPartGrupo(alNom.Text, alApe.Text, alCi.Text, alGru.Text, "Alumno", alCon.Text);
+                        TemplateParteAdmin.ListarPartGrupo b = new TemplateParteAdmin.ListarPartGrupo(gCod.Text);
                         b.ShowDialog();
 
                     };

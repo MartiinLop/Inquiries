@@ -40,6 +40,9 @@ namespace TemplateParteAdmin
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rbWeb = new System.Windows.Forms.RadioButton();
             this.rbVideojuegos = new System.Windows.Forms.RadioButton();
             this.rbSoporte = new System.Windows.Forms.RadioButton();
@@ -52,9 +55,7 @@ namespace TemplateParteAdmin
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -169,6 +170,7 @@ namespace TemplateParteAdmin
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.btnVolver);
             this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Controls.Add(this.pictureBox3);
@@ -190,6 +192,7 @@ namespace TemplateParteAdmin
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1238, 490);
             this.panel3.TabIndex = 16;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnVolver
             // 
@@ -211,12 +214,43 @@ namespace TemplateParteAdmin
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.btnGuardar.Location = new System.Drawing.Point(949, 431);
+            this.btnGuardar.Location = new System.Drawing.Point(904, 431);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(121, 39);
+            this.btnGuardar.Size = new System.Drawing.Size(166, 39);
             this.btnGuardar.TabIndex = 15;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Crear grupo";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Inquiries.Properties.Resources.personamas;
+            this.pictureBox3.Location = new System.Drawing.Point(244, 392);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(65, 63);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Inquiries.Properties.Resources.personamas;
+            this.pictureBox2.Location = new System.Drawing.Point(244, 301);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Inquiries.Properties.Resources.libromas;
+            this.pictureBox1.Location = new System.Drawing.Point(244, 206);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // rbWeb
             // 
@@ -333,35 +367,15 @@ namespace TemplateParteAdmin
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
             // 
-            // pictureBox3
+            // label7
             // 
-            this.pictureBox3.Image = global::Inquiries.Properties.Resources.personamas;
-            this.pictureBox3.Location = new System.Drawing.Point(244, 392);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 63);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Inquiries.Properties.Resources.personamas;
-            this.pictureBox2.Location = new System.Drawing.Point(244, 301);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Inquiries.Properties.Resources.libromas;
-            this.pictureBox1.Location = new System.Drawing.Point(244, 206);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1064, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "label7";
+            this.label7.Visible = false;
             // 
             // CrearGrupoAdmin
             // 
@@ -413,5 +427,6 @@ namespace TemplateParteAdmin
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label label7;
     }
 }

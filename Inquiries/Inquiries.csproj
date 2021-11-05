@@ -116,6 +116,12 @@
     <Compile Include="Presentación\FORPanelGruposAdmin.Designer.cs">
       <DependentUpon>FORPanelGruposAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\FORPanelIntegrantesGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelIntegrantesGrupo.designer.cs">
+      <DependentUpon>FORPanelIntegrantesGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\FORPanelMiniGrupAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelGruposAdmin.resx">
       <DependentUpon>FORPanelGruposAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelIntegrantesGrupo.resx">
+      <DependentUpon>FORPanelIntegrantesGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelMiniGrupAdmin.resx">
       <DependentUpon>FORPanelMiniGrupAdmin.cs</DependentUpon>
