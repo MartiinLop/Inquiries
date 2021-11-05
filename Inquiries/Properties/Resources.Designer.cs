@@ -93,6 +93,16 @@ namespace Inquiries.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gorro {
+            get {
+                object obj = ResourceManager.GetObject("gorro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagen_pdef {
             get {
                 object obj = ResourceManager.GetObject("imagen_pdef", resourceCulture);
@@ -173,6 +183,36 @@ namespace Inquiries.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap librolapiz {
+            get {
+                object obj = ResourceManager.GetObject("librolapiz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap libromas {
+            get {
+                object obj = ResourceManager.GetObject("libromas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap libromenos {
+            get {
+                object obj = ResourceManager.GetObject("libromenos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lutu {
             get {
                 object obj = ResourceManager.GetObject("lutu", resourceCulture);
@@ -186,6 +226,16 @@ namespace Inquiries.Properties {
         internal static System.Drawing.Bitmap nuevousuario {
             get {
                 object obj = ResourceManager.GetObject("nuevousuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personamas {
+            get {
+                object obj = ResourceManager.GetObject("personamas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

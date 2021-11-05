@@ -50,5 +50,10 @@ namespace Inquiries
             return a.contgrupos();
         }
 
+        public static int cantAlEnGrupo(string gcod)
+        {
+            return ConBD.cantidadAlGrupo(gcod);
+        }
+
     }
 }

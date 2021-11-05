@@ -36,31 +36,31 @@ namespace TemplateParteAdmin
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.txtAsig = new System.Windows.Forms.TextBox();
-            this.txtDoc = new System.Windows.Forms.TextBox();
-            this.txtAl = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.rbSoporte = new System.Windows.Forms.RadioButton();
-            this.rbVideojuegos = new System.Windows.Forms.RadioButton();
-            this.rbWeb = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.rbWeb = new System.Windows.Forms.RadioButton();
+            this.rbVideojuegos = new System.Windows.Forms.RadioButton();
+            this.rbSoporte = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAl = new System.Windows.Forms.TextBox();
+            this.txtDoc = new System.Windows.Forms.TextBox();
+            this.txtAsig = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -156,6 +156,17 @@ namespace TemplateParteAdmin
             this.panel2.Size = new System.Drawing.Size(1238, 71);
             this.panel2.TabIndex = 15;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(511, 58);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CREAR NUEVO GRUPO";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnVolver);
@@ -180,155 +191,19 @@ namespace TemplateParteAdmin
             this.panel3.Size = new System.Drawing.Size(1238, 490);
             this.panel3.TabIndex = 16;
             // 
-            // label1
+            // btnVolver
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(511, 58);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CREAR NUEVO GRUPO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(78, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 39);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Nombre:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 39);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Asignaturas:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 309);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 39);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Docentes:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(66, 402);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 39);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Alumnos:";
-            // 
-            // txtNom
-            // 
-            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(255, 21);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(165, 40);
-            this.txtNom.TabIndex = 4;
-            // 
-            // txtAsig
-            // 
-            this.txtAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAsig.Location = new System.Drawing.Point(345, 220);
-            this.txtAsig.Name = "txtAsig";
-            this.txtAsig.Size = new System.Drawing.Size(165, 40);
-            this.txtAsig.TabIndex = 5;
-            // 
-            // txtDoc
-            // 
-            this.txtDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoc.Location = new System.Drawing.Point(345, 313);
-            this.txtDoc.Name = "txtDoc";
-            this.txtDoc.Size = new System.Drawing.Size(165, 40);
-            this.txtDoc.TabIndex = 6;
-            // 
-            // txtAl
-            // 
-            this.txtAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAl.Location = new System.Drawing.Point(345, 401);
-            this.txtAl.Name = "txtAl";
-            this.txtAl.Size = new System.Drawing.Size(165, 40);
-            this.txtAl.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 39);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Orientación:";
-            // 
-            // rbSoporte
-            // 
-            this.rbSoporte.AutoSize = true;
-            this.rbSoporte.Location = new System.Drawing.Point(235, 106);
-            this.rbSoporte.Name = "rbSoporte";
-            this.rbSoporte.Size = new System.Drawing.Size(120, 17);
-            this.rbSoporte.TabIndex = 9;
-            this.rbSoporte.TabStop = true;
-            this.rbSoporte.Text = "Desarrollo y Soporte";
-            this.rbSoporte.UseVisualStyleBackColor = true;
-            // 
-            // rbVideojuegos
-            // 
-            this.rbVideojuegos.AutoSize = true;
-            this.rbVideojuegos.Location = new System.Drawing.Point(368, 106);
-            this.rbVideojuegos.Name = "rbVideojuegos";
-            this.rbVideojuegos.Size = new System.Drawing.Size(83, 17);
-            this.rbVideojuegos.TabIndex = 10;
-            this.rbVideojuegos.TabStop = true;
-            this.rbVideojuegos.Text = "Videojuegos";
-            this.rbVideojuegos.UseVisualStyleBackColor = true;
-            // 
-            // rbWeb
-            // 
-            this.rbWeb.AutoSize = true;
-            this.rbWeb.Location = new System.Drawing.Point(462, 106);
-            this.rbWeb.Name = "rbWeb";
-            this.rbWeb.Size = new System.Drawing.Size(95, 17);
-            this.rbWeb.TabIndex = 11;
-            this.rbWeb.TabStop = true;
-            this.rbWeb.Text = "Desarollo Web";
-            this.rbWeb.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(244, 206);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 63);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(244, 301);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 63);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(244, 392);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 63);
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.btnVolver.Location = new System.Drawing.Point(1097, 431);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(122, 39);
+            this.btnVolver.TabIndex = 16;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnGuardar
             // 
@@ -343,18 +218,150 @@ namespace TemplateParteAdmin
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // btnVolver
+            // rbWeb
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.btnVolver.Location = new System.Drawing.Point(1097, 431);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(122, 39);
-            this.btnVolver.TabIndex = 16;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
+            this.rbWeb.AutoSize = true;
+            this.rbWeb.Location = new System.Drawing.Point(462, 106);
+            this.rbWeb.Name = "rbWeb";
+            this.rbWeb.Size = new System.Drawing.Size(95, 17);
+            this.rbWeb.TabIndex = 11;
+            this.rbWeb.TabStop = true;
+            this.rbWeb.Text = "Desarollo Web";
+            this.rbWeb.UseVisualStyleBackColor = true;
+            // 
+            // rbVideojuegos
+            // 
+            this.rbVideojuegos.AutoSize = true;
+            this.rbVideojuegos.Location = new System.Drawing.Point(368, 106);
+            this.rbVideojuegos.Name = "rbVideojuegos";
+            this.rbVideojuegos.Size = new System.Drawing.Size(83, 17);
+            this.rbVideojuegos.TabIndex = 10;
+            this.rbVideojuegos.TabStop = true;
+            this.rbVideojuegos.Text = "Videojuegos";
+            this.rbVideojuegos.UseVisualStyleBackColor = true;
+            // 
+            // rbSoporte
+            // 
+            this.rbSoporte.AutoSize = true;
+            this.rbSoporte.Location = new System.Drawing.Point(235, 106);
+            this.rbSoporte.Name = "rbSoporte";
+            this.rbSoporte.Size = new System.Drawing.Size(120, 17);
+            this.rbSoporte.TabIndex = 9;
+            this.rbSoporte.TabStop = true;
+            this.rbSoporte.Text = "Desarrollo y Soporte";
+            this.rbSoporte.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(205, 39);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Orientación:";
+            // 
+            // txtAl
+            // 
+            this.txtAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAl.Location = new System.Drawing.Point(345, 401);
+            this.txtAl.Name = "txtAl";
+            this.txtAl.Size = new System.Drawing.Size(165, 40);
+            this.txtAl.TabIndex = 7;
+            // 
+            // txtDoc
+            // 
+            this.txtDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDoc.Location = new System.Drawing.Point(345, 313);
+            this.txtDoc.Name = "txtDoc";
+            this.txtDoc.Size = new System.Drawing.Size(165, 40);
+            this.txtDoc.TabIndex = 6;
+            // 
+            // txtAsig
+            // 
+            this.txtAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsig.Location = new System.Drawing.Point(345, 220);
+            this.txtAsig.Name = "txtAsig";
+            this.txtAsig.Size = new System.Drawing.Size(165, 40);
+            this.txtAsig.TabIndex = 5;
+            // 
+            // txtNom
+            // 
+            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNom.Location = new System.Drawing.Point(255, 21);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(165, 40);
+            this.txtNom.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(66, 402);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 39);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Alumnos:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(55, 309);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 39);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Docentes:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(211, 39);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Asignaturas:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(78, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nombre:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Inquiries.Properties.Resources.personamas;
+            this.pictureBox3.Location = new System.Drawing.Point(244, 392);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(65, 63);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Inquiries.Properties.Resources.personamas;
+            this.pictureBox2.Location = new System.Drawing.Point(244, 301);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Inquiries.Properties.Resources.libromas;
+            this.pictureBox1.Location = new System.Drawing.Point(244, 206);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // CrearGrupoAdmin
             // 
@@ -371,9 +378,9 @@ namespace TemplateParteAdmin
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

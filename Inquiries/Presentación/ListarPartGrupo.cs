@@ -18,5 +18,10 @@ namespace TemplateParteAdmin
             InitializeComponent();
             Gcod = gcod;
         }
+
+        private void ListarPartGrupo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

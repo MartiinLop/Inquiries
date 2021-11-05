@@ -110,6 +110,12 @@
     <Compile Include="Presentación\FORPanelChatsConsultasPrincipal.designer.cs">
       <DependentUpon>FORPanelChatsConsultasPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\FORPanelGruposAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FORPanelGruposAdmin.Designer.cs">
+      <DependentUpon>FORPanelGruposAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\FORPanelMiniGrupAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,11 +364,17 @@
     <Compile Include="Presentación\VerConsultaAl.Designer.cs">
       <DependentUpon>VerConsultaAl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Presentación\CrearGrupoAdmin.resx">
+      <DependentUpon>CrearGrupoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ElimGruposAdmin.resx">
       <DependentUpon>ElimGruposAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelChatsConsultasPrincipal.resx">
       <DependentUpon>FORPanelChatsConsultasPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FORPanelGruposAdmin.resx">
+      <DependentUpon>FORPanelGruposAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FORPanelMiniGrupAdmin.resx">
       <DependentUpon>FORPanelMiniGrupAdmin.cs</DependentUpon>
@@ -451,6 +463,9 @@
     <EmbeddedResource Include="Presentación\MenuUsuAdminCompleto.resx">
       <DependentUpon>MenuUsuAdminCompleto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\ModificarGrupoAdmin.resx">
+      <DependentUpon>ModificarGrupoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\ModPerfilAlumno.resx">
       <DependentUpon>ModPerfilAlumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -521,6 +536,10 @@
     <None Include="Resources\inquiries.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\personamas.png" />
+    <None Include="Resources\libromenos.png" />
+    <None Include="Resources\libromas.png" />
+    <None Include="Resources\librolapiz.png" />
     <None Include="Resources\librogrupos_invertidopng.png" />
     <None Include="Resources\librogrupos.png" />
     <None Include="Resources\nuevousuario.jpg" />
@@ -529,6 +548,7 @@
     <None Include="Resources\imagen_pdef.jpg" />
     <None Include="Resources\editar.png" />
     <None Include="Resources\Eliminar.png" />
+    <None Include="Resources\gorro.png" />
     <Content Include="Resources\imgperf.jpg" />
     <None Include="Resources\lapisHD.png" />
     <Content Include="Resources\libroconsultas.png" />

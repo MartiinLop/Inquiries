@@ -40,6 +40,7 @@ namespace TemplateParteAdmin
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelGrupos = new System.Windows.Forms.Panel();
             this.btnEFiltros = new System.Windows.Forms.Button();
             this.btnFGrupo = new System.Windows.Forms.Button();
             this.txtFCedula = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace TemplateParteAdmin
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.panelGrupos = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -170,6 +170,7 @@ namespace TemplateParteAdmin
             this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // panel3
             // 
@@ -186,6 +187,13 @@ namespace TemplateParteAdmin
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1238, 490);
             this.panel3.TabIndex = 18;
+            // 
+            // panelGrupos
+            // 
+            this.panelGrupos.Location = new System.Drawing.Point(0, 0);
+            this.panelGrupos.Name = "panelGrupos";
+            this.panelGrupos.Size = new System.Drawing.Size(895, 487);
+            this.panelGrupos.TabIndex = 37;
             // 
             // btnEFiltros
             // 
@@ -258,13 +266,6 @@ namespace TemplateParteAdmin
             this.splitter1.Size = new System.Drawing.Size(895, 490);
             this.splitter1.TabIndex = 17;
             this.splitter1.TabStop = false;
-            // 
-            // panelGrupos
-            // 
-            this.panelGrupos.Location = new System.Drawing.Point(0, 0);
-            this.panelGrupos.Name = "panelGrupos";
-            this.panelGrupos.Size = new System.Drawing.Size(895, 487);
-            this.panelGrupos.TabIndex = 37;
             // 
             // timer1
             // 

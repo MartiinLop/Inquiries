@@ -29,7 +29,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -1516,6 +1516,24 @@ namespace Inquiries
                 cons.ExecuteNonQuery();
                 conectar1.Close();
             }
+        }
+
+        public static int cantidadAlGrupo(string gcod)
+        {
+            int cant = 0;
+            string comando = "select grupo.gnom, count(alumno.alci) from alumno, grupo where alumno.algrupo = grupo.gcod and grupo.gcod = "+gcod+" group by grupo.gnom;";
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand cantAl = new MySqlCommand(string.Format(comando), conectar);
+            MySqlDataReader consulta = cantAl.ExecuteReader();
+            while (consulta.Read())
+            {
+                cant = consulta.GetInt32("count(alumno.alci)");
+            }
+            conectar.Close();
+
+            return cant;
         }
     }
 }

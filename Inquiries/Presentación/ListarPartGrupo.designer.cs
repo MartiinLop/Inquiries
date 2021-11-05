@@ -30,6 +30,7 @@ namespace TemplateParteAdmin
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panelPartGrupo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEFiltros = new System.Windows.Forms.Button();
             this.btnFGrupo = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace TemplateParteAdmin
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnCerrarAl = new System.Windows.Forms.Button();
-            this.panelPartGrupo = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,6 +69,15 @@ namespace TemplateParteAdmin
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1238, 490);
             this.panel3.TabIndex = 24;
+            // 
+            // panelPartGrupo
+            // 
+            this.panelPartGrupo.AutoScroll = true;
+            this.panelPartGrupo.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.panelPartGrupo.Location = new System.Drawing.Point(4, 47);
+            this.panelPartGrupo.Name = "panelPartGrupo";
+            this.panelPartGrupo.Size = new System.Drawing.Size(891, 440);
+            this.panelPartGrupo.TabIndex = 38;
             // 
             // label3
             // 
@@ -269,13 +278,6 @@ namespace TemplateParteAdmin
             this.btnCerrarAl.Text = "Cerrar sesión";
             this.btnCerrarAl.UseVisualStyleBackColor = true;
             // 
-            // panelPartGrupo
-            // 
-            this.panelPartGrupo.Location = new System.Drawing.Point(4, 47);
-            this.panelPartGrupo.Name = "panelPartGrupo";
-            this.panelPartGrupo.Size = new System.Drawing.Size(891, 440);
-            this.panelPartGrupo.TabIndex = 38;
-            // 
             // ListarPartGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +288,7 @@ namespace TemplateParteAdmin
             this.Controls.Add(this.panel1);
             this.Name = "ListarPartGrupo";
             this.Text = "ListarPartGrupo";
+            this.Load += new System.EventHandler(this.ListarPartGrupo_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);

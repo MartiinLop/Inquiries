@@ -23,7 +23,7 @@ namespace Inquiries
         private void timer1_Tick(object sender, EventArgs e)
         {
             string[,] grupos = (string[,])Admin.obtGrupos();
-
+           
 
             if (grupos.Length != comparar.Length)
             {
@@ -36,7 +36,13 @@ namespace Inquiries
                     panelGrupos.Controls.Add(lGrupos);
                     lGrupos.Dock = DockStyle.Top;
 
-                    TemplateParteAdmin.FORPanelModGruposAdmin a = new TemplateParteAdmin.FORPanelModGruposAdmin(grupos[x, 1],Convert.ToInt32(grupos[x, 2])) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    int cantAlu = Grupo.cantAlEnGrupo(grupos[x, 2]);
+                    Label cantAl = new Label();
+                    cantAl.Visible = false;
+                    cantAl.Text = Convert.ToString(cantAlu);
+                    panel1.Controls.Add(cantAl);
+
+                    FORPanelGruposAdmin a = new FORPanelGruposAdmin(grupos[x, 1], Convert.ToInt32(cantAl.Text)) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                     lGrupos.Controls.Add(a);
                     a.Show();
 
@@ -60,8 +66,8 @@ namespace Inquiries
                     a.Click += delegate (object enviar, EventArgs f)
                     {
 
-                        //VerUsuAdmin b = new VerUsuAdmin(alNom.Text, alApe.Text, alCi.Text, alGru.Text, "Alumno", alCon.Text);
-                        //b.ShowDialog();
+                        TemplateParteAdmin.ListarPartGrupo b = new TemplateParteAdmin.ListarPartGrupo(alNom.Text, alApe.Text, alCi.Text, alGru.Text, "Alumno", alCon.Text);
+                        b.ShowDialog();
 
                     };
 
@@ -97,6 +103,11 @@ namespace Inquiries
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void MenuPrincipalGrupos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

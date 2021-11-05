@@ -8,18 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TemplateParteAdmin
+namespace Inquiries.Presentación
 {
-    public partial class CrearGrupoAdmin : Form
+    public partial class FORPanelGruposAdmin : Form
     {
-        public CrearGrupoAdmin()
+        public FORPanelGruposAdmin(string grupo, int cantidadEnGrupo)
         {
             InitializeComponent();
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
+            lblGrupo.Text = grupo;
+            lblCant.Text = Convert.ToString(cantidadEnGrupo);
         }
     }
 }
