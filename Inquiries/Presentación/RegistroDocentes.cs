@@ -26,8 +26,8 @@ namespace Inquiries
             Grupo a = new Grupo();
             try
             {
-                //    // Test de espacios vacíos 
-                if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || txtMateDoc.Text == "" || comboBox1.Text == "" || txtContraConfDoc.Text == "")
+                 // Test de espacios vacíos 
+                if (txtCIDoc.Text == "" || txtNomDoc.Text == "" || txtApeDoc.Text == "" || txtContraDoc.Text == "" || comboBox1.Text == "" || txtContraConfDoc.Text == "")
                 {
                     MessageBox.Show("Faltan datos!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -38,13 +38,15 @@ namespace Inquiries
                     Boolean est = true, con = false;
                     Docente.registrar(Convert.ToInt32(txtCIDoc.Text), txtNomDoc.Text, txtApeDoc.Text, txtContraDoc.Text, Convert.ToInt32(Grupo.grupo().Rows[comboBox1.SelectedIndex][0].ToString()), con, est, obtByte(pictureBox1.Image));
 
+                    Docente.regEnseña(Convert.ToInt32(txtCIDoc.Text), Convert.ToInt32(Asignatura.devolverMaterias().Rows[comboBox1.SelectedIndex][0].ToString()));
+
                     txtCIDoc.Text = "";
                     txtNomDoc.Text = "";
                     txtApeDoc.Text = "";
                     txtContraDoc.Text = "";
                     txtContraConfDoc.Text = "";
                     comboBox1.Text = "";
-                    txtMateDoc.Text = "";
+           
 
                     MessageBox.Show("Usuario creado!");
 
@@ -77,11 +79,19 @@ namespace Inquiries
         private void RegistroDocentes_Load(object sender, EventArgs e)
         {
             ConBD z = new ConBD();
-            int b = z.contgrupos();
             Grupo a = new Grupo();
+
+
+            int b = z.contgrupos();
             for (int i = 0; i < b; i++)
             {
                 comboBox1.Items.Add(Grupo.grupo().Rows[i]["gnom"]);
+            }
+
+            int c = Asignatura.cantMaterias();
+            for (int i = 0; i < b; i++)
+            {
+                comboBox2.Items.Add(Asignatura.devolverMaterias().Rows[i]["anom"]);
             }
         }
 
@@ -108,7 +118,6 @@ namespace Inquiries
 
             if (img.ShowDialog() == DialogResult.OK)
             {
-                txtNomImg.Text = img.FileName;
 
                 pictureBox1.Image = Image.FromFile(img.FileName);
 

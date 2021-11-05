@@ -28,49 +28,56 @@ namespace Inquiries
             Admin aAd = new Admin();
             try
             {
-                //Inicio sesión
-                if (aAl.inSesAl(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                try
                 {
-                    txtUsuario.Text = "Cédula de identidad";
-                    txtContra.Text = "Contraseña";
-                    this.Hide();
-                    MenuAlumnos f = new MenuAlumnos();
-                    f.ShowDialog();
-                    this.Show();
-
-                }
-                else
-                {
-                    if (aDoc.inSesDoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                    //Inicio sesión
+                    if (aAl.inSesAl(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                     {
                         txtUsuario.Text = "Cédula de identidad";
                         txtContra.Text = "Contraseña";
                         this.Hide();
-                        MenuDocentes f = new MenuDocentes();
+                        MenuAlumnos f = new MenuAlumnos();
                         f.ShowDialog();
                         this.Show();
+
                     }
                     else
                     {
-                        if (aAd.inSesAd(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                        if (aDoc.inSesDoc(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
                         {
                             txtUsuario.Text = "Cédula de identidad";
                             txtContra.Text = "Contraseña";
                             this.Hide();
-                            MenuPrincipalAdmin f = new MenuPrincipalAdmin();
+                            MenuDocentes f = new MenuDocentes();
                             f.ShowDialog();
                             this.Show();
                         }
-                        else { MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                        else
+                        {
+                            if (aAd.inSesAd(Convert.ToInt32(txtUsuario.Text), txtContra.Text))
+                            {
+                                txtUsuario.Text = "Cédula de identidad";
+                                txtContra.Text = "Contraseña";
+                                this.Hide();
+                                MenuPrincipalAdmin f = new MenuPrincipalAdmin();
+                                f.ShowDialog();
+                                this.Show();
+                            }
+                            else { MessageBox.Show("Este usuario no existe", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+                        }
 
                     }
 
                 }
-
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("Datos erróneos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception)
+            catch(Exception)
             {
-                MessageBox.Show("Faltan datos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

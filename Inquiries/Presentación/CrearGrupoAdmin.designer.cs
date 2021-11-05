@@ -38,6 +38,7 @@ namespace TemplateParteAdmin
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,7 @@ namespace TemplateParteAdmin
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnIngresar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -170,6 +171,7 @@ namespace TemplateParteAdmin
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnIngresar);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.btnVolver);
             this.panel3.Controls.Add(this.btnGuardar);
@@ -194,6 +196,16 @@ namespace TemplateParteAdmin
             this.panel3.TabIndex = 16;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1064, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "label7";
+            this.label7.Visible = false;
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
@@ -214,7 +226,7 @@ namespace TemplateParteAdmin
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
-            this.btnGuardar.Location = new System.Drawing.Point(904, 431);
+            this.btnGuardar.Location = new System.Drawing.Point(596, 49);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(166, 39);
             this.btnGuardar.TabIndex = 15;
@@ -225,7 +237,7 @@ namespace TemplateParteAdmin
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Inquiries.Properties.Resources.personamas;
-            this.pictureBox3.Location = new System.Drawing.Point(244, 392);
+            this.pictureBox3.Location = new System.Drawing.Point(250, 343);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(65, 63);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,7 +247,7 @@ namespace TemplateParteAdmin
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Inquiries.Properties.Resources.personamas;
-            this.pictureBox2.Location = new System.Drawing.Point(244, 301);
+            this.pictureBox2.Location = new System.Drawing.Point(250, 252);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(65, 63);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -245,7 +257,7 @@ namespace TemplateParteAdmin
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Inquiries.Properties.Resources.libromas;
-            this.pictureBox1.Location = new System.Drawing.Point(244, 206);
+            this.pictureBox1.Location = new System.Drawing.Point(250, 157);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -298,7 +310,7 @@ namespace TemplateParteAdmin
             // txtAl
             // 
             this.txtAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAl.Location = new System.Drawing.Point(345, 401);
+            this.txtAl.Location = new System.Drawing.Point(351, 352);
             this.txtAl.Name = "txtAl";
             this.txtAl.Size = new System.Drawing.Size(165, 40);
             this.txtAl.TabIndex = 7;
@@ -306,7 +318,7 @@ namespace TemplateParteAdmin
             // txtDoc
             // 
             this.txtDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoc.Location = new System.Drawing.Point(345, 313);
+            this.txtDoc.Location = new System.Drawing.Point(351, 264);
             this.txtDoc.Name = "txtDoc";
             this.txtDoc.Size = new System.Drawing.Size(165, 40);
             this.txtDoc.TabIndex = 6;
@@ -314,7 +326,7 @@ namespace TemplateParteAdmin
             // txtAsig
             // 
             this.txtAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAsig.Location = new System.Drawing.Point(345, 220);
+            this.txtAsig.Location = new System.Drawing.Point(351, 171);
             this.txtAsig.Name = "txtAsig";
             this.txtAsig.Size = new System.Drawing.Size(165, 40);
             this.txtAsig.TabIndex = 5;
@@ -331,7 +343,7 @@ namespace TemplateParteAdmin
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(66, 402);
+            this.label5.Location = new System.Drawing.Point(72, 353);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 39);
             this.label5.TabIndex = 3;
@@ -341,7 +353,7 @@ namespace TemplateParteAdmin
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 309);
+            this.label4.Location = new System.Drawing.Point(61, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 39);
             this.label4.TabIndex = 2;
@@ -351,7 +363,7 @@ namespace TemplateParteAdmin
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 218);
+            this.label3.Location = new System.Drawing.Point(24, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 39);
             this.label3.TabIndex = 1;
@@ -367,15 +379,19 @@ namespace TemplateParteAdmin
             this.label2.TabIndex = 0;
             this.label2.Text = "Nombre:";
             // 
-            // label7
+            // btnIngresar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1064, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "label7";
-            this.label7.Visible = false;
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(188)))));
+            this.btnIngresar.Location = new System.Drawing.Point(235, 422);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(166, 39);
+            this.btnIngresar.TabIndex = 18;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // CrearGrupoAdmin
             // 
@@ -387,6 +403,7 @@ namespace TemplateParteAdmin
             this.Controls.Add(this.panel1);
             this.Name = "CrearGrupoAdmin";
             this.Text = "CrearGrupoAdmin";
+            this.Load += new System.EventHandler(this.CrearGrupoAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -428,5 +445,6 @@ namespace TemplateParteAdmin
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnIngresar;
     }
 }

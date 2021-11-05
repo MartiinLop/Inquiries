@@ -51,7 +51,6 @@ namespace Inquiries
             this.btnChatAl = new System.Windows.Forms.Button();
             this.btnConsultasAl = new System.Windows.Forms.Button();
             this.btnGruposAl = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -326,21 +325,6 @@ namespace Inquiries
             this.btnGruposAl.Text = "GRUPOS";
             this.btnGruposAl.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.No;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1028, 451);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 29);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "Ver Agenda de Consultas";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
@@ -527,7 +511,6 @@ namespace Inquiries
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminarAl);
@@ -579,7 +562,6 @@ namespace Inquiries
         private System.Windows.Forms.Button btnChatAl;
         private System.Windows.Forms.Button btnConsultasAl;
         private System.Windows.Forms.Button btnGruposAl;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;

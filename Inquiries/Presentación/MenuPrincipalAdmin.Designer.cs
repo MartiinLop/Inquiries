@@ -41,14 +41,14 @@ namespace Inquiries
             this.pnlUsu = new System.Windows.Forms.Panel();
             this.btnVerUsuarios = new System.Windows.Forms.Button();
             this.panelUsuarios = new System.Windows.Forms.Panel();
-            this.panelHistorial = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.panelHistorialMain = new System.Windows.Forms.Panel();
-            this.btnVHistorial = new System.Windows.Forms.Button();
-            this.panelGrupos = new System.Windows.Forms.Panel();
-            this.panelMainGrupos = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelHistorialMain = new System.Windows.Forms.Panel();
+            this.panelMainGrupos = new System.Windows.Forms.Panel();
+            this.panelGrupos = new System.Windows.Forms.Panel();
+            this.panelHistorial = new System.Windows.Forms.Panel();
+            this.btnVHistorial = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelUsuarios.SuspendLayout();
             this.panelHistorialMain.SuspendLayout();
@@ -194,58 +194,15 @@ namespace Inquiries
             this.panelUsuarios.TabIndex = 8;
             this.panelUsuarios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUsuarios_Paint);
             // 
-            // panelHistorial
-            // 
-            this.panelHistorial.Location = new System.Drawing.Point(13, 14);
-            this.panelHistorial.Name = "panelHistorial";
-            this.panelHistorial.Size = new System.Drawing.Size(1081, 449);
-            this.panelHistorial.TabIndex = 9;
-            // 
             // timer2
             // 
             this.timer2.Interval = 700;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // panelHistorialMain
+            // timer3
             // 
-            this.panelHistorialMain.Controls.Add(this.btnVHistorial);
-            this.panelHistorialMain.Controls.Add(this.panelHistorial);
-            this.panelHistorialMain.Location = new System.Drawing.Point(155, 124);
-            this.panelHistorialMain.Name = "panelHistorialMain";
-            this.panelHistorialMain.Size = new System.Drawing.Size(1109, 505);
-            this.panelHistorialMain.TabIndex = 9;
-            this.panelHistorialMain.Visible = false;
-            // 
-            // btnVHistorial
-            // 
-            this.btnVHistorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.btnVHistorial.FlatAppearance.BorderSize = 0;
-            this.btnVHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVHistorial.ForeColor = System.Drawing.Color.White;
-            this.btnVHistorial.Location = new System.Drawing.Point(799, 469);
-            this.btnVHistorial.Name = "btnVHistorial";
-            this.btnVHistorial.Size = new System.Drawing.Size(127, 33);
-            this.btnVHistorial.TabIndex = 11;
-            this.btnVHistorial.Text = "Ver Historial";
-            this.btnVHistorial.UseVisualStyleBackColor = false;
-            // 
-            // panelGrupos
-            // 
-            this.panelGrupos.Controls.Add(this.panelMainGrupos);
-            this.panelGrupos.Controls.Add(this.button1);
-            this.panelGrupos.Location = new System.Drawing.Point(18, 124);
-            this.panelGrupos.Name = "panelGrupos";
-            this.panelGrupos.Size = new System.Drawing.Size(1172, 534);
-            this.panelGrupos.TabIndex = 0;
-            this.panelGrupos.Visible = false;
-            // 
-            // panelMainGrupos
-            // 
-            this.panelMainGrupos.Location = new System.Drawing.Point(4, 7);
-            this.panelMainGrupos.Name = "panelMainGrupos";
-            this.panelMainGrupos.Size = new System.Drawing.Size(1165, 485);
-            this.panelMainGrupos.TabIndex = 13;
+            this.timer3.Interval = 600;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // button1
             // 
@@ -262,10 +219,53 @@ namespace Inquiries
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // timer3
+            // panelHistorialMain
             // 
-            this.timer3.Interval = 600;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            this.panelHistorialMain.Controls.Add(this.btnVHistorial);
+            this.panelHistorialMain.Controls.Add(this.panelHistorial);
+            this.panelHistorialMain.Location = new System.Drawing.Point(155, 124);
+            this.panelHistorialMain.Name = "panelHistorialMain";
+            this.panelHistorialMain.Size = new System.Drawing.Size(1109, 505);
+            this.panelHistorialMain.TabIndex = 9;
+            this.panelHistorialMain.Visible = false;
+            // 
+            // panelMainGrupos
+            // 
+            this.panelMainGrupos.Location = new System.Drawing.Point(4, 7);
+            this.panelMainGrupos.Name = "panelMainGrupos";
+            this.panelMainGrupos.Size = new System.Drawing.Size(1165, 485);
+            this.panelMainGrupos.TabIndex = 13;
+            // 
+            // panelGrupos
+            // 
+            this.panelGrupos.Controls.Add(this.panelMainGrupos);
+            this.panelGrupos.Controls.Add(this.button1);
+            this.panelGrupos.Location = new System.Drawing.Point(18, 124);
+            this.panelGrupos.Name = "panelGrupos";
+            this.panelGrupos.Size = new System.Drawing.Size(1172, 534);
+            this.panelGrupos.TabIndex = 0;
+            this.panelGrupos.Visible = false;
+            // 
+            // panelHistorial
+            // 
+            this.panelHistorial.Location = new System.Drawing.Point(13, 14);
+            this.panelHistorial.Name = "panelHistorial";
+            this.panelHistorial.Size = new System.Drawing.Size(1081, 449);
+            this.panelHistorial.TabIndex = 9;
+            // 
+            // btnVHistorial
+            // 
+            this.btnVHistorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.btnVHistorial.FlatAppearance.BorderSize = 0;
+            this.btnVHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVHistorial.ForeColor = System.Drawing.Color.White;
+            this.btnVHistorial.Location = new System.Drawing.Point(799, 469);
+            this.btnVHistorial.Name = "btnVHistorial";
+            this.btnVHistorial.Size = new System.Drawing.Size(127, 33);
+            this.btnVHistorial.TabIndex = 11;
+            this.btnVHistorial.Text = "Ver Historial";
+            this.btnVHistorial.UseVisualStyleBackColor = false;
             // 
             // MenuPrincipalAdmin
             // 
@@ -300,13 +300,13 @@ namespace Inquiries
         private System.Windows.Forms.Button btnVerUsuarios;
         private System.Windows.Forms.Panel pnlUsu;
         private System.Windows.Forms.Panel panelUsuarios;
-        private System.Windows.Forms.Panel panelHistorial;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Panel panelHistorialMain;
-        private System.Windows.Forms.Button btnVHistorial;
-        private System.Windows.Forms.Panel panelGrupos;
-        private System.Windows.Forms.Panel panelMainGrupos;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelHistorialMain;
+        private System.Windows.Forms.Panel panelHistorial;
+        private System.Windows.Forms.Panel panelMainGrupos;
+        private System.Windows.Forms.Panel panelGrupos;
+        private System.Windows.Forms.Button btnVHistorial;
     }
 }

@@ -330,7 +330,7 @@ namespace Inquiries
 
         private void MenuPrincipalAdmin_Load(object sender, EventArgs e)
         {
-
+            btnVHistorial.Visible = false;
 
         }
 

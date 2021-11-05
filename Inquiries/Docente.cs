@@ -86,6 +86,12 @@ namespace Inquiries
             ConBD.regdoc(dci, dnom, dape, dcon, grupo, dconexion, destado, img);
         }
 
+        public static void regEnseña(int dci, int acod){
+
+            ConBD.regEnseña(dci, acod);
+
+        }
+
         public static byte[] obtImgDoc()
         {
             return ConBD.imgDoc();

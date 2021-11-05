@@ -353,9 +353,14 @@ namespace Inquiries
            return ConBD.crearGrupoAdmin(nombre, ori);
         }
 
-        public static void argegarAGrupo(string gcod, string asignatura, string docente, string integrantes, string nombregrupo)
+        public static void argegarAGrupo(string gcod, string asignatura, string docente, string alumno, string nombregrupo)
         {
-            ConBD.modGrupo(gcod, asignatura, docente, integrantes, nombregrupo);
+            ConBD.modGrupo(gcod, asignatura, docente, alumno, nombregrupo);
+        }
+
+        public static string crearGrupoSinOri(string nombre)
+        {
+            return ConBD.crearGrupoSinOri(nombre);
         }
     }
 }

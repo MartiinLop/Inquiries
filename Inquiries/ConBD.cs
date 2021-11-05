@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
 namespace Inquiries
 {
     class ConBD
@@ -29,7 +30,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 1234;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -157,6 +158,16 @@ namespace Inquiries
             MySqlCommand grupos = new MySqlCommand("insert into gruposdocente (cidocente, dgrupo) values ('" + dCI + "', '" + grupo + "');", conectar2);
             grupos.ExecuteReader();
             conectar2.Close();
+        }
+
+        public static void regEnseña(int dci, int acod)
+        {
+            MySqlConnection conectar = new MySqlConnection(conexbd);
+            conectar.Open();
+
+            MySqlCommand grupos = new MySqlCommand("insert into enseña (dci, acod) values (" + dci + ", " + acod + ");", conectar);
+            grupos.ExecuteReader();
+            conectar.Close();
         }
 
         //Seleccionar imagen docente
@@ -1407,30 +1418,36 @@ namespace Inquiries
         //Eliminar chat con código
         public static void elimChatCod(int cod)
         {
-            string comando1 = "delete mcod, chcod, emisor, contenido, fecharealizado from mensaje where chcod = " + cod + ";";
-            string comando2 = "delete alci, chcod, rol from participa where chcod = " + cod + ";";
-            string comando3 = "delete chcod, docente, chmate, resumen, titulochat, fechacomienzo, cestado from chat where cod = " + cod + ";";
+            try
+            {
+                string comando1 = "delete mcod, chcod, emisor, contenido, fecharealizado from mensaje where chcod = " + cod + ";";
+                string comando2 = "delete alci, chcod, rol from participa where chcod = " + cod + ";";
+                string comando3 = "delete chcod, docente, chmate, resumen, titulochat, fechacomienzo, cestado from chat where cod = " + cod + ";";
 
-            MySqlConnection conectar1 = new MySqlConnection(conexbd);
-            conectar1.Open();
+                MySqlConnection conectar1 = new MySqlConnection(conexbd);
+                conectar1.Open();
 
-            MySqlCommand cons = new MySqlCommand(comando1, conectar1);
-            cons.ExecuteNonQuery();
-            conectar1.Close();
+                MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+                cons.ExecuteNonQuery();
+                conectar1.Close();
 
-            MySqlConnection conectar2 = new MySqlConnection(conexbd);
-            conectar2.Open();
+                MySqlConnection conectar2 = new MySqlConnection(conexbd);
+                conectar2.Open();
 
-            MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
-            cons2.ExecuteNonQuery();
-            conectar2.Close();
+                MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
+                cons2.ExecuteNonQuery();
+                conectar2.Close();
 
-            MySqlConnection conectar3= new MySqlConnection(conexbd);
-            conectar3.Open();
+                MySqlConnection conectar3 = new MySqlConnection(conexbd);
+                conectar3.Open();
 
-            MySqlCommand cons3 = new MySqlCommand(comando3, conectar2);
-            cons3.ExecuteNonQuery();
-            conectar3.Close();
+                MySqlCommand cons3 = new MySqlCommand(comando3, conectar2);
+                cons3.ExecuteNonQuery();
+                conectar3.Close();
+            }
+            catch (Exception){
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -1482,12 +1499,19 @@ namespace Inquiries
         }
 
         //Modificar grupos
-        public static void modGrupo(string gCod, string asignatura, string docente, string integrantes, string nombregrupo)
+        public static void modGrupo(string gCod, string asignatura, string docente, string alumno, string nombregrupo)
         {
 
             if(asignatura != null)
             {
-               string comando3 = "update asignatura set agrupo = "+nombregrupo+" where acod = "+asignatura+";";
+                MySqlConnection conectar1 = new MySqlConnection(conexbd);
+                conectar1.Open();
+                string comando1 = "insert into asignatura (anom, aori, agrupo) values ('"+asignatura+"', null, '"+nombregrupo+"');";
+
+                MySqlCommand cons1 = new MySqlCommand(comando1, conectar1);
+                cons1.ExecuteNonQuery();
+                conectar1.Close();
+                MessageBox.Show("Asignatura agregada", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if(docente != null)
@@ -1500,19 +1524,25 @@ namespace Inquiries
                 MySqlCommand cons2 = new MySqlCommand(comando2, conectar2);
                 cons2.ExecuteNonQuery();
                 conectar2.Close();
+                MessageBox.Show("Docente agregado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            if(integrantes != null)
+            if(alumno != null)
             {
-                string comando1 = "update alumno set algrupo ="+gCod+" where alci = "+integrantes+";";
-                MySqlConnection conectar1 = new MySqlConnection(conexbd);
-                conectar1.Open();
+                MySqlConnection conectar3 = new MySqlConnection(conexbd);
+                conectar3.Open();
 
-                MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+                string comando3 = "update alumno set algrupo ="+gCod+" where alci = "+alumno+";";
+                
+
+                MySqlCommand cons = new MySqlCommand(comando3, conectar3);
                 cons.ExecuteNonQuery();
-                conectar1.Close();
+                conectar3.Close();
+                MessageBox.Show("Alumno agregado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+     
 
         public static int cantidadAlGrupo(string gcod)
         {
@@ -1563,7 +1593,7 @@ namespace Inquiries
         public static string crearGrupoAdmin(string nombre, string ori)
         {
             string a=null;
-            string comando1 = "insert into grupo (gnom, gori) values ("+nombre+", "+ori+");";
+            string comando1 = "insert into grupo (gnom, gori) values ('"+nombre+"', '"+ori+"');";
             MySqlConnection conectar1 = new MySqlConnection(conexbd);
             conectar1.Open();
 
@@ -1579,7 +1609,33 @@ namespace Inquiries
             MySqlDataReader mensaje = codAs.ExecuteReader();
             while (mensaje.Read())
             {
-                a += mensaje.GetString("emisor") + ": " + mensaje.GetString("contenido") + "\n";
+                a += mensaje.GetString("gcod");
+            }
+            conectar2.Close();
+
+            return a;
+        }
+
+        public static string crearGrupoSinOri(string nombre)
+        {
+            string a = null;
+            string comando1 = "insert into grupo (gnom) values ('" + nombre + "');";
+            MySqlConnection conectar1 = new MySqlConnection(conexbd);
+            conectar1.Open();
+
+            MySqlCommand cons = new MySqlCommand(comando1, conectar1);
+            cons.ExecuteNonQuery();
+            conectar1.Close();
+
+            string comando2 = "select gcod from grupo order by gcod desc limit 1;";
+            MySqlConnection conectar2 = new MySqlConnection(conexbd);
+            conectar2.Open();
+
+            MySqlCommand codAs = new MySqlCommand(string.Format(comando2), conectar2);
+            MySqlDataReader mensaje = codAs.ExecuteReader();
+            while (mensaje.Read())
+            {
+                a += mensaje.GetString("gcod");
             }
             conectar2.Close();
 
