@@ -30,7 +30,7 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
-        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075;";
+        private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -508,7 +508,7 @@ namespace Inquiries
 
             MySqlConnection conectar = new MySqlConnection(conexbd);
             conectar.Open();
-            string cons = "select dci, gruposdocente.dgrupo, dnom, dape, asignatura.anom from docente, gruposdocente, grupo, enseña, asignatura " +
+            string cons = "select docente.dci, gruposdocente.dgrupo, dnom, dape, asignatura.anom from docente, gruposdocente, grupo, enseña, asignatura " +
                 "where docente.dci = gruposdocente.cidocente and grupo.gcod = gruposdocente.dgrupo and enseña.dci = docente.dci and asignatura.acod = enseña.acod and grupo.gnom = '" + grupo + "'; ";
             MySqlCommand comando = new MySqlCommand(string.Format(cons), conectar);
 
