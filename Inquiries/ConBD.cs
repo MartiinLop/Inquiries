@@ -9,6 +9,7 @@ using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using System.Configuration;
 namespace Inquiries
 {
     class ConBD
@@ -30,6 +31,8 @@ namespace Inquiries
         }
 
         //Contraseña a base de datos
+        //string para sv de la utu: "Server = 192.168.5.50; Port = 3306; Database = wojtek; Uid = juan.lopez; Pwd= 54086535;"
+        //string para mi pc: "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;"
         private static string conexbd = "Server = localhost; Port = 3306; Database = inquiriesbd; Uid = root; Pwd= 26134075sql;";
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
